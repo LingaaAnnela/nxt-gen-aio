@@ -3,45 +3,48 @@ import { HttpClient } from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, Subject } from 'rxjs';
-import { environment } from '../../../../public/environments/environment';
+import { environment } from '../../../../../public/environments/environment';
 import { Params } from '../interface/core.interface';
 import { NotificationModel } from '../interface/notification.interface';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NotificationService {
-
   public alertSubject = new Subject();
 
   public notification: boolean = true;
 
-  constructor(private zone: NgZone,
+  constructor(
+    private zone: NgZone,
     private http: HttpClient,
     private modalService: NgbModal,
-    private toastr: ToastrService) { }
+    private toastr: ToastrService
+  ) {}
 
   showSuccess(message: string): void {
-    this.alertSubject.next({type: 'success', message: message});
+    this.alertSubject.next({ type: 'success', message: message });
     this.zone.run(() => {
       this.modalService.dismissAll();
-      if(this.notification) { 
+      if (this.notification) {
         this.toastr.success(message);
       }
     });
   }
 
   showError(message: string): void {
-    this.alertSubject.next({type: 'error', message: message});
-      this.zone.run(() => {    
-        if(this.notification) {
-          this.toastr.error(message);
-        }
-      });
+    this.alertSubject.next({ type: 'error', message: message });
+    this.zone.run(() => {
+      if (this.notification) {
+        this.toastr.error(message);
+      }
+    });
   }
 
   getNotifications(payload?: Params): Observable<NotificationModel> {
-    return this.http.get<NotificationModel>(`${environment.URL}/notification.json`, { params: payload });
+    return this.http.get<NotificationModel>(
+      `${environment.URL}/notification.json`,
+      { params: payload }
+    );
   }
-
 }

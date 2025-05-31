@@ -14,16 +14,18 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'nxt-gen-m' title`, () => {
+  it(`should have the 'nxt-gen-aio' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('nxt-gen-m');
+    expect(app.title).toEqual('nxt-gen-aio');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, nxt-gen-m');
+    expect(compiled.querySelector('h1')?.textContent).toContain(
+      'Hello, nxt-gen-aio'
+    );
   });
 });

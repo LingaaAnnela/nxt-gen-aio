@@ -1,6 +1,6 @@
 {
-  "name": "nxt-gen-m",
-  "short_name": "nxt-gen-m",
+  "name": "nxt-gen-aio",
+  "short_name": "nxt-gen-aio",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",

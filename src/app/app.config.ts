@@ -14,11 +14,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 import { routes } from './app.routes';
 
-import { AuthInterceptor } from './core/interceptors/auth.interceptor';
-import { LoaderInterceptor } from './core/interceptors/loader.interceptor';
+import { AuthInterceptor } from './web/core/interceptors/auth.interceptor';
+import { LoaderInterceptor } from './web/core/interceptors/loader.interceptor';
 import { ErrorService } from './shared/services/error.service';
 import { NotificationService } from './shared/services/notification.service';
-import { GlobalErrorHandlerInterceptor } from './core/interceptors/global-error-handler.interceptor';
+import { GlobalErrorHandlerInterceptor } from './web/core/interceptors/global-error-handler.interceptor';
 import { provideToastr } from 'ngx-toastr';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
