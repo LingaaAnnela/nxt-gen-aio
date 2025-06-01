@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
-import { ProductResolver } from '../../../shared/resolvers/product.resolver';
-import { StoreResolver } from '../../../shared/resolvers/store.resolver';
+import { ProductResolver } from '../../shared/resolvers/product.resolver';
+import { StoreResolver } from '../../shared/resolvers/store.resolver';
 
 // Components
 import { CartComponent } from './cart/cart.component';
@@ -19,7 +19,7 @@ import { ProductComponent } from './product/product.component';
 import { CollectionComponent } from './collection/collection.component';
 
 // Checkout
-import { ScrollPositionGuard } from '../../../shared/guard/scroll.guard';
+import { ScrollPositionGuard } from '../../shared/guard/scroll.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 
 export default [

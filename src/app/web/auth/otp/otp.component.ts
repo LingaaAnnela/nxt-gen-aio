@@ -9,14 +9,14 @@ import {
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
-import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { AlertComponent } from '../../../shared/components/widgets/alert/alert.component';
-import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { VerifyEmailOtp } from '../../../shared/action/auth.action';
+import { BreadcrumbComponent } from '../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { AlertComponent } from '../../shared/components/widgets/alert/alert.component';
+import { ButtonComponent } from '../../shared/components/widgets/button/button.component';
+import { Breadcrumb } from '../../shared/interface/breadcrumb';
+import { VerifyEmailOtp } from '../../shared/action/auth.action';
 
 @Component({
-  selector: 'app-otp',
+  selector: 'nxt-otp',
   templateUrl: './otp.component.html',
   styleUrls: ['./otp.component.scss'],
   standalone: true,
@@ -28,7 +28,7 @@ import { VerifyEmailOtp } from '../../../shared/action/auth.action';
     TranslateModule,
   ],
 })
-export class OtpComponent {
+export class NxtOtpComponent {
   public form: FormGroup;
   public email: string;
   public breadcrumb: Breadcrumb = {

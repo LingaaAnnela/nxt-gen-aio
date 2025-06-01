@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewportScroller } from '@angular/common';
-import { Params } from '../../../../../../../shared/interface/core.interface';
+import { Params } from '../../../../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 
@@ -35,9 +35,8 @@ export class CollectionRatingFilterComponent {
     ); // checked and unchecked value
 
     if ((<HTMLInputElement>event?.target)?.checked)
-      this.selectedRatings.push(
-        (<HTMLInputElement>event?.target)?.value
-      ); // push in array cheked value
+      this.selectedRatings.push((<HTMLInputElement>event?.target)?.value);
+    // push in array cheked value
     else this.selectedRatings.splice(index, 1); // removed in array unchecked value
 
     this.router.navigate([], {

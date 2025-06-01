@@ -13,21 +13,21 @@ import {
   Product,
   Variation,
   SelectedVariant,
-} from '../../../../../../../shared/interface/product.interface';
+} from '../../../../../../shared/interface/product.interface';
 import {
   Cart,
   CartAddOrUpdate,
-} from '../../../../../../../shared/interface/cart.interface';
-import { AddToCart } from '../../../../../../../shared/action/cart.action';
-import { CartState } from '../../../../../../../shared/state/cart.state';
-import { Option } from '../../../../../../../shared/interface/theme-option.interface';
-import { AddToWishlist } from '../../../../../../../shared/action/wishlist.action';
-import { AddToCompare } from '../../../../../../../shared/action/compare.action';
+} from '../../../../../../shared/interface/cart.interface';
+import { AddToCart } from '../../../../../../shared/action/cart.action';
+import { CartState } from '../../../../../../shared/state/cart.state';
+import { Option } from '../../../../../../shared/interface/theme-option.interface';
+import { AddToWishlist } from '../../../../../../shared/action/wishlist.action';
+import { AddToCompare } from '../../../../../../shared/action/compare.action';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../../../../shared/pipe/currency-symbol.pipe';
-import { ButtonComponent } from '../../../../../../../shared/components/widgets/button/button.component';
+import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
+import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
 import { SaleTimerComponent } from '../sale-timer/sale-timer.component';
-import { VariantAttributesComponent } from '../../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
+import { VariantAttributesComponent } from '../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
 

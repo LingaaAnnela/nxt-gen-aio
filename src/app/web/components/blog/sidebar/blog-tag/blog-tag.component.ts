@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Tag } from '../../../../../shared/interface/tag.interface';
+import { Tag } from '../../../../shared/interface/tag.interface';
 import { RouterLink } from '@angular/router';
 
 @Component({

@@ -2,13 +2,13 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Params } from '../../../../shared/interface/core.interface';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { ProductModel } from '../../../../shared/interface/product.interface';
-import { GetProducts } from '../../../../shared/action/product.action';
-import { ProductState } from '../../../../shared/state/product.state';
-import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
-import { Option } from '../../../../shared/interface/theme-option.interface';
+import { Params } from '../../../shared/interface/core.interface';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { ProductModel } from '../../../shared/interface/product.interface';
+import { GetProducts } from '../../../shared/action/product.action';
+import { ProductState } from '../../../shared/state/product.state';
+import { ThemeOptionState } from '../../../shared/state/theme-option.state';
+import { Option } from '../../../shared/interface/theme-option.interface';
 import { CollectionNoSidebarComponent } from './collection-no-sidebar/collection-no-sidebar.component';
 import { CollectionOffCanvasFilterComponent } from './collection-offcanvas-filter/collection-offcanvas-filter.component';
 import { CollectionListComponent } from './collection-list/collection-list.component';
@@ -18,7 +18,7 @@ import { CollectionBannerComponent } from './collection-banner/collection-banner
 import { CollectionCategorySidebarComponent } from './collection-category-sidebar/collection-category-sidebar.component';
 import { CollectionCategorySliderComponent } from './collection-category-slider/collection-category-slider.component';
 
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-collection',

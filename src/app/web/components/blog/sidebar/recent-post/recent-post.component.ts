@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Blog } from '../../../../../shared/interface/blog.interface';
+import { Blog } from '../../../../shared/interface/blog.interface';
 import { RouterLink } from '@angular/router';
 import { SlicePipe, DatePipe } from '@angular/common';
 

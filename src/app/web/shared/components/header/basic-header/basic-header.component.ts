@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  HostListener,
-  Inject,
-  PLATFORM_ID,
-} from '@angular/core';
+import { Component, Input, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Option } from '../../../interface/theme-option.interface';
 import { TranslateModule } from '@ngx-translate/core';
@@ -24,28 +18,16 @@ import { NavbarMenuButtonComponent } from '../widgets/navbar-menu-button/navbar-
 import { TopbarComponent } from '../widgets/topbar/topbar.component';
 
 @Component({
-  selector: 'nxt-basic-header',
-  templateUrl: './basic-header.component.html',
-  styleUrls: ['./basic-header.component.scss'],
-  imports: [
-    TopbarComponent,
-    NavbarMenuButtonComponent,
-    LogoComponent,
-    CategoriesComponent,
-    SearchComponent,
-    SearchBoxComponent,
-    CallComponent,
-    WishlistComponent,
-    CartComponent,
-    MyAccountComponent,
-    CategoriesBlockComponent,
-    ButtonComponent,
-    MenuComponent,
-    DealComponent,
-    TranslateModule,
-  ],
+    selector: 'app-basic-header',
+    templateUrl: './basic-header.component.html',
+    styleUrls: ['./basic-header.component.scss'],
+    imports: [TopbarComponent, NavbarMenuButtonComponent, LogoComponent,
+        CategoriesComponent, SearchComponent, SearchBoxComponent, CallComponent,
+        WishlistComponent, CartComponent, MyAccountComponent, CategoriesBlockComponent,
+        ButtonComponent, MenuComponent, DealComponent, TranslateModule]
 })
-export class NxtBasicHeaderComponent {
+export class BasicHeaderComponent {
+
   @Input() data: Option | null;
   @Input() logo: string | null | undefined;
   @Input() sticky: boolean | number | undefined; // Default false
@@ -53,17 +35,14 @@ export class NxtBasicHeaderComponent {
   public stick: boolean = false;
   public active: boolean = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  }
 
   // @HostListener Decorator
-  @HostListener('window:scroll', [])
+  @HostListener("window:scroll", [])
   onWindowScroll() {
-    if (isPlatformBrowser(this.platformId)) {
-      let number =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        0;
+    if (isPlatformBrowser(this.platformId)) {  
+      let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
       if (number >= 150 && window.innerWidth > 400) {
         this.stick = true;
       } else {
@@ -72,7 +51,7 @@ export class NxtBasicHeaderComponent {
     }
   }
 
-  toggle(val: boolean) {
+  toggle(val: boolean){
     this.active = val;
   }
 }

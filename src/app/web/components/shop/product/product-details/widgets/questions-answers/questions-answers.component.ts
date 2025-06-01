@@ -8,16 +8,16 @@ import {
 import { FormControl } from '@angular/forms';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subject } from 'rxjs';
-import { GetUserDetails } from '../../../../../../../shared/action/account.action';
-import { QuestionModalComponent } from '../../../../../../../shared/components/widgets/modal/question-modal/question-modal.component';
-import { AccountUser } from '../../../../../../../shared/interface/account.interface';
-import { Product } from '../../../../../../../shared/interface/product.interface';
-import { QuestionAnswers } from '../../../../../../../shared/interface/questions-answers.interface';
-import { QuestionsAnswersService } from '../../../../../../../shared/services/questions-answers.service';
-import { AccountState } from '../../../../../../../shared/state/account.state';
-import { Feedback } from '../../../../../../../shared/action/questions-answers.action';
+import { GetUserDetails } from '../../../../../../shared/action/account.action';
+import { QuestionModalComponent } from '../../../../../../shared/components/widgets/modal/question-modal/question-modal.component';
+import { AccountUser } from '../../../../../../shared/interface/account.interface';
+import { Product } from '../../../../../../shared/interface/product.interface';
+import { QuestionAnswers } from '../../../../../../shared/interface/questions-answers.interface';
+import { QuestionsAnswersService } from '../../../../../../shared/services/questions-answers.service';
+import { AccountState } from '../../../../../../shared/state/account.state';
+import { Feedback } from '../../../../../../shared/action/questions-answers.action';
 import { TranslateModule } from '@ngx-translate/core';
-import { NoDataComponent } from '../../../../../../../shared/components/widgets/no-data/no-data.component';
+import { NoDataComponent } from '../../../../../../shared/components/widgets/no-data/no-data.component';
 import { AsyncPipe } from '@angular/common';
 
 @Component({

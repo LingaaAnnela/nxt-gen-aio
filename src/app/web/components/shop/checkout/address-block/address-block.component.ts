@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { UserAddress } from '../../../../../shared/interface/user.interface';
+import { UserAddress } from '../../../../shared/interface/user.interface';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

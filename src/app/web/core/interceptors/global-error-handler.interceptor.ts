@@ -5,9 +5,9 @@ import {
   HttpRequest,
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { ErrorService } from '../../../shared/services/error.service';
-import { LoggingService } from '../../../shared/services/logging.service';
-import { NotificationService } from '../../../shared/services/notification.service';
+import { ErrorService } from '../../shared/services/error.service';
+import { LoggingService } from '../../shared/services/logging.service';
+import { NotificationService } from '../../shared/services/notification.service';
 import { Observable, catchError, throwError } from 'rxjs';
 
 @Injectable()

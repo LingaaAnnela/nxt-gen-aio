@@ -13,7 +13,7 @@ import {
   HideLoaderAction,
   ShowButtonSpinnerAction,
   ShowLoaderAction,
-} from '../../../shared/action/loader.action';
+} from '../../shared/action/loader.action';
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {

@@ -1,5 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Values } from '../../../../../shared/interface/setting.interface';
+import { Values } from '../../../../shared/interface/setting.interface';
 import { UpperCasePipe } from '@angular/common';
 
 @Component({

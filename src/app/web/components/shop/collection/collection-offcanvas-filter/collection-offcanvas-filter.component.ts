@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Params } from '../../../../../shared/interface/core.interface';
-import { AttributeService } from '../../../../../shared/services/attribute.service';
+import { Params } from '../../../../shared/interface/core.interface';
+import { AttributeService } from '../../../../shared/services/attribute.service';
 import { CollectionProductsComponent } from '../widgets/collection-products/collection-products.component';
 import { CollectionSidebarComponent } from '../widgets/sidebar/sidebar.component';
 

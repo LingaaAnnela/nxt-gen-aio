@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { SettingState } from '../../../../shared/state/setting.state';
-import { PointState } from '../../../../shared/state/point.state';
-import { GetUserTransaction } from '../../../../shared/action/point.action';
-import { Point } from '../../../../shared/interface/point.interface';
-import { Params } from '../../../../shared/interface/core.interface';
-import { Values } from '../../../../shared/interface/setting.interface';
+import { SettingState } from '../../../shared/state/setting.state';
+import { PointState } from '../../../shared/state/point.state';
+import { GetUserTransaction } from '../../../shared/action/point.action';
+import { Point } from '../../../shared/interface/point.interface';
+import { Params } from '../../../shared/interface/core.interface';
+import { Values } from '../../../shared/interface/setting.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../shared/pipe/currency-symbol.pipe';
-import { TitleCasePipe } from '../../../../shared/pipe/title-case.pipe';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
-import { PaginationComponent } from '../../../../shared/components/widgets/pagination/pagination.component';
+import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
+import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
+import { PaginationComponent } from '../../../shared/components/widgets/pagination/pagination.component';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({

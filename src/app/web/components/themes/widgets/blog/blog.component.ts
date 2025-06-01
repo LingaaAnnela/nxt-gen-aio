@@ -2,13 +2,10 @@ import { Component, inject, Input } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
-import { BlogService } from '../../../../../shared/services/blog.service';
-import { BlogState } from '../../../../../shared/state/blog.state';
-import {
-  Blog,
-  BlogModel,
-} from '../../../../../shared/interface/blog.interface';
-import * as data from '../../../../../shared/data/owl-carousel';
+import { BlogService } from '../../../../shared/services/blog.service';
+import { BlogState } from '../../../../shared/state/blog.state';
+import { Blog, BlogModel } from '../../../../shared/interface/blog.interface';
+import * as data from '../../../../shared/data/owl-carousel';
 import { RouterLink } from '@angular/router';
 import { SkeletonBlogComponent } from '../../../blog/skeleton-blog/skeleton-blog.component';
 import { NgStyle, DatePipe } from '@angular/common';

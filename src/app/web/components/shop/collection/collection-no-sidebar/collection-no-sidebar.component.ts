@@ -1,10 +1,10 @@
 import { Component, inject, Input, SimpleChange } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Params } from '../../../../../shared/interface/core.interface';
-import { Option } from '../../../../../shared/interface/theme-option.interface';
-import { ThemeOptionState } from '../../../../../shared/state/theme-option.state';
-import { AttributeService } from '../../../../../shared/services/attribute.service';
+import { Params } from '../../../../shared/interface/core.interface';
+import { Option } from '../../../../shared/interface/theme-option.interface';
+import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
+import { AttributeService } from '../../../../shared/services/attribute.service';
 import { CollectionProductsComponent } from '../widgets/collection-products/collection-products.component';
 import { BannerComponent } from '../widgets/banner/banner.component';
 

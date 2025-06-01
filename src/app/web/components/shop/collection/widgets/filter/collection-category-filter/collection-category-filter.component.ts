@@ -2,12 +2,12 @@ import { Component, inject, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Params } from '../../../../../../../shared/interface/core.interface';
+import { Params } from '../../../../../../shared/interface/core.interface';
 import {
   Category,
   CategoryModel,
-} from '../../../../../../../shared/interface/category.interface';
-import { CategoryState } from '../../../../../../../shared/state/category.state';
+} from '../../../../../../shared/interface/category.interface';
+import { CategoryState } from '../../../../../../shared/state/category.state';
 
 @Component({
   selector: 'app-collection-category-filter',
@@ -46,9 +46,8 @@ export class CollectionCategoryFilterComponent {
     ); // checked and unchecked value
 
     if ((<HTMLInputElement>event?.target)?.checked)
-      this.selectedCategories.push(
-        (<HTMLInputElement>event?.target)?.value
-      ); // push in array cheked value
+      this.selectedCategories.push((<HTMLInputElement>event?.target)?.value);
+    // push in array cheked value
     else this.selectedCategories.splice(index, 1); // removed in array unchecked value
 
     this.router.navigate([], {

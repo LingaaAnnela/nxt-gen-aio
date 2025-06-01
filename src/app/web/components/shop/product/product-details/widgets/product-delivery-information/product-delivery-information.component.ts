@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../../../../../../shared/interface/product.interface';
+import { Product } from '../../../../../../shared/interface/product.interface';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

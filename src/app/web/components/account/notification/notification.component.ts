@@ -1,11 +1,11 @@
 import { Component, Inject, inject, PLATFORM_ID } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { NotificationState } from '../../../../shared/state/notification.state';
-import { MarkAsReadNotification } from '../../../../shared/action/notification.action';
-import { Notification } from '../../../../shared/interface/notification.interface';
+import { NotificationState } from '../../../shared/state/notification.state';
+import { MarkAsReadNotification } from '../../../shared/action/notification.action';
+import { Notification } from '../../../shared/interface/notification.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { AsyncPipe, DatePipe, isPlatformBrowser } from '@angular/common';
 
 @Component({

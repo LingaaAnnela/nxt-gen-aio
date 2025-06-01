@@ -1,13 +1,25 @@
-import { Component, ViewChild, TemplateRef, Input, PLATFORM_ID, Inject, inject } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  TemplateRef,
+  Input,
+  PLATFORM_ID,
+  Inject,
+  inject,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { ModalDismissReasons, NgbModal, NgbRating } from '@ng-bootstrap/ng-bootstrap';
+import {
+  ModalDismissReasons,
+  NgbModal,
+  NgbRating,
+} from '@ng-bootstrap/ng-bootstrap';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Product, Variation } from '../../../../interface/product.interface';
 import { Cart, CartAddOrUpdate } from '../../../../interface/cart.interface';
 import { AddToCart } from '../../../../action/cart.action';
 import { CartState } from '../../../../state/cart.state';
-import * as data from  '../../../../../shared/data/owl-carousel';
+import * as data from '../../../../data/owl-carousel';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { TitleCasePipe } from '../../../../pipe/title-case.pipe';
 import { TranslateModule } from '@ngx-translate/core';
@@ -16,20 +28,29 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ButtonComponent } from '../../button/button.component';
 
 @Component({
-    selector: 'app-product-detail-modal',
-    templateUrl: './product-detail-modal.component.html',
-    styleUrls: ['./product-detail-modal.component.scss'],
-    providers: [CurrencySymbolPipe],
-    imports: [ButtonComponent, CarouselModule, NgbRating,
-        VariantAttributesComponent, TranslateModule, TitleCasePipe, CurrencySymbolPipe]
+  selector: 'app-product-detail-modal',
+  templateUrl: './product-detail-modal.component.html',
+  styleUrls: ['./product-detail-modal.component.scss'],
+  providers: [CurrencySymbolPipe],
+  imports: [
+    ButtonComponent,
+    CarouselModule,
+    NgbRating,
+    VariantAttributesComponent,
+    TranslateModule,
+    TitleCasePipe,
+    CurrencySymbolPipe,
+  ],
 })
 export class ProductDetailModalComponent {
-
-  @ViewChild("productDetailModal", { static: false }) productDetailModal: TemplateRef<any>;
+  @ViewChild('productDetailModal', { static: false })
+  productDetailModal: TemplateRef<any>;
 
   @Input() product: Product;
 
-  cartItem$: Observable<Cart[]> = inject(Store).select(CartState.cartItems) as Observable<Cart[]>;
+  cartItem$: Observable<Cart[]> = inject(Store).select(
+    CartState.cartItems
+  ) as Observable<Cart[]>;
 
   public closeResult: string;
   public modalOpen: boolean = false;
@@ -39,35 +60,42 @@ export class ProductDetailModalComponent {
   public selectedVariation: Variation | null;
 
   public activeSlide: string = '0';
-  
+
   public productMainThumbSlider = data.productMainThumbSlider;
   public productThumbSlider = data.productThumbSlider;
   public isBrowser: boolean;
 
-  constructor(private modalService: NgbModal,
+  constructor(
+    private modalService: NgbModal,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private store: Store) {
-      this.isBrowser = isPlatformBrowser(platformId);
+    private store: Store
+  ) {
+    this.isBrowser = isPlatformBrowser(platformId);
   }
 
   ngOnInit() {
-    this.cartItem$.subscribe(items => {
-      this.cartItem = items.find(item => item.product.id == this.product.id)!;
+    this.cartItem$.subscribe((items) => {
+      this.cartItem = items.find((item) => item.product.id == this.product.id)!;
     });
   }
 
   async openModal() {
-    if (isPlatformBrowser(this.platformId)) {  
+    if (isPlatformBrowser(this.platformId)) {
       this.modalOpen = true;
-      this.modalService.open(this.productDetailModal, {
-        ariaLabelledBy: 'Product-Detail-Modal',
-        centered: true,
-        windowClass: 'theme-modal view-modal modal-lg'
-      }).result.then((result) => {
-        `Result ${result}`
-      }, (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      });
+      this.modalService
+        .open(this.productDetailModal, {
+          ariaLabelledBy: 'Product-Detail-Modal',
+          centered: true,
+          windowClass: 'theme-modal view-modal modal-lg',
+        })
+        .result.then(
+          (result) => {
+            `Result ${result}`;
+          },
+          (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          }
+        );
     }
   }
 
@@ -76,34 +104,45 @@ export class ProductDetailModalComponent {
   }
 
   updateQuantity(qty: number) {
-    if(1 > this.productQty + (qty)) return;
-    this.productQty = this.productQty + (qty);
+    if (1 > this.productQty + qty) return;
+    this.productQty = this.productQty + qty;
     this.checkStockAvailable();
   }
 
   checkStockAvailable() {
-    if(this.selectedVariation) {
-      this.selectedVariation['stock_status'] = this.selectedVariation?.quantity < this.productQty ? 'out_of_stock' : 'in_stock';
+    if (this.selectedVariation) {
+      this.selectedVariation['stock_status'] =
+        this.selectedVariation?.quantity < this.productQty
+          ? 'out_of_stock'
+          : 'in_stock';
     } else {
-      this.product['stock_status']  = this.product?.quantity < this.productQty ? 'out_of_stock' : 'in_stock';
+      this.product['stock_status'] =
+        this.product?.quantity < this.productQty ? 'out_of_stock' : 'in_stock';
     }
   }
 
   addToCart(product: Product) {
-    if(product) {
+    if (product) {
       const params: CartAddOrUpdate = {
-        id: this.cartItem && (this.selectedVariation && this.cartItem?.variation && 
-          this.selectedVariation?.id == this.cartItem?.variation?.id) ? this.cartItem.id : null,
+        id:
+          this.cartItem &&
+          this.selectedVariation &&
+          this.cartItem?.variation &&
+          this.selectedVariation?.id == this.cartItem?.variation?.id
+            ? this.cartItem.id
+            : null,
         product_id: product?.id!,
         product: product ? product : null,
         variation: this.selectedVariation ? this.selectedVariation : null,
-        variation_id: this.selectedVariation?.id ? this.selectedVariation?.id! : null,
-        quantity: this.productQty
-      }
+        variation_id: this.selectedVariation?.id
+          ? this.selectedVariation?.id!
+          : null,
+        quantity: this.productQty,
+      };
       this.store.dispatch(new AddToCart(params)).subscribe({
         complete: () => {
           this.modalService.dismissAll();
-        }
+        },
       });
     }
   }
@@ -117,5 +156,4 @@ export class ProductDetailModalComponent {
       return `with: ${reason}`;
     }
   }
-  
 }

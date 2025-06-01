@@ -5,9 +5,9 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
-import { Product } from '../../../../../../shared/interface/product.interface';
-import { Option } from '../../../../../../shared/interface/theme-option.interface';
-import * as data from '../../../../../../shared/data/owl-carousel';
+import { Product } from '../../../../../shared/interface/product.interface';
+import { Option } from '../../../../../shared/interface/theme-option.interface';
+import * as data from '../../../../../shared/data/owl-carousel';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProductSidebarComponent } from '../sidebar/sidebar.component';
 import { ProductDetailsTabsComponent } from '../widgets/product-details-tabs/product-details-tabs.component';

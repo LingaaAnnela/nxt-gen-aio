@@ -4,22 +4,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable, debounceTime, distinctUntilChanged } from 'rxjs';
-import { GetProducts } from '../../../../shared/action/product.action';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
-import { ProductBoxComponent } from '../../../../shared/components/widgets/product-box/product-box.component';
-import { SkeletonProductBoxComponent } from '../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
-import * as data from '../../../../shared/data/owl-carousel';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { Params } from '../../../../shared/interface/core.interface';
+import { GetProducts } from '../../../shared/action/product.action';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
+import { ProductBoxComponent } from '../../../shared/components/widgets/product-box/product-box.component';
+import { SkeletonProductBoxComponent } from '../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
+import * as data from '../../../shared/data/owl-carousel';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { Params } from '../../../shared/interface/core.interface';
 import {
   Product,
   ProductModel,
-} from '../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../shared/state/product.state';
-import { ProductService } from '../../../../shared/services/product.service';
+} from '../../../shared/interface/product.interface';
+import { ProductState } from '../../../shared/state/product.state';
+import { ProductService } from '../../../shared/services/product.service';
 
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 
 @Component({
   selector: 'app-search',

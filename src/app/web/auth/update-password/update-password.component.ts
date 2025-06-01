@@ -9,14 +9,14 @@ import {
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
-import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { AlertComponent } from '../../../shared/components/widgets/alert/alert.component';
-import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { UpdatePassword } from '../../../shared/action/auth.action';
+import { BreadcrumbComponent } from '../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { AlertComponent } from '../../shared/components/widgets/alert/alert.component';
+import { ButtonComponent } from '../../shared/components/widgets/button/button.component';
+import { Breadcrumb } from '../../shared/interface/breadcrumb';
+import { UpdatePassword } from '../../shared/action/auth.action';
 
 @Component({
-  selector: 'app-update-password',
+  selector: 'nxt-update-password',
   templateUrl: './update-password.component.html',
   styleUrls: ['./update-password.component.scss'],
   standalone: true,
@@ -28,7 +28,7 @@ import { UpdatePassword } from '../../../shared/action/auth.action';
     TranslateModule,
   ],
 })
-export class UpdatePasswordComponent {
+export class NxtUpdatePasswordComponent {
   public form: FormGroup;
   public email: string;
   public token: any;

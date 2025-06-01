@@ -1,8 +1,8 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Params } from '../../../../../../../shared/interface/core.interface';
+import { Params } from '../../../../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { TitleCasePipe } from '../../../../../../../shared/pipe/title-case.pipe';
+import { TitleCasePipe } from '../../../../../../shared/pipe/title-case.pipe';
 
 @Component({
   selector: 'app-collection-filter',

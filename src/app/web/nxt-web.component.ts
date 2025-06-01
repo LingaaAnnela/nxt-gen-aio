@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
-import { FooterComponent } from '../shared/components/footer/footer.component';
-import { HeaderComponent } from '../shared/components/header/header.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { LoaderComponent } from './shared/components/widgets/loader/loader.component';
 
 @Component({
   selector: 'nxt-web',
   templateUrl: './nxt-web.component.html',
   styleUrls: ['./nxt-web.component.scss'],
-  imports: [LoadingBarModule, HeaderComponent, RouterOutlet, FooterComponent],
+  imports: [
+    LoadingBarModule,
+    LoaderComponent,
+    HeaderComponent,
+    RouterOutlet,
+    FooterComponent,
+  ],
 })
 export class NxtWebComponent {
   setLogo() {

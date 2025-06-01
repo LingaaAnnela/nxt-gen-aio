@@ -1,10 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Product } from '../../../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../../../shared/state/product.state';
+import { Product } from '../../../../../../shared/interface/product.interface';
+import { ProductState } from '../../../../../../shared/state/product.state';
 import { TranslateModule } from '@ngx-translate/core';
-import { ProductBoxComponent } from '../../../../../../../shared/components/widgets/product-box/product-box.component';
+import { ProductBoxComponent } from '../../../../../../shared/components/widgets/product-box/product-box.component';
 import { SlicePipe } from '@angular/common';
 
 @Component({

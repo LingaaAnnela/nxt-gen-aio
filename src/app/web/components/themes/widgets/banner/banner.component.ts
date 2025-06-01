@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import * as data from '../../../../../shared/data/owl-carousel';
-import { ImageLinkComponent } from '../../../../../shared/components/widgets/image-link/image-link.component';
+import * as data from '../../../../shared/data/owl-carousel';
+import { ImageLinkComponent } from '../../../../shared/components/widgets/image-link/image-link.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @Component({

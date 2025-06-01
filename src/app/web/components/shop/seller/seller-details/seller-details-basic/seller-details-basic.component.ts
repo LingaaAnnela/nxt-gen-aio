@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Params } from '../../../../../../shared/interface/core.interface';
-import { Stores } from '../../../../../../shared/interface/store.interface';
+import { Params } from '../../../../../shared/interface/core.interface';
+import { Stores } from '../../../../../shared/interface/store.interface';
 import { CollectionProductsComponent } from '../../../collection/widgets/collection-products/collection-products.component';
 import { SellerStoreSocialLinksComponent } from '../../widgets/seller-store-social-links/seller-store-social-links.component';
 import { SellerStoreDescriptionComponent } from '../../widgets/seller-store-description/seller-store-description.component';

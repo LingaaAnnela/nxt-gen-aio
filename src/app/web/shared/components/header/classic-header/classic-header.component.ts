@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  HostListener,
-  Inject,
-  PLATFORM_ID,
-} from '@angular/core';
+import { Component, Input, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Option } from '../../../interface/theme-option.interface';
 import { TranslateModule } from '@ngx-translate/core';
@@ -21,25 +15,15 @@ import { LogoComponent } from '../widgets/logo/logo.component';
 import { NavbarMenuButtonComponent } from '../widgets/navbar-menu-button/navbar-menu-button.component';
 
 @Component({
-  selector: 'nxt-classic-header',
-  templateUrl: './classic-header.component.html',
-  styleUrls: ['./classic-header.component.scss'],
-  imports: [
-    NavbarMenuButtonComponent,
-    LogoComponent,
-    SearchComponent,
-    CallComponent,
-    ButtonComponent,
-    MenuComponent,
-    SearchBoxComponent,
-    CompareComponent,
-    WishlistComponent,
-    CartComponent,
-    MyAccountComponent,
-    TranslateModule,
-  ],
+    selector: 'app-classic-header',
+    templateUrl: './classic-header.component.html',
+    styleUrls: ['./classic-header.component.scss'],
+    imports: [NavbarMenuButtonComponent, LogoComponent, SearchComponent,
+        CallComponent, ButtonComponent, MenuComponent, SearchBoxComponent,
+        CompareComponent, WishlistComponent, CartComponent, MyAccountComponent, TranslateModule]
 })
-export class NxtClassicHeaderComponent {
+export class ClassicHeaderComponent {
+
   @Input() data: Option | null;
   @Input() logo: string | null | undefined;
   @Input() sticky: boolean | number | undefined; // Default false
@@ -47,17 +31,14 @@ export class NxtClassicHeaderComponent {
   public stick: boolean = false;
   public active: boolean = false;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  }
 
   // @HostListener Decorator
-  @HostListener('window:scroll', [])
+  @HostListener("window:scroll", [])
   onWindowScroll() {
-    if (isPlatformBrowser(this.platformId)) {
-      let number =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop ||
-        0;
+    if (isPlatformBrowser(this.platformId)) {  
+      let number = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
       if (number >= 150 && window.innerWidth > 400) {
         this.stick = true;
       } else {
@@ -66,7 +47,7 @@ export class NxtClassicHeaderComponent {
     }
   }
 
-  toggle(val: boolean) {
+  toggle(val: boolean){
     this.active = val;
   }
 }

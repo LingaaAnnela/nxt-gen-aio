@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Params } from '../../../../../../shared/interface/core.interface';
-import { Stores } from '../../../../../../shared/interface/store.interface';
+import { Params } from '../../../../../shared/interface/core.interface';
+import { Stores } from '../../../../../shared/interface/store.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { CollectionProductsComponent } from '../../../collection/widgets/collection-products/collection-products.component';
 import { RouterLink } from '@angular/router';

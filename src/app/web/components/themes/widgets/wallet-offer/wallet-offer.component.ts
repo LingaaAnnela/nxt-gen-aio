@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import * as data from '../../../../../shared/data/owl-carousel';
-import { Offer } from '../../../../../shared/interface/theme.interface';
+import * as data from '../../../../shared/data/owl-carousel';
+import { Offer } from '../../../../shared/interface/theme.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { CarouselModule } from 'ngx-owl-carousel-o';

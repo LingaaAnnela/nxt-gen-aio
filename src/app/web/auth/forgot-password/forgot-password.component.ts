@@ -9,14 +9,14 @@ import { Store } from '@ngxs/store';
 import { Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 
-import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { AlertComponent } from '../../../shared/components/widgets/alert/alert.component';
-import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { ForgotPassWord } from '../../../shared/action/auth.action';
+import { Breadcrumb } from '../../shared/interface/breadcrumb';
+import { AlertComponent } from '../../shared/components/widgets/alert/alert.component';
+import { BreadcrumbComponent } from '../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { ButtonComponent } from '../../shared/components/widgets/button/button.component';
+import { ForgotPassWord } from '../../shared/action/auth.action';
 
 @Component({
-  selector: 'app-forgot-password',
+  selector: 'nxt-forgot-password',
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss'],
   standalone: true,
@@ -28,7 +28,7 @@ import { ForgotPassWord } from '../../../shared/action/auth.action';
     TranslateModule,
   ],
 })
-export class ForgotPasswordComponent {
+export class NxtForgotPasswordComponent {
   public form: FormGroup;
   public breadcrumb: Breadcrumb = {
     title: 'Forgot Password',

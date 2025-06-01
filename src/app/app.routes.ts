@@ -1,23 +1,16 @@
 import { Routes } from '@angular/router';
-import { MaintenanceComponent } from './web/maintenance/maintenance.component';
-import { LayoutComponent } from './web/layout/layout.component';
-import { content } from './shared/routes/routes';
+import { provideState } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+
+import { ThemesComponent } from './web/components/themes/themes.component';
+import { homeReducer } from './store/reducers/home.reducer';
 import { NxtWebComponent } from './web/nxt-web.component';
 
 export const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: '/theme/rome',
-  //   pathMatch: 'full',
-  // },
-  // {
-  //   path: 'maintenance',
-  //   component: MaintenanceComponent,
-  // },
   {
-    path: '',
-    // component: LayoutComponent,
+    path: 'nxt',
     component: NxtWebComponent,
-    // children: content,
+    children: [{ path: '', component: ThemesComponent }],
   },
+  { path: '**', redirectTo: '/nxt' },
 ];

@@ -1,16 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { Observable } from 'rxjs';
 import { Select, Store } from '@ngxs/store';
-import * as data from '../../../../shared/data/owl-carousel';
-import { GetBlogs } from '../../../../shared/action/blog.action';
-import { BlogState } from '../../../../shared/state/blog.state';
-import { BlogModel } from '../../../../shared/interface/blog.interface';
+import * as data from '../../../shared/data/owl-carousel';
+import { GetBlogs } from '../../../shared/action/blog.action';
+import { BlogState } from '../../../shared/state/blog.state';
+import { BlogModel } from '../../../shared/interface/blog.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 export interface Clients {
   title: string;

@@ -7,26 +7,26 @@ import {
 } from '@angular/common';
 import { Store, Select } from '@ngxs/store';
 import { Observable, forkJoin } from 'rxjs';
-import { ThemeOptionState } from '../../shared/state/theme-option.state';
-import { Option } from '../../shared/interface/theme-option.interface';
-import { GetCategories } from '../../shared/action/category.action';
-import { ThemeOptionService } from '../../shared/services/theme-option.service';
-import { GetBlogs } from '../../shared/action/blog.action';
-import { GetDealProducts } from '../../shared/action/product.action';
-import { GetUserDetails } from '../../shared/action/account.action';
-import { ExitModalComponent } from '../../shared/components/widgets/modal/exit-modal/exit-modal.component';
-import { CookieComponent } from '../../shared/components/widgets/cookie/cookie.component';
-import { NewsletterModalComponent } from '../../shared/components/widgets/modal/newsletter-modal/newsletter-modal.component';
-import { BackToTopComponent } from '../../shared/components/widgets/back-to-top/back-to-top.component';
-import { StickyCompareComponent } from '../../shared/components/widgets/sticky-compare/sticky-compare.component';
-import { StickyCartComponent } from '../../shared/components/widgets/sticky-cart/sticky-cart.component';
-import { RecentPurchasePopupComponent } from '../../shared/components/widgets/recent-purchase-popup/recent-purchase-popup.component';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { ThemeOptionState } from '../shared/state/theme-option.state';
+import { Option } from '../shared/interface/theme-option.interface';
+import { GetCategories } from '../shared/action/category.action';
+import { ThemeOptionService } from '../shared/services/theme-option.service';
+import { GetBlogs } from '../shared/action/blog.action';
+import { GetDealProducts } from '../shared/action/product.action';
+import { GetUserDetails } from '../shared/action/account.action';
+import { ExitModalComponent } from '../shared/components/widgets/modal/exit-modal/exit-modal.component';
+import { CookieComponent } from '../shared/components/widgets/cookie/cookie.component';
+import { NewsletterModalComponent } from '../shared/components/widgets/modal/newsletter-modal/newsletter-modal.component';
+import { BackToTopComponent } from '../shared/components/widgets/back-to-top/back-to-top.component';
+import { StickyCompareComponent } from '../shared/components/widgets/sticky-compare/sticky-compare.component';
+import { StickyCartComponent } from '../shared/components/widgets/sticky-cart/sticky-cart.component';
+import { RecentPurchasePopupComponent } from '../shared/components/widgets/recent-purchase-popup/recent-purchase-popup.component';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from '../../shared/components/header/header.component';
-import { LoaderComponent } from '../../shared/components/widgets/loader/loader.component';
+import { HeaderComponent } from '../shared/components/header/header.component';
+import { LoaderComponent } from '../shared/components/widgets/loader/loader.component';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
-import { ThemeCustomizerComponent } from '../../shared/components/widgets/theme-customizer/theme-customizer.component';
+import { ThemeCustomizerComponent } from '../shared/components/widgets/theme-customizer/theme-customizer.component';
 
 @Component({
   selector: 'app-layout',

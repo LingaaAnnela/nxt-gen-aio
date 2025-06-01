@@ -1,16 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { GetWishlist } from '../../../../shared/action/wishlist.action';
-import { WishlistState } from '../../../../shared/state/wishlist.state';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { WishlistModel } from '../../../../shared/interface/wishlist.interface';
-import { WishlistService } from '../../../../shared/services/wishlist.service';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
-import { ProductBoxComponent } from '../../../../shared/components/widgets/product-box/product-box.component';
-import { SkeletonProductBoxComponent } from '../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
+import { GetWishlist } from '../../../shared/action/wishlist.action';
+import { WishlistState } from '../../../shared/state/wishlist.state';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { WishlistModel } from '../../../shared/interface/wishlist.interface';
+import { WishlistService } from '../../../shared/services/wishlist.service';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
+import { ProductBoxComponent } from '../../../shared/components/widgets/product-box/product-box.component';
+import { SkeletonProductBoxComponent } from '../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import { AsyncPipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-wishlist',

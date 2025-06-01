@@ -8,12 +8,12 @@ import {
 } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { VerifyEmailOtp } from '../../../../shared/action/auth.action';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
+import { VerifyEmailOtp } from '../../../shared/action/auth.action';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
-import { AlertComponent } from '../../../../shared/components/widgets/alert/alert.component';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { AlertComponent } from '../../../shared/components/widgets/alert/alert.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-otp',

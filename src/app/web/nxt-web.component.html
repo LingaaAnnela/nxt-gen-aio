@@ -1,3 +1,16 @@
+<!-- Top Progress Loader -->
+<ngx-loading-bar
+  class="loader-bg"
+  [includeSpinner]="true"
+  [height]="'3px'"
+></ngx-loading-bar>
+
+<!-- Main Loader -->
+@if (false) {
+<app-loader></app-loader>
+}
+
+<!-- Layout Partial -->
 <app-header [logo]="setLogo().header_logo"></app-header>
 <router-outlet></router-outlet>
 <app-footer [footer]="setLogo().footer"></app-footer>

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Params } from '../../../../../../../shared/interface/core.interface';
-import { CurrencySymbolPipe } from '../../../../../../../shared/pipe/currency-symbol.pipe';
+import { Params } from '../../../../../../shared/interface/core.interface';
+import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
 
 @Component({
   selector: 'app-collection-price-filter',
@@ -74,9 +74,8 @@ export class CollectionPriceFilterComponent {
     ); // checked and unchecked value
 
     if ((<HTMLInputElement>event?.target)?.checked)
-      this.selectedPrices.push(
-        (<HTMLInputElement>event?.target)?.value
-      ); // push in array cheked value
+      this.selectedPrices.push((<HTMLInputElement>event?.target)?.value);
+    // push in array cheked value
     else this.selectedPrices.splice(index, 1); // removed in array unchecked value
 
     this.router.navigate([], {

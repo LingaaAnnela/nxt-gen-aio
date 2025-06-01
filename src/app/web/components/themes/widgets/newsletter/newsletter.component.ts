@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { NewsLetter } from '../../../../../shared/interface/theme.interface';
+import { NewsLetter } from '../../../../shared/interface/theme.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgStyle } from '@angular/common';
 

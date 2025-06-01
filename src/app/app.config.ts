@@ -16,41 +16,41 @@ import { routes } from './app.routes';
 
 import { AuthInterceptor } from './web/core/interceptors/auth.interceptor';
 import { LoaderInterceptor } from './web/core/interceptors/loader.interceptor';
-import { ErrorService } from './shared/services/error.service';
-import { NotificationService } from './shared/services/notification.service';
+import { ErrorService } from './web/shared/services/error.service';
+import { NotificationService } from './web/shared/services/notification.service';
 import { GlobalErrorHandlerInterceptor } from './web/core/interceptors/global-error-handler.interceptor';
 import { provideToastr } from 'ngx-toastr';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { AccountState } from './shared/state/account.state';
-import { AttributeState } from './shared/state/attribute.state';
-import { AuthState } from './shared/state/auth.state';
-import { BlogState } from './shared/state/blog.state';
-import { CartState } from './shared/state/cart.state';
-import { CategoryState } from './shared/state/category.state';
-import { CompareState } from './shared/state/compare.state';
-import { CountryState } from './shared/state/country.state';
-import { CouponState } from './shared/state/coupon.state';
-import { CurrencyState } from './shared/state/currency.state';
-import { LoaderState } from './shared/state/loader.state';
-import { NotificationState } from './shared/state/notification.state';
-import { OrderStatusState } from './shared/state/order-status.state';
-import { OrderState } from './shared/state/order.state';
-import { PageState } from './shared/state/page.state';
-import { PaymentDetailsState } from './shared/state/payment-details.state';
-import { PointState } from './shared/state/point.state';
-import { ProductState } from './shared/state/product.state';
-import { QuestionAnswersState } from './shared/state/questions-answers.state';
-import { RefundState } from './shared/state/refund.state';
-import { ReviewState } from './shared/state/review.state';
-import { SettingState } from './shared/state/setting.state';
-import { StateState } from './shared/state/state.state';
-import { StoreState } from './shared/state/store.state';
-import { TagState } from './shared/state/tag.state';
-import { ThemeOptionState } from './shared/state/theme-option.state';
-import { ThemeState } from './shared/state/theme.state';
-import { WalletState } from './shared/state/wallet.state';
-import { WishlistState } from './shared/state/wishlist.state';
+import { AccountState } from './web/shared/state/account.state';
+import { AttributeState } from './web/shared/state/attribute.state';
+import { AuthState } from './web/shared/state/auth.state';
+import { BlogState } from './web/shared/state/blog.state';
+import { CartState } from './web/shared/state/cart.state';
+import { CategoryState } from './web/shared/state/category.state';
+import { CompareState } from './web/shared/state/compare.state';
+import { CountryState } from './web/shared/state/country.state';
+import { CouponState } from './web/shared/state/coupon.state';
+import { CurrencyState } from './web/shared/state/currency.state';
+import { LoaderState } from './web/shared/state/loader.state';
+import { NotificationState } from './web/shared/state/notification.state';
+import { OrderStatusState } from './web/shared/state/order-status.state';
+import { OrderState } from './web/shared/state/order.state';
+import { PageState } from './web/shared/state/page.state';
+import { PaymentDetailsState } from './web/shared/state/payment-details.state';
+import { PointState } from './web/shared/state/point.state';
+import { ProductState } from './web/shared/state/product.state';
+import { QuestionAnswersState } from './web/shared/state/questions-answers.state';
+import { RefundState } from './web/shared/state/refund.state';
+import { ReviewState } from './web/shared/state/review.state';
+import { SettingState } from './web/shared/state/setting.state';
+import { StateState } from './web/shared/state/state.state';
+import { StoreState } from './web/shared/state/store.state';
+import { TagState } from './web/shared/state/tag.state';
+import { ThemeOptionState } from './web/shared/state/theme-option.state';
+import { ThemeState } from './web/shared/state/theme.state';
+import { WalletState } from './web/shared/state/wallet.state';
+import { WishlistState } from './web/shared/state/wishlist.state';
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
@@ -60,6 +60,15 @@ import {
 } from '@angular/common/http';
 import { CurrencyPipe } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { provideRouterStore } from '@ngrx/router-store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+
+import { homeReducer } from './store/reducers/home.reducer';
+
+import * as NxtHomeEffects from './store/effects/home.effects';
+import { reducers } from './store/reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -161,5 +170,9 @@ export const appConfig: ApplicationConfig = {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    provideStore(reducers),
+    provideEffects(NxtHomeEffects),
+    provideRouterStore(),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };

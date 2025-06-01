@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { WalletState } from '../../../../shared/state/wallet.state';
-import { GetUserTransaction } from '../../../../shared/action/wallet.action';
-import { Wallet } from '../../../../shared/interface/wallet.interface';
-import { Params } from '../../../../shared/interface/core.interface';
+import { WalletState } from '../../../shared/state/wallet.state';
+import { GetUserTransaction } from '../../../shared/action/wallet.action';
+import { Wallet } from '../../../shared/interface/wallet.interface';
+import { Params } from '../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../shared/pipe/currency-symbol.pipe';
-import { TitleCasePipe } from '../../../../shared/pipe/title-case.pipe';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
-import { PaginationComponent } from '../../../../shared/components/widgets/pagination/pagination.component';
+import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
+import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
+import { PaginationComponent } from '../../../shared/components/widgets/pagination/pagination.component';
 import { AsyncPipe, DatePipe } from '@angular/common';
 
 @Component({

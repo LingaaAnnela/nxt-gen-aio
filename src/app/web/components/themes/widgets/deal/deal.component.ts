@@ -8,20 +8,17 @@ import {
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { ProductState } from '../../../../../shared/state/product.state';
-import { ProductModel } from '../../../../../shared/interface/product.interface';
-import * as data from '../../../../../shared/data/owl-carousel';
-import {
-  Deal,
-  DealOfDays,
-} from '../../../../../shared/interface/theme.interface';
-import { AddToWishlist } from '../../../../../shared/action/wishlist.action';
-import { AddToCompare } from '../../../../../shared/action/compare.action';
+import { ProductState } from '../../../../shared/state/product.state';
+import { ProductModel } from '../../../../shared/interface/product.interface';
+import * as data from '../../../../shared/data/owl-carousel';
+import { Deal, DealOfDays } from '../../../../shared/interface/theme.interface';
+import { AddToWishlist } from '../../../../shared/action/wishlist.action';
+import { AddToCompare } from '../../../../shared/action/compare.action';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency-symbol.pipe';
+import { CurrencySymbolPipe } from '../../../../shared/pipe/currency-symbol.pipe';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { NgStyle } from '@angular/common';
-import { ProductDetailModalComponent } from '../../../../../shared/components/widgets/modal/product-detail-modal/product-detail-modal.component';
+import { ProductDetailModalComponent } from '../../../../shared/components/widgets/modal/product-detail-modal/product-detail-modal.component';
 
 @Component({
   selector: 'app-deal',

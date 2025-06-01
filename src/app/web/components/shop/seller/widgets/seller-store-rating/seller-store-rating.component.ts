@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Stores } from '../../../../../../shared/interface/store.interface';
+import { Stores } from '../../../../../shared/interface/store.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 

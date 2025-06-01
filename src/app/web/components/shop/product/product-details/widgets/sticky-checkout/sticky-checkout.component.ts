@@ -4,17 +4,17 @@ import { Observable } from 'rxjs';
 import {
   Product,
   Variation,
-} from '../../../../../../../shared/interface/product.interface';
+} from '../../../../../../shared/interface/product.interface';
 import {
   Cart,
   CartAddOrUpdate,
-} from '../../../../../../../shared/interface/cart.interface';
-import { AddToCart } from '../../../../../../../shared/action/cart.action';
-import { CartState } from '../../../../../../../shared/state/cart.state';
+} from '../../../../../../shared/interface/cart.interface';
+import { AddToCart } from '../../../../../../shared/action/cart.action';
+import { CartState } from '../../../../../../shared/state/cart.state';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../../../../shared/pipe/currency-symbol.pipe';
-import { ButtonComponent } from '../../../../../../../shared/components/widgets/button/button.component';
-import { VariantAttributesComponent } from '../../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
+import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
+import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
+import { VariantAttributesComponent } from '../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
 
 @Component({
   selector: 'app-sticky-checkout',

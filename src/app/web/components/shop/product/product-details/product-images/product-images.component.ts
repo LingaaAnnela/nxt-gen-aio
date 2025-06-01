@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../../../../../shared/interface/product.interface';
-import { Option } from '../../../../../../shared/interface/theme-option.interface';
+import { Product } from '../../../../../shared/interface/product.interface';
+import { Option } from '../../../../../shared/interface/theme-option.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProductDetailsTabsComponent } from '../widgets/product-details-tabs/product-details-tabs.component';
 import { ProductBundleComponent } from '../widgets/product-bundle/product-bundle.component';

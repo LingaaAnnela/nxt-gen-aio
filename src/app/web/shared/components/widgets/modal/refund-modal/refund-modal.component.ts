@@ -16,8 +16,8 @@ import {
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngxs/store';
 // import { Select2Data, Select2Module } from 'ng-select2-component';
-import { SendRefundRequest } from '../../../../../shared/action/refund.action';
-import { Product } from '../../../../../shared/interface/product.interface';
+import { SendRefundRequest } from '../../../../action/refund.action';
+import { Product } from '../../../../interface/product.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';

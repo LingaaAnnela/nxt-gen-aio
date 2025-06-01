@@ -7,13 +7,13 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngxs/store';
 import { Router } from '@angular/router';
-import { ForgotPassWord } from '../../../../shared/action/auth.action';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
+import { ForgotPassWord } from '../../../shared/action/auth.action';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 
-import { AlertComponent } from '../../../../shared/components/widgets/alert/alert.component';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { AlertComponent } from '../../../shared/components/widgets/alert/alert.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-forgot-password',

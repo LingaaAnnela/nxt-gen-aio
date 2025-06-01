@@ -9,15 +9,15 @@ import {
 import { TranslateModule } from '@ngx-translate/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { ContactUs } from '../../../../shared/action/page.action';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
+import { ContactUs } from '../../../shared/action/page.action';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import {
   Contact,
   Option,
-} from '../../../../shared/interface/theme-option.interface';
-import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
+} from '../../../shared/interface/theme-option.interface';
+import { ThemeOptionState } from '../../../shared/state/theme-option.state';
 
 @Component({
   selector: 'app-contact-us',

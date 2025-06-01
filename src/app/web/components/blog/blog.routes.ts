@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { BlogResolver } from '../../../shared/resolvers/blog.resolver';
+import { BlogResolver } from '../../shared/resolvers/blog.resolver';
 
-import { ScrollPositionGuard } from '../../../shared/guard/scroll.guard';
+import { ScrollPositionGuard } from '../../shared/guard/scroll.guard';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogComponent } from './blog.component';
 
