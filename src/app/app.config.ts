@@ -60,6 +60,15 @@ import {
 } from '@angular/common/http';
 import { CurrencyPipe } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
+import { provideStore } from '@ngrx/store';
+import { provideEffects } from '@ngrx/effects';
+import { provideRouterStore } from '@ngrx/router-store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+
+import { homeReducer } from './store/reducers/home.reducer';
+
+import * as NxtHomeEffects from './store/effects/home.effects';
+import { reducers } from './store/reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -161,5 +170,9 @@ export const appConfig: ApplicationConfig = {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    provideStore(reducers),
+    provideEffects(NxtHomeEffects),
+    provideRouterStore(),
+    provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
 };
