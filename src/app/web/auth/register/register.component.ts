@@ -11,16 +11,16 @@ import { Store } from '@ngxs/store';
 
 import { TranslateModule } from '@ngx-translate/core';
 // import { Select2Module } from 'ng-select2-component';
-import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { countryCodes } from '../../../shared/data/country-code';
-import { CustomValidators } from '../../../shared/validator/password-match';
-import { Register } from '../../../shared/action/auth.action';
+import { ButtonComponent } from '../../shared/components/widgets/button/button.component';
+import { BreadcrumbComponent } from '../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { Breadcrumb } from '../../shared/interface/breadcrumb';
+import { countryCodes } from '../../shared/data/country-code';
+import { CustomValidators } from '../../shared/validator/password-match';
+import { Register } from '../../shared/action/auth.action';
 import { isPlatformBrowser } from '@angular/common';
 
 @Component({
-  selector: 'app-register',
+  selector: 'nxt-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
   standalone: true,
@@ -32,7 +32,7 @@ import { isPlatformBrowser } from '@angular/common';
     TranslateModule,
   ],
 })
-export class RegisterComponent {
+export class NxtRegisterComponent {
   public form: FormGroup;
   public breadcrumb: Breadcrumb = {
     title: 'Sign In',

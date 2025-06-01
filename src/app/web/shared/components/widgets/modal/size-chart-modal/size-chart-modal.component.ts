@@ -1,40 +1,53 @@
-import { Component, TemplateRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import {
+  Component,
+  TemplateRef,
+  ViewChild,
+  PLATFORM_ID,
+  Inject,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Attachment } from '../../../../../shared/interface/attachment.interface';
+import { Attachment } from '../../../../interface/attachment.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
 
 @Component({
-    selector: 'app-size-chart-modal',
-    templateUrl: './size-chart-modal.component.html',
-    styleUrls: ['./size-chart-modal.component.scss'],
-    imports: [ButtonComponent, TranslateModule]
+  selector: 'app-size-chart-modal',
+  templateUrl: './size-chart-modal.component.html',
+  styleUrls: ['./size-chart-modal.component.scss'],
+  imports: [ButtonComponent, TranslateModule],
 })
 export class SizeChartModalComponent {
-
-  @ViewChild("sizeChartModal", { static: false }) SizeChartModal: TemplateRef<string>;
+  @ViewChild('sizeChartModal', { static: false })
+  SizeChartModal: TemplateRef<string>;
 
   public closeResult: string;
   public modalOpen: boolean = false;
   public image: Attachment;
 
-  constructor( private modalService: NgbModal,
-    @Inject(PLATFORM_ID) private platformId: Object){}
+  constructor(
+    private modalService: NgbModal,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   async openModal(image: Attachment) {
-    if (isPlatformBrowser(this.platformId)) {  
+    if (isPlatformBrowser(this.platformId)) {
       this.image = image;
       this.modalOpen = true;
-      this.modalService.open(this.SizeChartModal, {
-        ariaLabelledBy: 'profile-Modal',
-        centered: true,
-        windowClass: 'theme-modal modal-lg'
-      }).result.then((result) => {
-        `Result ${result}`
-      }, (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      });
+      this.modalService
+        .open(this.SizeChartModal, {
+          ariaLabelledBy: 'profile-Modal',
+          centered: true,
+          windowClass: 'theme-modal modal-lg',
+        })
+        .result.then(
+          (result) => {
+            `Result ${result}`;
+          },
+          (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          }
+        );
     }
   }
 

@@ -2,11 +2,11 @@ import { Component, Inject, Input, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Store } from '@ngxs/store';
 import { forkJoin } from 'rxjs';
-import { GetProducts } from '../../../../shared/action/product.action';
-import { GetBlogs } from '../../../../shared/action/blog.action';
-import { Osaka } from '../../../../shared/interface/theme.interface';
-import { ThemeOptionService } from '../../../../shared/services/theme-option.service';
-import * as data from '../../../../shared/data/owl-carousel';
+import { GetProducts } from '../../../shared/action/product.action';
+import { GetBlogs } from '../../../shared/action/blog.action';
+import { Osaka } from '../../../shared/interface/theme.interface';
+import { ThemeOptionService } from '../../../shared/services/theme-option.service';
+import * as data from '../../../shared/data/owl-carousel';
 import { NewsletterComponent } from '../widgets/newsletter/newsletter.component';
 import { BlogComponent } from '../widgets/blog/blog.component';
 import { FourColumnProductComponent } from '../widgets/four-column-product/four-column-product.component';
@@ -14,7 +14,7 @@ import { CollectionComponent } from '../widgets/collection/collection .component
 import { ProductComponent } from '../widgets/product/product.component';
 import { BannerComponent } from '../widgets/banner/banner.component';
 import { CategoriesComponent } from '../widgets/categories/categories.component';
-import { TitleComponent } from '../../../../shared/components/widgets/title/title.component';
+import { TitleComponent } from '../../../shared/components/widgets/title/title.component';
 import { HomeBannerComponent } from '../widgets/home-banner/home-banner.component';
 
 @Component({

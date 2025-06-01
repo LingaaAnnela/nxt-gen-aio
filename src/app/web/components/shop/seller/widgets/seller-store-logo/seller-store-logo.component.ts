@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Stores } from '../../../../../../shared/interface/store.interface';
+import { Stores } from '../../../../../shared/interface/store.interface';
 
 import { RouterLink } from '@angular/router';
 

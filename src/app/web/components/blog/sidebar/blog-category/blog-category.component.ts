@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Category } from '../../../../../shared/interface/category.interface';
+import { Category } from '../../../../shared/interface/category.interface';
 import { RouterLink } from '@angular/router';
 import { NgTemplateOutlet } from '@angular/common';
 

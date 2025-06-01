@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { CouponState } from '../../../../shared/state/coupon.state';
-import { CouponService } from '../../../../shared/services/coupon.service';
-import { GetCoupons } from '../../../../shared/action/coupon.action';
-import { CouponModel } from '../../../../shared/interface/coupon.interface';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { CouponState } from '../../../shared/state/coupon.state';
+import { CouponService } from '../../../shared/services/coupon.service';
+import { GetCoupons } from '../../../shared/action/coupon.action';
+import { CouponModel } from '../../../shared/interface/coupon.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { AsyncPipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-offer',

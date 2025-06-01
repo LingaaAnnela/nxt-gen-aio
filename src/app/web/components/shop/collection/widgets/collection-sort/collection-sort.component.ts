@@ -9,8 +9,8 @@ import {
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 // import { Select2Data, Select2UpdateEvent } from 'ng-select2-component';
-import { Params } from '../../../../../../shared/interface/core.interface';
-import { AttributeService } from '../../../../../../shared/services/attribute.service';
+import { Params } from '../../../../../shared/interface/core.interface';
+import { AttributeService } from '../../../../../shared/services/attribute.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 

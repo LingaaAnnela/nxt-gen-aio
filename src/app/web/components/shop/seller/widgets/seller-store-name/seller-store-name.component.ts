@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Stores } from '../../../../../../shared/interface/store.interface';
-import { TitleCasePipe } from '../../../../../../shared/pipe/title-case.pipe';
+import { Stores } from '../../../../../shared/interface/store.interface';
+import { TitleCasePipe } from '../../../../../shared/pipe/title-case.pipe';
 import { RouterLink } from '@angular/router';
 
 @Component({

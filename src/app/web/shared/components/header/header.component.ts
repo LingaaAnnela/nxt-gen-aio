@@ -11,7 +11,7 @@ import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Option } from '../../interface/theme-option.interface';
 import { ThemeOptionState } from '../../state/theme-option.state';
-import { NxtMinimalHeaderComponent } from './minimal-header/minimal-header.component';
+import { MinimalHeaderComponent } from './minimal-header/minimal-header.component';
 import { MobileMenuComponent } from './widgets/mobile-menu/mobile-menu.component';
 
 @Component({
@@ -19,7 +19,7 @@ import { MobileMenuComponent } from './widgets/mobile-menu/mobile-menu.component
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   imports: [
-    NxtMinimalHeaderComponent,
+    MinimalHeaderComponent,
     MobileMenuComponent,
     AsyncPipe,
     CommonModule,

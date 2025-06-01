@@ -1,12 +1,22 @@
-import { Injectable } from "@angular/core";
-import { Store, Action, Selector, State, StateContext } from "@ngxs/store";
-import { tap } from "rxjs";
-import { GetUserDetails, UpdateUserProfile, UpdateUserPassword, 
-         CreateAddress, UpdateAddress, DeleteAddress, AccountClear } from "../action/account.action";
-import { AccountUser, AccountUserUpdatePassword } from "./../interface/account.interface";
-import { AccountService } from "../services/account.service";
-import { NotificationService } from "../services/notification.service";
-import { Permission } from "../interface/role.interface";
+import { Injectable } from '@angular/core';
+import { Store, Action, Selector, State, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+import {
+  GetUserDetails,
+  UpdateUserProfile,
+  UpdateUserPassword,
+  CreateAddress,
+  UpdateAddress,
+  DeleteAddress,
+  AccountClear,
+} from '../action/account.action';
+import {
+  AccountUser,
+  AccountUserUpdatePassword,
+} from '../interface/account.interface';
+import { AccountService } from '../services/account.service';
+import { NotificationService } from '../services/notification.service';
+import { Permission } from '../interface/role.interface';
 
 export class AccountStateModel {
   user: AccountUser | null;
@@ -14,15 +24,14 @@ export class AccountStateModel {
 }
 
 @State<AccountStateModel>({
-    name: "account",
-    defaults: {
-      user: null,
-      permissions: []
-    },
+  name: 'account',
+  defaults: {
+    user: null,
+    permissions: [],
+  },
 })
 @Injectable()
 export class AccountState {
-
   constructor(private accountService: AccountService) {}
 
   @Selector()
@@ -39,26 +48,32 @@ export class AccountState {
   getUserDetails(ctx: StateContext<AccountStateModel>) {
     return this.accountService.getUserDetails().pipe(
       tap({
-        next: result => { 
+        next: (result) => {
           ctx.patchState({
             user: result,
             permissions: result.permission,
           });
         },
-        error: err => { 
+        error: (err) => {
           throw new Error(err?.error?.message);
-        }
+        },
       })
     );
   }
 
   @Action(UpdateUserProfile)
-  updateProfile(ctx: StateContext<AccountStateModel>, { payload }: UpdateUserProfile) {
+  updateProfile(
+    ctx: StateContext<AccountStateModel>,
+    { payload }: UpdateUserProfile
+  ) {
     // Update Profile Logic Here
   }
 
   @Action(UpdateUserPassword)
-  updatePassword(ctx: StateContext<AccountUserUpdatePassword>, { payload }: UpdateUserPassword) {
+  updatePassword(
+    ctx: StateContext<AccountUserUpdatePassword>,
+    { payload }: UpdateUserPassword
+  ) {
     // Update Password Logic Here
   }
 
@@ -78,11 +93,10 @@ export class AccountState {
   }
 
   @Action(AccountClear)
-  accountClear(ctx: StateContext<AccountStateModel>){
+  accountClear(ctx: StateContext<AccountStateModel>) {
     ctx.patchState({
       user: null,
-      permissions: []
+      permissions: [],
     });
   }
-
 }

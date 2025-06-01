@@ -1,11 +1,11 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { Product } from '../../../../../../../shared/interface/product.interface';
-import { ReviewModalComponent } from '../../../../../../../shared/components/widgets/modal/review-modal/review-modal.component';
-import { Review } from '../../../../../../../shared/interface/review.interface';
+import { Product } from '../../../../../../shared/interface/product.interface';
+import { ReviewModalComponent } from '../../../../../../shared/components/widgets/modal/review-modal/review-modal.component';
+import { Review } from '../../../../../../shared/interface/review.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { NoDataComponent } from '../../../../../../../shared/components/widgets/no-data/no-data.component';
+import { NoDataComponent } from '../../../../../../shared/components/widgets/no-data/no-data.component';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { ButtonComponent } from '../../../../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
 import { NgStyle, DatePipe } from '@angular/common';
 
 @Component({

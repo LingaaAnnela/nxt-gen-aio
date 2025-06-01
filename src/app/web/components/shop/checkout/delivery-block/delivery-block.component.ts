@@ -2,7 +2,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {
   Values,
   DeliveryBlock,
-} from '../../../../../shared/interface/setting.interface';
+} from '../../../../shared/interface/setting.interface';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({

@@ -1,15 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { OrderState } from '../../../../shared/state/order.state';
-import { GetOrders } from '../../../../shared/action/order.action';
-import { OrderModel } from '../../../../shared/interface/order.interface';
-import { Params } from '../../../../shared/interface/core.interface';
+import { OrderState } from '../../../shared/state/order.state';
+import { GetOrders } from '../../../shared/action/order.action';
+import { OrderModel } from '../../../shared/interface/order.interface';
+import { Params } from '../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../shared/pipe/currency-symbol.pipe';
-import { TitleCasePipe } from '../../../../shared/pipe/title-case.pipe';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
-import { PaginationComponent } from '../../../../shared/components/widgets/pagination/pagination.component';
+import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
+import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
+import { PaginationComponent } from '../../../shared/components/widgets/pagination/pagination.component';
 import { RouterLink } from '@angular/router';
 import { AsyncPipe, DatePipe } from '@angular/common';
 

@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { PageState } from '../../../../shared/state/page.state';
-import { GetFaqs } from '../../../../shared/action/page.action';
-import { FaqModel } from '../../../../shared/interface/page.interface';
-import { PageService } from '../../../../shared/services/page.service';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { PageState } from '../../../shared/state/page.state';
+import { GetFaqs } from '../../../shared/action/page.action';
+import { FaqModel } from '../../../shared/interface/page.interface';
+import { PageService } from '../../../shared/services/page.service';
 import {
   NgbAccordionDirective,
   NgbAccordionItem,
@@ -18,7 +18,7 @@ import {
 } from '@ng-bootstrap/ng-bootstrap';
 import { SkeletonPageComponent } from '../skeleton-page/skeleton-page.component';
 import { AsyncPipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-faq',

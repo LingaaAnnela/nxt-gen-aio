@@ -2,19 +2,19 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Params } from '../../../../../shared/interface/core.interface';
-import { Breadcrumb } from '../../../../../shared/interface/breadcrumb';
-import { ProductModel } from '../../../../../shared/interface/product.interface';
-import { Stores } from '../../../../../shared/interface/store.interface';
-import { StoreState } from '../../../../../shared/state/store.state';
-import { GetProducts } from '../../../../../shared/action/product.action';
-import { ProductState } from '../../../../../shared/state/product.state';
-import { ThemeOptionState } from '../../../../../shared/state/theme-option.state';
-import { Option } from '../../../../../shared/interface/theme-option.interface';
+import { Params } from '../../../../shared/interface/core.interface';
+import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
+import { ProductModel } from '../../../../shared/interface/product.interface';
+import { Stores } from '../../../../shared/interface/store.interface';
+import { StoreState } from '../../../../shared/state/store.state';
+import { GetProducts } from '../../../../shared/action/product.action';
+import { ProductState } from '../../../../shared/state/product.state';
+import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
+import { Option } from '../../../../shared/interface/theme-option.interface';
 import { SellerDetailsClassicComponent } from './seller-details-classic/seller-details-classic.component';
 import { SellerDetailsBasicComponent } from './seller-details-basic/seller-details-basic.component';
 import { AsyncPipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-seller-details',

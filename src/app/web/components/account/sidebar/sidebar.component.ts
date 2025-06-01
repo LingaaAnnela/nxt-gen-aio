@@ -8,17 +8,17 @@ import {
 } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { User } from '../../../../shared/interface/user.interface';
-import { AccountState } from '../../../../shared/state/account.state';
-import { Notification } from '../../../../shared/interface/notification.interface';
-import { NotificationState } from '../../../../shared/state/notification.state';
-import { Logout } from '../../../../shared/action/auth.action';
-import { ConfirmationModalComponent } from '../../../../shared/components/widgets/modal/confirmation-modal/confirmation-modal.component';
+import { User } from '../../../shared/interface/user.interface';
+import { AccountState } from '../../../shared/state/account.state';
+import { Notification } from '../../../shared/interface/notification.interface';
+import { NotificationState } from '../../../shared/state/notification.state';
+import { Logout } from '../../../shared/action/auth.action';
+import { ConfirmationModalComponent } from '../../../shared/components/widgets/modal/confirmation-modal/confirmation-modal.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { TitleCasePipe } from '../../../../shared/pipe/title-case.pipe';
+import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 
 @Component({
   selector: 'app-sidebar',

@@ -10,11 +10,11 @@ import { Meta } from '@angular/platform-browser';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { isPlatformBrowser, AsyncPipe } from '@angular/common';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { Product } from '../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../shared/state/product.state';
-import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
-import { Option } from '../../../../shared/interface/theme-option.interface';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { Product } from '../../../shared/interface/product.interface';
+import { ProductState } from '../../../shared/state/product.state';
+import { ThemeOptionState } from '../../../shared/state/theme-option.state';
+import { Option } from '../../../shared/interface/theme-option.interface';
 import { StickyCheckoutComponent } from './product-details/widgets/sticky-checkout/sticky-checkout.component';
 import { RelatedProductsComponent } from './product-details/widgets/related-products/related-products.component';
 import { ProductAccordionComponent } from './product-details/product-accordion/product-accordion.component';
@@ -22,7 +22,7 @@ import { ProductStickyComponent } from './product-details/product-sticky/product
 import { ProductSliderComponent } from './product-details/product-slider/product-slider.component';
 import { ProductImagesComponent } from './product-details/product-images/product-images.component';
 import { ProductThumbnailComponent } from './product-details/product-thumbnail/product-thumbnail.component';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-product',

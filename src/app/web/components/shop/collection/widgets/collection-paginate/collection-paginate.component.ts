@@ -3,10 +3,10 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ViewportScroller, AsyncPipe } from '@angular/common';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { ProductModel } from '../../../../../../shared/interface/product.interface';
-import { Params } from '../../../../../../shared/interface/core.interface';
-import { ProductState } from '../../../../../../shared/state/product.state';
-import { PaginationComponent } from '../../../../../../shared/components/widgets/pagination/pagination.component';
+import { ProductModel } from '../../../../../shared/interface/product.interface';
+import { Params } from '../../../../../shared/interface/core.interface';
+import { ProductState } from '../../../../../shared/state/product.state';
+import { PaginationComponent } from '../../../../../shared/components/widgets/pagination/pagination.component';
 
 @Component({
   selector: 'app-collection-paginate',

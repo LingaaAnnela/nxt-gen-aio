@@ -11,11 +11,11 @@
   <app-minimal-header [data]="(themeOption$ | async)" [logo]="logo" [sticky]="sticky"></app-minimal-header>
 } -->
 
-<nxt-minimal-header
+<app-minimal-header
   [data]="themeOption$ | async"
   [logo]="logo"
   [sticky]="sticky"
-></nxt-minimal-header>
+></app-minimal-header>
 <!-- <ng-container *ngIf="themeOption$ | async as themeOption">
   <pre>{{ themeOption | json }}</pre>
 </ng-container> -->

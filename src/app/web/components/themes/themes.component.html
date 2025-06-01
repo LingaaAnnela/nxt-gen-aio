@@ -1,7 +1,6 @@
-@if ((homePage$ | async)?.slug === 'nxt-gen') {
-<h1>NXT GEN</h1>
 <app-rome [data]="homePage$ | async" [slug]="slug"></app-rome>
-} @if ((homePage$ | async)?.slug === 'paris') {
+
+<!-- @if ((homePage$ | async)?.slug === 'paris') {
 <app-paris [data]="homePage$ | async" [slug]="slug"></app-paris>
 } @if ((homePage$ | async)?.slug === 'tokyo') {
 <app-tokyo [data]="homePage$ | async" [slug]="slug"></app-tokyo>
@@ -15,4 +14,4 @@
 <app-berlin [data]="homePage$ | async" [slug]="slug"></app-berlin>
 } @if ((homePage$ | async)?.slug === 'denver') {
 <app-denver [data]="homePage$ | async" [slug]="slug"></app-denver>
-}
+} -->

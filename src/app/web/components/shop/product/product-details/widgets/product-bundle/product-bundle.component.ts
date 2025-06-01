@@ -1,17 +1,17 @@
 import { Component, inject, Input } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Product } from '../../../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../../../shared/state/product.state';
+import { Product } from '../../../../../../shared/interface/product.interface';
+import { ProductState } from '../../../../../../shared/state/product.state';
 import {
   Cart,
   CartAddOrUpdate,
-} from '../../../../../../../shared/interface/cart.interface';
-import { AddToCart } from '../../../../../../../shared/action/cart.action';
-import { CartState } from '../../../../../../../shared/state/cart.state';
+} from '../../../../../../shared/interface/cart.interface';
+import { AddToCart } from '../../../../../../shared/action/cart.action';
+import { CartState } from '../../../../../../shared/state/cart.state';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../../../../shared/pipe/currency-symbol.pipe';
-import { ButtonComponent } from '../../../../../../../shared/components/widgets/button/button.component';
+import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
+import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -61,7 +61,8 @@ export class ProductBundleComponent {
     if ((<HTMLInputElement>event?.target)?.checked)
       this.selectedProductIds.push(
         Number((<HTMLInputElement>event?.target)?.value)
-      ); // push in array cheked value
+      );
+    // push in array cheked value
     else this.selectedProductIds.splice(index, 1); // removed in array unchecked value
 
     this.crossSellproduct$.subscribe((products) => {

@@ -1,6 +1,6 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
-import { Link } from '../../../../../../../shared/interface/theme.interface';
-import { ImageLinkComponent } from '../../../../../../../shared/components/widgets/image-link/image-link.component';
+import { Link } from '../../../../../../shared/interface/theme.interface';
+import { ImageLinkComponent } from '../../../../../../shared/components/widgets/image-link/image-link.component';
 
 @Component({
   selector: 'app-product-banner',

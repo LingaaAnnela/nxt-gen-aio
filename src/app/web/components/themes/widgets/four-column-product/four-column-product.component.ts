@@ -1,9 +1,9 @@
 import { Component, inject, Input } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { ProductModel } from '../../../../../shared/interface/product.interface';
-import { SliderProductsTokyo } from '../../../../../shared/interface/theme.interface';
-import { ProductState } from '../../../../../shared/state/product.state';
+import { ProductModel } from '../../../../shared/interface/product.interface';
+import { SliderProductsTokyo } from '../../../../shared/interface/theme.interface';
+import { ProductState } from '../../../../shared/state/product.state';
 import { ProductComponent } from '../product/product.component';
 
 @Component({

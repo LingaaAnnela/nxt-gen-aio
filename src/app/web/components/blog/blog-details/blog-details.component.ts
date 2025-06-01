@@ -3,14 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Blog } from '../../../../shared/interface/blog.interface';
-import { BlogState } from '../../../../shared/state/blog.state';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
-import { Option } from '../../../../shared/interface/theme-option.interface';
+import { Blog } from '../../../shared/interface/blog.interface';
+import { BlogState } from '../../../shared/state/blog.state';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { ThemeOptionState } from '../../../shared/state/theme-option.state';
+import { Option } from '../../../shared/interface/theme-option.interface';
 import { BlogSidebarComponent } from '../sidebar/sidebar.component';
 import { NgClass, NgStyle, AsyncPipe, DatePipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-blog-details',

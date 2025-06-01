@@ -1,7 +1,7 @@
 import { Component, Input, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Product } from '../../../../../../../shared/interface/product.interface';
-import { Option } from '../../../../../../../shared/interface/theme-option.interface';
+import { Product } from '../../../../../../shared/interface/product.interface';
+import { Option } from '../../../../../../shared/interface/theme-option.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { environment } from '../../../../../../../../../public/environments/environment';
 

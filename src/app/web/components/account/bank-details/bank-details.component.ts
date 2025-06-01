@@ -10,11 +10,11 @@ import { Observable } from 'rxjs';
 import {
   GetPaymentDetails,
   UpdatePaymentDetails,
-} from '../../../../shared/action/payment-details.action';
-import { PaymentDetailsState } from '../../../../shared/state/payment-details.state';
-import { PaymentDetails } from '../../../../shared/interface/payment-details.interface';
+} from '../../../shared/action/payment-details.action';
+import { PaymentDetailsState } from '../../../shared/state/payment-details.state';
+import { PaymentDetails } from '../../../shared/interface/payment-details.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 
 @Component({
   selector: 'app-bank-details',

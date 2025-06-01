@@ -3,16 +3,16 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable, Subject, of } from 'rxjs';
 import { switchMap, mergeMap, takeUntil } from 'rxjs/operators';
-import { ViewOrder } from '../../../../../shared/action/order.action';
-import { GetOrderStatus } from '../../../../../shared/action/order-status.action';
-import { OrderState } from '../../../../../shared/state/order.state';
-import { OrderStatusState } from '../../../../../shared/state/order-status.state';
-import { Order } from '../../../../../shared/interface/order.interface';
-import { OrderStatusModel } from '../../../../../shared/interface/order-status.interface';
-import { RefundModalComponent } from '../../../../../shared/components/widgets/modal/refund-modal/refund-modal.component';
-import { PayModalComponent } from '../../../../../shared/components/widgets/modal/pay-modal/pay-modal.component';
+import { ViewOrder } from '../../../../shared/action/order.action';
+import { GetOrderStatus } from '../../../../shared/action/order-status.action';
+import { OrderState } from '../../../../shared/state/order.state';
+import { OrderStatusState } from '../../../../shared/state/order-status.state';
+import { Order } from '../../../../shared/interface/order.interface';
+import { OrderStatusModel } from '../../../../shared/interface/order-status.interface';
+import { RefundModalComponent } from '../../../../shared/components/widgets/modal/refund-modal/refund-modal.component';
+import { PayModalComponent } from '../../../../shared/components/widgets/modal/pay-modal/pay-modal.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../../shared/pipe/currency-symbol.pipe';
+import { CurrencySymbolPipe } from '../../../../shared/pipe/currency-symbol.pipe';
 import {
   NgClass,
   AsyncPipe,

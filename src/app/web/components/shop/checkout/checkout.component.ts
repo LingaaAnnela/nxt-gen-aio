@@ -16,36 +16,36 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Observable } from 'rxjs';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import { AccountUser } from '../../../../shared/interface/account.interface';
-import { AccountState } from '../../../../shared/state/account.state';
-import { CartState } from '../../../../shared/state/cart.state';
-import { GetCartItems } from '../../../../shared/action/cart.action';
-import { OrderState } from '../../../../shared/state/order.state';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import { AccountUser } from '../../../shared/interface/account.interface';
+import { AccountState } from '../../../shared/state/account.state';
+import { CartState } from '../../../shared/state/cart.state';
+import { GetCartItems } from '../../../shared/action/cart.action';
+import { OrderState } from '../../../shared/state/order.state';
 import {
   Checkout,
   PlaceOrder,
   Clear,
-} from '../../../../shared/action/order.action';
-import { AddressModalComponent } from '../../../../shared/components/widgets/modal/address-modal/address-modal.component';
-import { Cart } from '../../../../shared/interface/cart.interface';
-import { SettingState } from '../../../../shared/state/setting.state';
-import { GetSettingOption } from '../../../../shared/action/setting.action';
-import { OrderCheckout } from '../../../../shared/interface/order.interface';
+} from '../../../shared/action/order.action';
+import { AddressModalComponent } from '../../../shared/components/widgets/modal/address-modal/address-modal.component';
+import { Cart } from '../../../shared/interface/cart.interface';
+import { SettingState } from '../../../shared/state/setting.state';
+import { GetSettingOption } from '../../../shared/action/setting.action';
+import { OrderCheckout } from '../../../shared/interface/order.interface';
 import {
   Values,
   DeliveryBlock,
-} from '../../../../shared/interface/setting.interface';
+} from '../../../shared/interface/setting.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { CurrencySymbolPipe } from '../../../../shared/pipe/currency-symbol.pipe';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
-import { LoaderComponent } from '../../../../shared/components/widgets/loader/loader.component';
-import { NoDataComponent } from '../../../../shared/components/widgets/no-data/no-data.component';
+import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { LoaderComponent } from '../../../shared/components/widgets/loader/loader.component';
+import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { PaymentBlockComponent } from './payment-block/payment-block.component';
 import { DeliveryBlockComponent } from './delivery-block/delivery-block.component';
 import { AsyncPipe, isPlatformBrowser } from '@angular/common';
 import { AddressBlockComponent } from './address-block/address-block.component';
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-checkout',

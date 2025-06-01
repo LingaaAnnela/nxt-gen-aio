@@ -1,11 +1,11 @@
 import { Component, inject, Input } from '@angular/core';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { AttributeService } from '../../../../../../shared/services/attribute.service';
-import { Params } from '../../../../../../shared/interface/core.interface';
-import { AttributeModel } from '../../../../../../shared/interface/attribute.interface';
-import { AttributeState } from '../../../../../../shared/state/attribute.state';
-import { GetAttributes } from '../../../../../../shared/action/attribute.action';
+import { AttributeService } from '../../../../../shared/services/attribute.service';
+import { Params } from '../../../../../shared/interface/core.interface';
+import { AttributeModel } from '../../../../../shared/interface/attribute.interface';
+import { AttributeState } from '../../../../../shared/state/attribute.state';
+import { GetAttributes } from '../../../../../shared/action/attribute.action';
 import { TranslateModule } from '@ngx-translate/core';
 import { CollectionRatingFilterComponent } from '../filter/collection-rating-filter/collection-rating-filter.component';
 import { CollectionPriceFilterComponent } from '../filter/collection-price-filter/collection-price-filter.component';

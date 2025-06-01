@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ImageLinkComponent } from '../../../../../shared/components/widgets/image-link/image-link.component';
+import { ImageLinkComponent } from '../../../../shared/components/widgets/image-link/image-link.component';
 
 @Component({
   selector: 'app-theme-home-banner',

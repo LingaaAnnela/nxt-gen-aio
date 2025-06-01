@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { Product } from '../../../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../../../shared/state/product.state';
-import { ProductBoxComponent } from '../../../../../../../shared/components/widgets/product-box/product-box.component';
-import { TitleComponent } from '../../../../../../../shared/components/widgets/title/title.component';
+import { Product } from '../../../../../../shared/interface/product.interface';
+import { ProductState } from '../../../../../../shared/state/product.state';
+import { ProductBoxComponent } from '../../../../../../shared/components/widgets/product-box/product-box.component';
+import { TitleComponent } from '../../../../../../shared/components/widgets/title/title.component';
 
 @Component({
   selector: 'app-related-products',

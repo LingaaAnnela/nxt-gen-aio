@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-import { CategoriesComponent } from '../../../../../../shared/components/widgets/categories/categories.component';
+import { CategoriesComponent } from '../../../../../shared/components/widgets/categories/categories.component';
 
 @Component({
   selector: 'app-collection-categories',

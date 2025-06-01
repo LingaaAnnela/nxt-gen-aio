@@ -8,15 +8,15 @@ import {
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Store } from '@ngxs/store';
-import { CustomValidators } from '../../../../shared/validator/password-match';
-import { Register } from '../../../../shared/action/auth.action';
-import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
-import * as data from '../../../../shared/data/country-code';
+import { CustomValidators } from '../../../shared/validator/password-match';
+import { Register } from '../../../shared/action/auth.action';
+import { Breadcrumb } from '../../../shared/interface/breadcrumb';
+import * as data from '../../../shared/data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
-import { ButtonComponent } from '../../../../shared/components/widgets/button/button.component';
+import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 // import { Select2Module } from 'ng-select2-component';
 
-import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 import { isPlatformBrowser } from '@angular/common';
 @Component({
   selector: 'app-register',

@@ -2,9 +2,9 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { ThemeState } from '../../../shared/state/theme.state';
-import { GetHomePage } from '../../../shared/action/theme.action';
-import { ThemeOptionService } from '../../../shared/services/theme-option.service';
+import { ThemeState } from '../../shared/state/theme.state';
+import { GetHomePage } from '../../shared/action/theme.action';
+import { ThemeOptionService } from '../../shared/services/theme-option.service';
 import { DenverComponent } from './denver/denver.component';
 import { BerlinComponent } from './berlin/berlin.component';
 import { MadridComponent } from './madrid/madrid.component';
@@ -41,9 +41,9 @@ export class ThemesComponent {
   ) {
     this.route.params.subscribe((params) => {
       this.themeOptionService.preloader = true;
-      this.slug = params['slug'] ? params['slug'] : 'paris';
+      this.slug = params['slug'] ? params['slug'] : 'rome';
       this.store.dispatch(
-        new GetHomePage(params['slug'] ? params['slug'] : 'paris')
+        new GetHomePage(params['slug'] ? params['slug'] : 'rome')
       );
     });
   }

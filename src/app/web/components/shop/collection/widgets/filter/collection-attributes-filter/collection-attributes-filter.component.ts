@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Params } from '../../../../../../../shared/interface/core.interface';
-import { Attribute } from '../../../../../../../shared/interface/attribute.interface';
+import { Params } from '../../../../../../shared/interface/core.interface';
+import { Attribute } from '../../../../../../shared/interface/attribute.interface';
 import { NgStyle } from '@angular/common';
 
 @Component({
@@ -30,9 +30,8 @@ export class CollectionAttributesComponent {
     ); // checked and unchecked value
 
     if ((<HTMLInputElement>event?.target)?.checked)
-      this.selectedAttributes.push(
-        (<HTMLInputElement>event?.target)?.value
-      ); // push in array cheked value
+      this.selectedAttributes.push((<HTMLInputElement>event?.target)?.value);
+    // push in array cheked value
     else this.selectedAttributes.splice(index, 1); // removed in array unchecked value
 
     this.router.navigate([], {

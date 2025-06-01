@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../../../../../../shared/interface/product.interface';
+import { Product } from '../../../../../../shared/interface/product.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { TitleCasePipe } from '../../../../../../../shared/pipe/title-case.pipe';
+import { TitleCasePipe } from '../../../../../../shared/pipe/title-case.pipe';
 
 @Component({
   selector: 'app-product-information',

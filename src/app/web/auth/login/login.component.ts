@@ -10,15 +10,15 @@ import { Router, RouterLink } from '@angular/router';
 import { Store } from '@ngxs/store';
 
 import { TranslateModule } from '@ngx-translate/core';
-import { AlertComponent } from '../../../shared/components/widgets/alert/alert.component';
-import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
-import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { AuthService } from '../../../shared/services/auth.service';
-import { Login } from '../../../shared/action/auth.action';
+import { AlertComponent } from '../../shared/components/widgets/alert/alert.component';
+import { BreadcrumbComponent } from '../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { ButtonComponent } from '../../shared/components/widgets/button/button.component';
+import { Breadcrumb } from '../../shared/interface/breadcrumb';
+import { AuthService } from '../../shared/services/auth.service';
+import { Login } from '../../shared/action/auth.action';
 
 @Component({
-  selector: 'app-login',
+  selector: 'nxt-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
   standalone: true,
@@ -31,7 +31,7 @@ import { Login } from '../../../shared/action/auth.action';
     TranslateModule,
   ],
 })
-export class LoginComponent {
+export class NxtLoginComponent {
   public form: FormGroup;
   public breadcrumb: Breadcrumb = {
     title: 'Log in',

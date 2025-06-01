@@ -1,29 +1,29 @@
-import { Routes } from "@angular/router";
-import { ForgotPasswordComponent } from "./forgot-password/forgot-password.component";
-import { LoginComponent } from "./login/login.component";
-import { OtpComponent } from "./otp/otp.component";
-import { RegisterComponent } from "./register/register.component";
-import { UpdatePasswordComponent } from "./update-password/update-password.component";
+import { Routes } from '@angular/router';
+import { NxtForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NxtLoginComponent } from './login/login.component';
+import { NxtOtpComponent } from './otp/otp.component';
+import { NxtRegisterComponent } from './register/register.component';
+import { NxtUpdatePasswordComponent } from './update-password/update-password.component';
 
 export default [
   {
-    path: "login",
-    component: LoginComponent,
+    path: 'login',
+    component: NxtLoginComponent,
   },
   {
-    path: "forgot-password",
-    component: ForgotPasswordComponent,
+    path: 'forgot-password',
+    component: NxtForgotPasswordComponent,
   },
   {
-    path: "otp",
-    component: OtpComponent,
+    path: 'otp',
+    component: NxtOtpComponent,
   },
   {
-    path: "update-password",
-    component: UpdatePasswordComponent,
+    path: 'update-password',
+    component: NxtUpdatePasswordComponent,
   },
   {
-    path: "register",
-    component: RegisterComponent,
-  }
+    path: 'register',
+    component: NxtRegisterComponent,
+  },
 ] as Routes;

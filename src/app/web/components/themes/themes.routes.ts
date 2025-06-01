@@ -4,11 +4,11 @@ import { ThemesComponent } from './themes.component';
 
 export default [
   {
-    path: 'home',
-    component: ThemesComponent
+    path: '',
+    component: ThemesComponent,
   },
   {
     path: 'theme/:slug',
-    component: ThemesComponent
-  }
+    component: ThemesComponent,
+  },
 ] as Routes;

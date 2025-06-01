@@ -8,15 +8,15 @@ import {
 import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
-import { NotificationService } from '../../../shared/services/notification.service';
-import { Values } from '../../../shared/interface/setting.interface';
-import { GetSettingOption } from '../../../shared/action/setting.action';
-import { SettingState } from '../../../shared/state/setting.state';
-import { GetThemeOption } from '../../../shared/action/theme-option.action';
-import { GetCurrencies } from '../../../shared/action/currency.action';
-import { AuthClear } from '../../../shared/action/auth.action';
-import { GetStates } from '../../../shared/action/state.action';
-import { GetCountries } from '../../../shared/action/country.action';
+import { NotificationService } from '../../shared/services/notification.service';
+import { Values } from '../../shared/interface/setting.interface';
+import { GetSettingOption } from '../../shared/action/setting.action';
+import { SettingState } from '../../shared/state/setting.state';
+import { GetThemeOption } from '../../shared/action/theme-option.action';
+import { GetCurrencies } from '../../shared/action/currency.action';
+import { AuthClear } from '../../shared/action/auth.action';
+import { GetStates } from '../../shared/action/state.action';
+import { GetCountries } from '../../shared/action/country.action';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {

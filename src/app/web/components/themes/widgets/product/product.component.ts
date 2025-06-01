@@ -2,15 +2,15 @@ import { Component, inject, Input } from '@angular/core';
 import { Select, Store } from '@ngxs/store';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { Observable } from 'rxjs';
-import { ProductService } from '../../../../../shared/services/product.service';
+import { ProductService } from '../../../../shared/services/product.service';
 import {
   Product,
   ProductModel,
-} from '../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../shared/state/product.state';
-import * as data from '../../../../../shared/data/owl-carousel';
-import { ProductBoxComponent } from '../../../../../shared/components/widgets/product-box/product-box.component';
-import { SkeletonProductBoxComponent } from '../../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
+} from '../../../../shared/interface/product.interface';
+import { ProductState } from '../../../../shared/state/product.state';
+import * as data from '../../../../shared/data/owl-carousel';
+import { ProductBoxComponent } from '../../../../shared/components/widgets/product-box/product-box.component';
+import { SkeletonProductBoxComponent } from '../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import { CommonModule, NgClass } from '@angular/common';
 
 @Component({

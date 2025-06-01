@@ -2,19 +2,19 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Store, Select } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { StoreService } from '../../../../../shared/services/store.service';
-import { Breadcrumb } from '../../../../../shared/interface/breadcrumb';
-import { Option } from '../../../../../shared/interface/theme-option.interface';
-import { ThemeOptionState } from '../../../../../shared/state/theme-option.state';
-import { StoresModel } from '../../../../../shared/interface/store.interface';
-import { StoreState } from '../../../../../shared/state/store.state';
-import { GetStores } from '../../../../../shared/action/store.action';
-import { GetStoreProducts } from '../../../../../shared/action/product.action';
-import { PaginationComponent } from '../../../../../shared/components/widgets/pagination/pagination.component';
+import { StoreService } from '../../../../shared/services/store.service';
+import { Breadcrumb } from '../../../../shared/interface/breadcrumb';
+import { Option } from '../../../../shared/interface/theme-option.interface';
+import { ThemeOptionState } from '../../../../shared/state/theme-option.state';
+import { StoresModel } from '../../../../shared/interface/store.interface';
+import { StoreState } from '../../../../shared/state/store.state';
+import { GetStores } from '../../../../shared/action/store.action';
+import { GetStoreProducts } from '../../../../shared/action/product.action';
+import { PaginationComponent } from '../../../../shared/components/widgets/pagination/pagination.component';
 import { SellerStoreClassicComponent } from './seller-store-classic/seller-store-classic.component';
 import { SellerStoreBasicComponent } from './seller-store-basic/seller-store-basic.component';
 import { AsyncPipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-seller-store',

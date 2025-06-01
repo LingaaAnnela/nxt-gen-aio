@@ -2,21 +2,21 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Select, Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
-import { BlogService } from '../../../shared/services/blog.service';
-import { ThemeOptionState } from '../../../shared/state/theme-option.state';
-import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { GetBlogs } from '../../../shared/action/blog.action';
-import { BlogState } from '../../../shared/state/blog.state';
-import { BlogModel } from '../../../shared/interface/blog.interface';
-import { Option } from '../../../shared/interface/theme-option.interface';
+import { BlogService } from '../../shared/services/blog.service';
+import { ThemeOptionState } from '../../shared/state/theme-option.state';
+import { Breadcrumb } from '../../shared/interface/breadcrumb';
+import { GetBlogs } from '../../shared/action/blog.action';
+import { BlogState } from '../../shared/state/blog.state';
+import { BlogModel } from '../../shared/interface/blog.interface';
+import { Option } from '../../shared/interface/theme-option.interface';
 import { TranslateModule } from '@ngx-translate/core';
-import { SummaryPipe } from '../../../shared/pipe/summary.pipe';
+import { SummaryPipe } from '../../shared/pipe/summary.pipe';
 import { BlogSidebarComponent } from './sidebar/sidebar.component';
-import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
-import { PaginationComponent } from '../../../shared/components/widgets/pagination/pagination.component';
+import { NoDataComponent } from '../../shared/components/widgets/no-data/no-data.component';
+import { PaginationComponent } from '../../shared/components/widgets/pagination/pagination.component';
 import { SkeletonBlogComponent } from './skeleton-blog/skeleton-blog.component';
 import { NgClass, AsyncPipe, DatePipe } from '@angular/common';
-import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { BreadcrumbComponent } from '../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
 @Component({
   selector: 'app-blogs',
