@@ -1,7 +1,15 @@
-import { Component, Input, Output, EventEmitter, Inject, PLATFORM_ID, inject } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  Inject,
+  PLATFORM_ID,
+  inject,
+} from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Category, CategoryModel } from '../../../interface/category.interface';
 import { CategoryState } from '../../../state/category.state';
@@ -9,17 +17,23 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
 import { isPlatformBrowser } from '@angular/common';
+import { NxtHomePageSelectors } from '../../../../../store/selectors';
 
 @Component({
-    selector: 'app-categories',
-    templateUrl: './categories.component.html',
-    styleUrls: ['./categories.component.scss'],
-    imports: [ButtonComponent, CarouselModule, ReactiveFormsModule, TranslateModule]
+  selector: 'app-categories',
+  templateUrl: './categories.component.html',
+  styleUrls: ['./categories.component.scss'],
+  imports: [
+    ButtonComponent,
+    CarouselModule,
+    ReactiveFormsModule,
+    TranslateModule,
+  ],
 })
-
 export class CategoriesComponent {
-
-  category$: Observable<CategoryModel> = inject(Store).select(CategoryState.category);
+  category$: Observable<CategoryModel> = inject(Store).select(
+    NxtHomePageSelectors.categories
+  );
 
   @Input() categoryIds: number[] = [];
   @Input() style: string = 'vertical';
@@ -36,18 +50,33 @@ export class CategoriesComponent {
   public selectedCategorySlug: string[] = [];
   public isBrowser: boolean;
 
-  constructor(private route: ActivatedRoute,
-    private router: Router, @Inject(PLATFORM_ID) platformID: object) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    @Inject(PLATFORM_ID) platformID: object
+  ) {
     this.isBrowser = isPlatformBrowser(platformID);
-    this.category$.subscribe(res => this.categories = res?.data?.filter(category => category.type == 'product'));
-    this.route.queryParams.subscribe(params => {
-      this.selectedCategorySlug = params['category'] ? params['category'].split(',') : [];
+    this.category$.subscribe((res) => {
+      console.log('Categories:', res);
+      this.categories = res?.data?.filter(
+        (category) => category.type == 'product'
+      );
+    });
+    this.route.queryParams.subscribe((params) => {
+      this.selectedCategorySlug = params['category']
+        ? params['category'].split(',')
+        : [];
     });
   }
 
   ngOnChanges() {
-    if(this.categoryIds && this.categoryIds.length) {
-      this.category$.subscribe(res => this.categories = res.data.filter(category => this.categoryIds?.includes(category.id)));
+    if (this.categoryIds && this.categoryIds.length) {
+      this.category$.subscribe(
+        (res) =>
+          (this.categories = res.data.filter((category) =>
+            this.categoryIds?.includes(category.id)
+          ))
+      );
     }
   }
 
@@ -57,19 +86,18 @@ export class CategoriesComponent {
 
   redirectToCollection(slug: string) {
     let index = this.selectedCategorySlug.indexOf(slug);
-    if(index === -1)
-      this.selectedCategorySlug.push(slug);
-    else
-      this.selectedCategorySlug.splice(index,1);
+    if (index === -1) this.selectedCategorySlug.push(slug);
+    else this.selectedCategorySlug.splice(index, 1);
 
     this.router.navigate(['/collections'], {
       relativeTo: this.route,
       queryParams: {
-        category: this.selectedCategorySlug.length ? this.selectedCategorySlug.join(',') : null
+        category: this.selectedCategorySlug.length
+          ? this.selectedCategorySlug.join(',')
+          : null,
       },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
-      skipLocationChange: false  // do trigger navigation
+      skipLocationChange: false, // do trigger navigation
     });
   }
-
 }

@@ -3,24 +3,26 @@ import { Actions, createEffect, FunctionalEffect, ofType } from '@ngrx/effects';
 import { catchError, delay, map, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
-import { NxtHomeService } from '../../services/home/home.service';
-import { NxtHomeActions } from '../actions';
+import { NxtHomePageService } from '../../services/home-page.service';
+import { NxtHomePageActions } from '../actions';
 
 export const onGetHomePage: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), homeService = inject(NxtHomeService)) => {
+  (
+    actions$ = inject(Actions),
+    homePageService = inject(NxtHomePageService)
+  ) => {
     return actions$.pipe(
-      ofType(NxtHomeActions.GetHomePage),
-      tap((action) => console.log('Effect triggered:', action)),
-      delay(3000),
+      ofType(NxtHomePageActions.GetHomePage),
+      // delay(3000),
       switchMap(({ slug }) =>
-        homeService.getHomePage(slug).pipe(
+        homePageService.getHomePage(slug).pipe(
           map((response) =>
-            NxtHomeActions.GetHomePageSuccess({
+            NxtHomePageActions.GetHomePageSuccess({
               response,
             })
           ),
           catchError((error: { message: string }) =>
-            of(NxtHomeActions.GetHomePageFailure({ error }))
+            of(NxtHomePageActions.GetHomePageFailure({ error }))
           )
         )
       )

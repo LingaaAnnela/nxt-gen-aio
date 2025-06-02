@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { NxtHomeActions } from './store/actions';
+import { NxtHomePageActions, NxtCategoryActions } from './store/actions';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +15,7 @@ export class AppComponent {
   constructor(private _store: Store) {}
 
   ngOnInit() {
-    this._store.dispatch(NxtHomeActions.GetHomePage({ slug: 'rome' }));
+    this._store.dispatch(NxtHomePageActions.GetHomePage({ slug: 'rome' }));
+    this._store.dispatch(NxtCategoryActions.GetCategories({ status: 1 }));
   }
 }
