@@ -1,10 +1,10 @@
 import { ActionReducerMap } from '@ngrx/store';
-import { homeReducer } from './home.reducer';
+import { homePageReducer } from './home-page.reducer';
 
 export interface NxtAppState {
-  home: ReturnType<typeof homeReducer>;
+  'home-page': ReturnType<typeof homePageReducer>;
 }
 
 export const reducers: ActionReducerMap<NxtAppState> = {
-  home: homeReducer,
+  'home-page': homePageReducer,
 };

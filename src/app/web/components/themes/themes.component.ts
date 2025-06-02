@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { RomeComponent } from './rome/rome.component';
 import { AsyncPipe } from '@angular/common';
-import { NxtHomeSelectors } from '../../../store/selectors';
+import { NxtHomePageSelectors } from '../../../store/selectors';
 
 @Component({
   selector: 'app-themes',
@@ -14,5 +14,7 @@ import { NxtHomeSelectors } from '../../../store/selectors';
 export class ThemesComponent {
   public slug: string;
 
-  homePage$: Observable<any> = inject(Store).select(NxtHomeSelectors.homePage);
+  homePage$: Observable<any> = inject(Store).select(
+    NxtHomePageSelectors.homePage
+  );
 }

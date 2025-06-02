@@ -65,9 +65,8 @@ import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore } from '@ngrx/router-store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
-import { homeReducer } from './store/reducers/home.reducer';
-
-import * as NxtHomeEffects from './store/effects/home.effects';
+import * as NxtHomeEffects from './store/effects/home-page.effects';
+import * as NxtCategoryEffects from './store/effects/category.effects';
 import { reducers } from './store/reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -171,7 +170,7 @@ export const appConfig: ApplicationConfig = {
       registrationStrategy: 'registerWhenStable:30000',
     }),
     provideStore(reducers),
-    provideEffects(NxtHomeEffects),
+    provideEffects([NxtHomeEffects, NxtCategoryEffects]),
     provideRouterStore(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],

@@ -1,1 +1,1 @@
-export * as NxtHomeSelectors from './home.selectors';
+export * as NxtHomePageSelectors from './home-page.selectors';
