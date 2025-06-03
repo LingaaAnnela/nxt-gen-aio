@@ -44,7 +44,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {
     // If Maintainance Mode On
     if (this.isMaintenanceModeOn) {
-      this.router.navigate(['/maintenance']);
+      this.router.navigate(['/nxt/maintenance']);
     }
 
     const token = this.store.selectSnapshot((state) => state.auth.access_token);

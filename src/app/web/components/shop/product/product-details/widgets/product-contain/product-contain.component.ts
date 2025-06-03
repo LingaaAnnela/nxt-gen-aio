@@ -152,7 +152,7 @@ export class ProductContainComponent {
       };
       this.store.dispatch(new AddToCart(params)).subscribe({
         complete: () => {
-          this.router.navigate(['/checkout']);
+          this.router.navigate(['/nxt/checkout']);
         },
       });
     }

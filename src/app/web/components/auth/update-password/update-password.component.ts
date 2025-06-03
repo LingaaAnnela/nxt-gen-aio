@@ -64,7 +64,7 @@ export class UpdatePasswordComponent {
         )
         .subscribe({
           complete: () => {
-            this.router.navigateByUrl('/auth/login');
+            this.router.navigateByUrl('/nxt/auth/login');
           },
         });
     }

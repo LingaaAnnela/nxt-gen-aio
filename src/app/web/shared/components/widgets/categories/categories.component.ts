@@ -89,7 +89,7 @@ export class CategoriesComponent {
     if (index === -1) this.selectedCategorySlug.push(slug);
     else this.selectedCategorySlug.splice(index, 1);
 
-    this.router.navigate(['/collections'], {
+    this.router.navigate(['/nxt/collections'], {
       relativeTo: this.route,
       queryParams: {
         category: this.selectedCategorySlug.length

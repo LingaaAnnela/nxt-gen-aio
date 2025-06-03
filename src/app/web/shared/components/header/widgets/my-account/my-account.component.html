@@ -38,11 +38,13 @@
     <ul class="user-box-name">
       @if (!(isAuthenticated$ | async)) {
       <li class="product-box-contain">
-        <a [routerLink]="['/auth/login']">{{ "log_in" | translate }}</a>
+        <a [routerLink]="['/nxt/auth/login']">{{ "log_in" | translate }}</a>
       </li>
       } @if (!(isAuthenticated$ | async)) {
       <li class="product-box-contain">
-        <a [routerLink]="['/auth/register']">{{ "register" | translate }}</a>
+        <a [routerLink]="['/nxt/auth/register']">{{
+          "register" | translate
+        }}</a>
       </li>
       } @if ((isAuthenticated$ | async)) {
       <li class="product-box-contain">

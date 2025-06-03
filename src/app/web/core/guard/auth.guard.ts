@@ -62,7 +62,7 @@ export class AuthGuard {
         this.router.url == '/checkout' ||
         this.router.url == '/compare'
       )
-        this.router.navigate(['/theme/paris']);
+        this.router.navigate(['/nxt/theme/rome']);
       return false;
     }
     return true;

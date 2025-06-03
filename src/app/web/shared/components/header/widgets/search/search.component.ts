@@ -5,36 +5,32 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../widgets/button/button.component';
 
 @Component({
-    selector: 'app-search',
-    templateUrl: './search.component.html',
-    styleUrls: ['./search.component.scss'],
-    imports: [ReactiveFormsModule, ButtonComponent, TranslateModule]
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss'],
+  imports: [ReactiveFormsModule, ButtonComponent, TranslateModule],
 })
 export class SearchComponent {
-
   @Input() style: string = 'basic';
 
   public term = new FormControl();
   public show: boolean = false;
 
-  constructor(private route: ActivatedRoute,
-    private router: Router) {
-  }
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   redirectToSearch() {
-    this.router.navigate(['/search'], {
+    this.router.navigate(['/nxt/search'], {
       relativeTo: this.route,
       queryParams: {
         category: null,
-        search: this.term.value ? this.term.value : null
+        search: this.term.value ? this.term.value : null,
       },
       queryParamsHandling: 'merge', // preserve the existing query params in the route
-      skipLocationChange: false  // do trigger navigation
+      skipLocationChange: false, // do trigger navigation
     });
   }
 
-  toggleSearchBox(){
-    this.show = !this.show
+  toggleSearchBox() {
+    this.show = !this.show;
   }
-
 }

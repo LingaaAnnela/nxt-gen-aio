@@ -58,7 +58,7 @@ export class OtpComponent {
         )
         .subscribe({
           complete: () => {
-            this.router.navigateByUrl('/auth/update-password');
+            this.router.navigateByUrl('/nxt/auth/update-password');
           },
         });
     }
