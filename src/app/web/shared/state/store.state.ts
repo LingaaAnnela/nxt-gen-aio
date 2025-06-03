@@ -1,34 +1,32 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { tap } from "rxjs";
-import { GetStores, GetStoreBySlug } from "../action/store.action";
-import { Stores } from "../interface/store.interface";
-import { StoreService } from "../services/store.service";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+import { GetStores, GetStoreBySlug } from '../action/store.action';
+import { Stores } from '../interface/store.interface';
+import { StoreService } from '../services/store.service';
 
 export class StoreStateModel {
   store = {
     data: [] as Stores[],
-    total: 0
-  }
+    total: 0,
+  };
   selectedStore: Stores | null;
 }
 
 @State<StoreStateModel>({
-  name: "store",
+  name: 'store',
   defaults: {
     store: {
       data: [],
-      total: 0
+      total: 0,
     },
-    selectedStore: null
+    selectedStore: null,
   },
 })
 @Injectable()
 export class StoreState {
-  
-  constructor(private storeService: StoreService,
-    private router: Router) {}
+  constructor(private storeService: StoreService, private router: Router) {}
 
   @Selector()
   static store(state: StoreStateModel) {
@@ -45,20 +43,24 @@ export class StoreState {
     this.storeService.skeletonLoader = true;
     return this.storeService.getStores(action.payload).pipe(
       tap({
-        next: result => { 
+        next: (result) => {
           ctx.patchState({
             store: {
               data: result.data,
-              total: result?.total ? result?.total : result.data ? result.data.length : 0
-            }
+              total: result?.total
+                ? result?.total
+                : result.data
+                ? result.data.length
+                : 0,
+            },
           });
         },
         complete: () => {
           this.storeService.skeletonLoader = false;
         },
-        error: err => { 
+        error: (err) => {
           throw new Error(err?.error?.message);
-        }
+        },
       })
     );
   }
@@ -67,24 +69,25 @@ export class StoreState {
   getStoreBySlug(ctx: StateContext<StoreStateModel>, { slug }: GetStoreBySlug) {
     return this.storeService.getStores().pipe(
       tap({
-        next: result => { 
+        next: (result) => {
           const state = ctx.getState();
-          const store = result.data.find(store => store && store.slug == slug);
-          if(store){
+          const store = result.data.find(
+            (store) => store && store.slug == slug
+          );
+          if (store) {
             ctx.patchState({
               ...state,
-              selectedStore: store
+              selectedStore: store,
             });
           } else {
-            this.router.navigate(['/404']);
+            this.router.navigate(['/nxt/404']);
           }
         },
-        error: err => { 
-          this.router.navigate(['/404']);
+        error: (err) => {
+          this.router.navigate(['/nxt/404']);
           throw new Error(err?.error?.message);
-        }
+        },
       })
     );
   }
-
 }

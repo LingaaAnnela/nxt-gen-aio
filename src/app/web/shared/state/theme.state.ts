@@ -1,25 +1,23 @@
-import { Injectable } from "@angular/core";
-import { Router } from "@angular/router";
-import { Action, Selector, State, StateContext } from "@ngxs/store";
-import { tap } from "rxjs";
-import { ThemeService } from "../services/theme.service";
-import { GetHomePage } from "../action/theme.action";
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
+import { Action, Selector, State, StateContext } from '@ngxs/store';
+import { tap } from 'rxjs';
+import { ThemeService } from '../services/theme.service';
+import { GetHomePage } from '../action/theme.action';
 
 export class ThemesStateModel {
   homePage: object | null;
 }
 
 @State<ThemesStateModel>({
-  name: "theme",
+  name: 'theme',
   defaults: {
-    homePage: null
+    homePage: null,
   },
 })
 @Injectable()
 export class ThemeState {
-
-  constructor(private router: Router, 
-    private themeService: ThemeService) {}
+  constructor(private router: Router, private themeService: ThemeService) {}
 
   @Selector()
   static homePage(state: ThemesStateModel) {
@@ -32,15 +30,14 @@ export class ThemeState {
       tap({
         next: (result) => {
           ctx.patchState({
-            homePage: result
+            homePage: result,
           });
         },
         error: (err) => {
-          this.router.navigate(['/404']);
+          this.router.navigate(['/nxt/404']);
           throw new Error(err?.error?.message);
         },
       })
     );
   }
-
 }

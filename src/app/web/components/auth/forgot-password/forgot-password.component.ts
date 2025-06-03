@@ -49,7 +49,7 @@ export class ForgotPasswordComponent {
     if (this.form.valid) {
       this.store.dispatch(new ForgotPassWord(this.form.value)).subscribe({
         complete: () => {
-          this.router.navigateByUrl('/auth/otp');
+          this.router.navigateByUrl('/nxt/auth/otp');
         },
       });
     }
