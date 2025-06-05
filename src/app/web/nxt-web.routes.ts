@@ -24,10 +24,6 @@ export const content: Routes = [
   },
   {
     path: '',
-    loadChildren: () => import('./components/blog/blog.routes'),
-  },
-  {
-    path: '',
     loadChildren: () => import('./components/page/page.routes'),
   },
   {
