@@ -1,28 +1,21 @@
-import {
-  AsyncPipe,
-  CommonModule,
-  isPlatformBrowser,
-  isPlatformServer,
-  PlatformLocation,
-} from '@angular/common';
-import { Component, inject, Inject, Input, PLATFORM_ID } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { Component, inject, Input } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Option } from '../../interface/theme-option.interface';
 import { ThemeOptionState } from '../../state/theme-option.state';
-import { MinimalHeaderComponent } from './minimal-header/minimal-header.component';
 import { MobileMenuComponent } from './widgets/mobile-menu/mobile-menu.component';
+import { StandardHeaderComponent } from './standard-header/standard-header.component';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   imports: [
-    MinimalHeaderComponent,
     MobileMenuComponent,
     AsyncPipe,
     CommonModule,
+    StandardHeaderComponent,
   ],
 })
 export class HeaderComponent {

@@ -74,9 +74,9 @@ export class NxtWebComponent {
 
   setLogo() {
     return {
-      header_logo: 'assets/images/logo/3.png',
+      header_logo: 'assets/images/logo/image.png',
       footer: {
-        footer_logo: 'assets/images/logo/3.png',
+        footer_logo: 'assets/images/logo/nxt-gen.png',
         footer_class: '',
       },
     };

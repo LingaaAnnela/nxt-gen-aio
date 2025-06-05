@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { Observable } from 'rxjs';
 import { Params } from '../../../shared/interface/core.interface';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
@@ -9,14 +9,7 @@ import { GetProducts } from '../../../shared/action/product.action';
 import { ProductState } from '../../../shared/state/product.state';
 import { ThemeOptionState } from '../../../shared/state/theme-option.state';
 import { Option } from '../../../shared/interface/theme-option.interface';
-import { CollectionNoSidebarComponent } from './collection-no-sidebar/collection-no-sidebar.component';
-import { CollectionOffCanvasFilterComponent } from './collection-offcanvas-filter/collection-offcanvas-filter.component';
-import { CollectionListComponent } from './collection-list/collection-list.component';
-import { CollectionRightSidebarComponent } from './collection-right-sidebar/collection-right-sidebar.component';
-import { CollectionLeftSidebarComponent } from './collection-left-sidebar/collection-left-sidebar.component';
-import { CollectionBannerComponent } from './collection-banner/collection-banner.component';
 import { CollectionCategorySidebarComponent } from './collection-category-sidebar/collection-category-sidebar.component';
-import { CollectionCategorySliderComponent } from './collection-category-slider/collection-category-slider.component';
 
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 
@@ -24,17 +17,7 @@ import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcru
   selector: 'app-collection',
   templateUrl: './collection.component.html',
   styleUrls: ['./collection.component.scss'],
-  imports: [
-    BreadcrumbComponent,
-    CollectionCategorySliderComponent,
-    CollectionCategorySidebarComponent,
-    CollectionBannerComponent,
-    CollectionLeftSidebarComponent,
-    CollectionRightSidebarComponent,
-    CollectionListComponent,
-    CollectionOffCanvasFilterComponent,
-    CollectionNoSidebarComponent,
-  ],
+  imports: [BreadcrumbComponent, CollectionCategorySidebarComponent],
 })
 export class CollectionComponent {
   product$: Observable<ProductModel> = inject(Store).select(
