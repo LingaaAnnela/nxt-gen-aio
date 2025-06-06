@@ -1,25 +1,6 @@
 <div class="show-button">
-  @if (filter['layout'] !== 'collection_offcanvas_filter' && filter['layout']
-  !== 'collection_no_sidebar') {
-  <div class="filter-button-group mt-0">
-    <div class="filter-button d-inline-block d-lg-none">
-      <a (click)="openFilter(true)"
-        ><i class="ri-filter-2-fill"></i> {{ "filter_menu" | translate }}</a
-      >
-    </div>
-  </div>
-  }
   <div class="top-filter-menu">
     <div class="category-dropdown">
-      @if (filter && filter['layout'] == 'collection_offcanvas_filter') {
-      <a
-        href="javascript:void(0)"
-        class="filter-offcanvas-title"
-        (click)="openOffCanvasMenu()"
-      >
-        <i class="ri-filter-2-fill"></i> {{ "filter_menu" | translate }}
-      </a>
-      }
       <h5 class="text-content">{{ "sort_by" | translate }} :</h5>
       @if(isBrowser) {
       <div class="dropdown">

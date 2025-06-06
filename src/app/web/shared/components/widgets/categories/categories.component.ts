@@ -70,13 +70,15 @@ export class CategoriesComponent {
   }
 
   ngOnChanges() {
+    console.log(this.categoryIds);
     if (this.categoryIds && this.categoryIds.length) {
-      this.category$.subscribe(
-        (res) =>
-          (this.categories = res.data.filter((category) =>
+      this.category$.subscribe((res) => {
+        if (res) {
+          this.categories = res.data.filter((category) =>
             this.categoryIds?.includes(category.id)
-          ))
-      );
+          );
+        }
+      });
     }
   }
 
