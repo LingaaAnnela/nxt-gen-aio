@@ -1,12 +1,12 @@
 <!-- Search Basic Style -->
 @if (style == 'basic') {
 <div class="input-group">
-  <!-- <input
+  <input
     type="search"
     class="form-control"
     placeholder="Search here.."
     [formControl]="term"
-  /> -->
+  />
   <app-button
     [type]="'button'"
     [class]="'btn'"
@@ -18,14 +18,7 @@
   </app-button>
 </div>
 }
-<!-- Search Basic Style -->
-@if (style == 'berlin') {
-<div class="input-group">
-  <a href="javascript:void(0)" class="btn" (click)="toggleSearchBox()">
-    <i class="ri-search-line"></i>
-  </a>
-</div>
-}
+
 <!-- Search Classic Style -->
 @if (style == 'classic') {
 <div class="searchbar-box-2 input-group d-xl-flex d-none">

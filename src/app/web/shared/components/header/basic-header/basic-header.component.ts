@@ -9,39 +9,42 @@ import { isPlatformBrowser } from '@angular/common';
 import { Option } from '../../../interface/theme-option.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { DealComponent } from '../widgets/deal/deal.component';
-import { CallComponent } from '../widgets/call/call.component';
+// import { MenuComponent } from '../../widgets/menu/menu.component';
 import { ButtonComponent } from '../../widgets/button/button.component';
 import { CategoriesBlockComponent } from '../widgets/categories/categories.component';
+import { MyAccountComponent } from '../widgets/my-account/my-account.component';
 import { CartComponent } from '../widgets/cart/cart.component';
 import { WishlistComponent } from '../widgets/wishlist/wishlist.component';
+import { CallComponent } from '../widgets/call/call.component';
 import { SearchBoxComponent } from '../widgets/search-box/search-box.component';
-import { MyAccountComponent } from '../widgets/my-account/my-account.component';
 import { SearchComponent } from '../widgets/search/search.component';
+import { CategoriesComponent } from '../../widgets/categories/categories.component';
 import { LogoComponent } from '../widgets/logo/logo.component';
 import { NavbarMenuButtonComponent } from '../widgets/navbar-menu-button/navbar-menu-button.component';
 import { TopbarComponent } from '../widgets/topbar/topbar.component';
 
 @Component({
-  selector: 'app-standard-header',
-  templateUrl: './standard-header.component.html',
-  styleUrls: ['./standard-header.component.scss'],
+  selector: 'app-basic-header',
+  templateUrl: './basic-header.component.html',
+  styleUrls: ['./basic-header.component.scss'],
   imports: [
     TopbarComponent,
     NavbarMenuButtonComponent,
     LogoComponent,
+    CategoriesComponent,
     SearchComponent,
-    MyAccountComponent,
     SearchBoxComponent,
+    CallComponent,
     WishlistComponent,
     CartComponent,
+    MyAccountComponent,
     CategoriesBlockComponent,
     ButtonComponent,
-    CallComponent,
     DealComponent,
     TranslateModule,
   ],
 })
-export class StandardHeaderComponent {
+export class BasicHeaderComponent {
   @Input() data: Option | null;
   @Input() logo: string | null | undefined;
   @Input() sticky: boolean | number | undefined; // Default false

@@ -23,7 +23,6 @@ import { provideToastr } from 'ngx-toastr';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { AccountState } from './web/shared/state/account.state';
-import { AttributeState } from './web/shared/state/attribute.state';
 import { AuthState } from './web/shared/state/auth.state';
 import { BlogState } from './web/shared/state/blog.state';
 import { CartState } from './web/shared/state/cart.state';
@@ -123,7 +122,6 @@ export const appConfig: ApplicationConfig = {
         ThemeOptionState,
         CategoryState,
         PageState,
-        AttributeState,
         ProductState,
         StoreState,
         CartState,

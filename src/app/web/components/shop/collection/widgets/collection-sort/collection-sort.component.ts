@@ -10,7 +10,6 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 // import { Select2Data, Select2UpdateEvent } from 'ng-select2-component';
 import { Params } from '../../../../../shared/interface/core.interface';
-import { AttributeService } from '../../../../../shared/services/attribute.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 
@@ -71,7 +70,6 @@ export class CollectionSortComponent {
   ];
   constructor(
     private route: ActivatedRoute,
-    private attributeService: AttributeService,
     private router: Router,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
@@ -125,13 +123,5 @@ export class CollectionSortComponent {
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });
-  }
-
-  openOffCanvasMenu() {
-    this.attributeService.offCanvasMenu = true;
-  }
-
-  openFilter(value: boolean) {
-    this.attributeService.offCanvasMenu = value;
   }
 }

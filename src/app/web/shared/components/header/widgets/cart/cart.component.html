@@ -194,14 +194,14 @@
     </div>
     <div class="button-group">
       <a
-        [routerLink]="['nxt/cart']"
+        [routerLink]="['/nxt/cart']"
         class="btn btn-sm cart-button"
         (click)="cartToggle(false)"
       >
         {{ "view_cart" | translate }}
       </a>
       <a
-        [routerLink]="['/checkout']"
+        [routerLink]="['/nxt/checkout']"
         class="btn btn-sm cart-button theme-bg-color text-white"
         (click)="cartToggle(false)"
       >
