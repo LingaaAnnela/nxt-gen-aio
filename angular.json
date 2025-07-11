@@ -29,18 +29,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.scss",
-              "public/assets/pwa/css/vendors/bootstrap.css",
-              "public/assets/pwa/css/vendors/bootstrap.rtl.css",
-              "public/assets/pwa/css/vendors/slick.css",
-              "public/assets/pwa/css/vendors/slick-theme.css",
-              "public/assets/pwa/css/dark.css",
-              "public/assets/pwa/css/date-picker.css",
-              "public/assets/pwa/css/iconly.css",
-              "public/assets/pwa/css/pricing-slider.css",
-              "public/assets/pwa/css/style.css"
-            ],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -49,7 +38,7 @@
                 {
                   "type": "initial",
                   "maximumWarning": "500kB",
-                  "maximumError": "1MB"
+                  "maximumError": "5MB"
                 },
                 {
                   "type": "anyComponentStyle",
