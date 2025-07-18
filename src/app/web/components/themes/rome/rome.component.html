@@ -76,6 +76,7 @@
       </app-theme-categories>
     </app-title>
     <div class="container-fluid-lg">
+      THEME PRODUCTS!
       <app-theme-product
         [style]="'horizontal'"
         [productIds]="productFilterIds || []"
@@ -92,7 +93,7 @@
   <!-- Product Section End -->
 
   <!-- Banner Section Start -->
-  @if (data?.content?.two_column_banners?.status) {
+  <!-- @if (data?.content?.two_column_banners?.status) {
   <section class="banner-section">
     <div class="container-fluid-lg">
       <div class="row gy-xl-0 gy-3">
@@ -115,7 +116,7 @@
       </div>
     </div>
   </section>
-  }
+  } -->
   <!-- Banner Section End -->
 
   @if (data?.content?.slider_products?.status) {
