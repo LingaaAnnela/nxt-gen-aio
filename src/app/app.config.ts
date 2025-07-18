@@ -11,6 +11,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 
 import { routes } from './app.routes';
 
@@ -66,6 +67,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 import * as NxtHomeEffects from './store/effects/home-page.effects';
 import * as NxtCategoryEffects from './store/effects/category.effects';
+import * as NxtProductEffects from './store/effects/product.effects';
 import { reducers } from './store/reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -153,6 +155,7 @@ export const appConfig: ApplicationConfig = {
           'notification',
         ],
       }),
+      NgxsReduxDevtoolsPluginModule.forRoot(),
       NgxsModule.forFeature([AuthState])
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
@@ -168,7 +171,7 @@ export const appConfig: ApplicationConfig = {
       registrationStrategy: 'registerWhenStable:30000',
     }),
     provideStore(reducers),
-    provideEffects([NxtHomeEffects, NxtCategoryEffects]),
+    provideEffects([NxtHomeEffects, NxtCategoryEffects, NxtProductEffects]),
     provideRouterStore(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
   ],
