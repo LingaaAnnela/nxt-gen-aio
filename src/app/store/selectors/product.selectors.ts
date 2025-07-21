@@ -54,3 +54,8 @@ export const selectSelectedProduct = createSelector(
   selectProductState,
   (state) => state.selectedProduct
 );
+
+export const selectRelatedProducts = createSelector(
+  selectProductState,
+  (state) => state.relatedProducts
+);

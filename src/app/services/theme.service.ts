@@ -6,17 +6,10 @@ import { environment } from '../../../public/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class NxtHomePageService {
+export class NxtThemeService {
   constructor(private _http: HttpClient) {}
 
-  getThemeOptions(): Observable<any> {
+  getTheme(): Observable<any> {
     return this._http.get(`${environment.URL}/theme-option.json`);
-  }
-
-  getHomePage(slug?: string): Observable<any> {
-    if (!slug) {
-      slug = 'rome';
-    }
-    return this._http.get(`${environment.URL}/themes/${slug}.json`);
   }
 }

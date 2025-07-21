@@ -1,14 +1,14 @@
 import { Component, inject, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser, NgClass } from '@angular/common';
 import { Observable } from 'rxjs';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Option } from '../../../interface/theme-option.interface';
-import { ThemeOptionState } from '../../../state/theme-option.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
 import { ClickOutsideDirective } from '../../../directive/out-side-directive';
 import { ThemeOptionService } from '../../../services/theme-option.service';
+import { NxtThemeSelectors } from '../../../../../store/selectors';
 
 @Component({
   selector: 'app-theme-customizer',
@@ -26,7 +26,7 @@ import { ThemeOptionService } from '../../../services/theme-option.service';
 })
 export class ThemeCustomizerComponent {
   themeOption$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
+    NxtThemeSelectors.options
   ) as Observable<Option>;
 
   public open: boolean = false;

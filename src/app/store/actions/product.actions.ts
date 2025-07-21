@@ -37,7 +37,7 @@ export const GetRelatedProducts = createAction(
 );
 export const GetRelatedProductsSuccess = createAction(
   '[NXT] Get Related Products Success',
-  props<{ result: ProductModel }>()
+  props<{ products: Product[] }>()
 );
 export const GetRelatedProductsFailure = createAction(
   '[NXT] Get Related Products Failure',

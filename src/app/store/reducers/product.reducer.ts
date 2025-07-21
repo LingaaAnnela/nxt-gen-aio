@@ -42,8 +42,14 @@ export const productReducer = createReducer(
         : 0,
     },
   })),
+  // Cleanup the selected product and related products on failure
+  // Alson on, Leaving this product page!
   on(NxtProductActions.GetProductBySlugSuccess, (state, { product }) => ({
     ...state,
     selectedProduct: product,
+  })),
+  on(NxtProductActions.GetRelatedProductsSuccess, (state, { products }) => ({
+    ...state,
+    relatedProducts: products,
   }))
 );

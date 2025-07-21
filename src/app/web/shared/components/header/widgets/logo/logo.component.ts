@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ThemeOptionState } from '../../../../state/theme-option.state';
 import { Option } from '../../../../interface/theme-option.interface';
+import { NxtThemeSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-logo',
@@ -18,6 +19,6 @@ export class LogoComponent {
   @Input() logo: string | null | undefined;
 
   themeOption$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
+    NxtThemeSelectors.options
   ) as Observable<Option>;
 }
