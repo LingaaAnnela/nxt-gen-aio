@@ -14,6 +14,7 @@ import { CollectionComponent } from './collection/collection.component';
 // Checkout
 import { ScrollPositionGuard } from '../../shared/guard/scroll.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { NxtProductResolver } from '../../resolvers/product.resolver';
 
 export default [
   {
@@ -31,6 +32,7 @@ export default [
     component: ProductComponent,
     resolve: {
       data: ProductResolver,
+      nxtData: NxtProductResolver,
     },
     canActivate: [ScrollPositionGuard],
   },

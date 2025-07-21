@@ -1,13 +1,13 @@
 import { Component, inject, Input } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ThemeOptionState } from '../../../../../shared/state/theme-option.state';
 import { Option } from '../../../../../shared/interface/theme-option.interface';
 import { Product } from '../../../../../shared/interface/product.interface';
 import { ProductBannerComponent } from '../widgets/product-banner/product-banner.component';
 import { TrendingProductsComponent } from '../widgets/trending-products/trending-products.component';
 import { StoreInformationComponent } from '../widgets/store-information/store-information.component';
 import { AsyncPipe } from '@angular/common';
+import { NxtThemeSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-product-details-sidebar',
@@ -22,7 +22,7 @@ import { AsyncPipe } from '@angular/common';
 })
 export class ProductSidebarComponent {
   themeOptions$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
+    NxtThemeSelectors.options
   ) as Observable<Option>;
 
   @Input() product: Product;

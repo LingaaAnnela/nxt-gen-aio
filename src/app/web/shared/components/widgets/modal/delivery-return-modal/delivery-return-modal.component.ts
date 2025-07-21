@@ -4,14 +4,10 @@ import {
   ViewChild,
   PLATFORM_ID,
   Inject,
-  inject,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { Option } from '../../../../interface/theme-option.interface';
-import { ThemeOptionState } from '../../../../state/theme-option.state';
+// import { Select, Store } from '@ngxs/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
 
@@ -25,9 +21,9 @@ export class DeliveryReturnModalComponent {
   @ViewChild('deliveryReturnModal', { static: false })
   DeliveryReturnModal: TemplateRef<string>;
 
-  themeOption$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
-  ) as Observable<Option>;
+  // themeOption$: Observable<Option> = inject(Store).select(
+  //   ThemeOptionState.themeOptions
+  // ) as Observable<Option>;
 
   public closeResult: string;
   public modalOpen: boolean = false;

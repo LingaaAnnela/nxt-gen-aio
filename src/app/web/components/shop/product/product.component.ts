@@ -7,13 +7,11 @@ import {
 } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { isPlatformBrowser, AsyncPipe } from '@angular/common';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { Product } from '../../../shared/interface/product.interface';
-import { ProductState } from '../../../shared/state/product.state';
-import { ThemeOptionState } from '../../../shared/state/theme-option.state';
 import { Option } from '../../../shared/interface/theme-option.interface';
 import { StickyCheckoutComponent } from './product-details/widgets/sticky-checkout/sticky-checkout.component';
 import { RelatedProductsComponent } from './product-details/widgets/related-products/related-products.component';
@@ -23,6 +21,10 @@ import { ProductSliderComponent } from './product-details/product-slider/product
 import { ProductImagesComponent } from './product-details/product-images/product-images.component';
 import { ProductThumbnailComponent } from './product-details/product-thumbnail/product-thumbnail.component';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import {
+  NxtThemeSelectors,
+  NxtProductSelectors,
+} from '../../../../store/selectors';
 
 @Component({
   selector: 'app-product',
@@ -42,10 +44,10 @@ import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcru
 })
 export class ProductComponent {
   product$: Observable<Product> = inject(Store).select(
-    ProductState.selectedProduct
+    NxtProductSelectors.selectSelectedProduct
   ) as Observable<Product>;
   themeOptions$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
+    NxtThemeSelectors.options
   ) as Observable<Option>;
 
   public breadcrumb: Breadcrumb = {
