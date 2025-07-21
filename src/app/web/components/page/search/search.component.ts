@@ -1,25 +1,21 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
-import { Select, Store } from '@ngxs/store';
-import { Observable, debounceTime, distinctUntilChanged } from 'rxjs';
-import { GetProducts } from '../../../shared/action/product.action';
+import { Store } from '@ngrx/store';
+import { debounceTime, distinctUntilChanged } from 'rxjs';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { ProductBoxComponent } from '../../../shared/components/widgets/product-box/product-box.component';
 import { SkeletonProductBoxComponent } from '../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import * as data from '../../../shared/data/owl-carousel';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { Params } from '../../../shared/interface/core.interface';
-import {
-  Product,
-  ProductModel,
-} from '../../../shared/interface/product.interface';
-import { ProductState } from '../../../shared/state/product.state';
+import { Product } from '../../../shared/interface/product.interface';
 import { ProductService } from '../../../shared/services/product.service';
 
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { NxtProductSelectors } from '../../../../store/selectors';
 
 @Component({
   selector: 'app-search',
@@ -41,9 +37,9 @@ export class SearchComponent {
     items: [{ label: 'Search', active: true }],
   };
 
-  product$: Observable<ProductModel> = inject(Store).select(
-    ProductState.product
-  );
+  // product$: Observable<ProductModel> = inject(Store).select(
+  //   ProductState.product
+  // );
 
   public products: Product[];
   public search = new FormControl();
@@ -60,7 +56,7 @@ export class SearchComponent {
   };
 
   constructor(
-    private store: Store,
+    private _store: Store,
     public productService: ProductService,
     private route: ActivatedRoute,
     public router: Router
@@ -72,11 +68,16 @@ export class SearchComponent {
         this.filter['search'] = params['search'];
         this.search.patchValue(params['search'] ? params['search'] : '');
       }
-      this.store.dispatch(new GetProducts(this.filter)).subscribe({
-        next: (val: any) => {
-          this.products = val.product.product.data;
-        },
-      });
+      // this.store.dispatch(new GetProducts(this.filter)).subscribe({
+      //   next: (val: any) => {
+      //     this.products = val.product.product.data;
+      //   },
+      // });
+      this._store
+        .select(NxtProductSelectors.selectProductsBySearchKey(params['search']))
+        .subscribe((products) => {
+          this.products = products;
+        });
     });
   }
 

@@ -1,14 +1,8 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Params } from '../../../shared/interface/core.interface';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { ProductModel } from '../../../shared/interface/product.interface';
-import { GetProducts } from '../../../shared/action/product.action';
-import { ProductState } from '../../../shared/state/product.state';
-import { ThemeOptionState } from '../../../shared/state/theme-option.state';
-import { Option } from '../../../shared/interface/theme-option.interface';
 import { CollectionCategorySidebarComponent } from './collection-category-sidebar/collection-category-sidebar.component';
 
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
@@ -20,12 +14,12 @@ import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcru
   imports: [BreadcrumbComponent, CollectionCategorySidebarComponent],
 })
 export class CollectionComponent {
-  product$: Observable<ProductModel> = inject(Store).select(
-    ProductState.product
-  );
-  themeOptions$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
-  ) as Observable<Option>;
+  // product$: Observable<ProductModel> = inject(Store).select(
+  //   ProductState.product
+  // );
+  // themeOptions$: Observable<Option> = inject(Store).select(
+  //   ThemeOptionState.themeOptions
+  // ) as Observable<Option>;
 
   public breadcrumb: Breadcrumb = {
     title: 'Collections',
@@ -50,7 +44,7 @@ export class CollectionComponent {
 
   public totalItems: number = 0;
 
-  constructor(private route: ActivatedRoute, private store: Store) {
+  constructor(private route: ActivatedRoute, private _store: Store) {
     // Get Query params..
     this.route.queryParams.subscribe((params) => {
       this.filter = {
@@ -67,24 +61,30 @@ export class CollectionComponent {
         attribute: params['attribute'] ? params['attribute'] : '',
       };
 
-      this.store.dispatch(new GetProducts(this.filter));
+      // this.store.dispatch(new GetProducts(this.filter));
 
       // Params For Demo Purpose only
       if (params && params['layout']) {
         this.layout = params['layout'];
       } else {
         // Get Collection Layout
-        this.themeOptions$.subscribe((option) => {
-          this.layout =
-            option?.collection && option?.collection?.collection_layout
-              ? option?.collection?.collection_layout
-              : 'collection_category_slider';
-        });
+        // this.themeOptions$.subscribe((option) => {
+        //   this.layout =
+        //     option?.collection && option?.collection?.collection_layout
+        //       ? option?.collection?.collection_layout
+        //       : 'collection_category_slider';
+        // });
       }
 
       this.filter['layout'] = this.layout;
+
+      // this._store
+      //   .select(NxtProductSelectors.selectProductsBySearchKey(params['field']))
+      //   .subscribe((products) => {
+      //     this.products = products;
+      //   });
     });
 
-    this.product$.subscribe((product) => (this.totalItems = product?.total));
+    // this.product$.subscribe((product) => (this.totalItems = product?.total));
   }
 }

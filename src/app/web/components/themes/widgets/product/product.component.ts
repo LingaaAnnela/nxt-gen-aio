@@ -1,17 +1,13 @@
-import { Component, inject, Input } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Component, Input } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
-import { Observable } from 'rxjs';
 import { ProductService } from '../../../../shared/services/product.service';
-import {
-  Product,
-  ProductModel,
-} from '../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../shared/state/product.state';
+import { Product } from '../../../../shared/interface/product.interface';
 import * as data from '../../../../shared/data/owl-carousel';
 import { ProductBoxComponent } from '../../../../shared/components/widgets/product-box/product-box.component';
 import { SkeletonProductBoxComponent } from '../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import { CommonModule, NgClass } from '@angular/common';
+import { NxtProductSelectors } from '../../../../../store/selectors';
 
 @Component({
   selector: 'app-theme-product',
@@ -39,19 +35,15 @@ export class ProductComponent {
 
   public skeletonItems = Array.from({ length: 6 }, (_, index) => index);
 
-  product$: Observable<ProductModel> = inject(Store).select(
-    ProductState.product
-  );
-
-  constructor(public productService: ProductService) {}
+  constructor(private _store: Store, public productService: ProductService) {}
 
   ngOnChanges() {
     if (Array.isArray(this.productIds)) {
-      this.product$.subscribe((products) => {
-        this.products = products.data.filter((product) =>
-          this.productIds?.includes(product?.id)
-        );
-      });
+      this._store
+        .select(NxtProductSelectors.selectProductsByIds(this.productIds))
+        .subscribe((products) => {
+          this.products = products;
+        });
     }
   }
 }
