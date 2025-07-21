@@ -1,12 +1,12 @@
 import { Component, inject, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ViewportScroller, AsyncPipe } from '@angular/common';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { ProductModel } from '../../../../../shared/interface/product.interface';
 import { Params } from '../../../../../shared/interface/core.interface';
-import { ProductState } from '../../../../../shared/state/product.state';
 import { PaginationComponent } from '../../../../../shared/components/widgets/pagination/pagination.component';
+import { NxtProductSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-collection-paginate',
@@ -16,7 +16,7 @@ import { PaginationComponent } from '../../../../../shared/components/widgets/pa
 })
 export class CollectionPaginateComponent {
   product$: Observable<ProductModel> = inject(Store).select(
-    ProductState.product
+    NxtProductSelectors.selectProduct
   );
 
   @Input() filter: Params;
@@ -28,7 +28,7 @@ export class CollectionPaginateComponent {
     private router: Router,
     private viewScroller: ViewportScroller
   ) {
-    this.product$.subscribe((product) => (this.totalItems = product?.total));
+    // this.product$.subscribe((product) => (this.totalItems = product?.total));
   }
 
   setPaginate(page: number) {

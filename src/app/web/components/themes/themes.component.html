@@ -1,1 +1,3 @@
-<app-rome [data]="homePage$ | async" [slug]="slug"></app-rome>
+<ng-container *ngIf="homePage$ | async as data">
+  <app-rome [data]="data" [slug]="slug"></app-rome>
+</ng-container>

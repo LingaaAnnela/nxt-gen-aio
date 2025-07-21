@@ -24,6 +24,6 @@ export class AppComponent {
     console.log('AppComponent - ngOnInit', this.counter);
     this._store.dispatch(NxtHomePageActions.GetHomePage({ slug: 'rome' }));
     this._store.dispatch(NxtCategoryActions.GetCategories({ status: 1 }));
-    this._store.dispatch(NxtProductActions.GetProducts({ status: 1 }));
+    this._store.dispatch(NxtProductActions.GetProducts({ status: 1, ids: '' }));
   }
 }

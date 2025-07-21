@@ -12,6 +12,7 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { routes } from './app.routes';
 
@@ -68,7 +69,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 import * as NxtHomeEffects from './store/effects/home-page.effects';
 import * as NxtCategoryEffects from './store/effects/category.effects';
 import * as NxtProductEffects from './store/effects/product.effects';
-import { reducers } from './store/reducers';
+import { debugMeta, reducers } from './store/reducers';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -155,7 +156,10 @@ export const appConfig: ApplicationConfig = {
           'notification',
         ],
       }),
-      NgxsReduxDevtoolsPluginModule.forRoot(),
+      // NgxsReduxDevtoolsPluginModule.forRoot(),
+      NgxsLoggerPluginModule.forRoot({
+        disabled: !isDevMode(),
+      }),
       NgxsModule.forFeature([AuthState])
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
@@ -170,7 +174,9 @@ export const appConfig: ApplicationConfig = {
       enabled: !isDevMode(),
       registrationStrategy: 'registerWhenStable:30000',
     }),
-    provideStore(reducers),
+    provideStore(reducers, {
+      metaReducers: [debugMeta],
+    }),
     provideEffects([NxtHomeEffects, NxtCategoryEffects, NxtProductEffects]),
     provideRouterStore(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),

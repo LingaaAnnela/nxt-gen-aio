@@ -7,7 +7,7 @@ import {
 
 export const GetProducts = createAction(
   '[NXT] Get Products',
-  props<{ status: number }>()
+  props<{ status: number; ids: string }>()
 );
 export const GetProductsSuccess = createAction(
   '[NXT] Get Products Success',

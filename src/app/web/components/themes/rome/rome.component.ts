@@ -1,21 +1,26 @@
-import { Component, inject, Inject, Input, PLATFORM_ID } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  PLATFORM_ID,
+  SimpleChanges,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Store } from '@ngxs/store';
-import { Observable, forkJoin } from 'rxjs';
+import { Store } from '@ngrx/store';
 import { Rome } from '../../../shared/interface/theme.interface';
-import { GetProducts } from '../../../shared/action/product.action';
-import { ProductState } from '../../../shared/state/product.state';
-import { GetBlogs } from '../../../shared/action/blog.action';
-import { ProductModel } from '../../../shared/interface/product.interface';
 import { ThemeOptionService } from '../../../shared/services/theme-option.service';
-import * as data from '../../../shared/data/owl-carousel';
 import { NewsletterComponent } from '../widgets/newsletter/newsletter.component';
 import { FourColumnProductComponent } from '../widgets/four-column-product/four-column-product.component';
-import { ImageLinkComponent } from '../../../shared/components/widgets/image-link/image-link.component';
 import { ProductComponent } from '../widgets/product/product.component';
 import { BannerComponent } from '../widgets/banner/banner.component';
 import { CategoriesComponent } from '../widgets/categories/categories.component';
 import { TitleComponent } from '../../../shared/components/widgets/title/title.component';
+import { NxtProductSelectors } from '../../../../store/selectors';
+
+import * as data from '../../../shared/data/owl-carousel';
 
 @Component({
   selector: 'app-rome',
@@ -26,18 +31,21 @@ import { TitleComponent } from '../../../shared/components/widgets/title/title.c
     CategoriesComponent,
     BannerComponent,
     ProductComponent,
-    ImageLinkComponent,
     FourColumnProductComponent,
     NewsletterComponent,
   ],
 })
-export class RomeComponent {
+export class RomeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() data?: Rome;
   @Input() slug?: string;
 
-  categoryProduct$: Observable<ProductModel> = inject(Store).select(
-    ProductState.product
-  ) as Observable<ProductModel>;
+  // categoryProduct$: Observable<ProductModel> = inject(Store).select(
+  //   ProductState.product
+  // ) as Observable<ProductModel>;
+
+  // selectProduct$: Observable<ProductModel> = inject(Store).select(
+  //   NxtProductSelectors.selectProduct
+  // );
 
   public categorySlider = data.categorySlider9;
   public productSlider6ItemMargin = data.productSlider6ItemMargin;
@@ -46,40 +54,19 @@ export class RomeComponent {
   public selectedCategoryId: number;
 
   constructor(
-    private store: Store,
+    private _store: Store,
     @Inject(PLATFORM_ID) private platformId: Object,
     private themeOptionService: ThemeOptionService
   ) {}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('RomeComponent - ngOnChanges', this.data);
+  }
+
   ngOnInit() {
+    console.log('RomeComponent - ngOnInit', this.data);
     if (isPlatformBrowser(this.platformId)) {
       if (this.data?.slug == this.slug) {
-        // Get Products
-        const getProducts$ = this.store.dispatch(
-          new GetProducts({
-            status: 1,
-            ids: this.data?.content?.products_ids?.join(','),
-          })
-        );
-
-        // Get Blogs
-        const getBlogs$ = this.store.dispatch(
-          new GetBlogs({
-            status: 1,
-            ids: this.data?.content?.featured_blogs?.blog_ids?.join(','),
-          })
-        );
-
-        // Skeleton Loader
-        document.body.classList.add('skeleton-body');
-
-        forkJoin([getProducts$, getBlogs$]).subscribe({
-          complete: () => {
-            document.body.classList.remove('skeleton-body');
-            this.themeOptionService.preloader = false;
-          },
-        });
-
         if (
           this.data?.content?.categories_products &&
           this.data?.content?.categories_products?.category_ids.length
@@ -106,14 +93,11 @@ export class RomeComponent {
   selectCategory(id: number) {
     if (isPlatformBrowser(this.platformId)) {
       this.selectedCategoryId = id;
-      this.categoryProduct$.subscribe((product) => {
-        this.productFilterIds = product.data
-          .filter((product) =>
-            product?.categories?.map((category) => category.id).includes(id)
-          )
-          ?.map((product) => product.id)
-          .slice(0, 5);
-      });
+      this._store
+        .select(NxtProductSelectors.selectProductsByCategoryIds(id))
+        .subscribe((products) => {
+          this.productFilterIds = products.slice(0, 5);
+        });
     }
   }
 }

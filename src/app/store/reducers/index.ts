@@ -1,4 +1,4 @@
-import { ActionReducerMap } from '@ngrx/store';
+import { ActionReducer, ActionReducerMap } from '@ngrx/store';
 import { homePageReducer } from './home-page.reducer';
 import { productReducer } from './product.reducer';
 
@@ -11,3 +11,10 @@ export const reducers: ActionReducerMap<NxtAppState> = {
   'home-page': homePageReducer,
   product: productReducer,
 };
+
+export function debugMeta(reducer: ActionReducer<any>): ActionReducer<any> {
+  return (state, action) => {
+    console.log('DISPATCHED ACTION:', action);
+    return reducer(state, action);
+  };
+}
