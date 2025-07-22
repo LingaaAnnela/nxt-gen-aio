@@ -4,7 +4,7 @@
   "paypal_email": null,
   "bank_name": null,
   "bank_holder_name": null,
-  "bank_account_no": null,
+  "bank_account_no": "2222-2222-2222",
   "swift": null,
   "ifsc": null,
   "is_default": "0",

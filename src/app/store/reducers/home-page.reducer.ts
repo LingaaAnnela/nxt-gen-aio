@@ -1,16 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
-import { NxtHomePageActions, NxtCategoryActions } from '../actions';
+import { NxtHomePageActions } from '../actions';
 
 export interface NxtHomePageState {
   showSpinner: boolean;
   config: any;
-  categories?: any;
 }
 
 export const initialState: NxtHomePageState = {
   showSpinner: false,
   config: null,
-  categories: null,
 };
 
 export const homePageReducer = createReducer(
@@ -25,19 +23,6 @@ export const homePageReducer = createReducer(
     showSpinner: false,
   })),
   on(NxtHomePageActions.GetHomePageFailure, (state) => ({
-    ...state,
-    showSpinner: false,
-  })),
-  on(NxtCategoryActions.GetCategories, (state) => ({
-    ...state,
-    showSpinner: true,
-  })),
-  on(NxtCategoryActions.GetCategoriesSuccess, (state, { response }) => ({
-    ...state,
-    categories: response,
-    showSpinner: false,
-  })),
-  on(NxtCategoryActions.GetCategoriesFailure, (state) => ({
     ...state,
     showSpinner: false,
   }))

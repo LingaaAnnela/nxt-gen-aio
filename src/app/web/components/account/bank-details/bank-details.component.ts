@@ -5,16 +5,13 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {
-  GetPaymentDetails,
-  UpdatePaymentDetails,
-} from '../../../shared/action/payment-details.action';
-import { PaymentDetailsState } from '../../../shared/state/payment-details.state';
 import { PaymentDetails } from '../../../shared/interface/payment-details.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { NxtAccountActions } from '../../../../store/actions';
+import { NxtAccountSelectors } from '../../../../store/selectors';
 
 @Component({
   selector: 'app-bank-details',
@@ -23,14 +20,14 @@ import { ButtonComponent } from '../../../shared/components/widgets/button/butto
   imports: [ReactiveFormsModule, ButtonComponent, TranslateModule],
 })
 export class BankDetailsComponent {
-  paymentDetails$: Observable<PaymentDetails> = inject(Store).select(
-    PaymentDetailsState.paymentDetails
+  bankDetails$: Observable<PaymentDetails> = inject(Store).select(
+    NxtAccountSelectors.bankDetails
   ) as Observable<PaymentDetails>;
 
   public form: FormGroup;
   public active = 'bank';
 
-  constructor(private store: Store) {
+  constructor(private _store: Store) {
     this.form = new FormGroup({
       bank_account_no: new FormControl(),
       bank_name: new FormControl(),
@@ -42,15 +39,16 @@ export class BankDetailsComponent {
   }
 
   ngOnInit(): void {
-    this.store.dispatch(new GetPaymentDetails());
-    this.paymentDetails$.subscribe((paymentDetails) => {
+    // this.store.dispatch(new GetPaymentDetails());
+    this._store.dispatch(NxtAccountActions.GetBankDetails());
+    this.bankDetails$.subscribe((bankDetails) => {
       this.form.patchValue({
-        bank_account_no: paymentDetails?.bank_account_no,
-        bank_name: paymentDetails?.bank_name,
-        bank_holder_name: paymentDetails?.bank_holder_name,
-        swift: paymentDetails?.swift,
-        ifsc: paymentDetails?.ifsc,
-        paypal_email: paymentDetails?.paypal_email,
+        bank_account_no: bankDetails?.bank_account_no,
+        bank_name: bankDetails?.bank_name,
+        bank_holder_name: bankDetails?.bank_holder_name,
+        swift: bankDetails?.swift,
+        ifsc: bankDetails?.ifsc,
+        paypal_email: bankDetails?.paypal_email,
       });
     });
   }
@@ -58,7 +56,7 @@ export class BankDetailsComponent {
   submit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      this.store.dispatch(new UpdatePaymentDetails(this.form.value));
+      // this.store.dispatch(new UpdatePaymentDetails(this.form.value));
     }
   }
 }

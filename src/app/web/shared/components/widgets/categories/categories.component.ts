@@ -12,12 +12,11 @@ import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Category, CategoryModel } from '../../../interface/category.interface';
-import { CategoryState } from '../../../state/category.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
 import { isPlatformBrowser } from '@angular/common';
-import { NxtHomePageSelectors } from '../../../../../store/selectors';
+import { NxtCategorySelectors } from '../../../../../store/selectors';
 
 @Component({
   selector: 'app-categories',
@@ -32,7 +31,7 @@ import { NxtHomePageSelectors } from '../../../../../store/selectors';
 })
 export class CategoriesComponent {
   category$: Observable<CategoryModel> = inject(Store).select(
-    NxtHomePageSelectors.categories
+    NxtCategorySelectors.categories
   );
 
   @Input() categoryIds: number[] = [];

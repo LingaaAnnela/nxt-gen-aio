@@ -3,7 +3,7 @@
     <h5>{{ "my_orders" | translate }}</h5>
   </div>
 </div>
-@if ((order$ | async)?.data?.length) {
+@if ((orders$ | async)?.length) {
 <div class="total-box mt-0">
   <div class="wallet-table mt-0">
     <div class="table-responsive">
@@ -18,8 +18,7 @@
             <th>{{ "payment_method" | translate }}</th>
             <th>{{ "option" | translate }}</th>
           </tr>
-          @for (order of (order$ | async)?.data ; track order ; let i = $index)
-          {
+          @for (order of (orders$ | async) ; track order ; let i = $index) {
           <tr>
             <td>{{ i + 1 }}</td>
             <td>
@@ -36,11 +35,7 @@
               {{ order.payment_method.toUpperCase() }}
             </td>
             <td>
-              <a
-                [routerLink]="[
-                  '/nxt/account/order/details',
-                  order.order_number
-                ]"
+              <a (click)="gotToOrderDetails(order)"
                 ><i class="ri-eye-line"></i
               ></a>
             </td>
@@ -50,10 +45,10 @@
       </table>
     </div>
   </div>
-  @if ((order$ | async)?.data?.length) {
+  @if ((orders$ | async)?.length) {
   <nav class="custome-pagination">
     <app-pagination
-      [total]="(order$ | async)?.total || 0"
+      [total]="(orders$ | async)?.length || 0"
       [currentPage]="filter['page']"
       [pageSize]="filter['paginate']"
       (setPage)="setPaginate($event)"
@@ -62,7 +57,7 @@
   </nav>
   }
 </div>
-} @if (!(order$ | async)?.data?.length) {
+} @if (!(orders$ | async)?.length) {
 <app-no-data
   [class]="'no-data-added'"
   [image]="'assets/svg/empty-items.svg'"
