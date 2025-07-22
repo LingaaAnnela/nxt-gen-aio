@@ -6,6 +6,7 @@ import {
   NxtCategoryActions,
   NxtProductActions,
   NxtThemeActions,
+  NxtAccountActions,
 } from './store/actions';
 
 @Component({
@@ -23,6 +24,7 @@ export class AppComponent {
   ngOnInit() {
     this.counter++;
     console.log('AppComponent - ngOnInit', this.counter);
+    this._store.dispatch(NxtAccountActions.GetSettings());
     this._store.dispatch(NxtThemeActions.GetTheme());
     this._store.dispatch(NxtHomePageActions.GetHomePage({ slug: 'rome' }));
     this._store.dispatch(NxtCategoryActions.GetCategories({ status: 1 }));
