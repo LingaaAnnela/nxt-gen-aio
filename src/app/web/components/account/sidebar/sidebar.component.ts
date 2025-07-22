@@ -6,19 +6,17 @@ import {
   Output,
   ViewChild,
 } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { User } from '../../../shared/interface/user.interface';
-import { AccountState } from '../../../shared/state/account.state';
 import { Notification } from '../../../shared/interface/notification.interface';
-import { NotificationState } from '../../../shared/state/notification.state';
-import { Logout } from '../../../shared/action/auth.action';
 import { ConfirmationModalComponent } from '../../../shared/components/widgets/modal/confirmation-modal/confirmation-modal.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
 import { RouterLinkActive, RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { NxtAccountSelectors } from '../../../../store/selectors';
 
 @Component({
   selector: 'app-sidebar',
@@ -39,17 +37,17 @@ export class SidebarComponent {
   @Output() menu: EventEmitter<boolean> = new EventEmitter();
 
   notification$: Observable<Notification[]> = inject(Store).select(
-    NotificationState.notification
+    NxtAccountSelectors.notifications
   ) as Observable<Notification[]>;
   user$: Observable<User> = inject(Store).select(
-    AccountState.user
+    NxtAccountSelectors.user
   ) as Observable<User>;
 
   @ViewChild('confirmationModal') ConfirmationModal: ConfirmationModalComponent;
 
   public unreadNotificationCount: number;
 
-  constructor(private store: Store) {
+  constructor(private _store: Store) {
     this.notification$.subscribe((notification) => {
       this.unreadNotificationCount = notification?.filter(
         (item) => !item.read_at
@@ -58,7 +56,7 @@ export class SidebarComponent {
   }
 
   logout() {
-    this.store.dispatch(new Logout());
+    // this.store.dispatch(new Logout());
   }
 
   openMenu(value: boolean) {

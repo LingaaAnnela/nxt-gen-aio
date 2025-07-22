@@ -66,6 +66,7 @@ import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore } from '@ngrx/router-store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 
+import * as NxtAccountEffects from './store/effects/account.effects';
 import * as NxtHomeEffects from './store/effects/home-page.effects';
 import * as NxtCategoryEffects from './store/effects/category.effects';
 import * as NxtProductEffects from './store/effects/product.effects';
@@ -179,6 +180,7 @@ export const appConfig: ApplicationConfig = {
       metaReducers: [debugMeta],
     }),
     provideEffects([
+      NxtAccountEffects,
       NxtHomeEffects,
       NxtCategoryEffects,
       NxtProductEffects,

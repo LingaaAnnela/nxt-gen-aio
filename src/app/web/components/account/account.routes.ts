@@ -17,41 +17,40 @@ export default [
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
       },
       {
         path: 'wallet',
-        component: WalletComponent
+        component: WalletComponent,
       },
       {
         path: 'notifications',
-        component: NotificationComponent
+        component: NotificationComponent,
       },
       {
         path: 'bank-details',
-        component: BankDetailsComponent
+        component: BankDetailsComponent,
       },
       {
         path: 'point',
-        component: PointComponent
+        component: PointComponent,
       },
       {
         path: 'order',
-        component: OrdersComponent
+        component: OrdersComponent,
       },
       {
         path: 'order/details/:id',
-        component: OrderDetailsComponent
+        component: OrderDetailsComponent,
       },
       {
         path: 'refund',
-        component: RefundComponent
+        component: RefundComponent,
       },
       {
         path: 'addresses',
-        component: AdressesComponent
-      }
-    ]
-  }
+        component: AdressesComponent,
+      },
+    ],
+  },
 ] as Routes;
-

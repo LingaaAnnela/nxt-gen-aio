@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { OrderState } from '../../../shared/state/order.state';
-import { GetOrders } from '../../../shared/action/order.action';
-import { OrderModel } from '../../../shared/interface/order.interface';
+import { Order } from '../../../shared/interface/order.interface';
 import { Params } from '../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
 import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { PaginationComponent } from '../../../shared/components/widgets/pagination/pagination.component';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AsyncPipe, DatePipe } from '@angular/common';
+import { NxtAccountSelectors } from '../../../../store/selectors';
+import { NxtAccountActions } from '../../../../store/actions';
 
 @Component({
   selector: 'app-orders',
@@ -30,21 +30,27 @@ import { AsyncPipe, DatePipe } from '@angular/common';
   ],
 })
 export class OrdersComponent {
-  order$: Observable<OrderModel> = inject(Store).select(
-    OrderState.order
-  ) as Observable<OrderModel>;
+  orders$: Observable<Order[]> = inject(Store).select(
+    NxtAccountSelectors.orders
+  ) as Observable<Order[]>;
 
   public filter: Params = {
     page: 1, // Current page number
     paginate: 10, // Display per page,
   };
 
-  constructor(private store: Store) {
-    this.store.dispatch(new GetOrders(this.filter));
+  constructor(private _store: Store, public router: Router) {
+    this._store.dispatch(NxtAccountActions.GetOrders(this.filter));
   }
 
   setPaginate(page: number) {
     this.filter['page'] = page;
-    this.store.dispatch(new GetOrders(this.filter));
+    this._store.dispatch(NxtAccountActions.GetOrders(this.filter));
+  }
+
+  gotToOrderDetails(order: Order) {
+    this._store.dispatch(NxtAccountActions.SetSelectedOrder({ order }));
+    this._store.dispatch(NxtAccountActions.GetOrderStatus());
+    this.router.navigate(['/nxt/account/order/details', order.order_number]);
   }
 }

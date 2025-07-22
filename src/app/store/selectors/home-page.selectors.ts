@@ -13,8 +13,3 @@ export const homePage = createSelector(
   selectHomePageState,
   (state) => state.config
 );
-
-export const categories = createSelector(
-  selectHomePageState,
-  (state) => state.categories
-);
