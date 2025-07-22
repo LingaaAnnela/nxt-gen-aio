@@ -115,3 +115,91 @@ export const onGetOrderStatus: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onGetSettings: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetSettings),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getSettings().pipe(
+          map(({ values }) =>
+            NxtAccountActions.GetSettingsSuccess({
+              settings: values,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetSettingsFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetPoint: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetPoint),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getTransactions().pipe(
+          map((point) =>
+            NxtAccountActions.GetPointSuccess({
+              point,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetPointFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetRefunds: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetRefunds),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getRefunds().pipe(
+          map(({ data }) =>
+            NxtAccountActions.GetRefundsSuccess({
+              refunds: data,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetRefundsFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetWallet: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetWallet),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getWallet().pipe(
+          map((wallet) =>
+            NxtAccountActions.GetWalletSuccess({
+              wallet,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetWalletFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);

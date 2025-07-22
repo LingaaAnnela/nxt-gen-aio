@@ -8,6 +8,10 @@ import { NotificationModel } from '../web/shared/interface/notification.interfac
 import { PaymentDetails } from '../web/shared/interface/payment-details.interface';
 import { OrderModel } from '../web/shared/interface/order.interface';
 import { OrderStatusModel } from '../web/shared/interface/order-status.interface';
+import { Setting } from '../web/shared/interface/setting.interface';
+import { Point } from '../web/shared/interface/point.interface';
+import { RefundModel } from '../web/shared/interface/refund.interface';
+import { Wallet } from '../web/shared/interface/wallet.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -43,5 +47,27 @@ export class NxtAccountService {
       `${environment.URL}/order-status.json`,
       { params: payload }
     );
+  }
+
+  getSettings(): Observable<Setting> {
+    return this._http.get<Setting>(`${environment.URL}/setting.json`);
+  }
+
+  getTransactions(payload?: Params): Observable<Point> {
+    return this._http.get<Point>(`${environment.URL}/point.json`, {
+      params: payload,
+    });
+  }
+
+  getRefunds(payload?: Params): Observable<RefundModel> {
+    return this._http.get<RefundModel>(`${environment.URL}/refund.json`, {
+      params: payload,
+    });
+  }
+
+  getWallet(payload?: Params): Observable<Wallet> {
+    return this._http.get<Wallet>(`${environment.URL}/wallet.json`, {
+      params: payload,
+    });
   }
 }

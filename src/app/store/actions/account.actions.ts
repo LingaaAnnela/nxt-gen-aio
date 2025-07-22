@@ -4,6 +4,10 @@ import { AccountUser } from '../../web/shared/interface/account.interface';
 import { PaymentDetails } from '../../web/shared/interface/payment-details.interface';
 import { Order } from '../../web/shared/interface/order.interface';
 import { OrderStatus } from '../../web/shared/interface/order-status.interface';
+import { Point } from '../../web/shared/interface/point.interface';
+import { Values } from '../../web/shared/interface/setting.interface';
+import { Refund } from '../../web/shared/interface/refund.interface';
+import { Wallet } from '../../web/shared/interface/wallet.interface';
 
 export const GetUser = createAction('[NXT] Get User');
 export const GetUserSuccess = createAction(
@@ -60,5 +64,45 @@ export const GetOrderStatusSuccess = createAction(
 );
 export const GetOrderStatusFailure = createAction(
   '[NXT] Get Order Status Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetSettings = createAction('[NXT] Get Settings');
+export const GetSettingsSuccess = createAction(
+  '[NXT] Get Settings Success',
+  props<{ settings: Values }>()
+);
+export const GetSettingsFailure = createAction(
+  '[NXT] Get Settings Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetPoint = createAction('[NXT] Get Point');
+export const GetPointSuccess = createAction(
+  '[NXT] Get Point Success',
+  props<{ point: Point }>()
+);
+export const GetPointFailure = createAction(
+  '[NXT] Get Point Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetRefunds = createAction('[NXT] Get Refunds');
+export const GetRefundsSuccess = createAction(
+  '[NXT] Get Refunds Success',
+  props<{ refunds: Refund[] }>()
+);
+export const GetRefundsFailure = createAction(
+  '[NXT] Get Refunds Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetWallet = createAction('[NXT] Get Wallet');
+export const GetWalletSuccess = createAction(
+  '[NXT] Get Wallet Success',
+  props<{ wallet: Wallet }>()
+);
+export const GetWalletFailure = createAction(
+  '[NXT] Get Wallet Failure',
   props<{ error: { message: string } }>()
 );
