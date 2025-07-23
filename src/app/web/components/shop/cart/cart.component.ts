@@ -1,14 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import {
   Cart,
   CartAddOrUpdate,
 } from '../../../shared/interface/cart.interface';
-import { CartState } from '../../../shared/state/cart.state';
-import { UpdateCart, DeleteCart } from '../../../shared/action/cart.action';
-import { AddToWishlist } from '../../../shared/action/wishlist.action';
 import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
@@ -16,6 +13,8 @@ import { ButtonComponent } from '../../../shared/components/widgets/button/butto
 import { RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { NxtCartSelectors } from '../../../../store/selectors';
+import { NxtCartActions } from '../../../../store/actions';
 
 @Component({
   selector: 'app-cart',
@@ -33,8 +32,8 @@ import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcru
   ],
 })
 export class CartComponent {
-  cartItem$: Observable<Cart[]> = inject(Store).select(CartState.cartItems);
-  cartTotal$: Observable<number> = inject(Store).select(CartState.cartTotal);
+  cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
+  cartTotal$: Observable<number> = inject(Store).select(NxtCartSelectors.total);
 
   public breadcrumb: Breadcrumb = {
     title: 'Cart',
@@ -52,14 +51,17 @@ export class CartComponent {
       variation_id: item?.variation_id ? item?.variation_id : null,
       quantity: qty,
     };
-    this.store.dispatch(new UpdateCart(params));
+    // this.store.dispatch(new UpdateCart(params));
+    this.store.dispatch(NxtCartActions.UpdateCart({ params }));
   }
 
   delete(id: number) {
-    this.store.dispatch(new DeleteCart(id));
+    // this.store.dispatch(new DeleteCart(id));
+    this.store.dispatch(NxtCartActions.DeleteCart({ id }));
   }
 
   addToWishlist(id: number) {
-    this.store.dispatch(new AddToWishlist({ product_id: id }));
+    // this.store.dispatch(new AddToWishlist({ product_id: id }));
+    this.store.dispatch(NxtCartActions.AddToWishlist({ id }));
   }
 }

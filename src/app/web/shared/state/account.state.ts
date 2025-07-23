@@ -39,10 +39,10 @@ export class AccountState {
     return state.user;
   }
 
-  @Selector()
-  static permissions(state: AccountStateModel) {
-    return state.permissions;
-  }
+  // @Selector()
+  // static permissions(state: AccountStateModel) {
+  //   return state.permissions;
+  // }
 
   @Action(GetUserDetails)
   getUserDetails(ctx: StateContext<AccountStateModel>) {

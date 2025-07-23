@@ -11,8 +11,4 @@ import { ProductComponent } from '../product/product.component';
 export class FourColumnProductComponent {
   @Input() data?: SliderProductsTokyo;
   @Input() col: string;
-
-  // product$: Observable<ProductModel> = inject(Store).select(
-  //   ProductState.product
-  // );
 }
