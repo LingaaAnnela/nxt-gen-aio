@@ -3,7 +3,6 @@ import { Component, inject, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ThemeOptionState } from '../../../../state/theme-option.state';
 import { Option } from '../../../../interface/theme-option.interface';
 import { NxtThemeSelectors } from '../../../../../../store/selectors';
 

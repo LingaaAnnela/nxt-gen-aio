@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { Category } from '../../web/shared/interface/category.interface';
 
 export const GetCategories = createAction(
   '[NXT] Get Categories',
@@ -6,7 +7,7 @@ export const GetCategories = createAction(
 );
 export const GetCategoriesSuccess = createAction(
   '[NXT] Get Categories Success',
-  props<{ response: any }>()
+  props<{ categories: Category[] }>()
 );
 export const GetCategoriesFailure = createAction(
   '[NXT] Get Categories Failure',

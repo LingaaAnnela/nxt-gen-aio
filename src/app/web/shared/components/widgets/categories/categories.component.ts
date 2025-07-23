@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Category, CategoryModel } from '../../../interface/category.interface';
+import { Category } from '../../../interface/category.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
@@ -30,7 +30,7 @@ import { NxtCategorySelectors } from '../../../../../store/selectors';
   ],
 })
 export class CategoriesComponent {
-  category$: Observable<CategoryModel> = inject(Store).select(
+  category$: Observable<Category[]> = inject(Store).select(
     NxtCategorySelectors.categories
   );
 
@@ -57,9 +57,7 @@ export class CategoriesComponent {
     this.isBrowser = isPlatformBrowser(platformID);
     this.category$.subscribe((res) => {
       console.log('Categories:', res);
-      this.categories = res?.data?.filter(
-        (category) => category.type == 'product'
-      );
+      this.categories = res?.filter((category) => category.type == 'product');
     });
     this.route.queryParams.subscribe((params) => {
       this.selectedCategorySlug = params['category']
@@ -73,7 +71,7 @@ export class CategoriesComponent {
     if (this.categoryIds && this.categoryIds.length) {
       this.category$.subscribe((res) => {
         if (res) {
-          this.categories = res.data.filter((category) =>
+          this.categories = res.filter((category) =>
             this.categoryIds?.includes(category.id)
           );
         }

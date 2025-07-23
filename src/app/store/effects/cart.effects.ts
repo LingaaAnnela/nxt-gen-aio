@@ -102,3 +102,59 @@ export const onUpdateCart: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onGetWishlist: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.GetWishlist),
+      // delay(3000),
+      switchMap(() =>
+        cartService.getWishlist().pipe(
+          map(({ data }) =>
+            NxtCartActions.GetWishlistSuccess({ wishlist: data })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtCartActions.GetWishlistFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onAddToWishlist: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.AddToWishlist),
+      // delay(3000),
+      switchMap(() =>
+        cartService.addToWishlist().pipe(
+          map(({ data }) => NxtCartActions.AddToWishlistSuccess()),
+          catchError((error: { message: string }) =>
+            of(NxtCartActions.AddToWishlistFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onADeleteWishlist: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.DeleteWishlist),
+      // delay(3000),
+      switchMap(() =>
+        cartService.deleteWishlist().pipe(
+          map(({ data }) => NxtCartActions.DeleteWishlistSuccess()),
+          catchError((error: { message: string }) =>
+            of(NxtCartActions.DeleteWishlistFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);

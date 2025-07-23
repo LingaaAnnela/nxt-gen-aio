@@ -1,16 +1,15 @@
 import { Component, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { GetWishlist } from '../../../shared/action/wishlist.action';
-import { WishlistState } from '../../../shared/state/wishlist.state';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { WishlistModel } from '../../../shared/interface/wishlist.interface';
-import { WishlistService } from '../../../shared/services/wishlist.service';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { ProductBoxComponent } from '../../../shared/components/widgets/product-box/product-box.component';
 import { SkeletonProductBoxComponent } from '../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import { AsyncPipe } from '@angular/common';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { NxtCartActions } from '../../../../store/actions';
+import { NxtCartSelectors } from '../../../../store/selectors';
+import { Product } from '../../../shared/interface/product.interface';
 
 @Component({
   selector: 'app-wishlist',
@@ -25,9 +24,12 @@ import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcru
   ],
 })
 export class WishlistComponent {
-  wishlistItems$: Observable<WishlistModel> = inject(Store).select(
-    WishlistState.wishlistItems
+  wishlist$: Observable<Product[]> = inject(Store).select(
+    NxtCartSelectors.wishlist
   );
+
+  // TODO
+  skeletonLoader: boolean = true;
 
   public breadcrumb: Breadcrumb = {
     title: 'Wishlist',
@@ -36,7 +38,7 @@ export class WishlistComponent {
 
   public skeletonItems = Array.from({ length: 12 }, (_, index) => index);
 
-  constructor(private store: Store, public wishlistService: WishlistService) {
-    this.store.dispatch(new GetWishlist());
+  constructor(private _store: Store) {
+    this._store.dispatch(NxtCartActions.GetWishlist());
   }
 }

@@ -22,3 +22,8 @@ export const stickyCartOpen = createSelector(
   selectCartState,
   (state) => state.stickyCartOpen
 );
+
+export const wishlist = createSelector(
+  selectCartState,
+  (state) => state.wishlist
+);

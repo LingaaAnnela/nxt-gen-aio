@@ -16,7 +16,6 @@ import {
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngxs/store';
 // import { Select2Data, Select2Module } from 'ng-select2-component';
-import { SendRefundRequest } from '../../../../action/refund.action';
 import { Product } from '../../../../interface/product.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { TranslateModule } from '@ngx-translate/core';
@@ -103,12 +102,12 @@ export class RefundModalComponent {
   sendRequest() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      this.store.dispatch(new SendRefundRequest(this.form.value)).subscribe({
-        complete: () => {
-          this.form.reset();
-          this.modalService.dismissAll();
-        },
-      });
+      // this.store.dispatch(new SendRefundRequest(this.form.value)).subscribe({
+      //   complete: () => {
+      //     this.form.reset();
+      //     this.modalService.dismissAll();
+      //   },
+      // });
     }
   }
 }

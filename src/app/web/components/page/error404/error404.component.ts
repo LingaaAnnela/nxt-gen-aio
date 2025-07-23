@@ -3,7 +3,6 @@ import { Location, AsyncPipe } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { ThemeOptionState } from '../../../shared/state/theme-option.state';
 import { Option } from '../../../shared/interface/theme-option.interface';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';

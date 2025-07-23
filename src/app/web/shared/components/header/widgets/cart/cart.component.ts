@@ -72,7 +72,6 @@ export class CartComponent {
         (setting) =>
           (this.shippingFreeAmt = setting?.general?.min_order_free_shipping)
       );
-      debugger;
       this.cartTotal = total;
       this.shippingCal = (this.cartTotal * 100) / this.shippingFreeAmt;
       if (this.shippingCal > 100) {
@@ -102,10 +101,12 @@ export class CartComponent {
       variation: item?.variation ? item?.variation : null,
       quantity: qty,
     };
+    this._store.dispatch(NxtCartActions.UpdateCart({ params }));
     // this.store.dispatch(new UpdateCart(params));
   }
 
   delete(id: number) {
+    this._store.dispatch(NxtCartActions.DeleteCart({ id }));
     // this.store.dispatch(new DeleteCart(id));
   }
 }

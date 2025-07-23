@@ -1,14 +1,15 @@
 import { createReducer, on } from '@ngrx/store';
 import { NxtCategoryActions, NxtThemeActions } from '../actions';
+import { Category } from '../../web/shared/interface/category.interface';
 
 export interface NxtCategoryState {
   showSpinner: boolean;
-  categories?: any;
+  categories?: Category[];
 }
 
 export const initialState: NxtCategoryState = {
   showSpinner: false,
-  categories: null,
+  categories: [],
 };
 
 export const categoryReducer = createReducer(
@@ -17,9 +18,9 @@ export const categoryReducer = createReducer(
     ...state,
     showSpinner: true,
   })),
-  on(NxtCategoryActions.GetCategoriesSuccess, (state, { response }) => ({
+  on(NxtCategoryActions.GetCategoriesSuccess, (state, { categories }) => ({
     ...state,
-    categories: response,
+    categories,
     showSpinner: false,
   })),
   on(NxtCategoryActions.GetCategoriesFailure, (state) => ({
