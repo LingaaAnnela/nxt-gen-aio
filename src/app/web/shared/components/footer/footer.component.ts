@@ -2,7 +2,6 @@ import { Component, inject, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Option } from '../../interface/theme-option.interface';
-import { ThemeOptionState } from '../../state/theme-option.state';
 import { Footer } from '../../interface/theme.interface';
 import { AsyncPipe } from '@angular/common';
 import { BasicFooterComponent } from './basic-footer/basic-footer.component';

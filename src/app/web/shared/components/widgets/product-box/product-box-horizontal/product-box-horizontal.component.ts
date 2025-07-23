@@ -1,14 +1,10 @@
 import { Component, inject, Input, ViewChild } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { ProductDetailModalComponent } from '../../modal/product-detail-modal/product-detail-modal.component';
 import { Product } from '../../../../interface/product.interface';
 import { CartAddOrUpdate, Cart } from '../../../../interface/cart.interface';
-import {
-  AddToWishlist,
-  DeleteWishlist,
-} from '../../../../action/wishlist.action';
 import { AddToCompare } from '../../../../action/compare.action';
 import { AddToCart } from '../../../../action/cart.action';
 import { CartState } from '../../../../state/cart.state';
@@ -77,11 +73,11 @@ export class ProductBoxHorizontalComponent {
   }
 
   addToWishlist(id: number) {
-    this.store.dispatch(new AddToWishlist({ product_id: id }));
+    // this.store.dispatch(new AddToWishlist({ product_id: id }));
   }
 
   removeWishlist(id: number) {
-    this.store.dispatch(new DeleteWishlist(id));
+    // this.store.dispatch(new DeleteWishlist(id));
   }
 
   addToCompar(id: number) {

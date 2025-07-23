@@ -4,20 +4,12 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { LoaderComponent } from './shared/components/widgets/loader/loader.component';
-import {
-  PlatformLocation,
-  isPlatformBrowser,
-  isPlatformServer,
-} from '@angular/common';
-import { Store } from '@ngxs/store';
-import { Observable, forkJoin } from 'rxjs';
-import { GetUserDetails } from './shared/action/account.action';
-import { GetBlogs } from './shared/action/blog.action';
-import { GetCategories } from './shared/action/category.action';
-import { GetDealProducts } from './shared/action/product.action';
+import { PlatformLocation, isPlatformBrowser } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { ThemeOptionService } from './shared/services/theme-option.service';
-import { ThemeOptionState } from './shared/state/theme-option.state';
 import { Option } from './shared/interface/theme-option.interface';
+import { NxtThemeSelectors } from '../store/selectors';
 
 @Component({
   selector: 'nxt-web',
@@ -33,12 +25,12 @@ import { Option } from './shared/interface/theme-option.interface';
 })
 export class NxtWebComponent {
   themeOption$: Observable<Option> = inject(Store).select(
-    ThemeOptionState.themeOptions
+    NxtThemeSelectors.options
   ) as Observable<Option>;
   cookies$: Observable<boolean> = inject(Store).select(
-    ThemeOptionState.cookies
+    NxtThemeSelectors.cookies
   );
-  exit$: Observable<boolean> = inject(Store).select(ThemeOptionState.exit);
+  exit$: Observable<boolean> = inject(Store).select(NxtThemeSelectors.exit);
 
   public cookies: boolean;
   public exit: boolean;
@@ -55,21 +47,21 @@ export class NxtWebComponent {
     this.cookies$.subscribe((res) => (this.cookies = res));
     this.exit$.subscribe((res) => (this.exit = res));
     this.themeOptionService.preloader = true;
-    this.store.dispatch(new GetUserDetails());
-    const getCategories$ = this.store.dispatch(
-      new GetCategories({ status: 1 })
-    );
-    const getBlog$ = this.store.dispatch(
-      new GetBlogs({ status: 1, paginate: 10 })
-    );
-    const getProduct$ = this.store.dispatch(
-      new GetDealProducts({ status: 1, paginate: 2 })
-    );
-    forkJoin([getCategories$, getBlog$, getProduct$]).subscribe({
-      complete: () => {
-        this.themeOptionService.preloader = false;
-      },
-    });
+    // this.store.dispatch(new GetUserDetails());
+    // const getCategories$ = this.store.dispatch(
+    //   new GetCategories({ status: 1 })
+    // );
+    // const getBlog$ = this.store.dispatch(
+    //   new GetBlogs({ status: 1, paginate: 10 })
+    // );
+    // const getProduct$ = this.store.dispatch(
+    //   new GetDealProducts({ status: 1, paginate: 2 })
+    // );
+    // forkJoin([getCategories$, getBlog$, getProduct$]).subscribe({
+    //   complete: () => {
+    //     this.themeOptionService.preloader = false;
+    //   },
+    // });
   }
 
   setLogo() {

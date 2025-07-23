@@ -8,13 +8,12 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { ThemeOptionState } from '../../../../state/theme-option.state';
-import { UpdateSession } from '../../../../action/theme-option.action';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ButtonComponent } from '../../button/button.component';
+import { NxtThemeSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-newsletter-modal',
@@ -27,7 +26,7 @@ export class NewsletterModalComponent {
   NewsletterModal: TemplateRef<string>;
 
   newsletter$: Observable<boolean> = inject(Store).select(
-    ThemeOptionState.newsletter
+    NxtThemeSelectors.newsletter
   );
 
   public closeResult: string;
@@ -36,7 +35,7 @@ export class NewsletterModalComponent {
 
   constructor(
     private modalService: NgbModal,
-    private store: Store,
+    private _store: Store,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.newsletter$.subscribe((res) => (this.newsletter = res));
@@ -47,7 +46,7 @@ export class NewsletterModalComponent {
       setTimeout(() => {
         this.openModal();
       }, 3000);
-      this.store.dispatch(new UpdateSession('newsletter', false));
+      // this.store.dispatch(new UpdateSession('newsletter', false));
     }
   }
 

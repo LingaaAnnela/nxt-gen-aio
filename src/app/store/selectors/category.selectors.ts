@@ -11,5 +11,5 @@ export const showSpinner = createSelector(
 
 export const categories = createSelector(
   selectCategoryState,
-  (state) => state.categories
+  (state) => state.categories!
 );

@@ -1,8 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { CartModel } from '../web/shared/interface/cart.interface';
 import { environment } from '../../../public/environments/environment';
+import { WishlistModel } from '../web/shared/interface/wishlist.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,5 +13,17 @@ export class NxtCartService {
 
   getCartItems(): Observable<CartModel> {
     return this._http.get<CartModel>(`${environment.URL}/cart.json`);
+  }
+
+  getWishlist(): Observable<WishlistModel> {
+    return this._http.get<WishlistModel>(`${environment.URL}/wishlist.json`);
+  }
+
+  addToWishlist(id?: number): Observable<any> {
+    return of(true);
+  }
+
+  deleteWishlist(id?: number): Observable<any> {
+    return of(true);
   }
 }

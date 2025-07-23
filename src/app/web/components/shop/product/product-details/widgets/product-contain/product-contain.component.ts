@@ -6,13 +6,12 @@ import {
   PLATFORM_ID,
   SimpleChanges,
 } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngxs/store';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import {
   Product,
   Variation,
-  SelectedVariant,
 } from '../../../../../../shared/interface/product.interface';
 import {
   Cart,
@@ -21,7 +20,6 @@ import {
 import { AddToCart } from '../../../../../../shared/action/cart.action';
 import { CartState } from '../../../../../../shared/state/cart.state';
 import { Option } from '../../../../../../shared/interface/theme-option.interface';
-import { AddToWishlist } from '../../../../../../shared/action/wishlist.action';
 import { AddToCompare } from '../../../../../../shared/action/compare.action';
 import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
@@ -159,7 +157,7 @@ export class ProductContainComponent {
   }
 
   addToWishlist(id: number) {
-    this.store.dispatch(new AddToWishlist({ product_id: id }));
+    // this.store.dispatch(new AddToWishlist({ product_id: id }));
   }
 
   addToCompare(id: number) {

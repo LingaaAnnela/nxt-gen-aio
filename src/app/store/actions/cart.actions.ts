@@ -4,6 +4,7 @@ import {
   CartAddOrUpdate,
   CartModel,
 } from '../../web/shared/interface/cart.interface';
+import { Product } from '../../web/shared/interface/product.interface';
 
 export const GetCartItems = createAction('[NXT] Get CartItems');
 export const GetCartItemsSuccess = createAction(
@@ -40,12 +41,43 @@ export const DeleteCart = createAction(
   props<{ id: number }>()
 );
 
+export const UpdateCartItem = createAction(
+  '[NXT] Update Cart Item',
+  props<{ item: Cart }>()
+);
+
+export const GetWishlist = createAction('[NXT] Get Wishlist');
+export const GetWishlistSuccess = createAction(
+  '[NXT] Get Wishlist Success',
+  props<{ wishlist: Product[] }>()
+);
+export const GetWishlistFailure = createAction(
+  '[NXT] Get Wishlist Failure',
+  props<{ error: { message: string } }>()
+);
+
 export const AddToWishlist = createAction(
   '[NXT] Add To Wishlist',
   props<{ id: number }>()
 );
+export const AddToWishlistSuccess = createAction(
+  '[NXT] Add To Wishlist Success'
+  // props<{ wishlist: Product[] }>()
+);
+export const AddToWishlistFailure = createAction(
+  '[NXT] Add To Wishlist Failure',
+  props<{ error: { message: string } }>()
+);
 
-export const UpdateCartItem = createAction(
-  '[NXT] Update Cart Item',
-  props<{ item: Cart }>()
+export const DeleteWishlist = createAction(
+  '[NXT] Get Wishlist',
+  props<{ id: number }>()
+);
+export const DeleteWishlistSuccess = createAction(
+  '[NXT] Delete Wishlist Success'
+  // props<{ wishlist: Product[] }>()
+);
+export const DeleteWishlistFailure = createAction(
+  '[NXT] Delete Wishlist Failure',
+  props<{ error: { message: string } }>()
 );

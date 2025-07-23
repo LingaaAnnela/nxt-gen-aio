@@ -9,12 +9,11 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { UpdateSession } from '../../../../action/theme-option.action';
-import { ThemeOptionState } from '../../../../state/theme-option.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
+import { NxtThemeSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-exit-modal',
@@ -26,7 +25,7 @@ export class ExitModalComponent {
   @ViewChild('exitModal', { static: true }) ExitModal: TemplateRef<string>;
 
   exit$: Observable<boolean> = inject(Store).select(
-    ThemeOptionState.exit
+    NxtThemeSelectors.exit
   ) as Observable<boolean>;
 
   public closeResult: string;
@@ -36,7 +35,7 @@ export class ExitModalComponent {
 
   constructor(
     private modalService: NgbModal,
-    private store: Store,
+    private _store: Store,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.exit$.subscribe((res) => (this.exit = res));
@@ -47,7 +46,7 @@ export class ExitModalComponent {
     if (event.clientY <= 0) {
       if (this.exit === true) {
         this.openModal();
-        this.store.dispatch(new UpdateSession('exit', false));
+        // this.store.dispatch(new UpdateSession('exit', false));
       }
     }
   }

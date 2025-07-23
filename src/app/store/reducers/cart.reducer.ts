@@ -1,12 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
 import { NxtCartActions } from '../actions';
 import { Cart } from '../../web/shared/interface/cart.interface';
+import { Product } from '../../web/shared/interface/product.interface';
 
 export interface NxtCartState {
   items: Cart[];
   total?: number;
   stickyCartOpen: boolean;
   sidebarCartOpen: boolean;
+  wishlist: Product[];
   showSpinner: boolean;
 }
 
@@ -15,6 +17,7 @@ export const initialState: NxtCartState = {
   total: 0,
   stickyCartOpen: false,
   sidebarCartOpen: false,
+  wishlist: [],
   showSpinner: false,
 };
 
@@ -50,8 +53,34 @@ export const cartReducer = createReducer(
       showSpinner: false,
     };
   }),
+  on(NxtCartActions.DeleteCart, (state, { id }) => {
+    const remainingItems = state.items.filter((i) => i.id !== id);
+
+    const total = remainingItems.reduce((prev, curr: Cart) => {
+      return prev + Number(curr.sub_total);
+    }, 0);
+
+    return {
+      ...state,
+      items: remainingItems,
+      total,
+      showSpinner: false,
+    };
+  }),
   on(NxtCartActions.ToggleSidebarCart, (state, { value }) => ({
     ...state,
     sidebarCartOpen: value,
+  })),
+  on(NxtCartActions.GetWishlist, (state) => ({
+    ...state,
+    wishlist: [],
+  })),
+  on(NxtCartActions.GetWishlistSuccess, (state, { wishlist }) => ({
+    ...state,
+    wishlist,
+  })),
+  on(NxtCartActions.GetWishlistFailure, (state, { error }) => ({
+    ...state,
+    wishlist: [],
   }))
 );

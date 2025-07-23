@@ -1,13 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Params } from '../../../../../../shared/interface/core.interface';
-import {
-  Category,
-  CategoryModel,
-} from '../../../../../../shared/interface/category.interface';
-import { CategoryState } from '../../../../../../shared/state/category.state';
+import { Category } from '../../../../../../shared/interface/category.interface';
+import { NxtCategorySelectors } from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-collection-category-filter',
@@ -16,8 +13,8 @@ import { CategoryState } from '../../../../../../shared/state/category.state';
   imports: [],
 })
 export class CollectionCategoryFilterComponent {
-  category$: Observable<CategoryModel> = inject(Store).select(
-    CategoryState.category
+  category$: Observable<Category[]> = inject(Store).select(
+    NxtCategorySelectors.categories
   );
 
   @Input() filter: Params;
@@ -28,7 +25,7 @@ export class CollectionCategoryFilterComponent {
   constructor(private route: ActivatedRoute, private router: Router) {
     this.category$.subscribe(
       (res) =>
-        (this.categories = res?.data?.filter(
+        (this.categories = res?.filter(
           (category) => category.type == 'product'
         ))
     );

@@ -13,9 +13,9 @@ export const onGetCategories: FunctionalEffect = createEffect(
       // delay(3000),
       switchMap(({ status }) =>
         homeService.getCategories({ status }).pipe(
-          map((response) =>
+          map(({ data }) =>
             NxtCategoryActions.GetCategoriesSuccess({
-              response,
+              categories: data,
             })
           ),
           catchError((error: { message: string }) =>

@@ -28,7 +28,7 @@ import { AccountState } from './web/shared/state/account.state';
 import { AuthState } from './web/shared/state/auth.state';
 import { BlogState } from './web/shared/state/blog.state';
 import { CartState } from './web/shared/state/cart.state';
-import { CategoryState } from './web/shared/state/category.state';
+// import { CategoryState } from './web/shared/state/category.state';
 import { CompareState } from './web/shared/state/compare.state';
 import { CountryState } from './web/shared/state/country.state';
 import { CouponState } from './web/shared/state/coupon.state';
@@ -39,19 +39,19 @@ import { OrderStatusState } from './web/shared/state/order-status.state';
 import { OrderState } from './web/shared/state/order.state';
 import { PageState } from './web/shared/state/page.state';
 import { PaymentDetailsState } from './web/shared/state/payment-details.state';
-import { PointState } from './web/shared/state/point.state';
+// import { PointState } from './web/shared/state/point.state';
 import { ProductState } from './web/shared/state/product.state';
 import { QuestionAnswersState } from './web/shared/state/questions-answers.state';
-import { RefundState } from './web/shared/state/refund.state';
+// import { RefundState } from './web/shared/state/refund.state';
 import { ReviewState } from './web/shared/state/review.state';
 import { SettingState } from './web/shared/state/setting.state';
 import { StateState } from './web/shared/state/state.state';
 import { StoreState } from './web/shared/state/store.state';
 import { TagState } from './web/shared/state/tag.state';
-import { ThemeOptionState } from './web/shared/state/theme-option.state';
-import { ThemeState } from './web/shared/state/theme.state';
-import { WalletState } from './web/shared/state/wallet.state';
-import { WishlistState } from './web/shared/state/wishlist.state';
+// import { ThemeOptionState } from './web/shared/state/theme-option.state';
+// import { ThemeState } from './web/shared/state/theme.state';
+// import { WalletState } from './web/shared/state/wallet.state';
+// import { WishlistState } from './web/shared/state/wishlist.state';
 import {
   HTTP_INTERCEPTORS,
   HttpClient,
@@ -124,22 +124,22 @@ export const appConfig: ApplicationConfig = {
         StateState,
         SettingState,
         CurrencyState,
-        ThemeState,
-        ThemeOptionState,
-        CategoryState,
+        // ThemeState,
+        // ThemeOptionState,
+        // CategoryState,
         PageState,
         ProductState,
         StoreState,
         CartState,
         BlogState,
         TagState,
-        WishlistState,
+        // WishlistState,
         CompareState,
         OrderState,
         OrderStatusState,
-        WalletState,
-        PointState,
-        RefundState,
+        // WalletState,
+        // PointState,
+        // RefundState,
         PaymentDetailsState,
         NotificationState,
         QuestionAnswersState,

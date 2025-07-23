@@ -11,10 +11,8 @@
 <!-- Wishlist Classic -->
 @if (style == 'classic') {
 <a [routerLink]="['/nxt/wishlist']" class="header-icon bag-icon">
-  @if ((wishlist$ | async)?.total) {
-  <small class="badge-number badge-light">{{
-    (wishlist$ | async)?.total
-  }}</small>
+  @if ((wishlist$ | async)) {
+  <small class="badge-number badge-light">{{ wishlist$ | async }}</small>
   }
   <i class="ri-heart-line"></i>
 </a>
