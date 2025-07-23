@@ -39,14 +39,6 @@ export class RomeComponent implements OnInit, OnChanges, OnDestroy {
   @Input() data?: Rome;
   @Input() slug?: string;
 
-  // categoryProduct$: Observable<ProductModel> = inject(Store).select(
-  //   ProductState.product
-  // ) as Observable<ProductModel>;
-
-  // selectProduct$: Observable<ProductModel> = inject(Store).select(
-  //   NxtProductSelectors.selectProduct
-  // );
-
   public categorySlider = data.categorySlider9;
   public productSlider6ItemMargin = data.productSlider6ItemMargin;
   public customOptionsItem4 = data.customOptionsItem4;

@@ -1,0 +1,104 @@
+import { inject } from '@angular/core';
+import { Actions, createEffect, FunctionalEffect, ofType } from '@ngrx/effects';
+import { concatLatestFrom } from '@ngrx/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+import { NxtCartActions } from '../actions';
+import { NxtCartService } from '../../services/cart.service';
+import { Store } from '@ngrx/store';
+import { NxtCartSelectors } from '../selectors';
+import { Cart } from '../../web/shared/interface/cart.interface';
+
+export const onGetCartItems: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.GetCartItems),
+      // delay(3000),
+      switchMap(() =>
+        cartService.getCartItems().pipe(
+          map((cart) => NxtCartActions.GetCartItemsSuccess({ cart })),
+          catchError((error: { message: string }) =>
+            of(NxtCartActions.GetCartItemsFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onUpdateCart: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), store = inject(Store)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.UpdateCart),
+      concatLatestFrom(() => [store.select(NxtCartSelectors.items)]),
+      map(([{ params }, items]) => {
+        const cart = [...items];
+        let item = cart.find((item) => Number(item.id) === Number(params.id));
+
+        if (item) {
+          if (
+            item.variation &&
+            params.variation_id &&
+            Number(item.id) === Number(params.id) &&
+            Number(item.variation_id) != Number(params.variation_id)
+          ) {
+            return NxtCartActions.ReplaceCart({ params });
+          }
+
+          const productQty = item.variation
+            ? item.variation?.quantity
+            : item.product?.quantity;
+
+          // TODO g
+          if (productQty < item.quantity + params.quantity) {
+            // this.notificationService.showError(`You can not add more items than available. In stock ${productQty} items.`);
+            // return false;
+          }
+
+          // if (item.variation) {
+          //   item.variation.selected_variation = item.variation?.attribute_values
+          //     ?.map((values) => values.value)
+          //     .join('/');
+          // }
+          const updatedVariation = {
+            ...item.variation,
+            selected_variation: item.variation?.attribute_values
+              ?.map((values) => values.value)
+              .join('/'),
+          };
+          const updatedQuantity = item.quantity + params.quantity;
+
+          // item.quantity = item.quantity + params.quantity;
+          // item.sub_total =
+          //   item.quantity *
+          //   (item.variation
+          //     ? item.variation?.sale_price
+          //     : item.product.sale_price);
+
+          const updatedItem = {
+            ...item,
+            quantity: updatedQuantity,
+            sub_total:
+              updatedQuantity *
+              (item.variation?.sale_price ?? item.product?.sale_price),
+            variation: updatedVariation,
+          };
+
+          if (item.quantity < 1) {
+            return NxtCartActions.DeleteCart({ id: params.id! });
+          }
+
+          // let total = items.reduce((prev, curr: Cart) => {
+          //   return prev + Number(curr.sub_total);
+          // }, 0);
+          return NxtCartActions.UpdateCartItem({ item: updatedItem });
+        }
+
+        return { type: '[Cart] No Update - Item Not Found' };
+      })
+    );
+  },
+  { functional: true }
+);
