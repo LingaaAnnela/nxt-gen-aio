@@ -7,6 +7,7 @@ import {
 import { Product } from '../../web/shared/interface/product.interface';
 import { OrderCheckout } from '../../web/shared/interface/order.interface';
 import { States } from '../../web/shared/interface/state.interface';
+import { Coupon } from '../../web/shared/interface/coupon.interface';
 
 export const GetCartItems = createAction('[NXT] Get CartItems');
 export const GetCartItemsSuccess = createAction(
@@ -91,5 +92,15 @@ export const GetOrderCheckoutSuccess = createAction(
 );
 export const GetOrderCheckoutFailure = createAction(
   '[NXT] Get Order Checkout Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetCoupons = createAction('[NXT] Get Coupons');
+export const GetCouponsSuccess = createAction(
+  '[NXT] Get Coupons Success',
+  props<{ coupons: Coupon[] }>()
+);
+export const GetCouponsFailure = createAction(
+  '[NXT] Get Coupons Failure',
   props<{ error: { message: string } }>()
 );

@@ -1,13 +1,9 @@
 import { Component, inject, Input, SimpleChanges } from '@angular/core';
 import { Product } from '../../../../../../shared/interface/product.interface';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { QuestionAnswersState } from '../../../../../../shared/state/questions-answers.state';
-import { QnAModel } from '../../../../../../shared/interface/questions-answers.interface';
-import { GetQuestionAnswers } from '../../../../../../shared/action/questions-answers.action';
-import { GetReview } from '../../../../../../shared/action/review.action';
-import { ReviewState } from '../../../../../../shared/state/review.state';
-import { ReviewModel } from '../../../../../../shared/interface/review.interface';
+import { QuestionAnswers } from '../../../../../../shared/interface/questions-answers.interface';
+import { Review } from '../../../../../../shared/interface/review.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { AsyncPipe } from '@angular/common';
 import { QuestionsAnswersComponent } from '../questions-answers/questions-answers.component';
@@ -22,6 +18,8 @@ import {
   NgbAccordionCollapse,
   NgbAccordionBody,
 } from '@ng-bootstrap/ng-bootstrap';
+import { NxtProductSelectors } from '../../../../../../../store/selectors';
+import { NxtProductActions } from '../../../../../../../store/actions';
 
 @Component({
   selector: 'app-product-details-accordion',
@@ -45,16 +43,24 @@ import {
 export class ProductDetailsAccordionComponent {
   @Input() product: Product | null;
 
-  question$: Observable<QnAModel> = inject(Store).select(
-    QuestionAnswersState.questionsAnswers
+  question$: Observable<QuestionAnswers[]> = inject(Store).select(
+    NxtProductSelectors.questionAnswers
   );
-  review$: Observable<ReviewModel> = inject(Store).select(ReviewState.review);
+  review$: Observable<Review[]> = inject(Store).select(
+    NxtProductSelectors.reviews
+  );
 
-  constructor(private store: Store) {}
+  constructor(private _store: Store) {}
 
   ngOnChanges(changes: SimpleChanges) {
     let product = changes['product']?.currentValue;
-    this.store.dispatch(new GetQuestionAnswers({ product_id: product.id }));
-    this.store.dispatch(new GetReview({ product_id: product.id }));
+    // this.store.dispatch(new GetQuestionAnswers({ product_id: product.id }));
+    // this.store.dispatch(new GetReview({ product_id: product.id }));
+    this._store.dispatch(
+      NxtProductActions.GetQuestionAnswers({ product_id: product.id })
+    );
+    this._store.dispatch(
+      NxtProductActions.GetReviews({ product_id: product.id })
+    );
   }
 }

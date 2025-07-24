@@ -141,7 +141,7 @@ export const onAddToWishlist: FunctionalEffect = createEffect(
   { functional: true }
 );
 
-export const onADeleteWishlist: FunctionalEffect = createEffect(
+export const onDeleteWishlist: FunctionalEffect = createEffect(
   (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
     return actions$.pipe(
       ofType(NxtCartActions.DeleteWishlist),
@@ -187,6 +187,26 @@ export const onGetOrderCheckout: FunctionalEffect = createEffect(
           ),
           catchError((error: { message: string }) =>
             of(NxtCartActions.GetOrderCheckoutFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetCoupons: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.GetCoupons),
+      // delay(3000),
+      switchMap(() =>
+        cartService.getCoupons().pipe(
+          map(({ data }) =>
+            NxtCartActions.GetCouponsSuccess({ coupons: data })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtCartActions.GetCouponsFailure({ error }))
           )
         )
       )

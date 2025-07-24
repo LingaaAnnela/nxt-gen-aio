@@ -1,17 +1,22 @@
-
-<div ngbAccordion [closeOthers]="true" class="accordion-box product-section-box mt-0">
+<div
+  ngbAccordion
+  [closeOthers]="true"
+  class="accordion-box product-section-box mt-0"
+>
   <div ngbAccordionItem [collapsed]="false">
     <h2 ngbAccordionHeader>
       <button ngbAccordionButton>
-        <span>{{ 'description' | translate }}</span>
+        <span>{{ "description" | translate }}</span>
       </button>
     </h2>
     <div ngbAccordionCollapse>
       <div ngbAccordionBody>
         <ng-template>
           <div class="product-description">
-            <div class="nav-desh ckeditor-content" [innerHTML]="product?.description">
-            </div>
+            <div
+              class="nav-desh ckeditor-content"
+              [innerHTML]="product?.description"
+            ></div>
           </div>
         </ng-template>
       </div>
@@ -20,13 +25,16 @@
   <div ngbAccordionItem>
     <h2 ngbAccordionHeader>
       <button ngbAccordionButton>
-        <span>{{ 'review' | translate }}</span>
+        <span>{{ "review" | translate }}</span>
       </button>
     </h2>
     <div ngbAccordionCollapse>
       <div ngbAccordionBody>
         <ng-template>
-          <app-product-review [product]="product" [reviews]="(review$ | async)?.data!"></app-product-review>
+          <app-product-review
+            [product]="product"
+            [reviews]="(review$ | async)!"
+          ></app-product-review>
         </ng-template>
       </div>
     </div>
@@ -34,13 +42,16 @@
   <div ngbAccordionItem>
     <h2 ngbAccordionHeader>
       <button ngbAccordionButton>
-        <span>{{ 'q_a' | translate }}</span>
+        <span>{{ "q_a" | translate }}</span>
       </button>
     </h2>
     <div ngbAccordionCollapse>
       <div ngbAccordionBody>
         <ng-template>
-          <app-questions-answers [product]="product!" [questionAnswers]="(question$ | async)?.data!"></app-questions-answers>
+          <app-questions-answers
+            [product]="product!"
+            [questionAnswers]="(question$ | async)!"
+          ></app-questions-answers>
         </ng-template>
       </div>
     </div>

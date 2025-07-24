@@ -7,19 +7,19 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import {
-  ModalDismissReasons,
-  NgbModal,
-  NgbRating,
-} from '@ng-bootstrap/ng-bootstrap';
-import { Product } from '../../../../interface/product.interface';
-import {
   FormControl,
   FormGroup,
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { Store } from '@ngxs/store';
-import { SendReview, UpdateReview } from '../../../../action/review.action';
+import { Store } from '@ngrx/store';
+import {
+  ModalDismissReasons,
+  NgbModal,
+  NgbRating,
+} from '@ng-bootstrap/ng-bootstrap';
+
+import { Product } from '../../../../interface/product.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
 
@@ -43,7 +43,7 @@ export class ReviewModalComponent {
   constructor(
     private modalService: NgbModal,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private store: Store
+    private _store: Store
   ) {
     this.form = new FormGroup({
       rating: new FormControl('', [Validators.required]),
@@ -99,12 +99,12 @@ export class ReviewModalComponent {
         review_image_id: '',
         description: this.form.get('description')?.value,
       };
-      let action = new SendReview(data);
+      // let action = new SendReview(data);
 
       if (this.type && this.type === 'edit' && this.product.user_review.id) {
-        action = new UpdateReview(this.product.user_review.id, data);
+        // action = new UpdateReview(this.product.user_review.id, data);
       }
-      this.store.dispatch(action);
+      // this._store.dispatch(action);
     }
   }
 }

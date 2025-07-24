@@ -31,7 +31,7 @@ import { CartState } from './web/shared/state/cart.state';
 // import { CategoryState } from './web/shared/state/category.state';
 // import { CompareState } from './web/shared/state/compare.state';
 // import { CountryState } from './web/shared/state/country.state';
-import { CouponState } from './web/shared/state/coupon.state';
+// import { CouponState } from './web/shared/state/coupon.state';
 // import { CurrencyState } from './web/shared/state/currency.state';
 import { LoaderState } from './web/shared/state/loader.state';
 // import { NotificationState } from './web/shared/state/notification.state';
@@ -41,9 +41,9 @@ import { PageState } from './web/shared/state/page.state';
 // import { PaymentDetailsState } from './web/shared/state/payment-details.state';
 // import { PointState } from './web/shared/state/point.state';
 import { ProductState } from './web/shared/state/product.state';
-import { QuestionAnswersState } from './web/shared/state/questions-answers.state';
+// import { QuestionAnswersState } from './web/shared/state/questions-answers.state';
 // import { RefundState } from './web/shared/state/refund.state';
-import { ReviewState } from './web/shared/state/review.state';
+// import { ReviewState } from './web/shared/state/review.state';
 import { SettingState } from './web/shared/state/setting.state';
 // import { StateState } from './web/shared/state/state.state';
 // import { StoreState } from './web/shared/state/store.state';
@@ -142,21 +142,21 @@ export const appConfig: ApplicationConfig = {
         // RefundState,
         // PaymentDetailsState,
         // NotificationState,
-        QuestionAnswersState,
-        ReviewState,
-        CouponState,
+        // QuestionAnswersState,
+        // ReviewState,
+        // CouponState,
       ]),
       NgxsStoragePluginModule.forRoot({
         keys: [
           'auth',
           'account',
-          'country',
-          'state',
+          // 'country',
+          // 'state',
           'cart',
-          'theme',
-          'theme_option',
+          // 'theme',
+          // 'theme_option',
           'setting',
-          'notification',
+          // 'notification',
         ],
       }),
       // NgxsReduxDevtoolsPluginModule.forRoot(),

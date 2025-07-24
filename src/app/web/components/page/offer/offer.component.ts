@@ -1,15 +1,14 @@
 import { Component, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { CouponState } from '../../../shared/state/coupon.state';
-import { CouponService } from '../../../shared/services/coupon.service';
-import { GetCoupons } from '../../../shared/action/coupon.action';
-import { CouponModel } from '../../../shared/interface/coupon.interface';
+import { Coupon } from '../../../shared/interface/coupon.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { AsyncPipe } from '@angular/common';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { NxtCartSelectors } from '../../../../store/selectors';
+import { NxtCartActions } from '../../../../store/actions';
 
 @Component({
   selector: 'app-offer',
@@ -24,10 +23,12 @@ export class OfferComponent {
     items: [{ label: 'Offer', active: true }],
   };
 
-  coupon$: Observable<CouponModel> = inject(Store).select(CouponState.coupon);
+  coupon$: Observable<{ data: Coupon[]; isLoading: boolean }> = inject(
+    Store
+  ).select(NxtCartSelectors.coupons);
 
-  constructor(private store: Store, public couponService: CouponService) {
-    this.store.dispatch(new GetCoupons({ status: 1 }));
+  constructor(private _store: Store) {
+    this._store.dispatch(NxtCartActions.GetCoupons());
   }
 
   copyFunction(txt: string) {

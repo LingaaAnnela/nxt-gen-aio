@@ -106,3 +106,47 @@ export const onGetRelatedProducts: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onGetReviews: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), productService = inject(NxtProductService)) => {
+    return actions$.pipe(
+      ofType(NxtProductActions.GetReviews),
+      // delay(3000),
+      switchMap(({ product_id }) =>
+        productService.getReviews({ product_id }).pipe(
+          map(({ data }) =>
+            NxtProductActions.GetReviewsSuccess({
+              reviews: data,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtProductActions.GetReviewsFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetQuestionAnswers: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), productService = inject(NxtProductService)) => {
+    return actions$.pipe(
+      ofType(NxtProductActions.GetQuestionAnswers),
+      // delay(3000),
+      switchMap(({ product_id }) =>
+        productService.getQuestionAnswers({ product_id }).pipe(
+          map(({ data }) =>
+            NxtProductActions.GetQuestionAnswersSuccess({
+              questionAnswers: data,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtProductActions.GetQuestionAnswersFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);

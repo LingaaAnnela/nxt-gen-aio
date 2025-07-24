@@ -32,3 +32,8 @@ export const checkout = createSelector(
   selectCartState,
   (state) => state.checkout
 );
+
+export const coupons = createSelector(
+  selectCartState,
+  (state) => state.coupons!
+);

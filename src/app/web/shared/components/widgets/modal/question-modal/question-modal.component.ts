@@ -7,16 +7,13 @@ import {
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { FormControl, ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { Store } from '@ngrx/store';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Store } from '@ngxs/store';
-import {
-  SendQuestion,
-  UpdateQuestionAnswers,
-} from '../../../../action/questions-answers.action';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { Product } from '../../../../interface/product.interface';
 import { QuestionAnswers } from '../../../../interface/questions-answers.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
-import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
 
 @Component({
@@ -47,7 +44,7 @@ export class QuestionModalComponent {
   constructor(
     private modalService: NgbModal,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private store: Store
+    private _store: Store
   ) {}
 
   async openModal(product: Product, qna?: QuestionAnswers) {
@@ -92,16 +89,16 @@ export class QuestionModalComponent {
       product_id: this.product.id,
       answer: '',
     };
-    let action = new SendQuestion(data);
-    if (data.question || data.product_id) {
-      if (this.type == 'edit' && this.id) {
-        action = new UpdateQuestionAnswers(data, this.id);
-      }
-      this.store.dispatch(action).subscribe({
-        complete: () => {
-          this.modalService.dismissAll();
-        },
-      });
-    }
+    // let action = new SendQuestion(data);
+    // if (data.question || data.product_id) {
+    //   if (this.type == 'edit' && this.id) {
+    //     action = new UpdateQuestionAnswers(data, this.id);
+    //   }
+    //   this.store.dispatch(action).subscribe({
+    //     complete: () => {
+    //       this.modalService.dismissAll();
+    //     },
+    //   });
+    // }
   }
 }

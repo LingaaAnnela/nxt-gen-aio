@@ -1,6 +1,6 @@
 <app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
 
-@if (couponService.skeletonLoader) {
+@if ((coupon$ |async)?.isLoading) {
 <div class="section-b-space section-t-space offer-section skeleton-offer">
   <div class="container-fluid-lg">
     <div class="row g-md-4 g-3">
@@ -53,7 +53,7 @@
           </div>
         </div>
       </div>
-      } @if (!(coupon$ |async)?.data?.length && !couponService.skeletonLoader) {
+      } @if (!(coupon$ |async)?.data?.length && !(coupon$ |async)?.isLoading) {
       <app-no-data
         [class]="'no-data-added collection-no-data'"
         [image]="'assets/svg/no-product.svg'"
