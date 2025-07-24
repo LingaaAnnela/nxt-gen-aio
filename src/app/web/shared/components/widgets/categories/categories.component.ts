@@ -56,7 +56,6 @@ export class CategoriesComponent {
   ) {
     this.isBrowser = isPlatformBrowser(platformID);
     this.category$.subscribe((res) => {
-      console.log('Categories:', res);
       this.categories = res?.filter((category) => category.type == 'product');
     });
     this.route.queryParams.subscribe((params) => {

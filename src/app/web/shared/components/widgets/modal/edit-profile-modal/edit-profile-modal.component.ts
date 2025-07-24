@@ -15,11 +15,10 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AccountUser } from '../../../../interface/account.interface';
 import { AccountState } from '../../../../state/account.state';
-import { UpdateUserProfile } from '../../../../action/account.action';
 import * as data from '../../../../data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
 // import { Select2Module } from 'ng-select2-component';
@@ -107,7 +106,7 @@ export class EditProfileModalComponent {
   submit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      this.store.dispatch(new UpdateUserProfile(this.form.value));
+      // this.store.dispatch(new UpdateUserProfile(this.form.value));
     }
   }
 

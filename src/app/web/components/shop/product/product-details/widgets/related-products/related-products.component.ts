@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../../shared/state/product.state';
 import { ProductBoxComponent } from '../../../../../../shared/components/widgets/product-box/product-box.component';
 import { TitleComponent } from '../../../../../../shared/components/widgets/title/title.component';
+import { NxtProductSelectors } from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-related-products',
@@ -14,7 +14,7 @@ import { TitleComponent } from '../../../../../../shared/components/widgets/titl
 })
 export class RelatedProductsComponent {
   relatedProduct$: Observable<Product[]> = inject(Store).select(
-    ProductState.relatedProducts
+    NxtProductSelectors.relatedProducts
   );
 
   @Input() product: Product | null;

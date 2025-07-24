@@ -1,23 +1,16 @@
-import {
-  Component,
-  Input,
-  ViewChild,
-  SimpleChanges,
-  inject,
-} from '@angular/core';
-import { Select, Store } from '@ngxs/store';
-import { Observable } from 'rxjs';
-import { Product, ProductModel } from '../../../../interface/product.interface';
+import { Component, Input, ViewChild, SimpleChanges } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Product } from '../../../../interface/product.interface';
 import { Option } from '../../../../interface/theme-option.interface';
-import { ProductState } from '../../../../state/product.state';
 import { DealsModalComponent } from '../../../widgets/modal/deals-modal/deals-modal.component';
-import { GetDealProducts } from '../../../../action/product.action';
 import { ButtonComponent } from '../../../widgets/button/button.component';
 import { TranslateModule } from '@ngx-translate/core';
+import { NxtProductSelectors } from '../../../../../../store/selectors';
+import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-deal',
-  imports: [ButtonComponent, DealsModalComponent, TranslateModule],
+  imports: [ButtonComponent, DealsModalComponent, TranslateModule, JsonPipe],
   templateUrl: './deal.component.html',
   styleUrls: ['./deal.component.scss'],
 })
@@ -27,26 +20,27 @@ export class DealComponent {
 
   @ViewChild('dealsModal') DealsModal: DealsModalComponent;
 
-  dealProducts$: Observable<Product[]> = inject(Store).select(
-    ProductState.dealProducts
-  ) as Observable<Product[]>;
+  // dealProducts$: Observable<Product[]> = inject(Store).select(
+  //   ProductState.dealProducts
+  // ) as Observable<Product[]>;
 
   public dealProducts: Product[];
   public ids: number[];
 
-  constructor(private store: Store) {}
+  constructor(private _store: Store) {}
 
   ngOnChanges(changes: SimpleChanges) {
     this.ids = changes['data']?.currentValue?.header?.today_deals;
   }
 
   ngOnInit() {
+    // TODO:
     if (Array.isArray(this.ids)) {
-      this.store
-        .dispatch(new GetDealProducts({ ids: this.ids.join() }))
+      this._store
+        .select(NxtProductSelectors.productsByIds(this.ids))
         .subscribe({
           next: (val: any) => {
-            this.dealProducts = val?.product?.dealProducts;
+            this.dealProducts = val?.product?.dealProducts || [];
           },
         });
     }

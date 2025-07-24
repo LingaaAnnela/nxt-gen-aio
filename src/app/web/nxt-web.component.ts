@@ -10,6 +10,7 @@ import { Observable } from 'rxjs';
 import { ThemeOptionService } from './shared/services/theme-option.service';
 import { Option } from './shared/interface/theme-option.interface';
 import { NxtThemeSelectors } from '../store/selectors';
+import { RecentPurchasePopupComponent } from './shared/components/widgets/recent-purchase-popup/recent-purchase-popup.component';
 
 @Component({
   selector: 'nxt-web',
@@ -21,6 +22,7 @@ import { NxtThemeSelectors } from '../store/selectors';
     HeaderComponent,
     RouterOutlet,
     FooterComponent,
+    RecentPurchasePopupComponent,
   ],
 })
 export class NxtWebComponent {

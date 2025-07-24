@@ -40,7 +40,7 @@ export class ProductComponent {
   ngOnChanges() {
     if (Array.isArray(this.productIds)) {
       this._store
-        .select(NxtProductSelectors.selectProductsByIds(this.productIds))
+        .select(NxtProductSelectors.productsByIds(this.productIds))
         .subscribe((products) => {
           this.products = products;
         });

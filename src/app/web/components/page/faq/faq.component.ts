@@ -1,11 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
-import { PageState } from '../../../shared/state/page.state';
-import { GetFaqs } from '../../../shared/action/page.action';
-import { FaqModel } from '../../../shared/interface/page.interface';
-import { PageService } from '../../../shared/services/page.service';
+import { Faq } from '../../../shared/interface/page.interface';
 import {
   NgbAccordionDirective,
   NgbAccordionItem,
@@ -19,6 +16,8 @@ import {
 import { SkeletonPageComponent } from '../skeleton-page/skeleton-page.component';
 import { AsyncPipe } from '@angular/common';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { NxtAccountActions } from '../../../../store/actions';
+import { NxtAccountSelectors } from '../../../../store/selectors';
 
 @Component({
   selector: 'app-faq',
@@ -44,9 +43,11 @@ export class FaqComponent {
     items: [{ label: "FAQ's", active: true }],
   };
 
-  faq$: Observable<FaqModel> = inject(Store).select(PageState.faq);
+  faqs$: Observable<{ data: Faq[]; isLoading: boolean }> = inject(Store).select(
+    NxtAccountSelectors.faqs
+  );
 
-  constructor(private store: Store, public pageService: PageService) {
-    this.store.dispatch(new GetFaqs());
+  constructor(private _store: Store) {
+    this._store.dispatch(NxtAccountActions.GetFaqs());
   }
 }

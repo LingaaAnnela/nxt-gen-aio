@@ -1,22 +1,25 @@
 import { Component, PLATFORM_ID, Inject, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product, ProductModel } from '../../../interface/product.interface';
-import { ProductState } from '../../../state/product.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { NxtProductSelectors } from '../../../../../store/selectors';
 
 @Component({
-    selector: 'app-recent-purchase-popup',
-    templateUrl: './recent-purchase-popup.component.html',
-    styleUrls: ['./recent-purchase-popup.component.scss'],
-    imports: [RouterLink, TranslateModule]
+  selector: 'app-recent-purchase-popup',
+  templateUrl: './recent-purchase-popup.component.html',
+  styleUrls: ['./recent-purchase-popup.component.scss'],
+  imports: [RouterLink, TranslateModule],
 })
 export class RecentPurchasePopupComponent {
-
-  relatesProduct$: Observable<Product[]> = inject(Store).select(ProductState.relatedProducts);
-  product$: Observable<ProductModel> = inject(Store).select(ProductState.product);
+  relatesProduct$: Observable<Product[]> = inject(Store).select(
+    NxtProductSelectors.relatedProducts
+  );
+  product$: Observable<ProductModel> = inject(Store).select(
+    NxtProductSelectors.selectProduct
+  );
 
   public product: Product | null;
   public show: boolean = false;
@@ -24,8 +27,9 @@ export class RecentPurchasePopupComponent {
   public popup_enable: boolean = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    if (isPlatformBrowser(this.platformId)) {  
-      if(this.popup_enable) {
+    console.log('RecentPurchasePopupComponent - constructor', this.platformId);
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.popup_enable) {
         setInterval(() => {
           this.show = true;
           this.min = Math.floor(Math.random() * 60) + 1;
@@ -39,8 +43,8 @@ export class RecentPurchasePopupComponent {
   }
 
   randomlySelectProduct() {
-    this.product$.subscribe(product => {
-      if(!product.data.length) {
+    this.product$.subscribe((product) => {
+      if (!product.data.length) {
         this.relatesProducts();
       } else {
         const randomIndex = Math.floor(Math.random() * product.data.length);
@@ -50,7 +54,7 @@ export class RecentPurchasePopupComponent {
   }
 
   relatesProducts() {
-    this.relatesProduct$.subscribe(products => {
+    this.relatesProduct$.subscribe((products) => {
       const randomIndex = Math.floor(Math.random() * products.length);
       this.product = products[randomIndex];
     });

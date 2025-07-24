@@ -1,7 +1,7 @@
 <app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
 <section class="faq-box-contain section-b-space">
   <div class="container">
-    @if (pageService.skeletonLoader) {
+    @if ((faqs$ | async )?.isLoading) {
     <app-skeleton-page></app-skeleton-page>
     } @else {
     <div class="row">
@@ -18,7 +18,7 @@
       <div class="col-xl-7">
         <div class="faq-accordion">
           <div class="accordion" ngbAccordion [closeOthers]="true">
-            @for (faq of (faq$ | async )?.data; track faq; let i = $index) {
+            @for (faq of (faqs$ | async )?.data; track faq; let i = $index) {
             <div ngbAccordionItem class="accordion-item" [collapsed]="i !== 0">
               <h2 class="accordion-header" ngbAccordionHeader>
                 <button

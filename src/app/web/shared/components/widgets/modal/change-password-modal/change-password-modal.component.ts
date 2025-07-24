@@ -1,51 +1,77 @@
-import { Component, TemplateRef, ViewChild, PLATFORM_ID, Inject } from '@angular/core';
+import {
+  Component,
+  TemplateRef,
+  ViewChild,
+  PLATFORM_ID,
+  Inject,
+} from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
-import { FormBuilder, FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Store } from '@ngxs/store';
-import { UpdateUserPassword } from '../../../../action/account.action';
-import { CustomValidators } from '../../../../validator/password-match';
+import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
+import { CustomValidators } from '../../../../validator/password-match';
 import { ButtonComponent } from '../../button/button.component';
 
 @Component({
-    selector: 'app-change-password-modal',
-    templateUrl: './change-password-modal.component.html',
-    styleUrls: ['./change-password-modal.component.scss'],
-    imports: [ButtonComponent, ReactiveFormsModule, TranslateModule]
+  selector: 'app-change-password-modal',
+  templateUrl: './change-password-modal.component.html',
+  styleUrls: ['./change-password-modal.component.scss'],
+  imports: [ButtonComponent, ReactiveFormsModule, TranslateModule],
 })
 export class ChangePasswordModalComponent {
-
   public form: FormGroup;
   public closeResult: string;
 
   public modalOpen: boolean = false;
 
-  @ViewChild("passwordModal", { static: false }) PasswordModal: TemplateRef<string>;
-  
-  constructor(private modalService: NgbModal,
+  @ViewChild('passwordModal', { static: false })
+  PasswordModal: TemplateRef<string>;
+
+  constructor(
+    private modalService: NgbModal,
     @Inject(PLATFORM_ID) private platformId: Object,
     private store: Store,
-    private formBuilder: FormBuilder) {
-      this.form = this.formBuilder.group({
+    private formBuilder: FormBuilder
+  ) {
+    this.form = this.formBuilder.group(
+      {
         current_password: new FormControl('', [Validators.required]),
         password: new FormControl('', [Validators.required]),
-        password_confirmation: new FormControl('', [Validators.required])
-      },{validator : CustomValidators.MatchValidator('password', 'password_confirmation')})
+        password_confirmation: new FormControl('', [Validators.required]),
+      },
+      {
+        validator: CustomValidators.MatchValidator(
+          'password',
+          'password_confirmation'
+        ),
+      }
+    );
   }
 
   async openModal() {
-    if (isPlatformBrowser(this.platformId)) {  
+    if (isPlatformBrowser(this.platformId)) {
       this.modalOpen = true;
-      this.modalService.open(this.PasswordModal, {
-        ariaLabelledBy: 'password-Modal',
-        centered: true,
-        windowClass: 'theme-modal'
-      }).result.then((result) => {
-        `Result ${result}`
-      }, (reason) => {
-        this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-      });
+      this.modalService
+        .open(this.PasswordModal, {
+          ariaLabelledBy: 'password-Modal',
+          centered: true,
+          windowClass: 'theme-modal',
+        })
+        .result.then(
+          (result) => {
+            `Result ${result}`;
+          },
+          (reason) => {
+            this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+          }
+        );
     }
   }
 
@@ -66,21 +92,20 @@ export class ChangePasswordModalComponent {
     );
   }
 
-  submit(){
+  submit() {
     this.form.markAllAsTouched();
-    if(this.form.valid) {
-      this.store.dispatch(new UpdateUserPassword(this.form.value)).subscribe({
-        complete: () => {
-          this.form.reset();
-        }
-      });
+    if (this.form.valid) {
+      // this.store.dispatch(new UpdateUserPassword(this.form.value)).subscribe({
+      //   complete: () => {
+      //     this.form.reset();
+      //   }
+      // });
     }
   }
 
   ngOnDestroy() {
-    if(this.modalOpen) {
+    if (this.modalOpen) {
       this.modalService.dismissAll();
     }
   }
-
 }

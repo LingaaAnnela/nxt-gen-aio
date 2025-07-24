@@ -86,7 +86,7 @@ export class RomeComponent implements OnInit, OnChanges, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.selectedCategoryId = id;
       this._store
-        .select(NxtProductSelectors.selectProductsByCategoryIds(id))
+        .select(NxtProductSelectors.productsByCategoryIds(id))
         .subscribe((products) => {
           this.productFilterIds = products.slice(0, 5);
         });

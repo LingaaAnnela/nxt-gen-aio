@@ -1,10 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
-import { SettingState } from '../shared/state/setting.state';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Values } from '../shared/interface/setting.interface';
-import { GetSettingOption } from '../shared/action/setting.action';
 import { NgStyle, AsyncPipe } from '@angular/common';
+import { NxtAccountSelectors } from '../../store/selectors';
 
 @Component({
   selector: 'app-maintenance',
@@ -14,10 +13,10 @@ import { NgStyle, AsyncPipe } from '@angular/common';
 })
 export class MaintenanceComponent {
   setting$: Observable<Values> = inject(Store).select(
-    SettingState.setting
+    NxtAccountSelectors.settings
   ) as Observable<Values>;
 
-  constructor(private store: Store) {
-    this.store.dispatch(new GetSettingOption());
+  constructor(private _store: Store) {
+    // this.store.dispatch(new GetSettingOption());
   }
 }

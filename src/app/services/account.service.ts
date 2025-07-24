@@ -15,6 +15,7 @@ import { Wallet } from '../web/shared/interface/wallet.interface';
 import { CurrencyModel } from '../web/shared/interface/currency.interface';
 import { States } from '../web/shared/interface/state.interface';
 import { Country } from '../web/shared/interface/country.interface';
+import { BlogModel } from '../web/shared/interface/blog.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -86,5 +87,15 @@ export class NxtAccountService {
 
   getCountries(): Observable<Country[]> {
     return this._http.get<Country[]>(`${environment.URL}/country.json`);
+  }
+
+  getFaqs(): Observable<any> {
+    return this._http.get(`${environment.URL}/faq.json`);
+  }
+
+  getBlogs(payload?: Params): Observable<BlogModel> {
+    return this._http.get<BlogModel>(`${environment.URL}/blog.json`, {
+      params: payload,
+    });
   }
 }

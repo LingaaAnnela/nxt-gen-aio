@@ -285,7 +285,7 @@
       <div class="col-12">
         <div class="slider-dots">
           <owl-carousel-o [options]="blogOptions">
-            @for (blog of (blog$ | async)?.data; track blog) {
+            @for (blog of (blogs$ | async)?.data; track blog) {
             <ng-template carouselSlide>
               <div>
                 <div class="blog-box">

@@ -14,7 +14,7 @@ import {
   FormsModule,
 } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 // import { Select2Data, Select2Module } from 'ng-select2-component';
 import { Product } from '../../../../interface/product.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';

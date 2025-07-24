@@ -1,18 +1,20 @@
 import { Component, inject, Input } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../../shared/state/product.state';
 import {
   Cart,
   CartAddOrUpdate,
 } from '../../../../../../shared/interface/cart.interface';
-import { AddToCart } from '../../../../../../shared/action/cart.action';
-import { CartState } from '../../../../../../shared/state/cart.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
 import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
 import { RouterLink } from '@angular/router';
+import {
+  NxtCartSelectors,
+  NxtProductSelectors,
+} from '../../../../../../../store/selectors';
+import { NxtCartActions } from '../../../../../../../store/actions';
 
 @Component({
   selector: 'app-product-bundle',
@@ -23,9 +25,9 @@ import { RouterLink } from '@angular/router';
 })
 export class ProductBundleComponent {
   crossSellproduct$: Observable<Product[]> = inject(Store).select(
-    ProductState.relatedProducts
+    NxtProductSelectors.relatedProducts
   );
-  cartItem$: Observable<Cart[]> = inject(Store).select(CartState.cartItems);
+  cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
 
   @Input() product: Product | null;
 
@@ -37,7 +39,7 @@ export class ProductBundleComponent {
 
   public total: number = 0;
 
-  constructor(private store: Store) {}
+  constructor(private _store: Store) {}
 
   ngOnInit() {}
 
@@ -91,7 +93,8 @@ export class ProductBundleComponent {
           variation_id: null,
           quantity: 1,
         };
-        this.store.dispatch(new AddToCart(params));
+        // this.store.dispatch(new AddToCart(params));
+        this._store.dispatch(NxtCartActions.AddToCart({ params }));
       }
     });
   }

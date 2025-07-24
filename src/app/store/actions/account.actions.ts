@@ -11,6 +11,8 @@ import { Wallet } from '../../web/shared/interface/wallet.interface';
 import { Currency } from '../../web/shared/interface/currency.interface';
 import { States } from '../../web/shared/interface/state.interface';
 import { Country } from '../../web/shared/interface/country.interface';
+import { Faq } from '../../web/shared/interface/page.interface';
+import { Blog } from '../../web/shared/interface/blog.interface';
 
 export const GetUser = createAction('[NXT] Get User');
 export const GetUserSuccess = createAction(
@@ -137,5 +139,31 @@ export const GetCountriesSuccess = createAction(
 );
 export const GetCountriesFailure = createAction(
   '[NXT] Get Countries Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetFaqs = createAction('[NXT] Get Faqs');
+export const GetFaqsSuccess = createAction(
+  '[NXT] Get Faqs Success',
+  props<{ faqs: Faq[] }>()
+);
+export const GetFaqsFailure = createAction(
+  '[NXT] Get Faqs Failure',
+  props<{ error: { message: string } }>()
+);
+
+// TODO: Update the interface for ContactUsModel
+export const ContactUs = createAction(
+  '[NXT] Contact Us',
+  props<{ payload: { name: string; email: string; message: string } }>()
+);
+
+export const GetBlogs = createAction('[NXT] Get Blogs');
+export const GetBlogsSuccess = createAction(
+  '[NXT] Get Blogs Success',
+  props<{ blogs: Blog[] }>()
+);
+export const GetBlogsFailure = createAction(
+  '[NXT] Get Blogs Failure',
   props<{ error: { message: string } }>()
 );

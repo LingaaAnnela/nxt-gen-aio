@@ -269,3 +269,47 @@ export const onGetCountries: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onGetFaqs: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetFaqs),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getFaqs().pipe(
+          map(({ data }) =>
+            NxtAccountActions.GetFaqsSuccess({
+              faqs: data,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetFaqsFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetBlogs: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetBlogs),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getBlogs().pipe(
+          map(({ data }) =>
+            NxtAccountActions.GetBlogsSuccess({
+              blogs: data,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetBlogsFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);

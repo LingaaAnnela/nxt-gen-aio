@@ -44,7 +44,7 @@ import {
 })
 export class ProductComponent {
   product$: Observable<Product> = inject(Store).select(
-    NxtProductSelectors.selectSelectedProduct
+    NxtProductSelectors.selectedProduct
   ) as Observable<Product>;
   themeOptions$: Observable<Option> = inject(Store).select(
     NxtThemeSelectors.options

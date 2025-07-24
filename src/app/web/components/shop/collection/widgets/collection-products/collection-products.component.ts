@@ -43,9 +43,7 @@ export class CollectionProductsComponent implements OnChanges {
     console.log('CollectionProductsComponent: ', this.filter);
     this._store
       .select(
-        NxtProductSelectors.selectProductsByCategoryNames(
-          this.filter['category']
-        )
+        NxtProductSelectors.productsByCategoryNames(this.filter['category'])
       )
       .subscribe((products) => {
         this.products = products;

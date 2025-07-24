@@ -1,10 +1,10 @@
 import { Component, inject, Input } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product, ProductModel } from '../../../interface/product.interface';
-import { ProductState } from '../../../state/product.state';
 import { RouterLink } from '@angular/router';
 import { NgClass, NgStyle, AsyncPipe } from '@angular/common';
+import { NxtProductSelectors } from '../../../../../store/selectors';
 
 @Component({
   selector: 'app-image-link',
@@ -14,7 +14,7 @@ import { NgClass, NgStyle, AsyncPipe } from '@angular/common';
 })
 export class ImageLinkComponent {
   product$: Observable<ProductModel> = inject(Store).select(
-    ProductState.product
+    NxtProductSelectors.selectProduct
   );
 
   @Input() image: any;
