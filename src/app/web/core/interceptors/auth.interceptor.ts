@@ -1,4 +1,4 @@
-import { inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 import {
   HttpRequest,
   HttpHandler,
@@ -9,16 +9,13 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store } from '@ngxs/store';
 import { NotificationService } from '../../shared/services/notification.service';
-import { Values } from '../../shared/interface/setting.interface';
-import { GetSettingOption } from '../../shared/action/setting.action';
-import { SettingState } from '../../shared/state/setting.state';
 import { AuthClear } from '../../shared/action/auth.action';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  setting$: Observable<Values> = inject(Store).select(
-    SettingState.setting
-  ) as Observable<Values>;
+  // setting$: Observable<Values> = inject(Store).select(
+  //   SettingState.setting
+  // ) as Observable<Values>;
 
   public isMaintenanceModeOn: boolean = false;
 
@@ -29,12 +26,12 @@ export class AuthInterceptor implements HttpInterceptor {
   ) {
     // this.store.dispatch(new GetCountries());
     // this.store.dispatch(new GetStates());
-    this.store.dispatch(new GetSettingOption());
+    // this.store.dispatch(new GetSettingOption());
     // this.store.dispatch(new GetThemeOption());
     // this.store.dispatch(new GetCurrencies({ status: 1 }));
-    this.setting$.subscribe((setting) => {
-      this.isMaintenanceModeOn = setting?.maintenance?.maintenance_mode!;
-    });
+    // this.setting$.subscribe((setting) => {
+    //   this.isMaintenanceModeOn = setting?.maintenance?.maintenance_mode!;
+    // });
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<any> {

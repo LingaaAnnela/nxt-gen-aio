@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product } from '../../../../../../shared/interface/product.interface';
-import { ProductState } from '../../../../../../shared/state/product.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProductBoxComponent } from '../../../../../../shared/components/widgets/product-box/product-box.component';
 import { SlicePipe } from '@angular/common';
+import { NxtProductSelectors } from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-trending-products',
@@ -15,7 +15,7 @@ import { SlicePipe } from '@angular/common';
 })
 export class TrendingProductsComponent {
   relatedProduct$: Observable<Product[]> = inject(Store).select(
-    ProductState.relatedProducts
+    NxtProductSelectors.relatedProducts
   );
 
   public relatedProducts: Product[] = [];

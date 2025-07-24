@@ -72,3 +72,10 @@ export const countries = createSelector(
   selectAccountState,
   (state) => state.countries
 );
+
+export const faqs = createSelector(selectAccountState, (state) => state.faqs!);
+
+export const blogs = createSelector(
+  selectAccountState,
+  (state) => state.blogs!
+);

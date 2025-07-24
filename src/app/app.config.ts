@@ -26,7 +26,7 @@ import { NgxsModule } from '@ngxs/store';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { AccountState } from './web/shared/state/account.state';
 import { AuthState } from './web/shared/state/auth.state';
-import { BlogState } from './web/shared/state/blog.state';
+// import { BlogState } from './web/shared/state/blog.state';
 import { CartState } from './web/shared/state/cart.state';
 // import { CategoryState } from './web/shared/state/category.state';
 // import { CompareState } from './web/shared/state/compare.state';
@@ -37,14 +37,14 @@ import { LoaderState } from './web/shared/state/loader.state';
 // import { NotificationState } from './web/shared/state/notification.state';
 // import { OrderStatusState } from './web/shared/state/order-status.state';
 import { OrderState } from './web/shared/state/order.state';
-import { PageState } from './web/shared/state/page.state';
+// import { PageState } from './web/shared/state/page.state';
 // import { PaymentDetailsState } from './web/shared/state/payment-details.state';
 // import { PointState } from './web/shared/state/point.state';
-import { ProductState } from './web/shared/state/product.state';
+// import { ProductState } from './web/shared/state/product.state';
 // import { QuestionAnswersState } from './web/shared/state/questions-answers.state';
 // import { RefundState } from './web/shared/state/refund.state';
 // import { ReviewState } from './web/shared/state/review.state';
-import { SettingState } from './web/shared/state/setting.state';
+// import { SettingState } from './web/shared/state/setting.state';
 // import { StateState } from './web/shared/state/state.state';
 // import { StoreState } from './web/shared/state/store.state';
 // import { TagState } from './web/shared/state/tag.state';
@@ -120,22 +120,22 @@ export const appConfig: ApplicationConfig = {
       NgxsModule.forRoot([
         LoaderState,
         AccountState,
+        CartState,
+        OrderState,
         // CountryState,
         // StateState,
-        SettingState,
+        // SettingState,
         // CurrencyState,
         // ThemeState,
         // ThemeOptionState,
         // CategoryState,
-        PageState,
-        ProductState,
+        // PageState,
+        // ProductState,
         // StoreState,
-        CartState,
-        BlogState,
+        // BlogState,
         // TagState,
         // WishlistState,
         // CompareState,
-        OrderState,
         // OrderStatusState,
         // WalletState,
         // PointState,
@@ -155,7 +155,7 @@ export const appConfig: ApplicationConfig = {
           'cart',
           // 'theme',
           // 'theme_option',
-          'setting',
+          // 'setting',
           // 'notification',
         ],
       }),

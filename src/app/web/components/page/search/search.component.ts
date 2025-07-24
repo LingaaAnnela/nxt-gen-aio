@@ -67,17 +67,18 @@ export class SearchComponent {
       if (params['search']) {
         this.filter['search'] = params['search'];
         this.search.patchValue(params['search'] ? params['search'] : '');
+
+        this._store
+          .select(NxtProductSelectors.productsBySearchKey(params['search']))
+          .subscribe((products) => {
+            this.products = products;
+          });
       }
       // this.store.dispatch(new GetProducts(this.filter)).subscribe({
       //   next: (val: any) => {
       //     this.products = val.product.product.data;
       //   },
       // });
-      this._store
-        .select(NxtProductSelectors.selectProductsBySearchKey(params['search']))
-        .subscribe((products) => {
-          this.products = products;
-        });
     });
   }
 

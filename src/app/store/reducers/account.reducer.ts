@@ -13,6 +13,8 @@ import { Wallet } from '../../web/shared/interface/wallet.interface';
 import { Currency } from '../../web/shared/interface/currency.interface';
 import { States } from '../../web/shared/interface/state.interface';
 import { Country } from '../../web/shared/interface/country.interface';
+import { Faq } from '../../web/shared/interface/page.interface';
+import { Blog } from '../../web/shared/interface/blog.interface';
 
 export interface NxtAccountState {
   user: AccountUser | null;
@@ -30,6 +32,14 @@ export interface NxtAccountState {
   selectedCurrency: Currency | null;
   states: States[];
   countries: Country[];
+  faqs: {
+    data: Faq[];
+    isLoading: boolean;
+  } | null;
+  blogs: {
+    data: Blog[];
+    isLoading: boolean;
+  } | null;
   showSpinner: boolean;
 }
 
@@ -49,6 +59,8 @@ export const initialState: NxtAccountState = {
   selectedCurrency: null,
   states: [],
   countries: [],
+  faqs: null,
+  blogs: null,
   showSpinner: false,
 };
 
@@ -220,5 +232,29 @@ export const accountReducer = createReducer(
   on(NxtAccountActions.GetCountriesFailure, (state, { error }) => ({
     ...state,
     countries: [],
+  })),
+  on(NxtAccountActions.GetFaqs, (state) => ({
+    ...state,
+    faqs: { data: [], isLoading: true },
+  })),
+  on(NxtAccountActions.GetFaqsSuccess, (state, { faqs }) => ({
+    ...state,
+    faqs: { data: faqs, isLoading: false },
+  })),
+  on(NxtAccountActions.GetFaqsFailure, (state, { error }) => ({
+    ...state,
+    faqs: { data: [], isLoading: false },
+  })),
+  on(NxtAccountActions.GetBlogs, (state) => ({
+    ...state,
+    blogs: { data: [], isLoading: true },
+  })),
+  on(NxtAccountActions.GetBlogsSuccess, (state, { blogs }) => ({
+    ...state,
+    blogs: { data: blogs, isLoading: false },
+  })),
+  on(NxtAccountActions.GetBlogsFailure, (state, { error }) => ({
+    ...state,
+    blogs: { data: [], isLoading: false },
   }))
 );

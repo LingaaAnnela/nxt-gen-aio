@@ -5,7 +5,7 @@ import {
   Validators,
   ReactiveFormsModule,
 } from '@angular/forms';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { ForgotPassWord } from '../../../shared/action/auth.action';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
@@ -35,7 +35,7 @@ export class ForgotPasswordComponent {
   };
 
   constructor(
-    private store: Store,
+    private _store: Store,
     public router: Router,
     public formBuilder: FormBuilder
   ) {
@@ -47,11 +47,11 @@ export class ForgotPasswordComponent {
   submit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      this.store.dispatch(new ForgotPassWord(this.form.value)).subscribe({
-        complete: () => {
-          this.router.navigateByUrl('/nxt/auth/otp');
-        },
-      });
+      // this.store.dispatch(new ForgotPassWord(this.form.value)).subscribe({
+      //   complete: () => {
+      //     this.router.navigateByUrl('/nxt/auth/otp');
+      //   },
+      // });
     }
   }
 }

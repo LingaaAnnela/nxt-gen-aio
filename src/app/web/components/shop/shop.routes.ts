@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-import { ProductResolver } from '../../shared/resolvers/product.resolver';
 
 // Components
 import { CartComponent } from './cart/cart.component';
@@ -32,8 +31,7 @@ export default [
     path: 'product/:slug',
     component: ProductComponent,
     resolve: {
-      data: ProductResolver,
-      nxtData: NxtProductResolver,
+      data: NxtProductResolver,
     },
     canActivate: [ScrollPositionGuard],
   },

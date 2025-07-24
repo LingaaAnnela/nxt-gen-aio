@@ -2,15 +2,15 @@ import { Component, inject } from '@angular/core';
 import { OwlOptions, CarouselModule } from 'ngx-owl-carousel-o';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { Observable } from 'rxjs';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import * as data from '../../../shared/data/owl-carousel';
-import { GetBlogs } from '../../../shared/action/blog.action';
-import { BlogState } from '../../../shared/state/blog.state';
-import { BlogModel } from '../../../shared/interface/blog.interface';
+import { Blog } from '../../../shared/interface/blog.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import { NxtAccountSelectors } from '../../../../store/selectors';
+import { NxtAccountActions } from '../../../../store/actions';
 
 export interface Clients {
   title: string;
@@ -32,9 +32,9 @@ export interface Clients {
   ],
 })
 export class AboutUsComponent {
-  blog$: Observable<BlogModel> = inject(Store).select(
-    BlogState.blog
-  ) as Observable<BlogModel>;
+  blogs$: Observable<{ data: Blog[]; isLoading: boolean }> = inject(
+    Store
+  ).select(NxtAccountSelectors.blogs);
 
   public breadcrumb: Breadcrumb = {
     title: 'About Us',
@@ -252,7 +252,7 @@ export class AboutUsComponent {
     },
   };
 
-  constructor(private store: Store) {
-    this.store.dispatch(new GetBlogs({ status: 1, paginate: 10 }));
+  constructor(private _store: Store) {
+    this._store.dispatch(NxtAccountActions.GetBlogs());
   }
 }

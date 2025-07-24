@@ -9,12 +9,12 @@ export const selectProduct = createSelector(
   (state) => state.product
 );
 
-export const selectProductsByIds = (ids: number[]) =>
+export const productsByIds = (ids: number[]) =>
   createSelector(selectProduct, (products) =>
     products.data.filter((product) => ids.includes(product.id))
   );
 
-export const selectProductsByCategoryIds = (id: number) =>
+export const productsByCategoryIds = (id: number) =>
   createSelector(selectProduct, (products) => {
     return products.data
       .filter((product) =>
@@ -23,7 +23,7 @@ export const selectProductsByCategoryIds = (id: number) =>
       ?.map((product) => product.id);
   });
 
-export const selectProductsByCategoryNames = (categoryList: string) =>
+export const productsByCategoryNames = (categoryList: string) =>
   createSelector(selectProduct, (product) => {
     if (!categoryList) return product.data;
 
@@ -43,19 +43,19 @@ export const selectProductsByCategoryNames = (categoryList: string) =>
     return filtered?.length ? filtered : product.data;
   });
 
-export const selectProductsBySearchKey = (key: string) =>
+export const productsBySearchKey = (key: string) =>
   createSelector(selectProduct, (products) =>
     products.data.filter((product) =>
       product.name.toLowerCase().includes(key.toLowerCase())
     )
   );
 
-export const selectSelectedProduct = createSelector(
+export const selectedProduct = createSelector(
   selectProductState,
   (state) => state.selectedProduct
 );
 
-export const selectRelatedProducts = createSelector(
+export const relatedProducts = createSelector(
   selectProductState,
   (state) => state.relatedProducts
 );

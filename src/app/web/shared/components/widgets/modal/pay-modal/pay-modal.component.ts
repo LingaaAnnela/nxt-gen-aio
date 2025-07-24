@@ -10,13 +10,12 @@ import {
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { RePayment } from '../../../../action/order.action';
 import { Order } from '../../../../interface/order.interface';
 import { Values } from '../../../../interface/setting.interface';
-import { SettingState } from '../../../../state/setting.state';
 import { ButtonComponent } from '../../button/button.component';
+import { NxtAccountSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-pay-modal',
@@ -33,7 +32,7 @@ import { ButtonComponent } from '../../button/button.component';
 export class PayModalComponent {
   @ViewChild('payModal', { static: false }) PayModal: TemplateRef<string>;
   setting$: Observable<Values> = inject(Store).select(
-    SettingState.setting
+    NxtAccountSelectors.settings
   ) as Observable<Values>;
 
   public closeResult: string;
@@ -85,11 +84,11 @@ export class PayModalComponent {
         order_number: this.order.order_number,
         payment_method: this.paymentType.value!,
       };
-      this.store.dispatch(new RePayment(data)).subscribe({
-        complete: () => {
-          this.modalService.dismissAll();
-        },
-      });
+      // this.store.dispatch(new RePayment(data)).subscribe({
+      //   complete: () => {
+      //     this.modalService.dismissAll();
+      //   },
+      // });
     }
   }
 }
