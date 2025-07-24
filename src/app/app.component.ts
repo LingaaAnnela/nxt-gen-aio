@@ -25,6 +25,10 @@ export class AppComponent {
     this.counter++;
     console.log('AppComponent - ngOnInit', this.counter);
     this._store.dispatch(NxtAccountActions.GetSettings());
+    this._store.dispatch(NxtAccountActions.GetUser());
+    this._store.dispatch(NxtAccountActions.GetCurrency());
+    this._store.dispatch(NxtAccountActions.GetStates());
+    this._store.dispatch(NxtAccountActions.GetCountries());
     this._store.dispatch(NxtThemeActions.GetTheme());
     this._store.dispatch(NxtHomePageActions.GetHomePage({ slug: 'rome' }));
     this._store.dispatch(NxtCategoryActions.GetCategories({ status: 1 }));

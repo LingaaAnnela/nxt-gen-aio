@@ -8,6 +8,9 @@ import { Point } from '../../web/shared/interface/point.interface';
 import { Values } from '../../web/shared/interface/setting.interface';
 import { Refund } from '../../web/shared/interface/refund.interface';
 import { Wallet } from '../../web/shared/interface/wallet.interface';
+import { Currency } from '../../web/shared/interface/currency.interface';
+import { States } from '../../web/shared/interface/state.interface';
+import { Country } from '../../web/shared/interface/country.interface';
 
 export const GetUser = createAction('[NXT] Get User');
 export const GetUserSuccess = createAction(
@@ -104,5 +107,35 @@ export const GetWalletSuccess = createAction(
 );
 export const GetWalletFailure = createAction(
   '[NXT] Get Wallet Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetCurrency = createAction('[NXT] Get Currency');
+export const GetCurrencySuccess = createAction(
+  '[NXT] Get Currency Success',
+  props<{ currencies: Currency[] }>()
+);
+export const GetCurrencyFailure = createAction(
+  '[NXT] Get Currency Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetStates = createAction('[NXT] Get States');
+export const GetStatesSuccess = createAction(
+  '[NXT] Get States Success',
+  props<{ states: States[] }>()
+);
+export const GetStatesFailure = createAction(
+  '[NXT] Get States Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetCountries = createAction('[NXT] Get Countries');
+export const GetCountriesSuccess = createAction(
+  '[NXT] Get Countries Success',
+  props<{ countries: Country[] }>()
+);
+export const GetCountriesFailure = createAction(
+  '[NXT] Get Countries Failure',
   props<{ error: { message: string } }>()
 );

@@ -52,3 +52,23 @@ export const wallet = createSelector(
   selectAccountState,
   (state) => state.wallet
 );
+
+export const currencies = createSelector(
+  selectAccountState,
+  (state) => state.currencies
+);
+
+export const selectedCurrency = createSelector(
+  selectAccountState,
+  (state) => state.selectedCurrency
+);
+
+export const states = createSelector(
+  selectAccountState,
+  (state) => state.states
+);
+
+export const countries = createSelector(
+  selectAccountState,
+  (state) => state.countries
+);

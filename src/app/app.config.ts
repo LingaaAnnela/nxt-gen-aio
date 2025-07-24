@@ -30,15 +30,15 @@ import { BlogState } from './web/shared/state/blog.state';
 import { CartState } from './web/shared/state/cart.state';
 // import { CategoryState } from './web/shared/state/category.state';
 // import { CompareState } from './web/shared/state/compare.state';
-import { CountryState } from './web/shared/state/country.state';
+// import { CountryState } from './web/shared/state/country.state';
 import { CouponState } from './web/shared/state/coupon.state';
-import { CurrencyState } from './web/shared/state/currency.state';
+// import { CurrencyState } from './web/shared/state/currency.state';
 import { LoaderState } from './web/shared/state/loader.state';
-import { NotificationState } from './web/shared/state/notification.state';
-import { OrderStatusState } from './web/shared/state/order-status.state';
+// import { NotificationState } from './web/shared/state/notification.state';
+// import { OrderStatusState } from './web/shared/state/order-status.state';
 import { OrderState } from './web/shared/state/order.state';
 import { PageState } from './web/shared/state/page.state';
-import { PaymentDetailsState } from './web/shared/state/payment-details.state';
+// import { PaymentDetailsState } from './web/shared/state/payment-details.state';
 // import { PointState } from './web/shared/state/point.state';
 import { ProductState } from './web/shared/state/product.state';
 import { QuestionAnswersState } from './web/shared/state/questions-answers.state';
@@ -120,10 +120,10 @@ export const appConfig: ApplicationConfig = {
       NgxsModule.forRoot([
         LoaderState,
         AccountState,
-        CountryState,
+        // CountryState,
         StateState,
         SettingState,
-        CurrencyState,
+        // CurrencyState,
         // ThemeState,
         // ThemeOptionState,
         // CategoryState,
@@ -136,12 +136,12 @@ export const appConfig: ApplicationConfig = {
         // WishlistState,
         // CompareState,
         OrderState,
-        OrderStatusState,
+        // OrderStatusState,
         // WalletState,
         // PointState,
         // RefundState,
-        PaymentDetailsState,
-        NotificationState,
+        // PaymentDetailsState,
+        // NotificationState,
         QuestionAnswersState,
         ReviewState,
         CouponState,

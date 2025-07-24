@@ -10,6 +10,9 @@ import { Values } from '../../web/shared/interface/setting.interface';
 import { Point } from '../../web/shared/interface/point.interface';
 import { Refund } from '../../web/shared/interface/refund.interface';
 import { Wallet } from '../../web/shared/interface/wallet.interface';
+import { Currency } from '../../web/shared/interface/currency.interface';
+import { States } from '../../web/shared/interface/state.interface';
+import { Country } from '../../web/shared/interface/country.interface';
 
 export interface NxtAccountState {
   user: AccountUser | null;
@@ -23,6 +26,10 @@ export interface NxtAccountState {
   point: Point | null;
   refunds: Refund[] | null;
   wallet: Wallet | null;
+  currencies: Currency[];
+  selectedCurrency: Currency | null;
+  states: States[];
+  countries: Country[];
   showSpinner: boolean;
 }
 
@@ -38,6 +45,10 @@ export const initialState: NxtAccountState = {
   point: null,
   refunds: null,
   wallet: null,
+  currencies: [],
+  selectedCurrency: null,
+  states: [],
+  countries: [],
   showSpinner: false,
 };
 
@@ -66,6 +77,7 @@ export const accountReducer = createReducer(
   on(NxtAccountActions.GetSettingsSuccess, (state, { settings }) => ({
     ...state,
     settings,
+    selectedCurrency: settings?.general?.default_currency || null,
     showSpinner: false,
   })),
   on(NxtAccountActions.GetSettingsFailure, (state, { error }) => ({
@@ -175,5 +187,38 @@ export const accountReducer = createReducer(
     ...state,
     refunds: null,
     showSpinner: false,
+  })),
+  on(NxtAccountActions.GetCurrency, (state) => ({
+    ...state,
+  })),
+  on(NxtAccountActions.GetCurrencySuccess, (state, { currencies }) => ({
+    ...state,
+    currencies,
+  })),
+  on(NxtAccountActions.GetCurrencyFailure, (state, { error }) => ({
+    ...state,
+    currencies: [],
+  })),
+  on(NxtAccountActions.GetStates, (state) => ({
+    ...state,
+  })),
+  on(NxtAccountActions.GetStatesSuccess, (state, { states }) => ({
+    ...state,
+    states,
+  })),
+  on(NxtAccountActions.GetStatesFailure, (state, { error }) => ({
+    ...state,
+    states: [],
+  })),
+  on(NxtAccountActions.GetCountries, (state) => ({
+    ...state,
+  })),
+  on(NxtAccountActions.GetCountriesSuccess, (state, { countries }) => ({
+    ...state,
+    countries,
+  })),
+  on(NxtAccountActions.GetCountriesFailure, (state, { error }) => ({
+    ...state,
+    countries: [],
   }))
 );

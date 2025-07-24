@@ -26,4 +26,8 @@ export class NxtCartService {
   deleteWishlist(id?: number): Observable<any> {
     return of(true);
   }
+
+  getCheckoutDetails(): Observable<any> {
+    return of(true);
+  }
 }

@@ -1,17 +1,12 @@
 import { Component, Input, Inject, PLATFORM_ID, inject } from '@angular/core';
-import { isPlatformBrowser, AsyncPipe } from '@angular/common';
-import { Select, Store } from '@ngxs/store';
+import { AsyncPipe } from '@angular/common';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import {
-  Currency,
-  CurrencyModel,
-} from '../../../../interface/currency.interface';
-import { CurrencyState } from '../../../../state/currency.state';
-import { SettingState } from '../../../../state/setting.state';
+import { Currency } from '../../../../interface/currency.interface';
 import { Values } from '../../../../interface/setting.interface';
-import { SelectedCurrency } from '../../../../action/setting.action';
 import { ButtonComponent } from '../../../widgets/button/button.component';
 import { ClickOutsideDirective } from '../../../../directive/out-side-directive';
+import { NxtAccountSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-currency',
@@ -21,10 +16,10 @@ import { ClickOutsideDirective } from '../../../../directive/out-side-directive'
 })
 export class CurrencyComponent {
   setting$: Observable<Values> = inject(Store).select(
-    SettingState.setting
+    NxtAccountSelectors.settings
   ) as Observable<Values>;
   selectedCurrency$: Observable<Currency> = inject(Store).select(
-    SettingState.selectedCurrency
+    NxtAccountSelectors.selectedCurrency
   ) as Observable<Currency>;
 
   public open: boolean = false;
@@ -33,9 +28,9 @@ export class CurrencyComponent {
 
   @Input() style: string = 'basic';
 
-  currency$: Observable<CurrencyModel> = inject(Store).select(
-    CurrencyState.currency
-  ) as Observable<CurrencyModel>;
+  currency$: Observable<Currency[]> = inject(Store).select(
+    NxtAccountSelectors.currencies
+  ) as Observable<Currency[]>;
 
   constructor(
     private store: Store,
@@ -53,13 +48,13 @@ export class CurrencyComponent {
   selectCurrency(currency: Currency) {
     this.selectedCurrency = currency;
     this.open = false;
-    this.store.dispatch(new SelectedCurrency(currency)).subscribe({
-      complete: () => {
-        if (isPlatformBrowser(this.platformId)) {
-          window.location.reload();
-        }
-      },
-    });
+    // this.store.dispatch(new SelectedCurrency(currency)).subscribe({
+    //   complete: () => {
+    //     if (isPlatformBrowser(this.platformId)) {
+    //       window.location.reload();
+    //     }
+    //   },
+    // });
   }
 
   hideDropdown() {
