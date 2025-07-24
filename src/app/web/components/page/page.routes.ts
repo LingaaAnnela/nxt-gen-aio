@@ -9,7 +9,7 @@ import { SearchComponent } from './search/search.component';
 export default [
   {
     path: 'faq',
-    component: FaqComponent
+    component: FaqComponent,
   },
   {
     path: '404',
@@ -17,18 +17,18 @@ export default [
   },
   {
     path: 'contact-us',
-    component: ContactUsComponent
+    component: ContactUsComponent,
   },
   {
     path: 'offer',
-    component: OfferComponent
+    component: OfferComponent,
   },
   {
     path: 'about-us',
-    component: AboutUsComponent
+    component: AboutUsComponent,
   },
   {
     path: 'search',
-    component: SearchComponent
+    component: SearchComponent,
   },
 ] as Routes;

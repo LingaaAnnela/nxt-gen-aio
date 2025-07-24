@@ -88,53 +88,49 @@
       "help_center": [
         {
           "label": "My Account",
-          "link": "account/dashboard"
+          "link": "nxt/account/dashboard"
         },
         {
           "label": "My Orders",
-          "link": "account/order"
+          "link": "nxt/account/order"
         },
         {
           "label": "Wishlist",
-          "link": "wishlist"
-        },
-        {
-          "label": "Compare",
-          "link": "compare"
+          "link": "nxt/wishlist"
         },
         {
           "label": "FAQ's",
-          "link": "faq"
+          "link": "nxt/faq"
         },
         {
           "label": "Contact Us",
-          "link": "contact-us"
+          "link": "nxt/contact-us"
         }
       ],
       "useful_link": [
         {
           "label": "Home",
-          "link": "home"
+          "link": "nxt/home"
         },
         {
           "label": "Collections",
-          "link": "collections"
+          "link": "nxt/collections"
         },
         {
           "label": "About",
-          "link": "about-us"
+          "link": "nxt/about-us"
         },
         {
           "label": "Blogs",
-          "link": "blogs"
+          "link": "nxt/blogs"
         },
         {
           "label": "Offers",
-          "link": "offer"
+          "link": "nxt/offer"
         },
         {
           "label": "Search",
-          "link": "search"
+          "link": "nxt/search"
         }
       ],
       "support_number": "+1-555-186-5359",

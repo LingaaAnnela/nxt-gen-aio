@@ -6,7 +6,7 @@ import {
   PLATFORM_ID,
   SimpleChanges,
 } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import {
@@ -17,10 +17,7 @@ import {
   Cart,
   CartAddOrUpdate,
 } from '../../../../../../shared/interface/cart.interface';
-import { AddToCart } from '../../../../../../shared/action/cart.action';
-import { CartState } from '../../../../../../shared/state/cart.state';
 import { Option } from '../../../../../../shared/interface/theme-option.interface';
-import { AddToCompare } from '../../../../../../shared/action/compare.action';
 import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
 import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
@@ -28,6 +25,7 @@ import { SaleTimerComponent } from '../sale-timer/sale-timer.component';
 import { VariantAttributesComponent } from '../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { isPlatformBrowser } from '@angular/common';
+import { NxtCartSelectors } from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-product-contain',
@@ -48,7 +46,7 @@ export class ProductContainComponent {
   @Input() option: Option | null;
   @Input() owlCar: any;
 
-  cartItem$: Observable<Cart[]> = inject(Store).select(CartState.cartItems);
+  cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
 
   public cartItem: Cart | null;
   public productQty: number = 1;
@@ -132,7 +130,8 @@ export class ProductContainComponent {
           : null,
         quantity: this.productQty,
       };
-      this.store.dispatch(new AddToCart(params));
+      // TODO
+      // this.store.dispatch(new AddToCart(params));
     }
   }
 
@@ -148,11 +147,12 @@ export class ProductContainComponent {
           : null,
         quantity: this.productQty,
       };
-      this.store.dispatch(new AddToCart(params)).subscribe({
-        complete: () => {
-          this.router.navigate(['/nxt/checkout']);
-        },
-      });
+      // TODO
+      // this.store.dispatch(new AddToCart(params)).subscribe({
+      //   complete: () => {
+      //     this.router.navigate(['/nxt/checkout']);
+      //   },
+      // });
     }
   }
 
@@ -161,7 +161,7 @@ export class ProductContainComponent {
   }
 
   addToCompare(id: number) {
-    this.store.dispatch(new AddToCompare({ product_id: id }));
+    // this.store.dispatch(new AddToCompare({ product_id: id }));
   }
 
   ngOnDestroy() {

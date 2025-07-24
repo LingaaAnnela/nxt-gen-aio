@@ -29,7 +29,7 @@ import { AuthState } from './web/shared/state/auth.state';
 import { BlogState } from './web/shared/state/blog.state';
 import { CartState } from './web/shared/state/cart.state';
 // import { CategoryState } from './web/shared/state/category.state';
-import { CompareState } from './web/shared/state/compare.state';
+// import { CompareState } from './web/shared/state/compare.state';
 import { CountryState } from './web/shared/state/country.state';
 import { CouponState } from './web/shared/state/coupon.state';
 import { CurrencyState } from './web/shared/state/currency.state';
@@ -46,8 +46,8 @@ import { QuestionAnswersState } from './web/shared/state/questions-answers.state
 import { ReviewState } from './web/shared/state/review.state';
 import { SettingState } from './web/shared/state/setting.state';
 import { StateState } from './web/shared/state/state.state';
-import { StoreState } from './web/shared/state/store.state';
-import { TagState } from './web/shared/state/tag.state';
+// import { StoreState } from './web/shared/state/store.state';
+// import { TagState } from './web/shared/state/tag.state';
 // import { ThemeOptionState } from './web/shared/state/theme-option.state';
 // import { ThemeState } from './web/shared/state/theme.state';
 // import { WalletState } from './web/shared/state/wallet.state';
@@ -129,12 +129,12 @@ export const appConfig: ApplicationConfig = {
         // CategoryState,
         PageState,
         ProductState,
-        StoreState,
+        // StoreState,
         CartState,
         BlogState,
-        TagState,
+        // TagState,
         // WishlistState,
-        CompareState,
+        // CompareState,
         OrderState,
         OrderStatusState,
         // WalletState,

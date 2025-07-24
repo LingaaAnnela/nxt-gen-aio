@@ -1,5 +1,5 @@
 import { Component, inject, Input, SimpleChanges } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {
   Product,
@@ -9,12 +9,11 @@ import {
   Cart,
   CartAddOrUpdate,
 } from '../../../../../../shared/interface/cart.interface';
-import { AddToCart } from '../../../../../../shared/action/cart.action';
-import { CartState } from '../../../../../../shared/state/cart.state';
 import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbol.pipe';
 import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
 import { VariantAttributesComponent } from '../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
+import { NxtCartSelectors } from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-sticky-checkout',
@@ -31,7 +30,7 @@ import { VariantAttributesComponent } from '../../../../../../shared/components/
 export class StickyCheckoutComponent {
   @Input() product: Product;
 
-  cartItem$: Observable<Cart[]> = inject(Store).select(CartState.cartItems);
+  cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
 
   public cartItem: Cart | null;
   public productQty: number = 1;
@@ -82,7 +81,8 @@ export class StickyCheckoutComponent {
           : null,
         quantity: this.productQty,
       };
-      this.store.dispatch(new AddToCart(params));
+      // TODO
+      // this.store.dispatch(new AddToCart(params));
     }
   }
 }
