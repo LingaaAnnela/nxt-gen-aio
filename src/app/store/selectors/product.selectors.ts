@@ -59,3 +59,13 @@ export const selectRelatedProducts = createSelector(
   selectProductState,
   (state) => state.relatedProducts
 );
+
+export const reviews = createSelector(
+  selectProductState,
+  (state) => state.reviews
+);
+
+export const questionAnswers = createSelector(
+  selectProductState,
+  (state) => state.questionAnswers
+);

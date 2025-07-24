@@ -3,6 +3,7 @@ import { NxtCartActions } from '../actions';
 import { Cart } from '../../web/shared/interface/cart.interface';
 import { Product } from '../../web/shared/interface/product.interface';
 import { OrderCheckout } from '../../web/shared/interface/order.interface';
+import { Coupon } from '../../web/shared/interface/coupon.interface';
 
 export interface NxtCartState {
   items: Cart[];
@@ -11,6 +12,10 @@ export interface NxtCartState {
   sidebarCartOpen: boolean;
   wishlist: Product[];
   checkout: OrderCheckout | null;
+  coupons: {
+    data: Coupon[];
+    isLoading: boolean;
+  } | null;
   showSpinner: boolean;
 }
 
@@ -21,6 +26,7 @@ export const initialState: NxtCartState = {
   sidebarCartOpen: false,
   wishlist: [],
   checkout: null,
+  coupons: null,
   showSpinner: false,
 };
 
@@ -96,5 +102,26 @@ export const cartReducer = createReducer(
   on(NxtCartActions.GetOrderCheckoutFailure, (state, { error }) => ({
     ...state,
     checkout: null,
+  })),
+  on(NxtCartActions.GetCoupons, (state) => ({
+    ...state,
+    coupons: {
+      data: [],
+      isLoading: true,
+    },
+  })),
+  on(NxtCartActions.GetCouponsSuccess, (state, { coupons }) => ({
+    ...state,
+    coupons: {
+      data: coupons,
+      isLoading: false,
+    },
+  })),
+  on(NxtCartActions.GetCouponsFailure, (state, { error }) => ({
+    ...state,
+    coupons: {
+      data: [],
+      isLoading: false,
+    },
   }))
 );
