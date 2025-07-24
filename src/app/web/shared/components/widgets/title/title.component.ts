@@ -1,18 +1,15 @@
 import { Component, Input } from '@angular/core';
 
-
 @Component({
-    selector: 'app-title',
-    templateUrl: './title.component.html',
-    styleUrls: ['./title.component.scss'],
-    imports: []
+  selector: 'app-title',
+  templateUrl: './title.component.html',
+  styleUrls: ['./title.component.scss'],
+  imports: [],
 })
 export class TitleComponent {
-
   @Input() class: string = 'title';
   @Input() svg: string = 'leaf';
   @Input() style: string;
   @Input() title?: string;
   @Input() description?: string;
-
 }

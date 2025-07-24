@@ -13,12 +13,10 @@ import {
   NgbModal,
   NgbRating,
 } from '@ng-bootstrap/ng-bootstrap';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Product, Variation } from '../../../../interface/product.interface';
 import { Cart, CartAddOrUpdate } from '../../../../interface/cart.interface';
-import { AddToCart } from '../../../../action/cart.action';
-import { CartState } from '../../../../state/cart.state';
 import * as data from '../../../../data/owl-carousel';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { TitleCasePipe } from '../../../../pipe/title-case.pipe';
@@ -26,6 +24,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { VariantAttributesComponent } from '../../variant-attributes/variant-attributes.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ButtonComponent } from '../../button/button.component';
+import { NxtCartSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-product-detail-modal',
@@ -49,7 +48,7 @@ export class ProductDetailModalComponent {
   @Input() product: Product;
 
   cartItem$: Observable<Cart[]> = inject(Store).select(
-    CartState.cartItems
+    NxtCartSelectors.items
   ) as Observable<Cart[]>;
 
   public closeResult: string;
@@ -139,11 +138,11 @@ export class ProductDetailModalComponent {
           : null,
         quantity: this.productQty,
       };
-      this.store.dispatch(new AddToCart(params)).subscribe({
-        complete: () => {
-          this.modalService.dismissAll();
-        },
-      });
+      // this.store.dispatch(new AddToCart(params)).subscribe({
+      //   complete: () => {
+      //     this.modalService.dismissAll();
+      //   },
+      // });
     }
   }
 

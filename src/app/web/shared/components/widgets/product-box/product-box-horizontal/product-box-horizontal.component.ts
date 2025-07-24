@@ -1,13 +1,10 @@
 import { Component, inject, Input, ViewChild } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { ProductDetailModalComponent } from '../../modal/product-detail-modal/product-detail-modal.component';
 import { Product } from '../../../../interface/product.interface';
 import { CartAddOrUpdate, Cart } from '../../../../interface/cart.interface';
-import { AddToCompare } from '../../../../action/compare.action';
-import { AddToCart } from '../../../../action/cart.action';
-import { CartState } from '../../../../state/cart.state';
 import { VariationModalComponent } from '../../modal/variation-modal/variation-modal.component';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { TitleCasePipe } from '../../../../pipe/title-case.pipe';
@@ -15,6 +12,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { ProductDetailModalComponent as ProductDetailModalComponent_1 } from '../../modal/product-detail-modal/product-detail-modal.component';
 import { ButtonComponent } from '../../button/button.component';
 import { RouterLink } from '@angular/router';
+import { NxtCartSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-product-box-horizontal',
@@ -38,7 +36,7 @@ export class ProductBoxHorizontalComponent {
   @Input() close: boolean;
 
   cartItem$: Observable<Cart[]> = inject(Store).select(
-    CartState.cartItems
+    NxtCartSelectors.items
   ) as Observable<Cart[]>;
 
   @ViewChild('productDetailModal')
@@ -69,7 +67,7 @@ export class ProductBoxHorizontalComponent {
       variation: this.cartItem ? this.cartItem?.variation : null,
       quantity: qty,
     };
-    this.store.dispatch(new AddToCart(params));
+    // this.store.dispatch(new AddToCart(params));
   }
 
   addToWishlist(id: number) {
@@ -81,6 +79,6 @@ export class ProductBoxHorizontalComponent {
   }
 
   addToCompar(id: number) {
-    this.store.dispatch(new AddToCompare({ product_id: id }));
+    // this.store.dispatch(new AddToCompare({ product_id: id }));
   }
 }
