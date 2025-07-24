@@ -27,7 +27,6 @@ export class RecentPurchasePopupComponent {
   public popup_enable: boolean = true;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
-    console.log('RecentPurchasePopupComponent - constructor', this.platformId);
     if (isPlatformBrowser(this.platformId)) {
       if (this.popup_enable) {
         setInterval(() => {

@@ -9,7 +9,6 @@ import {
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
-import { ReplaceCart } from '../../../../action/cart.action';
 import { Cart, CartAddOrUpdate } from '../../../../interface/cart.interface';
 import { Product, Variation } from '../../../../interface/product.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';

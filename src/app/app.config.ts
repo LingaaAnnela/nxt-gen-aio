@@ -11,32 +11,32 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
-import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
+// import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+// import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { routes } from './app.routes';
 
 import { AuthInterceptor } from './web/core/interceptors/auth.interceptor';
-import { LoaderInterceptor } from './web/core/interceptors/loader.interceptor';
+// import { LoaderInterceptor } from './web/core/interceptors/loader.interceptor';
 import { ErrorService } from './web/shared/services/error.service';
 import { NotificationService } from './web/shared/services/notification.service';
 import { GlobalErrorHandlerInterceptor } from './web/core/interceptors/global-error-handler.interceptor';
 import { provideToastr } from 'ngx-toastr';
-import { NgxsModule } from '@ngxs/store';
-import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
-import { AccountState } from './web/shared/state/account.state';
-import { AuthState } from './web/shared/state/auth.state';
+// import { NgxsModule } from '@ngxs/store';
+// import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
+// import { AccountState } from './web/shared/state/account.state';
+// import { AuthState } from './web/shared/state/auth.state';
 // import { BlogState } from './web/shared/state/blog.state';
-import { CartState } from './web/shared/state/cart.state';
+// import { CartState } from './web/shared/state/cart.state';
 // import { CategoryState } from './web/shared/state/category.state';
 // import { CompareState } from './web/shared/state/compare.state';
 // import { CountryState } from './web/shared/state/country.state';
 // import { CouponState } from './web/shared/state/coupon.state';
 // import { CurrencyState } from './web/shared/state/currency.state';
-import { LoaderState } from './web/shared/state/loader.state';
+// import { LoaderState } from './web/shared/state/loader.state';
 // import { NotificationState } from './web/shared/state/notification.state';
 // import { OrderStatusState } from './web/shared/state/order-status.state';
-import { OrderState } from './web/shared/state/order.state';
+// import { OrderState } from './web/shared/state/order.state';
 // import { PageState } from './web/shared/state/page.state';
 // import { PaymentDetailsState } from './web/shared/state/payment-details.state';
 // import { PointState } from './web/shared/state/point.state';
@@ -100,11 +100,11 @@ export const appConfig: ApplicationConfig = {
       useClass: GlobalErrorHandlerInterceptor,
       multi: true,
     },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: LoaderInterceptor,
-      multi: true,
-    },
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: LoaderInterceptor,
+    //   multi: true,
+    // },
     importProvidersFrom(
       BrowserModule,
       BrowserAnimationsModule,
@@ -116,54 +116,56 @@ export const appConfig: ApplicationConfig = {
           deps: [HttpClient],
         },
         defaultLanguage: 'en',
-      }),
-      NgxsModule.forRoot([
-        LoaderState,
-        AccountState,
-        CartState,
-        OrderState,
-        // CountryState,
-        // StateState,
-        // SettingState,
-        // CurrencyState,
-        // ThemeState,
-        // ThemeOptionState,
-        // CategoryState,
-        // PageState,
-        // ProductState,
-        // StoreState,
-        // BlogState,
-        // TagState,
-        // WishlistState,
-        // CompareState,
-        // OrderStatusState,
-        // WalletState,
-        // PointState,
-        // RefundState,
-        // PaymentDetailsState,
-        // NotificationState,
-        // QuestionAnswersState,
-        // ReviewState,
-        // CouponState,
-      ]),
-      NgxsStoragePluginModule.forRoot({
-        keys: [
-          'auth',
-          'account',
-          // 'country',
-          // 'state',
-          'cart',
-          // 'theme',
-          // 'theme_option',
-          // 'setting',
-          // 'notification',
-        ],
-      }),
+      })
+      // NgxsModule.forRoot([
+      //   // LoaderState,
+      //   // AccountState,
+      //   // CartState,
+      //   // OrderState,
+      //   // CountryState,
+      //   // StateState,
+      //   // SettingState,
+      //   // CurrencyState,
+      //   // ThemeState,
+      //   // ThemeOptionState,
+      //   // CategoryState,
+      //   // PageState,
+      //   // ProductState,
+      //   // StoreState,
+      //   // BlogState,
+      //   // TagState,
+      //   // WishlistState,
+      //   // CompareState,
+      //   // OrderStatusState,
+      //   // WalletState,
+      //   // PointState,
+      //   // RefundState,
+      //   // PaymentDetailsState,
+      //   // NotificationState,
+      //   // QuestionAnswersState,
+      //   // ReviewState,
+      //   // CouponState,
+      // ]),
+      // NgxsStoragePluginModule.forRoot({
+      //   keys: [
+      //     // 'auth',
+      //     // 'account',
+      //     // 'country',
+      //     // 'state',
+      //     // 'cart',
+      //     // 'theme',
+      //     // 'theme_option',
+      //     // 'setting',
+      //     // 'notification',
+      //   ],
+      // }),
       // NgxsReduxDevtoolsPluginModule.forRoot(),
-      NgxsLoggerPluginModule.forRoot({
-        disabled: !isDevMode(),
-      }),
-      NgxsModule.forFeature([AuthState])
+      // NgxsLoggerPluginModule.forRoot({
+      //   disabled: !isDevMode(),
+      // })
+      // NgxsModule.forFeature([
+      //   /* AuthState */
+      // ])
     ),
     provideHttpClient(withInterceptorsFromDi(), withFetch()),
     provideZoneChangeDetection({ eventCoalescing: true }),

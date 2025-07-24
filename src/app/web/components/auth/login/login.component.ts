@@ -8,7 +8,6 @@ import {
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { Login } from '../../../shared/action/auth.action';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { AuthService } from '../../../shared/services/auth.service';
 import { TranslateModule } from '@ngx-translate/core';

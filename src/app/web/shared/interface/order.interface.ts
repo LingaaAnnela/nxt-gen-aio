@@ -1,4 +1,3 @@
-import { RePayment } from '../action/order.action';
 import { PaginateModel } from './core.interface';
 import { Coupon } from './coupon.interface';
 import { OrderStatus } from './order-status.interface';

@@ -9,6 +9,11 @@ export const showSpinner = createSelector(
   (state) => state.showSpinner
 );
 
+export const isAuthenticated = createSelector(
+  selectAccountState,
+  (state) => state.auth?.isAuthenticated || false
+);
+
 export const user = createSelector(selectAccountState, (state) => state.user);
 
 export const settings = createSelector(

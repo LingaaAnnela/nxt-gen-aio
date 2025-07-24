@@ -18,11 +18,11 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AccountUser } from '../../../../interface/account.interface';
-import { AccountState } from '../../../../state/account.state';
 import * as data from '../../../../data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
 // import { Select2Module } from 'ng-select2-component';
 import { ButtonComponent } from '../../button/button.component';
+import { NxtAccountSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-edit-profile-modal',
@@ -32,7 +32,7 @@ import { ButtonComponent } from '../../button/button.component';
 })
 export class EditProfileModalComponent {
   user$: Observable<AccountUser> = inject(Store).select(
-    AccountState.user
+    NxtAccountSelectors.user
   ) as Observable<AccountUser>;
 
   public form: FormGroup;

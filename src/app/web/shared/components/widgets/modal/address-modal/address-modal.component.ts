@@ -18,10 +18,6 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
 import { map, Observable } from 'rxjs';
 // import { Select2Data, Select2UpdateEvent, Select2Module } from 'ng-select2-component';
-import {
-  CreateAddress,
-  UpdateAddress,
-} from '../../../../action/account.action';
 import { UserAddress } from '../../../../interface/user.interface';
 import * as data from '../../../../data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
@@ -144,10 +140,10 @@ export class AddressModalComponent {
   submit() {
     this.form.markAllAsTouched();
 
-    let action = new CreateAddress(this.form.value);
+    // let action = new CreateAddress(this.form.value);
 
     if (this.address) {
-      action = new UpdateAddress(this.form.value, this.address.id);
+      // action = new UpdateAddress(this.form.value, this.address.id);
     }
 
     if (this.form.valid) {

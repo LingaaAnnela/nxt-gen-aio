@@ -7,9 +7,8 @@ import {
 } from '@angular/common/http';
 import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { NotificationService } from '../../shared/services/notification.service';
-import { AuthClear } from '../../shared/action/auth.action';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -20,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
   public isMaintenanceModeOn: boolean = false;
 
   constructor(
-    private store: Store,
+    private _store: Store,
     private router: Router,
     private notificationService: NotificationService
   ) {
@@ -40,7 +39,8 @@ export class AuthInterceptor implements HttpInterceptor {
       this.router.navigate(['/nxt/maintenance']);
     }
 
-    const token = this.store.selectSnapshot((state) => state.auth.access_token);
+    // const token = this.store.selectSnapshot((state) => state.auth.access_token);
+    const token = 'abc1234'; // Replace with actual token retrieval logic
     if (token) {
       req = req.clone({
         setHeaders: {
@@ -53,7 +53,7 @@ export class AuthInterceptor implements HttpInterceptor {
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
           this.notificationService.notification = false;
-          this.store.dispatch(new AuthClear());
+          // this.store.dispatch(new AuthClear());
         }
         return throwError(() => error);
       })

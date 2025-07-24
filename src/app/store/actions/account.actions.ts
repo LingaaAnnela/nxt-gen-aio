@@ -14,6 +14,65 @@ import { Country } from '../../web/shared/interface/country.interface';
 import { Faq } from '../../web/shared/interface/page.interface';
 import { Blog } from '../../web/shared/interface/blog.interface';
 
+export const Login = createAction(
+  '[NXT] Login User',
+  props<{ email: string; password: string }>()
+);
+export const LoginSuccess = createAction(
+  '[NXT] Login User Success',
+  props<{ user: AccountUser }>()
+);
+export const LoginFailure = createAction(
+  '[NXT] Login User Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const Logout = createAction('[NXT] Logout User');
+export const LogoutSuccess = createAction('[NXT] Logout User Success');
+export const LogoutFailure = createAction(
+  '[NXT] Logout User Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const Register = createAction(
+  '[NXT] Register User',
+  props<{ user: AccountUser }>()
+);
+export const RegisterSuccess = createAction(
+  '[NXT] Register User Success',
+  props<{ user: AccountUser }>()
+);
+export const RegisterFailure = createAction(
+  '[NXT] Register User Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const ForgotPassword = createAction(
+  '[NXT] Forgot Password',
+  props<{ email: string }>()
+);
+export const ForgotPasswordSuccess = createAction(
+  '[NXT] Forgot Password Success',
+  props<{ message: string }>()
+);
+export const ForgotPasswordFailure = createAction(
+  '[NXT] Forgot Password Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const ResetPassword = createAction(
+  '[NXT] Reset Password',
+  props<{ token: string; newPassword: string }>()
+);
+export const ResetPasswordSuccess = createAction(
+  '[NXT] Reset Password Success',
+  props<{ message: string }>()
+);
+export const ResetPasswordFailure = createAction(
+  '[NXT] Reset Password Failure',
+  props<{ error: { message: string } }>()
+);
+
 export const GetUser = createAction('[NXT] Get User');
 export const GetUserSuccess = createAction(
   '[NXT] Get User Success',
