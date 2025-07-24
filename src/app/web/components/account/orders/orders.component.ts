@@ -1,15 +1,16 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Router } from '@angular/router';
+import { AsyncPipe, DatePipe } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
+
 import { Observable } from 'rxjs';
 import { Order } from '../../../shared/interface/order.interface';
 import { Params } from '../../../shared/interface/core.interface';
-import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
 import { TitleCasePipe } from '../../../shared/pipe/title-case.pipe';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { PaginationComponent } from '../../../shared/components/widgets/pagination/pagination.component';
-import { Router, RouterLink } from '@angular/router';
-import { AsyncPipe, DatePipe } from '@angular/common';
 import { NxtAccountSelectors } from '../../../../store/selectors';
 import { NxtAccountActions } from '../../../../store/actions';
 
@@ -19,7 +20,6 @@ import { NxtAccountActions } from '../../../../store/actions';
   styleUrls: ['./orders.component.scss'],
   providers: [CurrencySymbolPipe],
   imports: [
-    RouterLink,
     PaginationComponent,
     NoDataComponent,
     AsyncPipe,

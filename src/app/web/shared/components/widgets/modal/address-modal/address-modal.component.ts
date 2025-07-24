@@ -6,7 +6,7 @@ import {
   Inject,
   inject,
 } from '@angular/core';
-import { isPlatformBrowser, AsyncPipe } from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
 import {
   FormBuilder,
   FormControl,
@@ -16,11 +16,11 @@ import {
 } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
+import { TranslateModule } from '@ngx-translate/core';
 import { map, Observable } from 'rxjs';
 // import { Select2Data, Select2UpdateEvent, Select2Module } from 'ng-select2-component';
 import { UserAddress } from '../../../../interface/user.interface';
 import * as data from '../../../../data/country-code';
-import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
 import { NxtAccountSelectors } from '../../../../../../store/selectors';
 import { Country } from '../../../../interface/country.interface';
@@ -29,7 +29,7 @@ import { Country } from '../../../../interface/country.interface';
   selector: 'address-modal',
   templateUrl: './address-modal.component.html',
   styleUrls: ['./address-modal.component.scss'],
-  imports: [ButtonComponent, ReactiveFormsModule, AsyncPipe, TranslateModule],
+  imports: [ButtonComponent, ReactiveFormsModule, TranslateModule],
 })
 export class AddressModalComponent {
   public form: FormGroup;

@@ -211,7 +211,7 @@ export class CheckoutComponent {
     }
 
     if (this.form.valid) {
-      this.loading = true;
+      // this.loading = true;
       // this.store.dispatch(new Checkout(this.form.value)).subscribe({
       //   error: (err) => {
       //     this.loading = false;

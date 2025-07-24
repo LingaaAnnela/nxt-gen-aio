@@ -1,7 +1,7 @@
 {
   "id": 19,
-  "name": "John Doe",
-  "email": "john.customer@example.com",
+  "name": "Linga Annela",
+  "email": "linga.annela@nxtgenmart.com",
   "country_code": "1",
   "phone": 5551855359,
   "profile_image_id": "1466",
@@ -148,7 +148,7 @@
     "created_by_id": "1",
     "created_at": "2023-09-30T09:27:07.000000Z",
     "updated_at": "2023-09-30T09:27:07.000000Z",
-    "original_url": "https://laravel.pixelstrap.net/fastkart/storage/1466/Group-427320142.png"
+    "original_url": "assets/images/nxt/linga-annela.jpeg"
   },
   "payment_account": {
     "id": 1,
