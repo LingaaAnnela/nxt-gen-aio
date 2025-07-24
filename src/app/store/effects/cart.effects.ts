@@ -158,3 +158,39 @@ export const onADeleteWishlist: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onGetOrderCheckout: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.GetOrderCheckout),
+      // delay(3000),
+      switchMap(() =>
+        cartService.getCheckoutDetails().pipe(
+          map((checkout) =>
+            NxtCartActions.GetOrderCheckoutSuccess({
+              orderCheckout: {
+                // It Just Static Values as per cart default value (When you are using api then you need calculate as per your requirement)
+                total: {
+                  convert_point_amount: -10,
+                  convert_wallet_balance: -84.4,
+                  coupon_total_discount: 10,
+                  points: 300,
+                  points_amount: 10,
+                  shipping_total: 0,
+                  sub_total: 35.19,
+                  tax_total: 2.54,
+                  total: 37.73,
+                  wallet_balance: 84.4,
+                },
+              },
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtCartActions.GetOrderCheckoutFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);

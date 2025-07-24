@@ -27,3 +27,8 @@ export const wishlist = createSelector(
   selectCartState,
   (state) => state.wishlist
 );
+
+export const checkout = createSelector(
+  selectCartState,
+  (state) => state.checkout
+);

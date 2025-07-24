@@ -8,13 +8,10 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { NotificationState } from '../../../shared/state/notification.state';
-import { MarkAsReadNotification } from '../../../shared/action/notification.action';
 import { Notification } from '../../../shared/interface/notification.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { AsyncPipe, DatePipe, isPlatformBrowser } from '@angular/common';
-import { NxtAccountActions } from '../../../../store/actions';
 import { NxtAccountSelectors } from '../../../../store/selectors';
 
 @Component({

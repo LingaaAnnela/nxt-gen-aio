@@ -43,7 +43,7 @@ export class AccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    this._store.dispatch(NxtAccountActions.GetUser());
+    // this._store.dispatch(NxtAccountActions.GetUser());
     // Initialization logic if needed
     this._store.dispatch(NxtAccountActions.GetNotifications());
   }

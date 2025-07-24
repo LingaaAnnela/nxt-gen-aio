@@ -203,3 +203,69 @@ export const onGetWallet: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onGetCurrency: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetCurrency),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getCurrencies().pipe(
+          map(({ data }) =>
+            NxtAccountActions.GetCurrencySuccess({
+              currencies: data,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetCurrencyFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetStates: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetStates),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getStates().pipe(
+          map((states) =>
+            NxtAccountActions.GetStatesSuccess({
+              states,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetStatesFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onGetCountries: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetCountries),
+      // delay(3000),
+      switchMap(() =>
+        accountService.getCountries().pipe(
+          map((countries) =>
+            NxtAccountActions.GetCountriesSuccess({
+              countries,
+            })
+          ),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.GetCurrencyFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);

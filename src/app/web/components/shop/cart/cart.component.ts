@@ -1,17 +1,17 @@
 import { Component, inject } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Router, RouterLink } from '@angular/router';
+import { AsyncPipe } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import {
   Cart,
   CartAddOrUpdate,
 } from '../../../shared/interface/cart.interface';
-import { TranslateModule } from '@ngx-translate/core';
 import { CurrencySymbolPipe } from '../../../shared/pipe/currency-symbol.pipe';
 import { NoDataComponent } from '../../../shared/components/widgets/no-data/no-data.component';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { RouterLink } from '@angular/router';
-import { AsyncPipe } from '@angular/common';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 import { NxtCartSelectors } from '../../../../store/selectors';
 import { NxtCartActions } from '../../../../store/actions';
@@ -40,7 +40,7 @@ export class CartComponent {
     items: [{ label: 'Cart', active: true }],
   };
 
-  constructor(private store: Store) {}
+  constructor(private _store: Store, public router: Router) {}
 
   updateQuantity(item: Cart, qty: number) {
     const params: CartAddOrUpdate = {
@@ -52,16 +52,16 @@ export class CartComponent {
       quantity: qty,
     };
     // this.store.dispatch(new UpdateCart(params));
-    this.store.dispatch(NxtCartActions.UpdateCart({ params }));
+    this._store.dispatch(NxtCartActions.UpdateCart({ params }));
   }
 
   delete(id: number) {
     // this.store.dispatch(new DeleteCart(id));
-    this.store.dispatch(NxtCartActions.DeleteCart({ id }));
+    this._store.dispatch(NxtCartActions.DeleteCart({ id }));
   }
 
   addToWishlist(id: number) {
     // this.store.dispatch(new AddToWishlist({ product_id: id }));
-    this.store.dispatch(NxtCartActions.AddToWishlist({ id }));
+    this._store.dispatch(NxtCartActions.AddToWishlist({ id }));
   }
 }

@@ -2,6 +2,7 @@ import { createReducer, on } from '@ngrx/store';
 import { NxtCartActions } from '../actions';
 import { Cart } from '../../web/shared/interface/cart.interface';
 import { Product } from '../../web/shared/interface/product.interface';
+import { OrderCheckout } from '../../web/shared/interface/order.interface';
 
 export interface NxtCartState {
   items: Cart[];
@@ -9,6 +10,7 @@ export interface NxtCartState {
   stickyCartOpen: boolean;
   sidebarCartOpen: boolean;
   wishlist: Product[];
+  checkout: OrderCheckout | null;
   showSpinner: boolean;
 }
 
@@ -18,6 +20,7 @@ export const initialState: NxtCartState = {
   stickyCartOpen: false,
   sidebarCartOpen: false,
   wishlist: [],
+  checkout: null,
   showSpinner: false,
 };
 
@@ -82,5 +85,16 @@ export const cartReducer = createReducer(
   on(NxtCartActions.GetWishlistFailure, (state, { error }) => ({
     ...state,
     wishlist: [],
+  })),
+  on(NxtCartActions.GetOrderCheckout, (state) => ({
+    ...state,
+  })),
+  on(NxtCartActions.GetOrderCheckoutSuccess, (state, { orderCheckout }) => ({
+    ...state,
+    checkout: orderCheckout,
+  })),
+  on(NxtCartActions.GetOrderCheckoutFailure, (state, { error }) => ({
+    ...state,
+    checkout: null,
   }))
 );

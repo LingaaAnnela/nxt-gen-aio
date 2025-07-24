@@ -6,7 +6,7 @@ import {
   PLATFORM_ID,
   ViewChild,
 } from '@angular/core';
-import { Store, Select } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import {
   FormBuilder,
   FormControl,
@@ -18,19 +18,8 @@ import {
 import { Observable } from 'rxjs';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { AccountUser } from '../../../shared/interface/account.interface';
-import { AccountState } from '../../../shared/state/account.state';
-import { CartState } from '../../../shared/state/cart.state';
-import { GetCartItems } from '../../../shared/action/cart.action';
-import { OrderState } from '../../../shared/state/order.state';
-import {
-  Checkout,
-  PlaceOrder,
-  Clear,
-} from '../../../shared/action/order.action';
 import { AddressModalComponent } from '../../../shared/components/widgets/modal/address-modal/address-modal.component';
 import { Cart } from '../../../shared/interface/cart.interface';
-import { SettingState } from '../../../shared/state/setting.state';
-import { GetSettingOption } from '../../../shared/action/setting.action';
 import { OrderCheckout } from '../../../shared/interface/order.interface';
 import {
   Values,
@@ -46,6 +35,10 @@ import { DeliveryBlockComponent } from './delivery-block/delivery-block.componen
 import { AsyncPipe, isPlatformBrowser } from '@angular/common';
 import { AddressBlockComponent } from './address-block/address-block.component';
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
+import {
+  NxtAccountSelectors,
+  NxtCartSelectors,
+} from '../../../../store/selectors';
 
 @Component({
   selector: 'app-checkout',
@@ -74,14 +67,14 @@ export class CheckoutComponent {
   };
 
   user$: Observable<AccountUser> = inject(Store).select(
-    AccountState.user
+    NxtAccountSelectors.user
   ) as Observable<AccountUser>;
-  cartItem$: Observable<Cart[]> = inject(Store).select(CartState.cartItems);
+  cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
   checkout$: Observable<OrderCheckout> = inject(Store).select(
-    OrderState.checkout
+    NxtCartSelectors.checkout
   ) as Observable<OrderCheckout>;
   setting$: Observable<Values> = inject(Store).select(
-    SettingState.setting
+    NxtAccountSelectors.settings
   ) as Observable<Values>;
 
   @ViewChild('addressModal') AddressModal: AddressModalComponent;
@@ -100,8 +93,8 @@ export class CheckoutComponent {
     private formBuilder: FormBuilder,
     @Inject(PLATFORM_ID) private platformId: object
   ) {
-    this.store.dispatch(new GetCartItems());
-    this.store.dispatch(new GetSettingOption());
+    // this.store.dispatch(new GetCartItems());
+    // this.store.dispatch(new GetSettingOption());
 
     this.form = this.formBuilder.group({
       products: this.formBuilder.array([], [Validators.required]),
@@ -194,15 +187,15 @@ export class CheckoutComponent {
     if (value) this.form.controls['coupon'].setValue(value);
     else this.form.controls['coupon'].reset();
 
-    this.store.dispatch(new Checkout(this.form.value)).subscribe({
-      error: (err) => {
-        this.couponError = err.message;
-      },
-      complete: () => {
-        this.appliedCoupon = value ? true : false;
-        this.couponError = null;
-      },
-    });
+    // this.store.dispatch(new Checkout(this.form.value)).subscribe({
+    //   error: (err) => {
+    //     this.couponError = err.message;
+    //   },
+    //   complete: () => {
+    //     this.appliedCoupon = value ? true : false;
+    //     this.couponError = null;
+    //   },
+    // });
   }
 
   couponRemove() {
@@ -219,15 +212,15 @@ export class CheckoutComponent {
 
     if (this.form.valid) {
       this.loading = true;
-      this.store.dispatch(new Checkout(this.form.value)).subscribe({
-        error: (err) => {
-          this.loading = false;
-          throw new Error(err);
-        },
-        complete: () => {
-          this.loading = false;
-        },
-      });
+      // this.store.dispatch(new Checkout(this.form.value)).subscribe({
+      //   error: (err) => {
+      //     this.loading = false;
+      //     throw new Error(err);
+      //   },
+      //   complete: () => {
+      //     this.loading = false;
+      //   },
+      // });
     }
   }
 
@@ -236,13 +229,13 @@ export class CheckoutComponent {
       if (this.cpnRef && !this.cpnRef.nativeElement.value) {
         this.form.controls['coupon'].reset();
       }
-      this.store.dispatch(new PlaceOrder(this.form.value));
+      // this.store.dispatch(new PlaceOrder(this.form.value));
     }
   }
 
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
-      this.store.dispatch(new Clear());
+      // this.store.dispatch(new Clear());
       this.form.reset();
     }
   }

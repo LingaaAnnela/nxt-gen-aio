@@ -15,6 +15,7 @@ import { CollectionComponent } from './collection/collection.component';
 import { ScrollPositionGuard } from '../../shared/guard/scroll.guard';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { NxtProductResolver } from '../../resolvers/product.resolver';
+import { NxtCheckoutResolver } from '../../resolvers/checkout.resolver';
 
 export default [
   {
@@ -44,5 +45,8 @@ export default [
   {
     path: 'checkout',
     component: CheckoutComponent,
+    resolve: {
+      data: NxtCheckoutResolver,
+    },
   },
 ] as Routes;

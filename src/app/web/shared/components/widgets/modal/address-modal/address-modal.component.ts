@@ -15,19 +15,19 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { Select, Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { map, Observable } from 'rxjs';
 // import { Select2Data, Select2UpdateEvent, Select2Module } from 'ng-select2-component';
 import {
   CreateAddress,
   UpdateAddress,
 } from '../../../../action/account.action';
-import { CountryState } from '../../../../state/country.state';
-import { StateState } from '../../../../state/state.state';
 import { UserAddress } from '../../../../interface/user.interface';
 import * as data from '../../../../data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../button/button.component';
+import { NxtAccountSelectors } from '../../../../../../store/selectors';
+import { Country } from '../../../../interface/country.interface';
 
 @Component({
   selector: 'address-modal',
@@ -48,7 +48,9 @@ export class AddressModalComponent {
   @ViewChild('addressModal', { static: false })
   AddressModal: TemplateRef<string>;
 
-  countries$: Observable<any> = inject(Store).select(CountryState.countries);
+  countries$: Observable<Country[]> = inject(Store).select(
+    NxtAccountSelectors.countries
+  );
 
   constructor(
     private modalService: NgbModal,
@@ -75,8 +77,12 @@ export class AddressModalComponent {
   countryChange(data: any) {
     if (data && data?.value) {
       this.states$ = this.store
-        .select(StateState.states)
-        .pipe(map((filterFn) => filterFn(+data?.value)));
+        .select(NxtAccountSelectors.states)
+        .pipe(
+          map((states) =>
+            states.filter((state) => state.country_id === +data?.value)
+          )
+        );
       if (!this.address) this.form.controls['state_id'].setValue('');
     } else {
       this.form.controls['state_id'].setValue('');
@@ -145,14 +151,14 @@ export class AddressModalComponent {
     }
 
     if (this.form.valid) {
-      this.store.dispatch(action).subscribe({
-        complete: () => {
-          this.form.reset();
-          if (!this.address) {
-            this.form?.controls?.['country_code'].setValue('91');
-          }
-        },
-      });
+      // this.store.dispatch(action).subscribe({
+      //   complete: () => {
+      //     this.form.reset();
+      //     if (!this.address) {
+      //       this.form?.controls?.['country_code'].setValue('91');
+      //     }
+      //   },
+      // });
     }
   }
 

@@ -5,6 +5,8 @@ import {
   CartModel,
 } from '../../web/shared/interface/cart.interface';
 import { Product } from '../../web/shared/interface/product.interface';
+import { OrderCheckout } from '../../web/shared/interface/order.interface';
+import { States } from '../../web/shared/interface/state.interface';
 
 export const GetCartItems = createAction('[NXT] Get CartItems');
 export const GetCartItemsSuccess = createAction(
@@ -79,5 +81,15 @@ export const DeleteWishlistSuccess = createAction(
 );
 export const DeleteWishlistFailure = createAction(
   '[NXT] Delete Wishlist Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const GetOrderCheckout = createAction('[NXT] Get Order Checkout');
+export const GetOrderCheckoutSuccess = createAction(
+  '[NXT] Get Order Checkout Success',
+  props<{ orderCheckout: OrderCheckout }>()
+);
+export const GetOrderCheckoutFailure = createAction(
+  '[NXT] Get Order Checkout Failure',
   props<{ error: { message: string } }>()
 );
