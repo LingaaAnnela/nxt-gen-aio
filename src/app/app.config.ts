@@ -45,7 +45,7 @@ import { QuestionAnswersState } from './web/shared/state/questions-answers.state
 // import { RefundState } from './web/shared/state/refund.state';
 import { ReviewState } from './web/shared/state/review.state';
 import { SettingState } from './web/shared/state/setting.state';
-import { StateState } from './web/shared/state/state.state';
+// import { StateState } from './web/shared/state/state.state';
 // import { StoreState } from './web/shared/state/store.state';
 // import { TagState } from './web/shared/state/tag.state';
 // import { ThemeOptionState } from './web/shared/state/theme-option.state';
@@ -121,7 +121,7 @@ export const appConfig: ApplicationConfig = {
         LoaderState,
         AccountState,
         // CountryState,
-        StateState,
+        // StateState,
         SettingState,
         // CurrencyState,
         // ThemeState,
