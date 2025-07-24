@@ -7,9 +7,8 @@ import {
   ReactiveFormsModule,
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import { CustomValidators } from '../../../shared/validator/password-match';
-import { Register } from '../../../shared/action/auth.action';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import * as data from '../../../shared/data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
@@ -41,7 +40,7 @@ export class RegisterComponent {
   public isBrowser: boolean;
 
   constructor(
-    private store: Store,
+    private _store: Store,
     private router: Router,
     private formBuilder: FormBuilder,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -81,11 +80,11 @@ export class RegisterComponent {
       return;
     }
     if (this.form.valid) {
-      this.store.dispatch(new Register(this.form.value)).subscribe({
-        complete: () => {
-          this.router.navigateByUrl('/account/dashboard');
-        },
-      });
+      // this.store.dispatch(new Register(this.form.value)).subscribe({
+      //   complete: () => {
+      //     this.router.navigateByUrl('/account/dashboard');
+      //   },
+      // });
     }
   }
 }

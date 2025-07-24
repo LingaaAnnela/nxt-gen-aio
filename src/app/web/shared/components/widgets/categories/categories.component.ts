@@ -66,7 +66,6 @@ export class CategoriesComponent {
   }
 
   ngOnChanges() {
-    console.log(this.categoryIds);
     if (this.categoryIds && this.categoryIds.length) {
       this.category$.subscribe((res) => {
         if (res) {

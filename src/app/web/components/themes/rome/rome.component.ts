@@ -2,11 +2,9 @@ import {
   Component,
   Inject,
   Input,
-  OnChanges,
   OnDestroy,
   OnInit,
   PLATFORM_ID,
-  SimpleChanges,
 } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { Store } from '@ngrx/store';
@@ -35,7 +33,7 @@ import * as data from '../../../shared/data/owl-carousel';
     NewsletterComponent,
   ],
 })
-export class RomeComponent implements OnInit, OnChanges, OnDestroy {
+export class RomeComponent implements OnInit, OnDestroy {
   @Input() data?: Rome;
   @Input() slug?: string;
 
@@ -51,12 +49,7 @@ export class RomeComponent implements OnInit, OnChanges, OnDestroy {
     private themeOptionService: ThemeOptionService
   ) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('RomeComponent - ngOnChanges', this.data);
-  }
-
   ngOnInit() {
-    console.log('RomeComponent - ngOnInit', this.data);
     if (isPlatformBrowser(this.platformId)) {
       if (this.data?.slug == this.slug) {
         if (

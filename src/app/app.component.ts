@@ -17,13 +17,10 @@ import {
 })
 export class AppComponent {
   title = 'nxt-gen-aio';
-  counter = 1;
 
   constructor(private _store: Store) {}
 
   ngOnInit() {
-    this.counter++;
-    console.log('AppComponent - ngOnInit', this.counter);
     this._store.dispatch(NxtAccountActions.GetSettings());
     this._store.dispatch(NxtAccountActions.GetUser());
     this._store.dispatch(NxtAccountActions.GetCurrency());

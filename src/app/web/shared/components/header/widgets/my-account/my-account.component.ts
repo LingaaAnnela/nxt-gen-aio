@@ -4,11 +4,9 @@ import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { Logout } from '../../../../action/auth.action';
 import { AccountUser } from '../../../../interface/account.interface';
-import { AccountState } from '../../../../state/account.state';
-import { AuthState } from '../../../../state/auth.state';
 import { ConfirmationModalComponent } from '../../../widgets/modal/confirmation-modal/confirmation-modal.component';
+import { NxtAccountSelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-my-account',
@@ -20,10 +18,10 @@ export class MyAccountComponent {
   @Input() style: string = 'basic';
 
   isAuthenticated$: Observable<Boolean> = inject(Store).select(
-    AuthState.isAuthenticated
+    NxtAccountSelectors.isAuthenticated
   );
   user$: Observable<AccountUser> = inject(Store).select(
-    AccountState.user
+    NxtAccountSelectors.user
   ) as Observable<AccountUser>;
 
   @ViewChild('confirmationModal') ConfirmationModal: ConfirmationModalComponent;

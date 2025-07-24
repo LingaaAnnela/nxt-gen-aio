@@ -2,8 +2,6 @@ import { Component, inject, ViewChild } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { AccountUser } from '../../../shared/interface/account.interface';
-import { AccountState } from '../../../shared/state/account.state';
-import { DeleteAddress } from '../../../shared/action/account.action';
 import { AddressModalComponent } from '../../../shared/components/widgets/modal/address-modal/address-modal.component';
 import { DeleteModalComponent } from '../../../shared/components/widgets/modal/delete-modal/delete-modal.component';
 import { UserAddress } from '../../../shared/interface/user.interface';

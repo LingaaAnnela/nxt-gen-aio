@@ -17,6 +17,11 @@ import { Faq } from '../../web/shared/interface/page.interface';
 import { Blog } from '../../web/shared/interface/blog.interface';
 
 export interface NxtAccountState {
+  auth: {
+    isAuthenticated: boolean;
+    token: string | null;
+    accsssToken: string | null;
+  } | null;
   user: AccountUser | null;
   settings: Values | null;
   permissions: Permission[];
@@ -44,6 +49,8 @@ export interface NxtAccountState {
 }
 
 export const initialState: NxtAccountState = {
+  // auth: null,
+  auth: { isAuthenticated: true, token: 'abc1234', accsssToken: 'ABC1234' }, // Temporary auth state for testing
   user: null,
   settings: null,
   permissions: [],

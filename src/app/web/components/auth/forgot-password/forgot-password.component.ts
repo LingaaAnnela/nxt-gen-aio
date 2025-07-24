@@ -7,7 +7,6 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { ForgotPassWord } from '../../../shared/action/auth.action';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';

@@ -6,11 +6,10 @@ import { DealsModalComponent } from '../../../widgets/modal/deals-modal/deals-mo
 import { ButtonComponent } from '../../../widgets/button/button.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { NxtProductSelectors } from '../../../../../../store/selectors';
-import { JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-deal',
-  imports: [ButtonComponent, DealsModalComponent, TranslateModule, JsonPipe],
+  imports: [ButtonComponent, DealsModalComponent, TranslateModule],
   templateUrl: './deal.component.html',
   styleUrls: ['./deal.component.scss'],
 })

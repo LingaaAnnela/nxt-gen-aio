@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Store } from '@ngxs/store';
+import { Store } from '@ngrx/store';
 import {
   UrlTree,
   Router,
@@ -7,7 +7,6 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { Observable } from 'rxjs';
-import { GetUserDetails } from '../../shared/action/account.action';
 import { AuthService } from '../../shared/services/auth.service';
 
 @Injectable({
@@ -15,7 +14,7 @@ import { AuthService } from '../../shared/services/auth.service';
 })
 export class AuthGuard {
   constructor(
-    private store: Store,
+    private _store: Store,
     private router: Router,
     private authService: AuthService
   ) {}
@@ -32,19 +31,19 @@ export class AuthGuard {
     this.authService.redirectUrl = state.url;
 
     // Redirect to the login page
-    if (
-      !this.store.selectSnapshot(
-        (state) => state.auth && state.auth.access_token
-      )
-    ) {
-      return this.router.createUrlTree(['/auth/login']);
-    }
+    // if (
+    //   !this.store.selectSnapshot(
+    //     (state) => state.auth && state.auth.access_token
+    //   )
+    // ) {
+    //   return this.router.createUrlTree(['/auth/login']);
+    // }
 
-    this.store.dispatch(new GetUserDetails()).subscribe({
-      complete: () => {
-        return true;
-      },
-    });
+    // this.store.dispatch(new GetUserDetails()).subscribe({
+    //   complete: () => {
+    //     return true;
+    //   },
+    // });
     return true;
   }
 
@@ -52,19 +51,19 @@ export class AuthGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | UrlTree {
-    if (
-      !!this.store.selectSnapshot(
-        (state) => state.auth && state.auth.access_token
-      )
-    ) {
-      if (
-        this.router.url.startsWith('/account') ||
-        this.router.url == '/checkout' ||
-        this.router.url == '/compare'
-      )
-        this.router.navigate(['/nxt/theme/rome']);
-      return false;
-    }
+    // if (
+    //   !!this.store.selectSnapshot(
+    //     (state) => state.auth && state.auth.access_token
+    //   )
+    // ) {
+    //   if (
+    //     this.router.url.startsWith('/account') ||
+    //     this.router.url == '/checkout' ||
+    //     this.router.url == '/compare'
+    //   )
+    //     this.router.navigate(['/nxt/theme/rome']);
+    //   return false;
+    // }
     return true;
   }
 }
