@@ -69,38 +69,24 @@ export class AboutUsComponent {
 
   public teamMembers = [
     {
-      profile_image: 'assets/images/inner-page/user/1.jpg',
-      name: 'Anna Baranov',
-      designation: 'Marketing',
-      description: 'cheeseburger airedale mozzarella the big cheese fondue.',
-    },
-    {
-      profile_image: 'assets/images/inner-page/user/2.jpg',
-      name: 'Anna Baranov',
-      designation: 'Marketing',
-      description:
-        'cheese on toast mozzarella bavarian bergkase smelly cheese cheesy feet.',
-    },
-    {
       profile_image: 'assets/images/inner-page/user/3.jpg',
-      name: 'Anna Baranov',
-      designation: 'Marketing',
+      name: 'Anwar Jethu',
+      designation: 'CEO, Nxt Gen',
       description:
         'camembert de normandie. Bocconcini rubber cheese fromage frais port-salut.',
     },
     {
-      profile_image: 'assets/images/inner-page/user/4.jpg',
-      name: 'Anna Baranov',
-      designation: 'Marketing',
-      description:
-        'Fondue stinking bishop goat. Macaroni cheese croque monsieur cottage cheese.',
+      profile_image: 'assets/images/nxt/linga-annela.jpeg',
+      name: 'Linga Annela',
+      designation: 'CTO, Nxt Gen',
+      description: 'cheeseburger airedale mozzarella the big cheese fondue.',
     },
     {
-      profile_image: 'assets/images/inner-page/user/5.jpg',
-      name: 'Anna Baranov',
-      designation: 'Marketing',
+      profile_image: 'assets/images/inner-page/user/2.jpg',
+      name: 'Bala Nadella',
+      designation: 'CFO, Nxt Gen',
       description:
-        'squirty cheese cheddar macaroni cheese airedale cheese triangles.',
+        'cheese on toast mozzarella bavarian bergkase smelly cheese cheesy feet.',
     },
   ];
 

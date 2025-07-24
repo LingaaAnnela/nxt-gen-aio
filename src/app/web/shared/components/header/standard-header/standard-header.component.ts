@@ -15,10 +15,7 @@ import { CategoriesBlockComponent } from '../widgets/categories/categories.compo
 import { CartComponent } from '../widgets/cart/cart.component';
 import { WishlistComponent } from '../widgets/wishlist/wishlist.component';
 import { SearchBoxComponent } from '../widgets/search-box/search-box.component';
-import { MyAccountComponent } from '../widgets/my-account/my-account.component';
-import { SearchComponent } from '../widgets/search/search.component';
 import { LogoComponent } from '../widgets/logo/logo.component';
-import { NavbarMenuButtonComponent } from '../widgets/navbar-menu-button/navbar-menu-button.component';
 import { TopbarComponent } from '../widgets/topbar/topbar.component';
 
 @Component({
@@ -27,10 +24,7 @@ import { TopbarComponent } from '../widgets/topbar/topbar.component';
   styleUrls: ['./standard-header.component.scss'],
   imports: [
     TopbarComponent,
-    NavbarMenuButtonComponent,
     LogoComponent,
-    SearchComponent,
-    MyAccountComponent,
     SearchBoxComponent,
     WishlistComponent,
     CartComponent,
