@@ -63,7 +63,7 @@
                               {{ "price" | translate }} :
                             </h5>
                             <span>{{
-                              (item?.variation
+                              (item?.variation?.sale_price
                                 ? item.variation.sale_price
                                 : item.product.sale_price
                               ) | currencySymbol
@@ -144,7 +144,7 @@
                     </h4>
                     <h5>
                       {{
-                        (item?.variation
+                        (item?.variation?.sale_price
                           ? item.variation.sale_price
                           : item.product.sale_price
                         ) | currencySymbol

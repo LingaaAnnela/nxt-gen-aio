@@ -18,7 +18,6 @@ import { WishlistComponent } from '../widgets/wishlist/wishlist.component';
 import { CallComponent } from '../widgets/call/call.component';
 import { SearchBoxComponent } from '../widgets/search-box/search-box.component';
 import { SearchComponent } from '../widgets/search/search.component';
-import { CategoriesComponent } from '../../widgets/categories/categories.component';
 import { LogoComponent } from '../widgets/logo/logo.component';
 import { NavbarMenuButtonComponent } from '../widgets/navbar-menu-button/navbar-menu-button.component';
 import { TopbarComponent } from '../widgets/topbar/topbar.component';
@@ -31,7 +30,6 @@ import { TopbarComponent } from '../widgets/topbar/topbar.component';
     TopbarComponent,
     NavbarMenuButtonComponent,
     LogoComponent,
-    CategoriesComponent,
     SearchComponent,
     SearchBoxComponent,
     CallComponent,

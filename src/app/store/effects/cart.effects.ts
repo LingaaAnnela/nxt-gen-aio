@@ -83,7 +83,7 @@ export const onUpdateCart: FunctionalEffect = createEffect(
             sub_total:
               updatedQuantity *
               (item.variation?.sale_price ?? item.product?.sale_price),
-            variation: updatedVariation,
+            // variation: updatedVariation, // TODO:
           };
 
           if (item.quantity < 1) {

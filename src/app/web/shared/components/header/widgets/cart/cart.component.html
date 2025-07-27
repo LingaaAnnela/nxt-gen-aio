@@ -109,7 +109,7 @@
           </a>
           <h6>
             {{
-              (item?.variation
+              (item?.variation?.sale_price
                 ? item.variation.sale_price
                 : item.product.sale_price
               ) | currencySymbol

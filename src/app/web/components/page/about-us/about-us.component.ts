@@ -82,7 +82,7 @@ export class AboutUsComponent {
       description: 'cheeseburger airedale mozzarella the big cheese fondue.',
     },
     {
-      profile_image: 'assets/images/inner-page/user/2.jpg',
+      profile_image: 'assets/images/nxt/bala-kishore.jpeg',
       name: 'Bala Nadella',
       designation: 'CFO, Nxt Gen',
       description:
