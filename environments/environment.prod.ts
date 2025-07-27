@@ -6,7 +6,7 @@ export const environment = {
   production: true,
   useMock: true,
   baseURL: 'http://localhost:4200/',
-  URL: '/assets/data',
+  URL: 'assets/data',
 };
 
 /*
