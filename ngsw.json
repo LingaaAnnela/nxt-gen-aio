@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1753628027528,
+  "timestamp": 1753628497768,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -24,15 +24,15 @@
         "/nxt-gen-aio/chunk-PWFZS6W4.js",
         "/nxt-gen-aio/chunk-RFKMXYIH.js",
         "/nxt-gen-aio/chunk-RFVUTIKW.js",
-        "/nxt-gen-aio/chunk-UBN4SQMN.js",
         "/nxt-gen-aio/chunk-UFDNTLTM.js",
+        "/nxt-gen-aio/chunk-WIUYOIK2.js",
         "/nxt-gen-aio/chunk-YCEHYFMY.js",
         "/nxt-gen-aio/favicon.ico",
         "/nxt-gen-aio/index.html",
-        "/nxt-gen-aio/main-3OY5UWJ4.js",
+        "/nxt-gen-aio/main-Z4RS5UZT.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-N6ANYMXA.css"
+        "/nxt-gen-aio/styles-IN2T52N7.css"
       ],
       "patterns": []
     },
@@ -219,6 +219,7 @@
         "/nxt-gen-aio/assets/images/newsletter/3.jpg",
         "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg",
         "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg",
+        "/nxt-gen-aio/assets/images/nxt/soujanya.jpeg",
         "/nxt-gen-aio/assets/images/nxt/sruthi-agiary.jpeg",
         "/nxt-gen-aio/assets/images/offer.gif",
         "/nxt-gen-aio/assets/images/payment/1.png",
@@ -500,6 +501,7 @@
     "/nxt-gen-aio/assets/images/newsletter/3.jpg": "1f8245cba798f23d787fca8f28c24ba007080acc",
     "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg": "b067ffd7c3134ceca261e1314928e46d56a4cbca",
     "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg": "6dad3f6b32cb542d95a665667ca4d296529f4c6e",
+    "/nxt-gen-aio/assets/images/nxt/soujanya.jpeg": "816f5fd62a1f2a541fb0f49733a5ab00815947a3",
     "/nxt-gen-aio/assets/images/nxt/sruthi-agiary.jpeg": "d6687b82b89a691864fcfdf3658fb459fcc354f0",
     "/nxt-gen-aio/assets/images/offer.gif": "317a8d8d0ab5dc84886ac7dc73c22b2abecba294",
     "/nxt-gen-aio/assets/images/payment/1.png": "9784ad4e197c747f788e23041d00f20160907081",
@@ -598,8 +600,8 @@
     "/nxt-gen-aio/chunk-PWFZS6W4.js": "2c52dbc2bb21a6d394b31f98b9572a16710826da",
     "/nxt-gen-aio/chunk-RFKMXYIH.js": "5a8e9c3140e7ca5b5665c02b3439a5b47ed01b4b",
     "/nxt-gen-aio/chunk-RFVUTIKW.js": "f6acb7ddb58f756267520fdcf24c93d10faa55bf",
-    "/nxt-gen-aio/chunk-UBN4SQMN.js": "7ba8cddebbb5e5f07a7bfaeefb45d57d9d292607",
     "/nxt-gen-aio/chunk-UFDNTLTM.js": "5dfa2416d1b8749fbe1fe10d683301b01731ecf8",
+    "/nxt-gen-aio/chunk-WIUYOIK2.js": "29638ed3c7e6a1ee9f2d165ea504abdb54e84ca2",
     "/nxt-gen-aio/chunk-YCEHYFMY.js": "02e24f2d920afc76027fa1cb6e93df6a9025e14d",
     "/nxt-gen-aio/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
     "/nxt-gen-aio/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
@@ -610,8 +612,8 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/nxt-gen-aio/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/nxt-gen-aio/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/nxt-gen-aio/index.html": "d931cafd7da4e267e9ebb83e6097005d51a94862",
-    "/nxt-gen-aio/main-3OY5UWJ4.js": "172fdbb0f28f079047f8515427dc1e306b702f77",
+    "/nxt-gen-aio/index.html": "000d899d94ecdd35eb00c1333dc39f3c32d035de",
+    "/nxt-gen-aio/main-Z4RS5UZT.js": "9df21e13a126b15445747b08c1ac47845371a22f",
     "/nxt-gen-aio/manifest.webmanifest": "085b2617ad038471d8c0461a760009f31a1cacd7",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
     "/nxt-gen-aio/media/bg-body-CC7IYXRE.png": "b121824023b53fd51b73133bea43eb7924af36be",
@@ -621,7 +623,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-N6ANYMXA.css": "919d8a74edaa2f08d628bf36e7be8def936a8672"
+    "/nxt-gen-aio/styles-IN2T52N7.css": "4392b92d7cea348a06993b369a270491372a5ff4"
   },
   "navigationUrls": [
     {
