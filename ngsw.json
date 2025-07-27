@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1753621239401,
+  "timestamp": 1753627074667,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -13,9 +13,9 @@
       "urls": [
         "/nxt-gen-aio/chunk-36XUKGOQ.js",
         "/nxt-gen-aio/chunk-3FTJX5YT.js",
-        "/nxt-gen-aio/chunk-4LYEFFKB.js",
         "/nxt-gen-aio/chunk-6ZZQ3VD2.js",
         "/nxt-gen-aio/chunk-AUSIVOBG.js",
+        "/nxt-gen-aio/chunk-HUAQRPPS.js",
         "/nxt-gen-aio/chunk-IDA5A7CT.js",
         "/nxt-gen-aio/chunk-IXXV57W7.js",
         "/nxt-gen-aio/chunk-L4H42EKM.js",
@@ -29,10 +29,10 @@
         "/nxt-gen-aio/chunk-YCEHYFMY.js",
         "/nxt-gen-aio/favicon.ico",
         "/nxt-gen-aio/index.html",
-        "/nxt-gen-aio/main-C5YF2ODQ.js",
+        "/nxt-gen-aio/main-CYKHBPEX.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-EQVCY5KO.css"
+        "/nxt-gen-aio/styles-SYIA2FGA.css"
       ],
       "patterns": []
     },
@@ -217,6 +217,7 @@
         "/nxt-gen-aio/assets/images/mega-menu2.png",
         "/nxt-gen-aio/assets/images/newsletter/1.jpg",
         "/nxt-gen-aio/assets/images/newsletter/3.jpg",
+        "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg",
         "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg",
         "/nxt-gen-aio/assets/images/offer.gif",
         "/nxt-gen-aio/assets/images/payment/1.png",
@@ -496,6 +497,7 @@
     "/nxt-gen-aio/assets/images/mega-menu2.png": "0a17b04c4710111590492a3c6d526a2a5a5da095",
     "/nxt-gen-aio/assets/images/newsletter/1.jpg": "51c10bfca2546652706a93437ab6572a5647ae13",
     "/nxt-gen-aio/assets/images/newsletter/3.jpg": "1f8245cba798f23d787fca8f28c24ba007080acc",
+    "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg": "b067ffd7c3134ceca261e1314928e46d56a4cbca",
     "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg": "6dad3f6b32cb542d95a665667ca4d296529f4c6e",
     "/nxt-gen-aio/assets/images/offer.gif": "317a8d8d0ab5dc84886ac7dc73c22b2abecba294",
     "/nxt-gen-aio/assets/images/payment/1.png": "9784ad4e197c747f788e23041d00f20160907081",
@@ -583,9 +585,9 @@
     "/nxt-gen-aio/assets/svg/tracking/shipped.svg": "d686e26939bcf1eaf5002028dbae089e3e71b878",
     "/nxt-gen-aio/chunk-36XUKGOQ.js": "017c5209e69a856e2afdc9f9bfec11d6dcb5f251",
     "/nxt-gen-aio/chunk-3FTJX5YT.js": "aaefa97002efd7be47bc47f6dc009606a3ea8705",
-    "/nxt-gen-aio/chunk-4LYEFFKB.js": "2f3646d31039263362ab9efe01e620bfdc1c7975",
     "/nxt-gen-aio/chunk-6ZZQ3VD2.js": "45cd9e57d55e7bed6a37a7fd637be6ce8c166eb2",
     "/nxt-gen-aio/chunk-AUSIVOBG.js": "f19db3fb372fa323241d128188c5bea8bb3753e1",
+    "/nxt-gen-aio/chunk-HUAQRPPS.js": "e7deeda200c634112e809d5a5ac28b4f774235d3",
     "/nxt-gen-aio/chunk-IDA5A7CT.js": "f190734cf3ef40aae2faf65de16f16f236c7511c",
     "/nxt-gen-aio/chunk-IXXV57W7.js": "b23d9b33bfb4ae4386e99f78a754233fc20d7798",
     "/nxt-gen-aio/chunk-L4H42EKM.js": "9e33f5177c90f728ca9381c5b26d3bde08cec245",
@@ -606,8 +608,8 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/nxt-gen-aio/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/nxt-gen-aio/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/nxt-gen-aio/index.html": "56f2a6bc27810912c949bd32fdd8c60c41002dd1",
-    "/nxt-gen-aio/main-C5YF2ODQ.js": "7e67faab31fe5eaf67be2d825cbc56e1d7580158",
+    "/nxt-gen-aio/index.html": "a807561e648f07d29d9db6c2b5ea906a2268812d",
+    "/nxt-gen-aio/main-CYKHBPEX.js": "4c45d75a957b025dca8251accd68f22bd265bb31",
     "/nxt-gen-aio/manifest.webmanifest": "085b2617ad038471d8c0461a760009f31a1cacd7",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
     "/nxt-gen-aio/media/bg-body-CC7IYXRE.png": "b121824023b53fd51b73133bea43eb7924af36be",
@@ -617,7 +619,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-EQVCY5KO.css": "84ab00123c9b5a87ffb91e2250aa05d183c84738"
+    "/nxt-gen-aio/styles-SYIA2FGA.css": "6374afd0700aaff3c2288089b5cf765ec67de060"
   },
   "navigationUrls": [
     {
