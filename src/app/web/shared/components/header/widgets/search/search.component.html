@@ -6,6 +6,7 @@
     class="form-control"
     placeholder="Search here.."
     [formControl]="term"
+    (keyup.enter)="redirectToSearch()"
   />
   <app-button
     [type]="'button'"
