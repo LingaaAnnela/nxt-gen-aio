@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1753630279269,
+  "timestamp": 1753630609233,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -32,7 +32,7 @@
         "/nxt-gen-aio/main-L2SVDKMC.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-WSAJHIGH.css"
+        "/nxt-gen-aio/styles-XARLC77P.css"
       ],
       "patterns": []
     },
@@ -503,7 +503,7 @@
     "/nxt-gen-aio/assets/images/nxt/arha-annela.jpeg": "64d6a488bf27eb61c4f26512754a1c15d5705868",
     "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg": "b067ffd7c3134ceca261e1314928e46d56a4cbca",
     "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg": "6dad3f6b32cb542d95a665667ca4d296529f4c6e",
-    "/nxt-gen-aio/assets/images/nxt/soujanya-batchu.jpeg": "2d8666a94dde00b4046953a57ce0145218e4adcc",
+    "/nxt-gen-aio/assets/images/nxt/soujanya-batchu.jpeg": "42b2dfdbcebdfca919ae3794895aaf63532c96b9",
     "/nxt-gen-aio/assets/images/nxt/sruthi-agiary.jpeg": "d6687b82b89a691864fcfdf3658fb459fcc354f0",
     "/nxt-gen-aio/assets/images/offer.gif": "317a8d8d0ab5dc84886ac7dc73c22b2abecba294",
     "/nxt-gen-aio/assets/images/payment/1.png": "9784ad4e197c747f788e23041d00f20160907081",
@@ -614,7 +614,7 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/nxt-gen-aio/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/nxt-gen-aio/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/nxt-gen-aio/index.html": "ea1f8ee6afe2c83be6bbd9cf013e75306c75c5f7",
+    "/nxt-gen-aio/index.html": "59d8f9e56e6ecb2a1f66cdb753e63533d6686062",
     "/nxt-gen-aio/main-L2SVDKMC.js": "70fd77e6f13e8240140fa5187955a9e94b7f68e0",
     "/nxt-gen-aio/manifest.webmanifest": "085b2617ad038471d8c0461a760009f31a1cacd7",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
@@ -625,7 +625,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-WSAJHIGH.css": "08d63ba964734553b687085da5fe2db98831cf14"
+    "/nxt-gen-aio/styles-XARLC77P.css": "34e9af11a62a8af6f5bc20f7cefed5e71f2d07ed"
   },
   "navigationUrls": [
     {
