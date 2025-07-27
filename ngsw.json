@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1753629007791,
+  "timestamp": 1753630279269,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -15,6 +15,7 @@
         "/nxt-gen-aio/chunk-3FTJX5YT.js",
         "/nxt-gen-aio/chunk-6ZZQ3VD2.js",
         "/nxt-gen-aio/chunk-AUSIVOBG.js",
+        "/nxt-gen-aio/chunk-B5UA63ZN.js",
         "/nxt-gen-aio/chunk-IDA5A7CT.js",
         "/nxt-gen-aio/chunk-IXXV57W7.js",
         "/nxt-gen-aio/chunk-L4H42EKM.js",
@@ -25,14 +26,13 @@
         "/nxt-gen-aio/chunk-RFKMXYIH.js",
         "/nxt-gen-aio/chunk-RFVUTIKW.js",
         "/nxt-gen-aio/chunk-UFDNTLTM.js",
-        "/nxt-gen-aio/chunk-XCE6PVJT.js",
         "/nxt-gen-aio/chunk-YCEHYFMY.js",
         "/nxt-gen-aio/favicon.ico",
         "/nxt-gen-aio/index.html",
-        "/nxt-gen-aio/main-MX2MVKIP.js",
+        "/nxt-gen-aio/main-L2SVDKMC.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-XMH6YZBC.css"
+        "/nxt-gen-aio/styles-WSAJHIGH.css"
       ],
       "patterns": []
     },
@@ -217,6 +217,7 @@
         "/nxt-gen-aio/assets/images/mega-menu2.png",
         "/nxt-gen-aio/assets/images/newsletter/1.jpg",
         "/nxt-gen-aio/assets/images/newsletter/3.jpg",
+        "/nxt-gen-aio/assets/images/nxt/arha-annela.jpeg",
         "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg",
         "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg",
         "/nxt-gen-aio/assets/images/nxt/soujanya-batchu.jpeg",
@@ -499,6 +500,7 @@
     "/nxt-gen-aio/assets/images/mega-menu2.png": "0a17b04c4710111590492a3c6d526a2a5a5da095",
     "/nxt-gen-aio/assets/images/newsletter/1.jpg": "51c10bfca2546652706a93437ab6572a5647ae13",
     "/nxt-gen-aio/assets/images/newsletter/3.jpg": "1f8245cba798f23d787fca8f28c24ba007080acc",
+    "/nxt-gen-aio/assets/images/nxt/arha-annela.jpeg": "64d6a488bf27eb61c4f26512754a1c15d5705868",
     "/nxt-gen-aio/assets/images/nxt/bala-kishore.jpeg": "b067ffd7c3134ceca261e1314928e46d56a4cbca",
     "/nxt-gen-aio/assets/images/nxt/linga-annela.jpeg": "6dad3f6b32cb542d95a665667ca4d296529f4c6e",
     "/nxt-gen-aio/assets/images/nxt/soujanya-batchu.jpeg": "2d8666a94dde00b4046953a57ce0145218e4adcc",
@@ -591,6 +593,7 @@
     "/nxt-gen-aio/chunk-3FTJX5YT.js": "aaefa97002efd7be47bc47f6dc009606a3ea8705",
     "/nxt-gen-aio/chunk-6ZZQ3VD2.js": "45cd9e57d55e7bed6a37a7fd637be6ce8c166eb2",
     "/nxt-gen-aio/chunk-AUSIVOBG.js": "f19db3fb372fa323241d128188c5bea8bb3753e1",
+    "/nxt-gen-aio/chunk-B5UA63ZN.js": "7d7ca8ee6582399bc54116188121223a4202e001",
     "/nxt-gen-aio/chunk-IDA5A7CT.js": "f190734cf3ef40aae2faf65de16f16f236c7511c",
     "/nxt-gen-aio/chunk-IXXV57W7.js": "b23d9b33bfb4ae4386e99f78a754233fc20d7798",
     "/nxt-gen-aio/chunk-L4H42EKM.js": "9e33f5177c90f728ca9381c5b26d3bde08cec245",
@@ -601,7 +604,6 @@
     "/nxt-gen-aio/chunk-RFKMXYIH.js": "5a8e9c3140e7ca5b5665c02b3439a5b47ed01b4b",
     "/nxt-gen-aio/chunk-RFVUTIKW.js": "f6acb7ddb58f756267520fdcf24c93d10faa55bf",
     "/nxt-gen-aio/chunk-UFDNTLTM.js": "5dfa2416d1b8749fbe1fe10d683301b01731ecf8",
-    "/nxt-gen-aio/chunk-XCE6PVJT.js": "a6e03d76f2c532c2514bb8ae32a04ae0c6c79626",
     "/nxt-gen-aio/chunk-YCEHYFMY.js": "02e24f2d920afc76027fa1cb6e93df6a9025e14d",
     "/nxt-gen-aio/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
     "/nxt-gen-aio/icons/icon-128x128.png": "f912963bdc6d5a38d8f1dd0afbaab2ce8d657acb",
@@ -612,8 +614,8 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "1de182f76f7329dfa8f9fcdd1fdcdd695bea6a99",
     "/nxt-gen-aio/icons/icon-72x72.png": "aa88a6096bd973be7f6d7a5489bfa6bc2463f8c4",
     "/nxt-gen-aio/icons/icon-96x96.png": "7fb8f59c30ce2ff12c700321a0b39e14b3dc8f95",
-    "/nxt-gen-aio/index.html": "ee4e0bd17fb563e4ae9fa0260efcf5bee642854b",
-    "/nxt-gen-aio/main-MX2MVKIP.js": "fd84583d1b96b5ce0c1e16f845c9d1926c3be7bf",
+    "/nxt-gen-aio/index.html": "ea1f8ee6afe2c83be6bbd9cf013e75306c75c5f7",
+    "/nxt-gen-aio/main-L2SVDKMC.js": "70fd77e6f13e8240140fa5187955a9e94b7f68e0",
     "/nxt-gen-aio/manifest.webmanifest": "085b2617ad038471d8c0461a760009f31a1cacd7",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
     "/nxt-gen-aio/media/bg-body-CC7IYXRE.png": "b121824023b53fd51b73133bea43eb7924af36be",
@@ -623,7 +625,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-XMH6YZBC.css": "7f0d69c2feec831f5a8f0680ee258274ce34862d"
+    "/nxt-gen-aio/styles-WSAJHIGH.css": "08d63ba964734553b687085da5fe2db98831cf14"
   },
   "navigationUrls": [
     {
