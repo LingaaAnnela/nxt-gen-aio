@@ -69,6 +69,25 @@ export class AboutUsComponent {
 
   public teamMembers = [
     {
+      profile_image: 'assets/images/nxt/arha-annela.jpeg',
+      name: 'Arha Annela',
+      designation: 'Manade Idantha',
+      description: 'cheeseburger airedale mozzarella the big cheese fondue.',
+    },
+    {
+      profile_image: 'assets/images/nxt/sruthi-agiary.jpeg',
+      name: 'Sruthi Agiary',
+      designation: 'CTO, Nxt Gen',
+      description: 'cheeseburger airedale mozzarella the big cheese fondue.',
+    },
+    {
+      profile_image: 'assets/images/nxt/soujanya-batchu.jpeg',
+      name: 'Soujanya Batchu',
+      designation: 'CFO, Nxt Gen',
+      description:
+        'cheese on toast mozzarella bavarian bergkase smelly cheese cheesy feet.',
+    },
+    {
       profile_image: 'assets/images/inner-page/user/3.jpg',
       name: 'Anwar Jethu',
       designation: 'CEO, Nxt Gen',
@@ -78,13 +97,13 @@ export class AboutUsComponent {
     {
       profile_image: 'assets/images/nxt/linga-annela.jpeg',
       name: 'Linga Annela',
-      designation: 'CTO, Nxt Gen',
+      designation: 'CTO Asst, Nxt Gen',
       description: 'cheeseburger airedale mozzarella the big cheese fondue.',
     },
     {
       profile_image: 'assets/images/nxt/bala-kishore.jpeg',
       name: 'Bala Nadella',
-      designation: 'CFO, Nxt Gen',
+      designation: 'CFO Asst, Nxt Gen',
       description:
         'cheese on toast mozzarella bavarian bergkase smelly cheese cheesy feet.',
     },
