@@ -75,7 +75,7 @@
       "page_top_bar_dark": false,
       "support_number": "+1-698-436-6278",
       "today_deals": [1, 12, 8],
-      "category_ids": [1, 2, 3, 4, 5, 6, 7, 8]
+      "category_ids": ["nxt-c-110", "nxt-c-105", "nxt-c-107", "nxt-c-108", "nxt-c-144", "nxt-c-114"]
     },
     "footer": {
       "footer_style": "light_mode",

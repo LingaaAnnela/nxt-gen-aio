@@ -14,7 +14,7 @@ export class NxtProductService {
   constructor(private _http: HttpClient) {}
 
   getProducts(payload?: Params): Observable<ProductModel> {
-    return this._http.get<ProductModel>(`${environment.URL}/product.json`, {
+    return this._http.get<ProductModel>(`${environment.URL}/product_resp.json`, {
       params: payload,
     });
   }
