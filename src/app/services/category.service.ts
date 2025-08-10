@@ -12,7 +12,7 @@ export class NxtCategoryService {
   constructor(private _http: HttpClient) {}
 
   getCategories(payload?: Params): Observable<CategoryModel> {
-    return this._http.get<CategoryModel>(`${environment.URL}/category.json`, {
+    return this._http.get<CategoryModel>(`${environment.URL}/category_resp.json`, {
       params: payload,
     });
   }
