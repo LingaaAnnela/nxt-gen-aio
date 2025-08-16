@@ -28,6 +28,38 @@
 </div>
 }
 
+<!-- <ng-container *ngIf="category$ | async as cats">
+  <div class="shop-left-sidebar">
+    <ul class="nav nav-pills mb-3 custom-nav-tab">
+      <ng-container *ngFor="let c of cats">
+        <li class="nav-item">
+          <app-button
+            [class]="
+              selectedCategorySlug.length &&
+              selectedCategorySlug.includes(c.slug!)
+                ? 'nav-link active'
+                : 'nav-link'
+            "
+            [id]="'nav_link_btn'"
+            [spinner]="false"
+            (click)="redirectToCollection(c.slug!)"
+          >
+            {{ c.name }}
+            <img
+              [src]="
+                c?.category_icon
+                  ? c?.category_icon?.original_url
+                  : 'assets/images/category.png'
+              "
+              [alt]="c?.name"
+            />
+          </app-button>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</ng-container> -->
+
 <!-- Category Classic Vertical -->
 @if (categories && categories.length && style == 'classic_vertical') {
 <div class="shop-left-sidebar">
@@ -61,6 +93,7 @@
 </div>
 }
 
+<!-- <pre> sliderOption : {{ sliderOption | json }} </pre> -->
 <!-- Category Style Horizontal -->
 @if (categories && categories.length && style == 'horizontal') {
 <div class="product-wrapper no-arrow" [class]="'category-slider'">

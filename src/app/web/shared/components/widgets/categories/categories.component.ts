@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
 import { isPlatformBrowser } from '@angular/common';
 import { NxtCategorySelectors } from '../../../../../store/selectors';
+import * as data from '../../../../shared/data/owl-carousel';
 
 @Component({
   selector: 'app-categories',
@@ -26,8 +27,8 @@ import { NxtCategorySelectors } from '../../../../../store/selectors';
     ButtonComponent,
     CarouselModule,
     ReactiveFormsModule,
-    TranslateModule,
-  ],
+    TranslateModule
+],
 })
 export class CategoriesComponent {
   category$: Observable<Category[]> = inject(Store).select(
@@ -39,7 +40,7 @@ export class CategoriesComponent {
   @Input() title?: string;
   @Input() image?: string;
   @Input() theme: string;
-  @Input() sliderOption: OwlOptions;
+  @Input() sliderOption: OwlOptions = data.categorySlider;
   @Input() selectedCategoryId: number;
   @Input() bgImage: string;
 
@@ -55,9 +56,9 @@ export class CategoriesComponent {
     @Inject(PLATFORM_ID) platformID: object
   ) {
     this.isBrowser = isPlatformBrowser(platformID);
-    this.category$.subscribe((res) => {
-      this.categories = res?.filter((category) => category.type == 'product');
-    });
+    // this.category$.subscribe((res) => {
+    //   this.categories = res?.filter((category) => category.type == 'product');
+    // });
     this.route.queryParams.subscribe((params) => {
       this.selectedCategorySlug = params['category']
         ? params['category'].split(',')
@@ -66,15 +67,18 @@ export class CategoriesComponent {
   }
 
   ngOnChanges() {
-    if (this.categoryIds && this.categoryIds.length) {
-      this.category$.subscribe((res) => {
-        if (res) {
-          this.categories = res.filter((category) =>
-            this.categoryIds?.includes(category.id)
-          );
-        }
-      });
-    }
+    // if (this.categoryIds && this.categoryIds.length) {
+    console.log('categoryIds', this.categoryIds);
+    this.category$.subscribe((res) => {
+      console.log('category$ res', res);
+      if (res) {
+        this.categories = res.filter((category) =>
+          this.categoryIds?.includes(category.id)
+        );
+        console.log('Filtered categories:', this.categories);
+      }
+    });
+    // }
   }
 
   selectCategory(id: number) {

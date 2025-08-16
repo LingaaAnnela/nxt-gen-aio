@@ -13,7 +13,7 @@ export interface Category {
   type: string;
   parent_id?: number;
   category_image?: Attachment;
-  category_image_id?: number;
+  category_image_id?: number | null;
   category_icon?: Attachment;
   category_icon_id?: number;
   commission_rate?: number;

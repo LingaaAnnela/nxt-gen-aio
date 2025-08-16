@@ -5,6 +5,7 @@ import { themeReducer } from './theme.reducer';
 import { categoryReducer } from './category.reducer';
 import { accountReducer } from './account.reducer';
 import { cartReducer } from './cart.reducer';
+import { productsEntityReducer } from './product-entity.reducer';
 
 export interface NxtAppState {
   account: ReturnType<typeof accountReducer>;
@@ -12,6 +13,7 @@ export interface NxtAppState {
   'home-page': ReturnType<typeof homePageReducer>;
   category: ReturnType<typeof categoryReducer>;
   product: ReturnType<typeof productReducer>;
+  'product-entity': ReturnType<typeof productsEntityReducer>;
   theme: ReturnType<typeof themeReducer>;
 }
 
@@ -21,6 +23,7 @@ export const reducers: ActionReducerMap<NxtAppState> = {
   'home-page': homePageReducer,
   category: categoryReducer,
   product: productReducer,
+  'product-entity': productsEntityReducer,
   theme: themeReducer,
 };
 
