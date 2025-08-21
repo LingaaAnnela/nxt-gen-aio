@@ -4,7 +4,10 @@ import { Observable } from 'rxjs';
 import { Product } from '../../../../../../shared/interface/product.interface';
 import { ProductBoxComponent } from '../../../../../../shared/components/widgets/product-box/product-box.component';
 import { TitleComponent } from '../../../../../../shared/components/widgets/title/title.component';
-import { NxtProductSelectors } from '../../../../../../../store/selectors';
+import {
+  NxtProductEntitySelectors,
+  NxtProductSelectors,
+} from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-related-products',
@@ -13,9 +16,9 @@ import { NxtProductSelectors } from '../../../../../../../store/selectors';
   imports: [TitleComponent, ProductBoxComponent],
 })
 export class RelatedProductsComponent {
-  relatedProduct$: Observable<Product[]> = inject(Store).select(
-    NxtProductSelectors.relatedProducts
-  );
+  // relatedProduct$: Observable<Product[]> = inject(Store).select(
+  //   NxtProductSelectors.relatedProducts
+  // );
 
   @Input() product: Product | null;
 
@@ -26,11 +29,15 @@ export class RelatedProductsComponent {
       this.product?.related_products &&
       Array.isArray(this.product?.related_products)
     ) {
-      this.relatedProduct$.subscribe((products) => {
-        this.relatedproducts = products.filter((product) =>
-          this.product?.related_products?.includes(product?.id)
-        );
-      });
+      inject(Store)
+        .select(
+          NxtProductEntitySelectors.productsByIds(this.product.related_products)
+        )
+        .subscribe((products) => {
+          this.relatedproducts = products.filter((product) =>
+            this.product?.related_products?.includes(product?.id)
+          );
+        });
     }
   }
 }

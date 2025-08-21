@@ -15,7 +15,7 @@ import { Category } from '../../../interface/category.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonComponent } from '../button/button.component';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NxtCategorySelectors } from '../../../../../store/selectors';
 import * as data from '../../../../shared/data/owl-carousel';
 
@@ -27,7 +27,8 @@ import * as data from '../../../../shared/data/owl-carousel';
     ButtonComponent,
     CarouselModule,
     ReactiveFormsModule,
-    TranslateModule
+    TranslateModule,
+    CommonModule
 ],
 })
 export class CategoriesComponent {
@@ -68,14 +69,11 @@ export class CategoriesComponent {
 
   ngOnChanges() {
     // if (this.categoryIds && this.categoryIds.length) {
-    console.log('categoryIds', this.categoryIds);
     this.category$.subscribe((res) => {
-      console.log('category$ res', res);
       if (res) {
         this.categories = res.filter((category) =>
           this.categoryIds?.includes(category.id)
         );
-        console.log('Filtered categories:', this.categories);
       }
     });
     // }

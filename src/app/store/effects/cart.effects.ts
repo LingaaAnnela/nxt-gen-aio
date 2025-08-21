@@ -35,7 +35,7 @@ export const onUpdateCart: FunctionalEffect = createEffect(
       concatLatestFrom(() => [store.select(NxtCartSelectors.items)]),
       map(([{ params }, items]) => {
         const cart = [...items];
-        let item = cart.find((item) => Number(item.id) === Number(params.id));
+        let item = cart.find((item) => Number(item.product_id) === Number(params.product_id));
 
         if (item) {
           if (
@@ -96,7 +96,7 @@ export const onUpdateCart: FunctionalEffect = createEffect(
           return NxtCartActions.UpdateCartItem({ item: updatedItem });
         }
 
-        return { type: '[Cart] No Update - Item Not Found' };
+        return NxtCartActions.AddToCart({ params });
       })
     );
   },

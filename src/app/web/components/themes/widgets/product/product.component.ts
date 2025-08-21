@@ -7,7 +7,10 @@ import * as data from '../../../../shared/data/owl-carousel';
 import { ProductBoxComponent } from '../../../../shared/components/widgets/product-box/product-box.component';
 import { SkeletonProductBoxComponent } from '../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import { CommonModule, NgClass } from '@angular/common';
-import { NxtProductSelectors } from '../../../../../store/selectors';
+import {
+  NxtProductEntitySelectors,
+  NxtProductSelectors,
+} from '../../../../../store/selectors';
 
 @Component({
   selector: 'app-theme-product',
@@ -40,7 +43,7 @@ export class ProductComponent {
   ngOnChanges() {
     if (Array.isArray(this.productIds)) {
       this._store
-        .select(NxtProductSelectors.productsByIds(this.productIds))
+        .select(NxtProductEntitySelectors.productsByIds(this.productIds))
         .subscribe((products) => {
           this.products = products;
         });

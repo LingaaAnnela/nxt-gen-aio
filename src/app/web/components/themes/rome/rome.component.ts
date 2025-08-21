@@ -16,7 +16,10 @@ import { ProductComponent } from '../widgets/product/product.component';
 import { BannerComponent } from '../widgets/banner/banner.component';
 import { CategoriesComponent } from '../widgets/categories/categories.component';
 import { TitleComponent } from '../../../shared/components/widgets/title/title.component';
-import { NxtProductSelectors } from '../../../../store/selectors';
+import {
+  NxtProductEntitySelectors,
+  NxtProductSelectors,
+} from '../../../../store/selectors';
 
 import * as data from '../../../shared/data/owl-carousel';
 
@@ -79,7 +82,7 @@ export class RomeComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.selectedCategoryId = id;
       this._store
-        .select(NxtProductSelectors.productsByCategoryIds(id))
+        .select(NxtProductEntitySelectors.productIdsByCategoryId(id))
         .subscribe((products) => {
           this.productFilterIds = products.slice(0, 5);
         });

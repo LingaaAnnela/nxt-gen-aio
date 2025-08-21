@@ -8,7 +8,10 @@ import { NoDataComponent } from '../../../../../shared/components/widgets/no-dat
 import { ProductBoxComponent } from '../../../../../shared/components/widgets/product-box/product-box.component';
 import { SkeletonProductBoxComponent } from '../../../../../shared/components/widgets/product-box/skeleton-product-box/skeleton-product-box.component';
 import { CollectionSortComponent } from '../collection-sort/collection-sort.component';
-import { NxtProductSelectors } from '../../../../../../store/selectors';
+import {
+  NxtProductEntitySelectors,
+  NxtProductSelectors,
+} from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-collection-products',
@@ -40,13 +43,14 @@ export class CollectionProductsComponent implements OnChanges {
   constructor(public productService: ProductService, private _store: Store) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('CollectionProductsComponent: ', this.filter);
     this._store
       .select(
-        NxtProductSelectors.productsByCategoryNames(this.filter['category'])
+        NxtProductEntitySelectors.productsByCategoryNames(
+          this.filter['category']
+        )
       )
       .subscribe((products) => {
-        this.products = products;
+        this.products = (products as Product[]) || [];
       });
   }
 

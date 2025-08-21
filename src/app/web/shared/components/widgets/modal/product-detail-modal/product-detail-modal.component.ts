@@ -25,6 +25,7 @@ import { VariantAttributesComponent } from '../../variant-attributes/variant-att
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { ButtonComponent } from '../../button/button.component';
 import { NxtCartSelectors } from '../../../../../../store/selectors';
+import { NxtCartActions } from '../../../../../../store/actions';
 
 @Component({
   selector: 'app-product-detail-modal',
@@ -143,6 +144,7 @@ export class ProductDetailModalComponent {
       //     this.modalService.dismissAll();
       //   },
       // });
+      this.store.dispatch(NxtCartActions.AddToCart({ params }));
     }
   }
 

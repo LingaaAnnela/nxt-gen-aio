@@ -228,14 +228,14 @@
                     <a
                       class="save notifi-wishlist"
                       href="javascript:void(0)"
-                      (click)="addToWishlist(item.product.id)"
+                      (click)="addToWishlist(item.product)"
                     >
                       {{ "save_for_later" | translate }}
                     </a>
                     <a
                       class="remove close_button"
                       href="javascript:void(0)"
-                      (click)="delete(item.id)"
+                      (click)="delete(item.product.id)"
                     >
                       {{ "remove" | translate }}
                     </a>

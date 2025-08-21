@@ -1,18 +1,22 @@
 import { inject } from '@angular/core';
 import { ResolveFn } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { of } from 'rxjs';
+import { filter, of, take } from 'rxjs';
 import { NxtProductActions } from '../../store/actions';
+import { Product } from '../shared/interface/product.interface';
+import { NxtProductEntitySelectors } from '../../store/selectors';
 
-export const NxtProductResolver: ResolveFn<boolean> = (route, state) => {
+export const NxtProductResolver: ResolveFn<Product | null> = (route, state) => {
   const slug = route.paramMap.get('slug');
+  if (!slug) return of(null);
 
-  if (!slug) {
-    // If no slug is present, return false
-    return of(false);
-  }
+  const store = inject(Store);
+  // For the existing use case!
+  store.dispatch(NxtProductActions.GetProductBySlug({ slug }));
 
-  inject(Store).dispatch(NxtProductActions.GetProductBySlug({ slug }));
-
-  return true;
+  return store.select(NxtProductEntitySelectors.productBySlug(slug)).pipe(
+    filter((p): p is Product => !!p),
+    // filter((p: Product) => !!p), // Same as above but without type guard
+    take(1)
+  );
 };

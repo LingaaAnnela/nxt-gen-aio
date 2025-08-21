@@ -43,7 +43,6 @@ export class StickyCheckoutComponent {
       this.product = changes['product']?.currentValue;
     }
     this.cartItem$.subscribe((items) => {
-      console.log('cart items', items);
       this.cartItem = items.find(
         (item) => item.product.id == this.product?.id
       )!;
