@@ -1,0 +1,93 @@
+{
+  "data": [
+    {
+      "updated_at": "2025-08-17T21:23:23.938634",
+      "created_at": "2025-08-17T21:23:23.938634",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 5,
+      "review_image_id": null,
+      "description": "I am genuinely delighted with this item. It's a total winner! The quality is superb, and it has added so much convenience to my daily routine. Highly satisfied customer!",
+      "id": 14,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:24.300948",
+      "created_at": "2025-08-17T21:23:24.300948",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 1,
+      "review_image_id": null,
+      "description": "Honestly, I regret buying this item. The quality is subpar, and it feels like a waste of money. I wouldn't recommend it to anyone.",
+      "id": 18,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:23.754559",
+      "created_at": "2025-08-17T21:23:23.754559",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 2,
+      "review_image_id": null,
+      "description": "I am genuinely delighted with this item. It's a total winner! The quality is superb, and it has added so much convenience to my daily routine. Highly satisfied customer!",
+      "id": 12,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:23.851868",
+      "created_at": "2025-08-17T21:23:23.851868",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 4,
+      "review_image_id": null,
+      "description": "Very impressed with this purchase. The item is of excellent quality, and it has exceeded my expectations.",
+      "id": 13,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:24.123221",
+      "created_at": "2025-08-17T21:23:24.123221",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 3,
+      "review_image_id": null,
+      "description": "Very impressed with this purchase. The item is of excellent quality, and it has exceeded my expectations.",
+      "id": 16,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:24.212602",
+      "created_at": "2025-08-17T21:23:24.212602",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 1,
+      "review_image_id": null,
+      "description": "Very impressed with this purchase. The item is of excellent quality, and it has exceeded my expectations.",
+      "id": 17,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:24.386561",
+      "created_at": "2025-08-17T21:23:24.386561",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 4,
+      "review_image_id": null,
+      "description": "Very impressed with this purchase. The item is of excellent quality, and it has exceeded my expectations.",
+      "id": 19,
+      "product_id": 141
+    },
+    {
+      "updated_at": "2025-08-17T21:23:24.031484",
+      "created_at": "2025-08-17T21:23:24.031484",
+      "store_id": 3,
+      "consumer_id": 1,
+      "rating": 3,
+      "review_image_id": null,
+      "description": "Avoid this product. The quality is terrible, and it started falling apart almost immediately. I wish I had read more reviews before buying. Lesson learned.",
+      "id": 15,
+      "product_id": 141
+    }
+  ],
+  "total": 8
+}
