@@ -15,6 +15,7 @@ import { ButtonComponent } from '../../../shared/components/widgets/button/butto
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 import { NxtCartSelectors } from '../../../../store/selectors';
 import { NxtCartActions } from '../../../../store/actions';
+import { Product } from '../../../shared/interface/product.interface';
 
 @Component({
   selector: 'app-cart',
@@ -60,8 +61,8 @@ export class CartComponent {
     this._store.dispatch(NxtCartActions.DeleteCart({ id }));
   }
 
-  addToWishlist(id: number) {
+  addToWishlist(product: Product) {
     // this.store.dispatch(new AddToWishlist({ product_id: id }));
-    this._store.dispatch(NxtCartActions.AddToWishlist({ id }));
+    this._store.dispatch(NxtCartActions.AddToWishlist({ product }));
   }
 }

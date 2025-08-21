@@ -48,8 +48,48 @@ export const cartReducer = createReducer(
     total: 0,
     showSpinner: false,
   })),
+  on(NxtCartActions.AddToCart, (state, { params }) => {
+    let updatedItems = [];
+    if (
+      state.items.findIndex((item) => item.product_id === params.product_id) !==
+      -1
+    ) {
+      updatedItems = state.items.map((item) =>
+        item.product_id === params.product_id
+          ? {
+              ...item,
+              quantity: params.quantity,
+              sub_total: params.product?.price! * params.quantity,
+            }
+          : item
+      );
+    } else {
+      const item: Cart = {
+        ...params,
+        id: params.id!,
+        variation: params.variation!,
+        product: params.product!,
+        sub_total: params.product?.price! * params.quantity,
+      };
+
+      updatedItems = [...state.items, item];
+    }
+
+    const total = updatedItems.reduce((prev, curr: Cart) => {
+      return prev + Number(curr.sub_total);
+    }, 0);
+
+    return {
+      ...state,
+      items: updatedItems,
+      total,
+      showSpinner: false,
+    };
+  }),
   on(NxtCartActions.UpdateCartItem, (state, { item }) => {
-    const updatedItems = state.items.map((i) => (i.id === item.id ? item : i));
+    const updatedItems = state.items.map((i) =>
+      i.product_id === item.product_id ? item : i
+    );
 
     const total = updatedItems.reduce((prev, curr: Cart) => {
       return prev + Number(curr.sub_total);
@@ -63,7 +103,7 @@ export const cartReducer = createReducer(
     };
   }),
   on(NxtCartActions.DeleteCart, (state, { id }) => {
-    const remainingItems = state.items.filter((i) => i.id !== id);
+    const remainingItems = state.items.filter((i) => i.product_id !== id);
 
     const total = remainingItems.reduce((prev, curr: Cart) => {
       return prev + Number(curr.sub_total);
@@ -74,6 +114,25 @@ export const cartReducer = createReducer(
       items: remainingItems,
       total,
       showSpinner: false,
+    };
+  }),
+  on(NxtCartActions.AddToWishlist, (state, { product }) => {
+    const isInWhishlist =
+      state.wishlist.findIndex((p) => p.id === product.id) !== -1;
+    if (!isInWhishlist) {
+      return {
+        ...state,
+        wishlist: [...state.wishlist, product],
+      };
+    }
+    return state;
+  }),
+  on(NxtCartActions.DeleteWishlist, (state, { id }) => {
+    const wishlist = state.wishlist.filter((p) => p.id !== id);
+
+    return {
+      ...state,
+      wishlist,
     };
   }),
   on(NxtCartActions.ToggleSidebarCart, (state, { value }) => ({

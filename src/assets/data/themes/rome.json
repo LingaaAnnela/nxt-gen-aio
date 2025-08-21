@@ -71,7 +71,7 @@
     "categories_products": {
       "title": "Our Products",
       "status": true,
-      "category_ids": [122, 110, 129]
+      "category_ids": [5, 10, 15, 4]
     },
     "two_column_banners": {
       "status": true,

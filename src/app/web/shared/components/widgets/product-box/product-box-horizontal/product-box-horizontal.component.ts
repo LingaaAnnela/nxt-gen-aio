@@ -13,6 +13,7 @@ import { ProductDetailModalComponent as ProductDetailModalComponent_1 } from '..
 import { ButtonComponent } from '../../button/button.component';
 import { RouterLink } from '@angular/router';
 import { NxtCartSelectors } from '../../../../../../store/selectors';
+import { NxtCartActions } from '../../../../../../store/actions';
 
 @Component({
   selector: 'app-product-box-horizontal',
@@ -54,7 +55,7 @@ export class ProductBoxHorizontalComponent {
 
   ngOnInit() {
     this.cartItem$.subscribe((items) => {
-      this.cartItem = items.find((item) => item.product.id == this.product.id)!;
+      this.cartItem = items.find((item) => item.product_id == this.product.id)!;
     });
   }
 
@@ -67,15 +68,18 @@ export class ProductBoxHorizontalComponent {
       variation: this.cartItem ? this.cartItem?.variation : null,
       quantity: qty,
     };
-    // this.store.dispatch(new AddToCart(params));
+
+    this.store.dispatch(NxtCartActions.UpdateCart({ params }));
   }
 
-  addToWishlist(id: number) {
+  addToWishlist(product: Product) {
     // this.store.dispatch(new AddToWishlist({ product_id: id }));
+    this.store.dispatch(NxtCartActions.AddToWishlist({ product }));
   }
 
   removeWishlist(id: number) {
     // this.store.dispatch(new DeleteWishlist(id));
+    this.store.dispatch(NxtCartActions.DeleteWishlist({ id }));
   }
 
   addToCompar(id: number) {

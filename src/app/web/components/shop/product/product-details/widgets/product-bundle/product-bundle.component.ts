@@ -12,6 +12,7 @@ import { ButtonComponent } from '../../../../../../shared/components/widgets/but
 import { RouterLink } from '@angular/router';
 import {
   NxtCartSelectors,
+  NxtProductEntitySelectors,
   NxtProductSelectors,
 } from '../../../../../../../store/selectors';
 import { NxtCartActions } from '../../../../../../../store/actions';
@@ -24,9 +25,9 @@ import { NxtCartActions } from '../../../../../../../store/actions';
   imports: [RouterLink, ButtonComponent, CurrencySymbolPipe, TranslateModule],
 })
 export class ProductBundleComponent {
-  crossSellproduct$: Observable<Product[]> = inject(Store).select(
-    NxtProductSelectors.relatedProducts
-  );
+  // crossSellproduct$: Observable<Product[]> = inject(Store).select(
+  //   NxtProductSelectors.relatedProducts
+  // );
   cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
 
   @Input() product: Product | null;
@@ -48,11 +49,17 @@ export class ProductBundleComponent {
       this.product?.cross_sell_products &&
       Array.isArray(this.product?.cross_sell_products)
     ) {
-      this.crossSellproduct$.subscribe((products) => {
-        this.crossSellproducts = products.filter((product) =>
-          this.product?.cross_sell_products?.includes(product?.id!)
-        );
-      });
+      inject(Store)
+        .select(
+          NxtProductEntitySelectors.productsByIds(
+            this.product.cross_sell_products
+          )
+        )
+        .subscribe((products) => {
+          this.crossSellproducts = products.filter((product) =>
+            this.product?.cross_sell_products?.includes(product?.id!)
+          );
+        });
     }
   }
 
@@ -67,11 +74,17 @@ export class ProductBundleComponent {
     // push in array cheked value
     else this.selectedProductIds.splice(index, 1); // removed in array unchecked value
 
-    this.crossSellproduct$.subscribe((products) => {
-      this.selectedProduct = products.filter((product) =>
-        this.selectedProductIds?.includes(product?.id!)
-      );
-    });
+    inject(Store)
+      .select(
+        NxtProductEntitySelectors.productsByIds(
+          this.product?.cross_sell_products || []
+        )
+      )
+      .subscribe((products) => {
+        this.selectedProduct = products.filter((product) =>
+          this.selectedProductIds?.includes(product?.id!)
+        );
+      });
 
     this.total = this.selectedProduct.reduce(
       (sum, item) => sum + item.sale_price,
@@ -93,7 +106,6 @@ export class ProductBundleComponent {
           variation_id: null,
           quantity: 1,
         };
-        // this.store.dispatch(new AddToCart(params));
         this._store.dispatch(NxtCartActions.AddToCart({ params }));
       }
     });

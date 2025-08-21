@@ -97,3 +97,8 @@ export const FeedbackFailure = createAction(
   '[NXT] Feedback Failure',
   props<{ error: { message: string } }>()
 );
+
+export const UpdateQuantity = createAction(
+  '[NXT] Update Quantity',
+  props<{ slug: string; quantity: number }>()
+);

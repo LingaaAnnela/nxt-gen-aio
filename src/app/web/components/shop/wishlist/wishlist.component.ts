@@ -29,7 +29,7 @@ export class WishlistComponent {
   );
 
   // TODO
-  skeletonLoader: boolean = true;
+  skeletonLoader: boolean = false;
 
   public breadcrumb: Breadcrumb = {
     title: 'Wishlist',
@@ -38,7 +38,5 @@ export class WishlistComponent {
 
   public skeletonItems = Array.from({ length: 12 }, (_, index) => index);
 
-  constructor(private _store: Store) {
-    this._store.dispatch(NxtCartActions.GetWishlist());
-  }
+  constructor(private _store: Store) {}
 }

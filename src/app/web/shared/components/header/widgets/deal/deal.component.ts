@@ -5,7 +5,7 @@ import { Option } from '../../../../interface/theme-option.interface';
 import { DealsModalComponent } from '../../../widgets/modal/deals-modal/deals-modal.component';
 import { ButtonComponent } from '../../../widgets/button/button.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { NxtProductSelectors } from '../../../../../../store/selectors';
+import { NxtProductEntitySelectors } from '../../../../../../store/selectors';
 
 @Component({
   selector: 'app-deal',
@@ -36,7 +36,7 @@ export class DealComponent {
     // TODO:
     if (Array.isArray(this.ids)) {
       this._store
-        .select(NxtProductSelectors.productsByIds(this.ids))
+        .select(NxtProductEntitySelectors.productsByIds(this.ids))
         .subscribe({
           next: (val: any) => {
             this.dealProducts = val?.product?.dealProducts || [];

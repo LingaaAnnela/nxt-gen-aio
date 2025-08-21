@@ -31,7 +31,7 @@ export default [
     path: 'product/:slug',
     component: ProductComponent,
     resolve: {
-      data: NxtProductResolver,
+      product: NxtProductResolver,
     },
     canActivate: [ScrollPositionGuard],
   },

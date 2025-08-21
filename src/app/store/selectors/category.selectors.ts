@@ -13,3 +13,8 @@ export const categories = createSelector(
   selectCategoryState,
   (state) => state.categories!
 );
+
+export const categorySlugIdMap = createSelector(
+  selectCategoryState,
+  (state) => state.categorySlugIdMap!
+);

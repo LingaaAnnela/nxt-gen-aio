@@ -17,7 +17,7 @@
       "size_chart_image": null,
       "related_products": [],
       "product_galleries": [],
-      "quantity": "1",
+      "quantity": "5",
       "created_at": "2025-08-13T01:59:42.986793",
       "store_id": 1,
       "stock_status": "in_stock",
@@ -162,7 +162,7 @@
       "price": 2.49,
       "sku": "SPT-552497",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -190,7 +190,7 @@
       "product_meta_image": null,
       "is_cod": "1",
       "updated_at": "2025-08-14T01:05:19.259083",
-      "orders_count": 0,
+      "orders_count": 1,
       "sale_price": 2.85,
       "reviews_count": 0,
       "description": "The Dutch Masters 3ct Chocolate cigars offer a rich and decadent flavor profile with notes of cocoa and a hint of sweetness, perfect for those who enjoy a more indulgent smoking experience. The Chocolate flavor is bold and satisfying, making it a favorite among those who appreciate a full-bodied cigar.",
@@ -300,7 +300,7 @@
       "price": 3.25,
       "sku": "DM3-682789",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -438,7 +438,7 @@
       "price": 1.79,
       "sku": "SWL-787086",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -602,7 +602,7 @@
       "price": 6.5,
       "sku": "RBF-564635",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -740,7 +740,7 @@
       "price": 1.29,
       "sku": "GLC-868149",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -878,7 +878,7 @@
       "price": 25,
       "sku": "R2P-377184",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1042,7 +1042,7 @@
       "price": 2.49,
       "sku": "PLS-966606",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1206,7 +1206,7 @@
       "price": 14.99,
       "sku": "S3M-780720",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1370,7 +1370,7 @@
       "price": 15,
       "sku": "AFS-718276",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1508,7 +1508,7 @@
       "price": 25,
       "sku": "MM--725753",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1646,7 +1646,7 @@
       "price": 25,
       "sku": "R2P-566295",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1784,7 +1784,7 @@
       "price": 1.29,
       "sku": "GLC-331871",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -1948,7 +1948,7 @@
       "price": 140.07,
       "sku": "OLH-541240",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2086,7 +2086,7 @@
       "price": 20,
       "sku": "LP2-626128",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2224,7 +2224,7 @@
       "price": 1.99,
       "sku": "ESM-849225",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2241,7 +2241,7 @@
       "size_chart_image_id": null,
       "sale_starts_at": null,
       "size_chart_image": null,
-      "related_products": [],
+      "related_products": [1, 2, 3, 4, 5],
       "product_galleries": [],
       "quantity": "1",
       "created_at": "2025-08-13T01:48:49.653851",
@@ -2362,7 +2362,7 @@
       "price": 1.5,
       "sku": "EWC-093033",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2526,7 +2526,7 @@
       "price": 113.02,
       "sku": "TTK-600274",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2664,7 +2664,7 @@
       "price": 1.5,
       "sku": "AAT-215741",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2802,7 +2802,7 @@
       "price": 25,
       "sku": "GB2-677486",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -2940,7 +2940,7 @@
       "price": 1.79,
       "sku": "SWL-417930",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3078,7 +3078,7 @@
       "price": 1.49,
       "sku": "GL5-232128",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3242,7 +3242,7 @@
       "price": 2.5,
       "sku": "VW2-835491",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3380,7 +3380,7 @@
       "price": 25,
       "sku": "R2P-751703",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3518,7 +3518,7 @@
       "price": 9.49,
       "sku": "SOE-092780",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3656,7 +3656,7 @@
       "price": 1.79,
       "sku": "SWL-165619",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3794,7 +3794,7 @@
       "price": 1.5,
       "sku": "DMR-360094",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -3932,7 +3932,7 @@
       "price": 20,
       "sku": "TIM-464718",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -4096,7 +4096,7 @@
       "price": 10,
       "sku": "CNC-789589",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -4234,7 +4234,7 @@
       "price": 25,
       "sku": "LM2-893658",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -4372,7 +4372,7 @@
       "price": 20,
       "sku": "GBP-892026",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -4536,7 +4536,7 @@
       "price": 15,
       "sku": "AFS-658110",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -4700,7 +4700,7 @@
       "price": 2.59,
       "sku": "C2O-303012",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -4838,7 +4838,7 @@
       "price": 4,
       "sku": "GL5-219754",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5002,7 +5002,7 @@
       "price": 15,
       "sku": "AFS-954473",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5140,7 +5140,7 @@
       "price": 20,
       "sku": "GBP-799102",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5304,7 +5304,7 @@
       "price": 15,
       "sku": "AFS-141382",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5442,7 +5442,7 @@
       "price": 20,
       "sku": "LP2-594697",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5580,7 +5580,7 @@
       "price": 25,
       "sku": "C2P-660193",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5718,7 +5718,7 @@
       "price": 6,
       "sku": "BC5-551963",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -5856,7 +5856,7 @@
       "price": 1.5,
       "sku": "BPD-010286",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6020,7 +6020,7 @@
       "price": 15,
       "sku": "AFS-240445",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6158,7 +6158,7 @@
       "price": 9.99,
       "sku": "ADS-836851",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6296,7 +6296,7 @@
       "price": 2.69,
       "sku": "CFH-249571",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6434,7 +6434,7 @@
       "price": 20,
       "sku": "SAI-252606",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6572,7 +6572,7 @@
       "price": 25,
       "sku": "R2P-269449",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6710,7 +6710,7 @@
       "price": 10,
       "sku": "S-978642",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6848,7 +6848,7 @@
       "price": 1.5,
       "sku": "LTB-572843",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -6986,7 +6986,7 @@
       "price": 25,
       "sku": "LM2-129603",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -7124,7 +7124,7 @@
       "price": 1.29,
       "sku": "GLC-408748",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -7288,7 +7288,7 @@
       "price": 16.5,
       "sku": "SBU-650878",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -7452,7 +7452,7 @@
       "price": 2.49,
       "sku": "PLU-161386",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -7616,7 +7616,7 @@
       "price": 15,
       "sku": "AFS-928192",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -7754,7 +7754,7 @@
       "price": 20,
       "sku": "BRI-158048",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -7918,7 +7918,7 @@
       "price": 1.49,
       "sku": "AGT-737440",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8056,7 +8056,7 @@
       "price": 20,
       "sku": "GBP-059356",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8194,7 +8194,7 @@
       "price": 2.69,
       "sku": "LDP-468908",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8358,7 +8358,7 @@
       "price": 3.49,
       "sku": "VCP-467767",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8496,7 +8496,7 @@
       "price": 1.5,
       "sku": "DMB-030146",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8660,7 +8660,7 @@
       "price": 2.49,
       "sku": "TWJ-236856",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8824,7 +8824,7 @@
       "price": 1.49,
       "sku": "AL-333383",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -8962,7 +8962,7 @@
       "price": 20,
       "sku": "CUD-075637",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9100,7 +9100,7 @@
       "price": 9,
       "sku": "HL--379479",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9238,7 +9238,7 @@
       "price": 2.69,
       "sku": "RCA-867399",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9376,7 +9376,7 @@
       "price": 9.49,
       "sku": "SOE-867087",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9514,7 +9514,7 @@
       "price": 9.99,
       "sku": "ADB-650122",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9678,7 +9678,7 @@
       "price": 2.49,
       "sku": "PLL-113443",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9816,7 +9816,7 @@
       "price": 25,
       "sku": "GB2-579129",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -9954,7 +9954,7 @@
       "price": 20,
       "sku": "OC--562500",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10118,7 +10118,7 @@
       "price": 2.49,
       "sku": "TOJ-516892",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10256,7 +10256,7 @@
       "price": 9.49,
       "sku": "SOE-584160",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10394,7 +10394,7 @@
       "price": 25,
       "sku": "R2P-880685",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10532,7 +10532,7 @@
       "price": 9.49,
       "sku": "SOE-983307",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10670,7 +10670,7 @@
       "price": 9.49,
       "sku": "SOE-852110",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10808,7 +10808,7 @@
       "price": 6.49,
       "sku": "B&J-614405",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -10946,7 +10946,7 @@
       "price": 25,
       "sku": "GB2-867973",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11084,7 +11084,7 @@
       "price": 2.69,
       "sku": "FFH-498412",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11222,7 +11222,7 @@
       "price": 20,
       "sku": "GBP-789653",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11386,7 +11386,7 @@
       "price": 2.49,
       "sku": "SMM-358786",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11524,7 +11524,7 @@
       "price": 6,
       "sku": "SWL-639340",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11662,7 +11662,7 @@
       "price": 7,
       "sku": "BC5-607286",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11800,7 +11800,7 @@
       "price": 25,
       "sku": "R2P-626970",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -11938,7 +11938,7 @@
       "price": 25,
       "sku": "GB2-572211",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12076,7 +12076,7 @@
       "price": 2.69,
       "sku": "KKK-461123",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12214,7 +12214,7 @@
       "price": 4,
       "sku": "GL5-265005",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12352,7 +12352,7 @@
       "price": 9,
       "sku": "HL--183700",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12490,7 +12490,7 @@
       "price": 9.99,
       "sku": "ADC-571046",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12628,7 +12628,7 @@
       "price": 1.5,
       "sku": "AP-761719",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12766,7 +12766,7 @@
       "price": 9.49,
       "sku": "SOE-039389",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -12930,7 +12930,7 @@
       "price": 2.5,
       "sku": "RB8-791071",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13068,7 +13068,7 @@
       "price": 9.49,
       "sku": "SOE-742397",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13206,7 +13206,7 @@
       "price": 1.5,
       "sku": "ECC-091945",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13344,7 +13344,7 @@
       "price": 6.49,
       "sku": "B&J-106191",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13508,7 +13508,7 @@
       "price": 2.59,
       "sku": "CDV-086285",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13646,7 +13646,7 @@
       "price": 20,
       "sku": "GBP-070650",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13784,7 +13784,7 @@
       "price": 25,
       "sku": "GB2-803721",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -13948,7 +13948,7 @@
       "price": 15,
       "sku": "AFS-110534",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14112,7 +14112,7 @@
       "price": 3.49,
       "sku": "NCM-152613",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14250,7 +14250,7 @@
       "price": 4.49,
       "sku": "TMX-863167",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14388,7 +14388,7 @@
       "price": 20,
       "sku": "CUD-280592",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14552,7 +14552,7 @@
       "price": 2.59,
       "sku": "DPC-750494",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14690,7 +14690,7 @@
       "price": 6.9,
       "sku": "SOE-625423",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14828,7 +14828,7 @@
       "price": 20,
       "sku": "GBP-749187",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -14966,7 +14966,7 @@
       "price": 1.5,
       "sku": "SS2-573005",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15104,7 +15104,7 @@
       "price": 25,
       "sku": "C2P-111648",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15242,7 +15242,7 @@
       "price": 1.5,
       "sku": "NC&-589622",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15406,7 +15406,7 @@
       "price": 2.5,
       "sku": "GO2-496138",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15544,7 +15544,7 @@
       "price": 25,
       "sku": "R2P-621266",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15682,7 +15682,7 @@
       "price": 10,
       "sku": "PP-421810",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15820,7 +15820,7 @@
       "price": 1.29,
       "sku": "GLC-915515",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -15958,7 +15958,7 @@
       "price": 25,
       "sku": "FSA-170917",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16096,7 +16096,7 @@
       "price": 1.29,
       "sku": "GLC-622832",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16234,7 +16234,7 @@
       "price": 25,
       "sku": "GB2-611635",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16372,7 +16372,7 @@
       "price": 20,
       "sku": "LP2-334164",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16510,7 +16510,7 @@
       "price": 10,
       "sku": "LLI-564786",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16648,7 +16648,7 @@
       "price": 6.9,
       "sku": "SOE-911809",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16786,7 +16786,7 @@
       "price": 20,
       "sku": "BP--587304",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -16924,7 +16924,7 @@
       "price": 1.5,
       "sku": "SS2-874101",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17062,7 +17062,7 @@
       "price": 25,
       "sku": "CM--514572",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17200,7 +17200,7 @@
       "price": 30,
       "sku": "HP4-207547",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17338,7 +17338,7 @@
       "price": 1.79,
       "sku": "SWL-365576",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17476,7 +17476,7 @@
       "price": 2.79,
       "sku": "SSL-284217",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17614,7 +17614,7 @@
       "price": 6,
       "sku": "SWL-147094",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17752,7 +17752,7 @@
       "price": 9.99,
       "sku": "ADS-404875",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -17890,7 +17890,7 @@
       "price": 25,
       "sku": "GB2-785105",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18028,7 +18028,7 @@
       "price": 9.49,
       "sku": "SOE-065298",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18166,7 +18166,7 @@
       "price": 20,
       "sku": "GL--825406",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18304,7 +18304,7 @@
       "price": 20,
       "sku": "C-101579",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18442,7 +18442,7 @@
       "price": 2.69,
       "sku": "RFH-868428",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18580,7 +18580,7 @@
       "price": 1.79,
       "sku": "SWL-540668",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18718,7 +18718,7 @@
       "price": 1.5,
       "sku": "ZW2-802154",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -18856,7 +18856,7 @@
       "price": 20,
       "sku": "TIM-486780",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19020,7 +19020,7 @@
       "price": 2.5,
       "sku": "GFG-823376",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19158,7 +19158,7 @@
       "price": 6,
       "sku": "SWL-190307",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19296,7 +19296,7 @@
       "price": 1.5,
       "sku": "LTV-016292",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19460,7 +19460,7 @@
       "price": 15,
       "sku": "AFS-395342",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19624,7 +19624,7 @@
       "price": 2.59,
       "sku": "CC2-168284",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19788,7 +19788,7 @@
       "price": 2.59,
       "sku": "DP2-738111",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -19926,7 +19926,7 @@
       "price": 20,
       "sku": "SM--492721",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20064,7 +20064,7 @@
       "price": 1.29,
       "sku": "GLC-850313",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20202,7 +20202,7 @@
       "price": 1.5,
       "sku": "WOG-648156",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20340,7 +20340,7 @@
       "price": 25,
       "sku": "LM2-508682",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20504,7 +20504,7 @@
       "price": 3.49,
       "sku": "FFM-918005",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20642,7 +20642,7 @@
       "price": 1.99,
       "sku": "EWG-003588",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20780,7 +20780,7 @@
       "price": 20,
       "sku": "CUD-438139",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -20918,7 +20918,7 @@
       "price": 3.5,
       "sku": "SPK-393159",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21056,7 +21056,7 @@
       "price": 25,
       "sku": "MT2-971004",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21194,7 +21194,7 @@
       "price": 1.5,
       "sku": "LTL-340504",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21358,7 +21358,7 @@
       "price": 5.5,
       "sku": "RLF-653188",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21496,7 +21496,7 @@
       "price": 20,
       "sku": "CUD-645470",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21634,7 +21634,7 @@
       "price": 7,
       "sku": "ABB-340716",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21772,7 +21772,7 @@
       "price": 3.5,
       "sku": "5EE-425672",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -21910,7 +21910,7 @@
       "price": 6,
       "sku": "BC5-307961",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22048,7 +22048,7 @@
       "price": 9.99,
       "sku": "RC5-989548",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22212,7 +22212,7 @@
       "price": 2.59,
       "sku": "FP2-689002",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22350,7 +22350,7 @@
       "price": 2.69,
       "sku": "SKS-162495",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22488,7 +22488,7 @@
       "price": 6,
       "sku": "SWL-171406",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22626,7 +22626,7 @@
       "price": 15,
       "sku": "RCL-544995",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22764,7 +22764,7 @@
       "price": 9.99,
       "sku": "ADS-708881",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -22902,7 +22902,7 @@
       "price": 25,
       "sku": "FF--444238",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23040,7 +23040,7 @@
       "price": 1.5,
       "sku": "DMD-806841",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23178,7 +23178,7 @@
       "price": 9.99,
       "sku": "ADP-253526",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23316,7 +23316,7 @@
       "price": 2.69,
       "sku": "LC-963713",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23480,7 +23480,7 @@
       "price": 15,
       "sku": "AFS-963781",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23618,7 +23618,7 @@
       "price": 20,
       "sku": "GBP-266975",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23756,7 +23756,7 @@
       "price": 20,
       "sku": "BP--696077",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -23894,7 +23894,7 @@
       "price": 25,
       "sku": "R2P-621990",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24032,7 +24032,7 @@
       "price": 1.5,
       "sku": "ZW2-624887",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24196,7 +24196,7 @@
       "price": 20,
       "sku": "TSP-252442",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24360,7 +24360,7 @@
       "price": 1.49,
       "sku": "API-677879",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24498,7 +24498,7 @@
       "price": 25,
       "sku": "C2P-511667",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24636,7 +24636,7 @@
       "price": 2.69,
       "sku": "DCR-603377",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24774,7 +24774,7 @@
       "price": 6.9,
       "sku": "SOE-507880",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -24912,7 +24912,7 @@
       "price": 25,
       "sku": "GB2-857197",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25050,7 +25050,7 @@
       "price": 25,
       "sku": "BB--250985",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25188,7 +25188,7 @@
       "price": 20,
       "sku": "TIM-911569",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25326,7 +25326,7 @@
       "price": 25,
       "sku": "MT2-761527",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25490,7 +25490,7 @@
       "price": 2.49,
       "sku": "SGT-547408",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25628,7 +25628,7 @@
       "price": 2.79,
       "sku": "SSL-574940",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25766,7 +25766,7 @@
       "price": 6,
       "sku": "SWL-574845",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -25904,7 +25904,7 @@
       "price": 9,
       "sku": "HL--524552",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26042,7 +26042,7 @@
       "price": 1.5,
       "sku": "TES-450422",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26180,7 +26180,7 @@
       "price": 20,
       "sku": "GBP-393829",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26344,7 +26344,7 @@
       "price": 1.49,
       "sku": "AW-766412",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26482,7 +26482,7 @@
       "price": 20,
       "sku": "CPU-135891",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26620,7 +26620,7 @@
       "price": 30,
       "sku": "HP4-240317",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26758,7 +26758,7 @@
       "price": 20,
       "sku": "LP2-397589",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -26922,7 +26922,7 @@
       "price": 2.5,
       "sku": "GL2-427319",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27060,7 +27060,7 @@
       "price": 3.5,
       "sku": "TSB-280319",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27198,7 +27198,7 @@
       "price": 30,
       "sku": "HP4-446711",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27336,7 +27336,7 @@
       "price": 20,
       "sku": "CUD-140509",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27474,7 +27474,7 @@
       "price": 1.5,
       "sku": "TES-523948",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27612,7 +27612,7 @@
       "price": 25,
       "sku": "GB2-431049",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27750,7 +27750,7 @@
       "price": 30,
       "sku": "HP4-415857",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -27888,7 +27888,7 @@
       "price": 2.5,
       "sku": "C-309064",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28026,7 +28026,7 @@
       "price": 25,
       "sku": "LM2-412940",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28164,7 +28164,7 @@
       "price": 9,
       "sku": "HL--174120",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28302,7 +28302,7 @@
       "price": 25,
       "sku": "GB2-554015",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28440,7 +28440,7 @@
       "price": 1.5,
       "sku": "BVT-097877",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28604,7 +28604,7 @@
       "price": 15,
       "sku": "AFS-071054",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28742,7 +28742,7 @@
       "price": 9.49,
       "sku": "SOE-217657",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -28906,7 +28906,7 @@
       "price": 14.99,
       "sku": "TK3-966967",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29070,7 +29070,7 @@
       "price": 4.49,
       "sku": "SF--941722",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29208,7 +29208,7 @@
       "price": 20,
       "sku": "CUD-694430",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29346,7 +29346,7 @@
       "price": 1.5,
       "sku": "BCS-317640",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29510,7 +29510,7 @@
       "price": 15,
       "sku": "AFS-489186",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29648,7 +29648,7 @@
       "price": 4.49,
       "sku": "TE3-628887",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29786,7 +29786,7 @@
       "price": 10,
       "sku": "RHP-535660",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -29924,7 +29924,7 @@
       "price": 25,
       "sku": "LM2-766228",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30062,7 +30062,7 @@
       "price": 25,
       "sku": "R2P-577443",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30200,7 +30200,7 @@
       "price": 4.49,
       "sku": "TM3-527460",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30338,7 +30338,7 @@
       "price": 30,
       "sku": "HP4-136159",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30502,7 +30502,7 @@
       "price": 15,
       "sku": "AFS-425976",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30640,7 +30640,7 @@
       "price": 6.9,
       "sku": "SOE-611270",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30778,7 +30778,7 @@
       "price": 30,
       "sku": "HP4-740984",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -30942,7 +30942,7 @@
       "price": 3.49,
       "sku": "NBS-968558",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31080,7 +31080,7 @@
       "price": 1.75,
       "sku": "ACL-073801",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31218,7 +31218,7 @@
       "price": 1.5,
       "sku": "EPC-896273",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31356,7 +31356,7 @@
       "price": 25,
       "sku": "MT2-069032",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31494,7 +31494,7 @@
       "price": 20,
       "sku": "DM--739555",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31632,7 +31632,7 @@
       "price": 20,
       "sku": "CUD-871274",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31770,7 +31770,7 @@
       "price": 30,
       "sku": "HP4-339958",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -31908,7 +31908,7 @@
       "price": 1.5,
       "sku": "EBD-859636",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32046,7 +32046,7 @@
       "price": 25,
       "sku": "BM--886235",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32184,7 +32184,7 @@
       "price": 25,
       "sku": "GB2-798531",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32322,7 +32322,7 @@
       "price": 15,
       "sku": "F21-661483",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32460,7 +32460,7 @@
       "price": 1.49,
       "sku": "GL5-239912",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32598,7 +32598,7 @@
       "price": 30,
       "sku": "HP4-693643",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32736,7 +32736,7 @@
       "price": 1.5,
       "sku": "LTT-473357",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -32874,7 +32874,7 @@
       "price": 5,
       "sku": "FXT-941585",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33038,7 +33038,7 @@
       "price": 15,
       "sku": "AFS-115422",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33176,7 +33176,7 @@
       "price": 1.79,
       "sku": "SWL-364105",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33314,7 +33314,7 @@
       "price": 4.49,
       "sku": "TUT-339909",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33478,7 +33478,7 @@
       "price": 3.5,
       "sku": "BA2-532351",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33616,7 +33616,7 @@
       "price": 1.5,
       "sku": "LTN-794261",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33780,7 +33780,7 @@
       "price": 2.59,
       "sku": "FG2-261208",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -33944,7 +33944,7 @@
       "price": 5.49,
       "sku": "MMC-252523",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34082,7 +34082,7 @@
       "price": 6,
       "sku": "BC5-778346",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34246,7 +34246,7 @@
       "price": 20,
       "sku": "TSP-936343",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34384,7 +34384,7 @@
       "price": 9.99,
       "sku": "ADS-363565",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34522,7 +34522,7 @@
       "price": 1.5,
       "sku": "DMJ-250738",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34660,7 +34660,7 @@
       "price": 20,
       "sku": "GBP-272765",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34798,7 +34798,7 @@
       "price": 25,
       "sku": "GB2-237789",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -34936,7 +34936,7 @@
       "price": 25,
       "sku": "BB--660020",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35074,7 +35074,7 @@
       "price": 1.29,
       "sku": "GLC-756609",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35212,7 +35212,7 @@
       "price": 25,
       "sku": "LM2-882358",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35376,7 +35376,7 @@
       "price": 2.49,
       "sku": "LDM-769453",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35514,7 +35514,7 @@
       "price": 9.49,
       "sku": "SOE-411455",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35678,7 +35678,7 @@
       "price": 6.5,
       "sku": "GPT-064564",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35816,7 +35816,7 @@
       "price": 20,
       "sku": "CUD-174918",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -35980,7 +35980,7 @@
       "price": 1.49,
       "sku": "AMM-498522",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36118,7 +36118,7 @@
       "price": 25,
       "sku": "R2P-831578",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36256,7 +36256,7 @@
       "price": 25,
       "sku": "GB2-726645",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36394,7 +36394,7 @@
       "price": 2.49,
       "sku": "SWL-319240",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36532,7 +36532,7 @@
       "price": 9.49,
       "sku": "SOE-894829",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36670,7 +36670,7 @@
       "price": 1.5,
       "sku": "EPV-224651",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36808,7 +36808,7 @@
       "price": 25,
       "sku": "MT2-572927",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -36946,7 +36946,7 @@
       "price": 20,
       "sku": "GBP-646938",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -37084,7 +37084,7 @@
       "price": 1.99,
       "sku": "EPG-385593",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -37222,7 +37222,7 @@
       "price": 25,
       "sku": "LM2-749457",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -37386,7 +37386,7 @@
       "price": 2.59,
       "sku": "CV2-860211",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -37524,7 +37524,7 @@
       "price": 25,
       "sku": "GB2-976468",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -37688,7 +37688,7 @@
       "price": 6.5,
       "sku": "GPT-121564",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -37852,7 +37852,7 @@
       "price": 1.25,
       "sku": "DPW-663310",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38016,7 +38016,7 @@
       "price": 2.49,
       "sku": "PLP-110074",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38154,7 +38154,7 @@
       "price": 10,
       "sku": "BBE-899797",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38292,7 +38292,7 @@
       "price": 5.5,
       "sku": "RHP-245255",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38430,7 +38430,7 @@
       "price": 7.99,
       "sku": "RSN-385874",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38568,7 +38568,7 @@
       "price": 2.69,
       "sku": "RB-937960",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38706,7 +38706,7 @@
       "price": 6.9,
       "sku": "SOE-975432",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -38844,7 +38844,7 @@
       "price": 20,
       "sku": "LP2-342199",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39008,7 +39008,7 @@
       "price": 15,
       "sku": "AFS-957716",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39146,7 +39146,7 @@
       "price": 25,
       "sku": "GB2-152373",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39310,7 +39310,7 @@
       "price": 6.5,
       "sku": "GPT-561974",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39448,7 +39448,7 @@
       "price": 10,
       "sku": "RBE-275353",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39612,7 +39612,7 @@
       "price": 15,
       "sku": "AFS-300569",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39750,7 +39750,7 @@
       "price": 25,
       "sku": "GB2-445243",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -39888,7 +39888,7 @@
       "price": 20,
       "sku": "CUD-806975",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40052,7 +40052,7 @@
       "price": 2.59,
       "sku": "CDP-927567",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40216,7 +40216,7 @@
       "price": 3.49,
       "sku": "NSM-903541",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40380,7 +40380,7 @@
       "price": 2.99,
       "sku": "ME2-812183",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40518,7 +40518,7 @@
       "price": 25,
       "sku": "MT2-206632",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40656,7 +40656,7 @@
       "price": 9.99,
       "sku": "ADA-479948",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40794,7 +40794,7 @@
       "price": 1.29,
       "sku": "GLC-899986",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -40932,7 +40932,7 @@
       "price": 20,
       "sku": "LP2-183035",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41096,7 +41096,7 @@
       "price": 2.59,
       "sku": "S2O-237649",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41234,7 +41234,7 @@
       "price": 1.79,
       "sku": "SWL-899271",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41372,7 +41372,7 @@
       "price": 2.79,
       "sku": "SSL-819322",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41510,7 +41510,7 @@
       "price": 25,
       "sku": "MT2-596264",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41648,7 +41648,7 @@
       "price": 25,
       "sku": "LM2-797470",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41786,7 +41786,7 @@
       "price": 30,
       "sku": "HP4-772349",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -41924,7 +41924,7 @@
       "price": 1.5,
       "sku": "BGD-493559",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42062,7 +42062,7 @@
       "price": 1.29,
       "sku": "GLC-992903",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42200,7 +42200,7 @@
       "price": 25,
       "sku": "MT2-129771",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42338,7 +42338,7 @@
       "price": 25,
       "sku": "MT2-816778",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42502,7 +42502,7 @@
       "price": 2.49,
       "sku": "OTC-970094",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42640,7 +42640,7 @@
       "price": 4,
       "sku": "GL5-842375",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42778,7 +42778,7 @@
       "price": 20,
       "sku": "CUD-980089",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -42916,7 +42916,7 @@
       "price": 1.75,
       "sku": "ACL-837105",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43054,7 +43054,7 @@
       "price": 1.5,
       "sku": "SS2-901354",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43192,7 +43192,7 @@
       "price": 1.29,
       "sku": "GLC-725873",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43330,7 +43330,7 @@
       "price": 7,
       "sku": "BC5-663430",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43468,7 +43468,7 @@
       "price": 6.9,
       "sku": "SOE-067313",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43606,7 +43606,7 @@
       "price": 25,
       "sku": "R2P-478313",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43744,7 +43744,7 @@
       "price": 1.5,
       "sku": "BCS-088774",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -43882,7 +43882,7 @@
       "price": 25,
       "sku": "GB2-335173",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44020,7 +44020,7 @@
       "price": 25,
       "sku": "MT2-958289",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44158,7 +44158,7 @@
       "price": 25,
       "sku": "GB2-319847",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44296,7 +44296,7 @@
       "price": 4,
       "sku": "GL5-771373",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44434,7 +44434,7 @@
       "price": 20,
       "sku": "BP--694441",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44572,7 +44572,7 @@
       "price": 6,
       "sku": "SWL-547346",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44710,7 +44710,7 @@
       "price": 1.5,
       "sku": "WOT-820980",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -44874,7 +44874,7 @@
       "price": 6.5,
       "sku": "GPT-804976",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45038,7 +45038,7 @@
       "price": 2.5,
       "sku": "GFI-243474",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45176,7 +45176,7 @@
       "price": 25,
       "sku": "C2P-847057",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45314,7 +45314,7 @@
       "price": 20,
       "sku": "TIM-275374",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45452,7 +45452,7 @@
       "price": 1.5,
       "sku": "SS2-013684",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45590,7 +45590,7 @@
       "price": 9.49,
       "sku": "SOE-004641",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45754,7 +45754,7 @@
       "price": 6.5,
       "sku": "GPT-078514",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -45892,7 +45892,7 @@
       "price": 9.49,
       "sku": "SOE-355719",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46056,7 +46056,7 @@
       "price": 6.5,
       "sku": "RLF-987896",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46194,7 +46194,7 @@
       "price": 25,
       "sku": "GB2-069613",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46332,7 +46332,7 @@
       "price": 2.49,
       "sku": "SWL-691989",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46470,7 +46470,7 @@
       "price": 1.5,
       "sku": "BWV-005884",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46608,7 +46608,7 @@
       "price": 2.69,
       "sku": "RO-062221",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46746,7 +46746,7 @@
       "price": 4.49,
       "sku": "THP-568848",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -46910,7 +46910,7 @@
       "price": 2.59,
       "sku": "P2O-741654",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47048,7 +47048,7 @@
       "price": 1.5,
       "sku": "BCS-403343",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47186,7 +47186,7 @@
       "price": 25,
       "sku": "R2P-246480",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47324,7 +47324,7 @@
       "price": 3.5,
       "sku": "FXT-913027",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47462,7 +47462,7 @@
       "price": 20,
       "sku": "CUD-575577",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47600,7 +47600,7 @@
       "price": 1.5,
       "sku": "SS2-400742",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47738,7 +47738,7 @@
       "price": 25,
       "sku": "MT2-517400",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -47876,7 +47876,7 @@
       "price": 5.5,
       "sku": "RHP-908115",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48014,7 +48014,7 @@
       "price": 1.99,
       "sku": "PB1-299828",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48178,7 +48178,7 @@
       "price": 6.5,
       "sku": "GPT-375889",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48342,7 +48342,7 @@
       "price": 3.49,
       "sku": "VCP-001358",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48480,7 +48480,7 @@
       "price": 25,
       "sku": "R2P-222887",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48618,7 +48618,7 @@
       "price": 25,
       "sku": "LM2-468987",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48782,7 +48782,7 @@
       "price": 4.5,
       "sku": "ZLF-615548",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -48946,7 +48946,7 @@
       "price": 15,
       "sku": "AFS-363293",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -49084,7 +49084,7 @@
       "price": 1.29,
       "sku": "GLC-654525",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -49248,7 +49248,7 @@
       "price": 15,
       "sku": "AFS-026171",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -49412,7 +49412,7 @@
       "price": 15,
       "sku": "AFS-663645",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -49550,7 +49550,7 @@
       "price": 6,
       "sku": "SWL-725280",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -49714,7 +49714,7 @@
       "price": 6.5,
       "sku": "GPT-691612",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -49878,7 +49878,7 @@
       "price": 6.5,
       "sku": "GPT-739686",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50016,7 +50016,7 @@
       "price": 9.99,
       "sku": "ADB-657013",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50180,7 +50180,7 @@
       "price": 2.5,
       "sku": "GGF-771875",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50344,7 +50344,7 @@
       "price": 2.59,
       "sku": "FO2-400272",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50508,7 +50508,7 @@
       "price": 2.5,
       "sku": "GFP-552387",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50646,7 +50646,7 @@
       "price": 1.5,
       "sku": "DMB-114790",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50784,7 +50784,7 @@
       "price": 9.99,
       "sku": "ADB-553080",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -50948,7 +50948,7 @@
       "price": 15,
       "sku": "AFS-849114",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51086,7 +51086,7 @@
       "price": 4,
       "sku": "GL5-055352",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51224,7 +51224,7 @@
       "price": 20,
       "sku": "LP2-878785",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51362,7 +51362,7 @@
       "price": 20,
       "sku": "GBP-875551",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51500,7 +51500,7 @@
       "price": 20,
       "sku": "WGI-845190",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51638,7 +51638,7 @@
       "price": 20,
       "sku": "CB--573815",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51776,7 +51776,7 @@
       "price": 1.29,
       "sku": "GLC-288735",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -51914,7 +51914,7 @@
       "price": 25,
       "sku": "GB2-606618",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52052,7 +52052,7 @@
       "price": 20,
       "sku": "CUD-277441",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52216,7 +52216,7 @@
       "price": 6.5,
       "sku": "GPT-506667",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52380,7 +52380,7 @@
       "price": 3.5,
       "sku": "PH1-649900",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52518,7 +52518,7 @@
       "price": 25,
       "sku": "MT2-986936",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52656,7 +52656,7 @@
       "price": 25,
       "sku": "MT2-310178",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52820,7 +52820,7 @@
       "price": 2.49,
       "sku": "OTC-434087",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -52958,7 +52958,7 @@
       "price": 20,
       "sku": "TIM-977784",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53096,7 +53096,7 @@
       "price": 30,
       "sku": "HP4-692213",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53260,7 +53260,7 @@
       "price": 2.59,
       "sku": "ARB-330577",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53398,7 +53398,7 @@
       "price": 20,
       "sku": "CUD-292823",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53536,7 +53536,7 @@
       "price": 25,
       "sku": "GB2-237006",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53674,7 +53674,7 @@
       "price": 20,
       "sku": "CUD-155658",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53812,7 +53812,7 @@
       "price": 1.5,
       "sku": "ZW2-211584",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -53950,7 +53950,7 @@
       "price": 30,
       "sku": "HP4-310575",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54088,7 +54088,7 @@
       "price": 10,
       "sku": "R-123726",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54226,7 +54226,7 @@
       "price": 1.5,
       "sku": "ASP-030512",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54364,7 +54364,7 @@
       "price": 20,
       "sku": "GBP-284128",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54502,7 +54502,7 @@
       "price": 7,
       "sku": "BC5-790049",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54640,7 +54640,7 @@
       "price": 20,
       "sku": "GBP-716728",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54804,7 +54804,7 @@
       "price": 2.49,
       "sku": "SRT-507015",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -54942,7 +54942,7 @@
       "price": 20,
       "sku": "PL--962113",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55080,7 +55080,7 @@
       "price": 6,
       "sku": "BC5-069534",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55218,7 +55218,7 @@
       "price": 1.79,
       "sku": "SWL-570010",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55356,7 +55356,7 @@
       "price": 1.5,
       "sku": "ZW2-176113",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55494,7 +55494,7 @@
       "price": 1.5,
       "sku": "LTB-114588",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55658,7 +55658,7 @@
       "price": 2.49,
       "sku": "TPP-141147",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55796,7 +55796,7 @@
       "price": 2.69,
       "sku": "FO-611669",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -55934,7 +55934,7 @@
       "price": 25,
       "sku": "GB2-793127",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56072,7 +56072,7 @@
       "price": 1.5,
       "sku": "LTB-176832",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56236,7 +56236,7 @@
       "price": 15,
       "sku": "AFS-159632",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56374,7 +56374,7 @@
       "price": 25,
       "sku": "GB2-757050",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56512,7 +56512,7 @@
       "price": 1.5,
       "sku": "DC&-717206",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56650,7 +56650,7 @@
       "price": 1.5,
       "sku": "DMO-522726",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56788,7 +56788,7 @@
       "price": 6,
       "sku": "BC5-688900",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -56926,7 +56926,7 @@
       "price": 1.5,
       "sku": "BBT-129462",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57064,7 +57064,7 @@
       "price": 6.9,
       "sku": "SOE-549110",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57202,7 +57202,7 @@
       "price": 1.5,
       "sku": "WOP-010580",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57366,7 +57366,7 @@
       "price": 15,
       "sku": "AFS-017975",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57504,7 +57504,7 @@
       "price": 9.99,
       "sku": "ADB-837734",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57642,7 +57642,7 @@
       "price": 20,
       "sku": "BP--210060",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57780,7 +57780,7 @@
       "price": 6.9,
       "sku": "SOE-126756",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -57918,7 +57918,7 @@
       "price": 1.79,
       "sku": "SWL-751426",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58056,7 +58056,7 @@
       "price": 25,
       "sku": "LM2-805429",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58194,7 +58194,7 @@
       "price": 20,
       "sku": "TIM-287218",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58332,7 +58332,7 @@
       "price": 1.5,
       "sku": "BCS-113606",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58470,7 +58470,7 @@
       "price": 10,
       "sku": "LLS-370241",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58634,7 +58634,7 @@
       "price": 15,
       "sku": "AFS-174494",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58772,7 +58772,7 @@
       "price": 1.99,
       "sku": "EBB-552042",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -58910,7 +58910,7 @@
       "price": 20,
       "sku": "LP2-128844",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59048,7 +59048,7 @@
       "price": 6.9,
       "sku": "SOE-779251",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59186,7 +59186,7 @@
       "price": 1.99,
       "sku": "ESG-259229",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59350,7 +59350,7 @@
       "price": 2.49,
       "sku": "TPM-326894",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59514,7 +59514,7 @@
       "price": 4.49,
       "sku": "SF--863234",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59652,7 +59652,7 @@
       "price": 25,
       "sku": "MT2-442816",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59790,7 +59790,7 @@
       "price": 1.79,
       "sku": "SWL-873425",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -59954,7 +59954,7 @@
       "price": 6.5,
       "sku": "GPT-631684",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60092,7 +60092,7 @@
       "price": 9.49,
       "sku": "SOE-134935",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60230,7 +60230,7 @@
       "price": 20,
       "sku": "CUD-807107",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60368,7 +60368,7 @@
       "price": 20,
       "sku": "GBP-818583",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60506,7 +60506,7 @@
       "price": 1.5,
       "sku": "ZW2-742910",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60644,7 +60644,7 @@
       "price": 25,
       "sku": "GB2-078795",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60782,7 +60782,7 @@
       "price": 20,
       "sku": "CPU-797400",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -60920,7 +60920,7 @@
       "price": 2.79,
       "sku": "SSL-370807",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61058,7 +61058,7 @@
       "price": 9.49,
       "sku": "SOE-641471",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61196,7 +61196,7 @@
       "price": 1.5,
       "sku": "LTS-490593",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61334,7 +61334,7 @@
       "price": 9.99,
       "sku": "ADS-685984",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61472,7 +61472,7 @@
       "price": 20,
       "sku": "LP2-737048",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61610,7 +61610,7 @@
       "price": 20,
       "sku": "GBP-948804",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61748,7 +61748,7 @@
       "price": 25,
       "sku": "LM2-907028",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -61886,7 +61886,7 @@
       "price": 10,
       "sku": "BBE-517511",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62024,7 +62024,7 @@
       "price": 25,
       "sku": "R2P-663373",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62162,7 +62162,7 @@
       "price": 20,
       "sku": "TIM-323526",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62326,7 +62326,7 @@
       "price": 2.49,
       "sku": "OTC-039095",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62464,7 +62464,7 @@
       "price": 9.99,
       "sku": "ADS-284264",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62602,7 +62602,7 @@
       "price": 2.79,
       "sku": "SSL-476868",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62760,7 +62760,7 @@
       "price": 4.5,
       "sku": "RBF-219041",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -62898,7 +62898,7 @@
       "price": 1.79,
       "sku": "SWL-006571",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63036,7 +63036,7 @@
       "price": 2.69,
       "sku": "DSN-604587",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63174,7 +63174,7 @@
       "price": 2.69,
       "sku": "LSS-565430",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63312,7 +63312,7 @@
       "price": 30,
       "sku": "HP4-947065",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63470,7 +63470,7 @@
       "price": 1.99,
       "sku": "ECB-737299",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63608,7 +63608,7 @@
       "price": 20,
       "sku": "GBP-582347",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63746,7 +63746,7 @@
       "price": 20,
       "sku": "BP--356914",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -63918,7 +63918,7 @@
       "price": 1.99,
       "sku": "PO1-807392",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -64082,7 +64082,7 @@
       "price": 21.99,
       "sku": "S4M-122769",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -64220,7 +64220,7 @@
       "price": 1.5,
       "sku": "DMH-236459",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -64384,7 +64384,7 @@
       "price": 5.49,
       "sku": "MMV-783931",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -64556,7 +64556,7 @@
       "price": 2.69,
       "sku": "RBC-896827",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -64694,7 +64694,7 @@
       "price": 25,
       "sku": "LM2-608380",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -64866,7 +64866,7 @@
       "price": 2.69,
       "sku": "LSC-898165",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65004,7 +65004,7 @@
       "price": 1.5,
       "sku": "BPD-309509",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65142,7 +65142,7 @@
       "price": 9.49,
       "sku": "SOE-472332",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65306,7 +65306,7 @@
       "price": 15,
       "sku": "AFS-018739",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65444,7 +65444,7 @@
       "price": 20,
       "sku": "LP2-415995",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65582,7 +65582,7 @@
       "price": 1.5,
       "sku": "BBD-147300",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65740,7 +65740,7 @@
       "price": 2.79,
       "sku": "SSL-447625",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -65912,7 +65912,7 @@
       "price": 2.69,
       "sku": "CWC-783538",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66050,7 +66050,7 @@
       "price": 10,
       "sku": "LLW-052875",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66188,7 +66188,7 @@
       "price": 1.75,
       "sku": "ACL-597102",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66305,7 +66305,7 @@
       "price": 6.5,
       "sku": "GPT-347432",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66443,7 +66443,7 @@
       "price": 1.5,
       "sku": "LTM-838878",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66581,7 +66581,7 @@
       "price": 10,
       "sku": "LLH-364840",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66745,7 +66745,7 @@
       "price": 15,
       "sku": "AFS-641941",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -66883,7 +66883,7 @@
       "price": 20,
       "sku": "FF--781831",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67047,7 +67047,7 @@
       "price": 15,
       "sku": "AFS-005609",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67185,7 +67185,7 @@
       "price": 4.49,
       "sku": "TE3-367432",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67302,7 +67302,7 @@
       "price": 6.5,
       "sku": "GPT-369326",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67440,7 +67440,7 @@
       "price": 9.99,
       "sku": "ADG-731346",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67578,7 +67578,7 @@
       "price": 15,
       "sku": "RBL-766201",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67742,7 +67742,7 @@
       "price": 4.49,
       "sku": "SF--121235",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -67880,7 +67880,7 @@
       "price": 4.49,
       "sku": "TF&-421550",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68044,7 +68044,7 @@
       "price": 3.49,
       "sku": "CTC-020212",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68182,7 +68182,7 @@
       "price": 20,
       "sku": "TIM-238716",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68320,7 +68320,7 @@
       "price": 20,
       "sku": "TR--856381",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68478,7 +68478,7 @@
       "price": 1.5,
       "sku": "WOW-359479",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68636,7 +68636,7 @@
       "price": 3.99,
       "sku": "RCE-049111",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68774,7 +68774,7 @@
       "price": 10,
       "sku": "LLP-686336",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -68946,7 +68946,7 @@
       "price": 4.49,
       "sku": "SF--191027",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69118,7 +69118,7 @@
       "price": 2.69,
       "sku": "FCC-895129",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69256,7 +69256,7 @@
       "price": 25,
       "sku": "R2P-481466",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69420,7 +69420,7 @@
       "price": 2.59,
       "sku": "CD2-443419",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69537,7 +69537,7 @@
       "price": 2.49,
       "sku": "SL-795571",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69675,7 +69675,7 @@
       "price": 25,
       "sku": "SM--987801",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69813,7 +69813,7 @@
       "price": 20,
       "sku": "GBP-143163",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -69985,7 +69985,7 @@
       "price": 3.25,
       "sku": "DM3-149248",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -70123,7 +70123,7 @@
       "price": 2.49,
       "sku": "SWL-244209",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -70261,7 +70261,7 @@
       "price": 10,
       "sku": "LLS-303122",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -70399,7 +70399,7 @@
       "price": 6.49,
       "sku": "B&J-183319",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -70563,7 +70563,7 @@
       "price": 15,
       "sku": "AFS-628722",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -70701,7 +70701,7 @@
       "price": 20,
       "sku": "X-901767",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -70873,7 +70873,7 @@
       "price": 3.99,
       "sku": "RB1-589138",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71011,7 +71011,7 @@
       "price": 25,
       "sku": "R2P-955336",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71149,7 +71149,7 @@
       "price": 20,
       "sku": "CM--968660",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71287,7 +71287,7 @@
       "price": 20,
       "sku": "CUD-100049",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71425,7 +71425,7 @@
       "price": 20,
       "sku": "LP2-679037",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71542,7 +71542,7 @@
       "price": 1.29,
       "sku": "GLC-776610",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71680,7 +71680,7 @@
       "price": 20,
       "sku": "MM--421789",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71797,7 +71797,7 @@
       "price": 1.29,
       "sku": "GLC-130658",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -71961,7 +71961,7 @@
       "price": 15,
       "sku": "AFS-146584",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72133,7 +72133,7 @@
       "price": 2.5,
       "sku": "GCB-332118",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72271,7 +72271,7 @@
       "price": 2.49,
       "sku": "SWL-183514",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72409,7 +72409,7 @@
       "price": 1.5,
       "sku": "LTW-658023",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72547,7 +72547,7 @@
       "price": 25,
       "sku": "GB2-989292",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72685,7 +72685,7 @@
       "price": 25,
       "sku": "MT2-160421",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72823,7 +72823,7 @@
       "price": 10,
       "sku": "LLG-729845",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -72940,7 +72940,7 @@
       "price": 1.29,
       "sku": "GLC-572323",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73078,7 +73078,7 @@
       "price": 30,
       "sku": "HP4-465861",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73236,7 +73236,7 @@
       "price": 1.5,
       "sku": "BPT-084243",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73394,7 +73394,7 @@
       "price": 7,
       "sku": "BC5-729029",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73552,7 +73552,7 @@
       "price": 1.5,
       "sku": "DMI-742922",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73690,7 +73690,7 @@
       "price": 20,
       "sku": "MM--872371",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73828,7 +73828,7 @@
       "price": 20,
       "sku": "GBP-997742",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -73966,7 +73966,7 @@
       "price": 20,
       "sku": "TIM-030705",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74138,7 +74138,7 @@
       "price": 2.5,
       "sku": "GG2-968011",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74310,7 +74310,7 @@
       "price": 3.49,
       "sku": "NVM-842205",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74448,7 +74448,7 @@
       "price": 6.9,
       "sku": "SOE-728695",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74586,7 +74586,7 @@
       "price": 25,
       "sku": "GB2-689786",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74703,7 +74703,7 @@
       "price": 4,
       "sku": "GL5-068091",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74861,7 +74861,7 @@
       "price": 6,
       "sku": "BC5-770980",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -74999,7 +74999,7 @@
       "price": 20,
       "sku": "BP--272450",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -75171,7 +75171,7 @@
       "price": 2.59,
       "sku": "DP2-607299",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -75309,7 +75309,7 @@
       "price": 20,
       "sku": "LP2-140809",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -75467,7 +75467,7 @@
       "price": 4.49,
       "sku": "TN3-476985",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -75625,7 +75625,7 @@
       "price": 6.9,
       "sku": "SOE-541338",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -75763,7 +75763,7 @@
       "price": 20,
       "sku": "SB--844178",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -75880,7 +75880,7 @@
       "price": 3.5,
       "sku": "BA2-316888",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76052,7 +76052,7 @@
       "price": 2.5,
       "sku": "GRR-635500",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76190,7 +76190,7 @@
       "price": 30,
       "sku": "HP4-760593",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76348,7 +76348,7 @@
       "price": 1.5,
       "sku": "CN-464602",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76506,7 +76506,7 @@
       "price": 1.5,
       "sku": "BPB-898928",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76678,7 +76678,7 @@
       "price": 2.69,
       "sku": "LSA-366789",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76795,7 +76795,7 @@
       "price": 1.79,
       "sku": "SWL-264603",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -76933,7 +76933,7 @@
       "price": 25,
       "sku": "R2P-863072",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77071,7 +77071,7 @@
       "price": 9,
       "sku": "HL--958507",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77209,7 +77209,7 @@
       "price": 25,
       "sku": "GB2-574960",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77347,7 +77347,7 @@
       "price": 20,
       "sku": "GBP-907478",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77485,7 +77485,7 @@
       "price": 2.5,
       "sku": "B-855886",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77623,7 +77623,7 @@
       "price": 20,
       "sku": "BC--705880",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77781,7 +77781,7 @@
       "price": 1.5,
       "sku": "BVD-328398",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -77898,7 +77898,7 @@
       "price": 2.79,
       "sku": "SSL-669604",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78036,7 +78036,7 @@
       "price": 20,
       "sku": "CUD-833130",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78174,7 +78174,7 @@
       "price": 25,
       "sku": "LM2-424470",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78346,7 +78346,7 @@
       "price": 1.69,
       "sku": "MMC-624965",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78484,7 +78484,7 @@
       "price": 6.9,
       "sku": "SOE-455922",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78622,7 +78622,7 @@
       "price": 9.99,
       "sku": "ADC-314506",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78760,7 +78760,7 @@
       "price": 20,
       "sku": "GBP-321871",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -78898,7 +78898,7 @@
       "price": 25,
       "sku": "C2P-921126",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79070,7 +79070,7 @@
       "price": 3.49,
       "sku": "NDC-211411",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79208,7 +79208,7 @@
       "price": 20,
       "sku": "BM--466303",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79346,7 +79346,7 @@
       "price": 25,
       "sku": "TB--590767",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79484,7 +79484,7 @@
       "price": 25,
       "sku": "GB2-301316",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79601,7 +79601,7 @@
       "price": 20,
       "sku": "MM--488710",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79773,7 +79773,7 @@
       "price": 1.69,
       "sku": "MP-792144",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -79945,7 +79945,7 @@
       "price": 2.69,
       "sku": "RPB-402677",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80062,7 +80062,7 @@
       "price": 1.29,
       "sku": "GLC-401426",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80200,7 +80200,7 @@
       "price": 20,
       "sku": "CUD-137012",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80338,7 +80338,7 @@
       "price": 25,
       "sku": "R2P-573183",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80510,7 +80510,7 @@
       "price": 1.99,
       "sku": "EPI-545388",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80668,7 +80668,7 @@
       "price": 1.5,
       "sku": "BPT-982065",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80806,7 +80806,7 @@
       "price": 9,
       "sku": "HL--131135",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -80944,7 +80944,7 @@
       "price": 25,
       "sku": "LM2-835219",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81082,7 +81082,7 @@
       "price": 20,
       "sku": "BP--370563",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81199,7 +81199,7 @@
       "price": 3.5,
       "sku": "G2O-720771",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81357,7 +81357,7 @@
       "price": 6,
       "sku": "BC5-701599",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81474,7 +81474,7 @@
       "price": 9.99,
       "sku": "ADR-502274",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81612,7 +81612,7 @@
       "price": 25,
       "sku": "LM2-520187",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81784,7 +81784,7 @@
       "price": 3.5,
       "sku": "HGB-778013",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -81901,7 +81901,7 @@
       "price": 15,
       "sku": "AFS-317962",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82039,7 +82039,7 @@
       "price": 25,
       "sku": "GB2-172399",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82156,7 +82156,7 @@
       "price": 1.29,
       "sku": "GLC-918062",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82294,7 +82294,7 @@
       "price": 25,
       "sku": "GB2-558750",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82411,7 +82411,7 @@
       "price": 6.9,
       "sku": "SOE-862959",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82583,7 +82583,7 @@
       "price": 1.99,
       "sku": "WMF-889044",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82700,7 +82700,7 @@
       "price": 1.79,
       "sku": "SWL-881663",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82817,7 +82817,7 @@
       "price": 2.99,
       "sku": "GL5-917307",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -82989,7 +82989,7 @@
       "price": 1.49,
       "sku": "AAP-670248",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83147,7 +83147,7 @@
       "price": 1.5,
       "sku": "DMG-983800",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83285,7 +83285,7 @@
       "price": 25,
       "sku": "LM2-001896",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83402,7 +83402,7 @@
       "price": 9.99,
       "sku": "ADD-792767",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83540,7 +83540,7 @@
       "price": 20,
       "sku": "LP2-612678",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83657,7 +83657,7 @@
       "price": 9.99,
       "sku": "ADS-298657",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83795,7 +83795,7 @@
       "price": 20,
       "sku": "GBP-182593",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -83912,7 +83912,7 @@
       "price": 1.5,
       "sku": "LTJ-948723",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84029,7 +84029,7 @@
       "price": 6.9,
       "sku": "SOE-137458",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84146,7 +84146,7 @@
       "price": 20,
       "sku": "TIM-010519",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84284,7 +84284,7 @@
       "price": 2.49,
       "sku": "SWL-630165",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84401,7 +84401,7 @@
       "price": 25,
       "sku": "R2P-057028",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84539,7 +84539,7 @@
       "price": 25,
       "sku": "GB2-550523",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84697,7 +84697,7 @@
       "price": 1.5,
       "sku": "BCS-775355",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84814,7 +84814,7 @@
       "price": 3.5,
       "sku": "5EE-231992",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -84931,7 +84931,7 @@
       "price": 1.29,
       "sku": "GLC-308853",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85089,7 +85089,7 @@
       "price": 1.99,
       "sku": "PSC-062502",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85206,7 +85206,7 @@
       "price": 1.29,
       "sku": "GLC-391574",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85378,7 +85378,7 @@
       "price": 4.49,
       "sku": "SF--993954",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85495,7 +85495,7 @@
       "price": 1.29,
       "sku": "GLC-594180",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85612,7 +85612,7 @@
       "price": 1.79,
       "sku": "SWL-176352",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85750,7 +85750,7 @@
       "price": 25,
       "sku": "GB2-091295",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -85922,7 +85922,7 @@
       "price": 2.69,
       "sku": "DNC-092486",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86080,7 +86080,7 @@
       "price": 7,
       "sku": "BC5-349287",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86197,7 +86197,7 @@
       "price": 9.99,
       "sku": "ADS-572852",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86369,7 +86369,7 @@
       "price": 1.99,
       "sku": "ECB-169076",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86527,7 +86527,7 @@
       "price": 1.79,
       "sku": "SWL-318243",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86644,7 +86644,7 @@
       "price": 20,
       "sku": "CCG-819955",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86761,7 +86761,7 @@
       "price": 9.49,
       "sku": "SOE-963091",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -86919,7 +86919,7 @@
       "price": 8.5,
       "sku": "ZLF-178152",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87036,7 +87036,7 @@
       "price": 25,
       "sku": "R2P-728040",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87153,7 +87153,7 @@
       "price": 10,
       "sku": "G2-098491",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87270,7 +87270,7 @@
       "price": 20,
       "sku": "CUD-924320",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87408,7 +87408,7 @@
       "price": 25,
       "sku": "GB2-404323",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87525,7 +87525,7 @@
       "price": 7,
       "sku": "RH-551947",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87642,7 +87642,7 @@
       "price": 2.99,
       "sku": "CSO-677784",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87759,7 +87759,7 @@
       "price": 6.5,
       "sku": "GPT-018145",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -87876,7 +87876,7 @@
       "price": 2.5,
       "sku": "GFA-236073",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88014,7 +88014,7 @@
       "price": 25,
       "sku": "LM2-069836",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88131,7 +88131,7 @@
       "price": 15,
       "sku": "AFS-578061",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88248,7 +88248,7 @@
       "price": 9.49,
       "sku": "SOE-373428",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88365,7 +88365,7 @@
       "price": 9.49,
       "sku": "SOE-472341",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88482,7 +88482,7 @@
       "price": 1.29,
       "sku": "GLC-072269",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88599,7 +88599,7 @@
       "price": 20,
       "sku": "LP2-608813",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88716,7 +88716,7 @@
       "price": 20,
       "sku": "CUD-445734",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -88833,7 +88833,7 @@
       "price": 9.49,
       "sku": "SOE-358455",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89005,7 +89005,7 @@
       "price": 2.69,
       "sku": "CC-561992",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89122,7 +89122,7 @@
       "price": 2.59,
       "sku": "MD2-117395",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89239,7 +89239,7 @@
       "price": 2.49,
       "sku": "TBM-675225",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89377,7 +89377,7 @@
       "price": 25,
       "sku": "MT2-354320",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89515,7 +89515,7 @@
       "price": 10,
       "sku": "LLB-267528",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89632,7 +89632,7 @@
       "price": 9.99,
       "sku": "ADS-270126",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89790,7 +89790,7 @@
       "price": 8,
       "sku": "BC5-865780",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -89907,7 +89907,7 @@
       "price": 20,
       "sku": "GBP-504584",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90024,7 +90024,7 @@
       "price": 20,
       "sku": "BP--264676",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90141,7 +90141,7 @@
       "price": 25,
       "sku": "R2P-253277",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90313,7 +90313,7 @@
       "price": 1.59,
       "sku": "HMC-350544",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90430,7 +90430,7 @@
       "price": 6.5,
       "sku": "GPT-702350",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90588,7 +90588,7 @@
       "price": 6,
       "sku": "BC5-419398",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90705,7 +90705,7 @@
       "price": 6.5,
       "sku": "GPT-091890",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90822,7 +90822,7 @@
       "price": 9.99,
       "sku": "ADR-506397",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -90939,7 +90939,7 @@
       "price": 15,
       "sku": "AFS-148115",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91111,7 +91111,7 @@
       "price": 1.59,
       "sku": "TCB-197672",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91228,7 +91228,7 @@
       "price": 6.5,
       "sku": "GPT-667545",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91345,7 +91345,7 @@
       "price": 10,
       "sku": "KK-654795",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91503,7 +91503,7 @@
       "price": 4,
       "sku": "GL5-106246",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91620,7 +91620,7 @@
       "price": 1.5,
       "sku": "MI-002125",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91737,7 +91737,7 @@
       "price": 6.9,
       "sku": "SOE-257508",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91875,7 +91875,7 @@
       "price": 25,
       "sku": "OB--422054",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -91992,7 +91992,7 @@
       "price": 20,
       "sku": "LP2-929768",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92130,7 +92130,7 @@
       "price": 2.49,
       "sku": "SWL-711338",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92247,7 +92247,7 @@
       "price": 6.9,
       "sku": "SOE-460325",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92364,7 +92364,7 @@
       "price": 25,
       "sku": "SBD-981010",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92481,7 +92481,7 @@
       "price": 15,
       "sku": "AFS-302684",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92598,7 +92598,7 @@
       "price": 15,
       "sku": "AFS-948221",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92715,7 +92715,7 @@
       "price": 20,
       "sku": "BP--581520",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92832,7 +92832,7 @@
       "price": 20,
       "sku": "LP2-008425",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -92949,7 +92949,7 @@
       "price": 1.29,
       "sku": "GLC-712528",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -93066,7 +93066,7 @@
       "price": 9.99,
       "sku": "ADP-905194",
       "is_trending": 1,
-      "type": "product"
+      "type": "simple"
     },
     {
       "status": 1,
@@ -93183,7 +93183,7 @@
       "price": 6.5,
       "sku": "GPT-369523",
       "is_trending": 0,
-      "type": "product"
+      "type": "simple"
     }
   ],
   "total": 655

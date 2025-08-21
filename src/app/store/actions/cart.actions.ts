@@ -61,7 +61,7 @@ export const GetWishlistFailure = createAction(
 
 export const AddToWishlist = createAction(
   '[NXT] Add To Wishlist',
-  props<{ id: number }>()
+  props<{ product: Product }>()
 );
 export const AddToWishlistSuccess = createAction(
   '[NXT] Add To Wishlist Success'
@@ -73,7 +73,7 @@ export const AddToWishlistFailure = createAction(
 );
 
 export const DeleteWishlist = createAction(
-  '[NXT] Get Wishlist',
+  '[NXT] Delete Wishlist',
   props<{ id: number }>()
 );
 export const DeleteWishlistSuccess = createAction(

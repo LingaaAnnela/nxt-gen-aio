@@ -4,12 +4,14 @@ import { Category } from '../../web/shared/interface/category.interface';
 
 export interface NxtCategoryState {
   showSpinner: boolean;
-  categories?: Category[];
+  categories: Category[];
+  categorySlugIdMap: Record<string, number>;
 }
 
 export const initialState: NxtCategoryState = {
   showSpinner: false,
   categories: [],
+  categorySlugIdMap: {},
 };
 
 export const categoryReducer = createReducer(
@@ -22,6 +24,10 @@ export const categoryReducer = createReducer(
     ...state,
     categories,
     showSpinner: false,
+    categorySlugIdMap: categories.reduce((acc, category) => {
+      acc[category.slug.toLowerCase()] = category.id;
+      return acc;
+    }, {} as Record<string, number>),
   })),
   on(NxtCategoryActions.GetCategoriesFailure, (state) => ({
     ...state,

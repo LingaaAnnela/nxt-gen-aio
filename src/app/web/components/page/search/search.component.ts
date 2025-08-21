@@ -15,7 +15,10 @@ import { ProductService } from '../../../shared/services/product.service';
 
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
-import { NxtProductSelectors } from '../../../../store/selectors';
+import {
+  NxtProductEntitySelectors,
+  NxtProductSelectors,
+} from '../../../../store/selectors';
 
 @Component({
   selector: 'app-search',
@@ -69,9 +72,11 @@ export class SearchComponent {
         this.search.patchValue(params['search'] ? params['search'] : '');
 
         this._store
-          .select(NxtProductSelectors.productsBySearchKey(params['search']))
+          .select(
+            NxtProductEntitySelectors.productsBySearchKey(params['search'])
+          )
           .subscribe((products) => {
-            this.products = products;
+            this.products = (products as Product[]) || [];
           });
       }
       // this.store.dispatch(new GetProducts(this.filter)).subscribe({

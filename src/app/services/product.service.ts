@@ -20,7 +20,7 @@ export class NxtProductService {
   }
 
   getReviews(slug: Params): Observable<ReviewModel> {
-    return this._http.get<ReviewModel>(`${environment.URL}/review.json`, {
+    return this._http.get<ReviewModel>(`${environment.URL}/review_resp.json`, {
       params: slug,
     });
   }

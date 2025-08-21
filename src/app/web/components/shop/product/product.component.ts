@@ -8,8 +8,8 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { Meta } from '@angular/platform-browser';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
-import { isPlatformBrowser, AsyncPipe } from '@angular/common';
+import { map, Observable, tap } from 'rxjs';
+import { isPlatformBrowser, AsyncPipe, CommonModule } from '@angular/common';
 import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import { Product } from '../../../shared/interface/product.interface';
 import { Option } from '../../../shared/interface/theme-option.interface';
@@ -31,6 +31,7 @@ import {
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.scss'],
   imports: [
+    CommonModule,
     BreadcrumbComponent,
     ProductThumbnailComponent,
     ProductImagesComponent,
@@ -39,13 +40,19 @@ import {
     ProductAccordionComponent,
     RelatedProductsComponent,
     StickyCheckoutComponent,
+
     AsyncPipe,
   ],
 })
 export class ProductComponent {
-  product$: Observable<Product> = inject(Store).select(
-    NxtProductSelectors.selectedProduct
-  ) as Observable<Product>;
+  private route = inject(ActivatedRoute);
+  product$ = this.route.data.pipe(
+    map((d) => d['product'] as Product | null)
+  );
+
+  // product$: Observable<Product> = inject(Store).select(
+  //   NxtProductSelectors.selectedProduct
+  // ) as Observable<Product>;
   themeOptions$: Observable<Option> = inject(Store).select(
     NxtThemeSelectors.options
   ) as Observable<Option>;
@@ -60,7 +67,6 @@ export class ProductComponent {
   public isBrowser: boolean;
 
   constructor(
-    private route: ActivatedRoute,
     private meta: Meta,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {

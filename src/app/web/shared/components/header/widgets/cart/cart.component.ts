@@ -61,6 +61,7 @@ export class CartComponent {
   constructor(private _store: Store) {
     // this.store.dispatch(new GetCartItems());
     this._store.dispatch(NxtCartActions.GetCartItems());
+    this._store.dispatch(NxtCartActions.GetWishlist());
 
     this.themeOption$.subscribe(
       (option) => (this.cartStyle = option?.general?.cart_style)
@@ -102,11 +103,9 @@ export class CartComponent {
       quantity: qty,
     };
     this._store.dispatch(NxtCartActions.UpdateCart({ params }));
-    // this.store.dispatch(new UpdateCart(params));
   }
 
   delete(id: number) {
     this._store.dispatch(NxtCartActions.DeleteCart({ id }));
-    // this.store.dispatch(new DeleteCart(id));
   }
 }

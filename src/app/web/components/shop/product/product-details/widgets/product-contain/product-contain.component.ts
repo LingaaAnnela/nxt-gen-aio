@@ -24,8 +24,12 @@ import { ButtonComponent } from '../../../../../../shared/components/widgets/but
 import { SaleTimerComponent } from '../sale-timer/sale-timer.component';
 import { VariantAttributesComponent } from '../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
 import { NgbRating } from '@ng-bootstrap/ng-bootstrap';
-import { isPlatformBrowser } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { NxtCartSelectors } from '../../../../../../../store/selectors';
+import {
+  NxtAccountActions,
+  NxtCartActions,
+} from '../../../../../../../store/actions';
 
 @Component({
   selector: 'app-product-contain',
@@ -33,6 +37,7 @@ import { NxtCartSelectors } from '../../../../../../../store/selectors';
   styleUrls: ['./product-contain.component.scss'],
   providers: [CurrencySymbolPipe],
   imports: [
+    CommonModule,
     NgbRating,
     VariantAttributesComponent,
     SaleTimerComponent,
@@ -93,6 +98,7 @@ export class ProductContainComponent {
 
     this.cartItem$.subscribe((items) => {
       this.cartItem = items.find((item) => item.product.id == this.product.id)!;
+      this.productQty = this.cartItem ? this.cartItem.quantity : 1;
     });
   }
 
@@ -113,8 +119,9 @@ export class ProductContainComponent {
           ? 'out_of_stock'
           : 'in_stock';
     } else {
-      this.product['stock_status'] =
-        this.product?.quantity < this.productQty ? 'out_of_stock' : 'in_stock';
+      // TODO
+      // this.product['stock_status'] =
+      //   this.product?.quantity < this.productQty ? 'out_of_stock' : 'in_stock';
     }
   }
 
@@ -131,7 +138,7 @@ export class ProductContainComponent {
         quantity: this.productQty,
       };
       // TODO
-      // this.store.dispatch(new AddToCart(params));
+      this.store.dispatch(NxtCartActions.AddToCart({ params }));
     }
   }
 
@@ -156,8 +163,8 @@ export class ProductContainComponent {
     }
   }
 
-  addToWishlist(id: number) {
-    // this.store.dispatch(new AddToWishlist({ product_id: id }));
+  addToWishlist(product: Product) {
+    this.store.dispatch(NxtCartActions.AddToWishlist({ product }));
   }
 
   addToCompare(id: number) {

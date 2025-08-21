@@ -14,11 +14,11 @@ export class NxtCartService {
   constructor(private _http: HttpClient) {}
 
   getCartItems(): Observable<CartModel> {
-    return this._http.get<CartModel>(`${environment.URL}/cart.json`);
+    return this._http.get<CartModel>(`${environment.URL}/cart_resp.json`);
   }
 
   getWishlist(): Observable<WishlistModel> {
-    return this._http.get<WishlistModel>(`${environment.URL}/wishlist.json`);
+    return this._http.get<WishlistModel>(`${environment.URL}/wishlist_resp.json`);
   }
 
   addToWishlist(id?: number): Observable<any> {
