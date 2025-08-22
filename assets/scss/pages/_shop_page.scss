@@ -1283,6 +1283,17 @@
         }
       }
     }
+
+    .sidebar-close {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+
+    .sidebar-open {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   .top-filter-category {

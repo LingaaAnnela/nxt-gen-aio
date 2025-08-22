@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1755864608715,
+  "timestamp": 1755903432291,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,6 @@
       "urls": [
         "/nxt-gen-aio/chunk-5S3CENPO.js",
         "/nxt-gen-aio/chunk-7QSJRT33.js",
-        "/nxt-gen-aio/chunk-CMEC5ERP.js",
         "/nxt-gen-aio/chunk-ERCC57WU.js",
         "/nxt-gen-aio/chunk-ERVLX5DS.js",
         "/nxt-gen-aio/chunk-ISARK6AK.js",
@@ -21,6 +20,7 @@
         "/nxt-gen-aio/chunk-K54TYYOL.js",
         "/nxt-gen-aio/chunk-LUABQX3O.js",
         "/nxt-gen-aio/chunk-MTKZ7X2X.js",
+        "/nxt-gen-aio/chunk-MXMFSUZB.js",
         "/nxt-gen-aio/chunk-NW57QTLR.js",
         "/nxt-gen-aio/chunk-QKLET5TT.js",
         "/nxt-gen-aio/chunk-QY66W3UJ.js",
@@ -29,10 +29,10 @@
         "/nxt-gen-aio/chunk-ZEAXLV6S.js",
         "/nxt-gen-aio/favicon.ico",
         "/nxt-gen-aio/index.html",
-        "/nxt-gen-aio/main-PUYTCSQF.js",
+        "/nxt-gen-aio/main-MVNMT35K.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-WA7EYRET.css"
+        "/nxt-gen-aio/styles-ORVUW5IQ.css"
       ],
       "patterns": []
     },
@@ -595,7 +595,6 @@
     "/nxt-gen-aio/assets/svg/tracking/shipped.svg": "d686e26939bcf1eaf5002028dbae089e3e71b878",
     "/nxt-gen-aio/chunk-5S3CENPO.js": "30615cd3ac94b5547ad713c4d7c73833573fb81a",
     "/nxt-gen-aio/chunk-7QSJRT33.js": "efa0af2fb0cf5902a552f9d0b41f6158dcbf8d5b",
-    "/nxt-gen-aio/chunk-CMEC5ERP.js": "9347fbd6b59c14e8466696def7da18e4d0280ce9",
     "/nxt-gen-aio/chunk-ERCC57WU.js": "46087efa0c5af17bf798b1695ba542ad79a0d047",
     "/nxt-gen-aio/chunk-ERVLX5DS.js": "85cc159095e4bbfef58319651864a6ef7a25eef1",
     "/nxt-gen-aio/chunk-ISARK6AK.js": "4c0a9d04f1a3f8c6ac0ee62d761948a19a3a1d86",
@@ -603,6 +602,7 @@
     "/nxt-gen-aio/chunk-K54TYYOL.js": "0e0b11037b1422b5bf5da58561b815fb0c841412",
     "/nxt-gen-aio/chunk-LUABQX3O.js": "3a9013907922312341d3ca9920c58b1237e91b27",
     "/nxt-gen-aio/chunk-MTKZ7X2X.js": "27a4e849742a2800fbf051772986a046ba2b6ab2",
+    "/nxt-gen-aio/chunk-MXMFSUZB.js": "f8a1963b29142a6ba82d57a561747d0c6ab1e0ca",
     "/nxt-gen-aio/chunk-NW57QTLR.js": "84e379e3c1d9579798cbc196ccbabf36b6e2247f",
     "/nxt-gen-aio/chunk-QKLET5TT.js": "036b02588feb12b2898ba9d63f2ef4182097213d",
     "/nxt-gen-aio/chunk-QY66W3UJ.js": "c8b84034f721c046ec75025bc4d80a242d2891c7",
@@ -618,8 +618,8 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "24b0f1d7642bbb9d7624ce8cb0f0c54c54622459",
     "/nxt-gen-aio/icons/icon-72x72.png": "2cd48b99095ebeae5d637c18c88529289ab40221",
     "/nxt-gen-aio/icons/icon-96x96.png": "c0e1fe613ec6fda037686fe0c80bdd21dcbcb07f",
-    "/nxt-gen-aio/index.html": "520f75428de46bd0ff8c8120ee219b3879396fde",
-    "/nxt-gen-aio/main-PUYTCSQF.js": "784dd081b234d54b3328d3b8287e0bd78649615a",
+    "/nxt-gen-aio/index.html": "7157a01bcbdf5d0786836d7afe49cb7fa6092d24",
+    "/nxt-gen-aio/main-MVNMT35K.js": "abe73aa8ed80b5daa7c46cb78a4cb0b5c3615bdc",
     "/nxt-gen-aio/manifest.webmanifest": "7743a3772ee544cf55725264629af4d60d7dec56",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
     "/nxt-gen-aio/media/bg-body-CC7IYXRE.png": "b121824023b53fd51b73133bea43eb7924af36be",
@@ -629,7 +629,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-WA7EYRET.css": "507e909cf0f1da3944e48ef7ab17081256c251e1"
+    "/nxt-gen-aio/styles-ORVUW5IQ.css": "6685f1359b741b3ad9d0d31706b192d9ed629b18"
   },
   "navigationUrls": [
     {
