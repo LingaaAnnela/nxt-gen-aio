@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1755810339169,
+  "timestamp": 1755822579509,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -26,13 +26,13 @@
         "/nxt-gen-aio/chunk-RFKMXYIH.js",
         "/nxt-gen-aio/chunk-RFVUTIKW.js",
         "/nxt-gen-aio/chunk-SC2FM3PA.js",
-        "/nxt-gen-aio/chunk-SLXNL7X2.js",
+        "/nxt-gen-aio/chunk-ZCDC46X2.js",
         "/nxt-gen-aio/favicon.ico",
         "/nxt-gen-aio/index.html",
-        "/nxt-gen-aio/main-ML52NSYU.js",
+        "/nxt-gen-aio/main-NOL3NBR4.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-PEXZSVIC.css"
+        "/nxt-gen-aio/styles-JWMSEQEG.css"
       ],
       "patterns": []
     },
@@ -245,6 +245,8 @@
         "/nxt-gen-aio/assets/images/themes/07.png",
         "/nxt-gen-aio/assets/images/themes/08.png",
         "/nxt-gen-aio/assets/images/withdraw-bg.png",
+        "/nxt-gen-aio/assets/nxt-gen-mart.png",
+        "/nxt-gen-aio/assets/nxt-gen-rounded.png",
         "/nxt-gen-aio/assets/svg/1/_sprite.svg",
         "/nxt-gen-aio/assets/svg/1/bag.svg",
         "/nxt-gen-aio/assets/svg/1/biscuit.svg",
@@ -528,6 +530,8 @@
     "/nxt-gen-aio/assets/images/themes/07.png": "3df8287e9323e32f13e5f315322a40592773721d",
     "/nxt-gen-aio/assets/images/themes/08.png": "ded7d41f21ebf6db3129931d1f9d59fd2cdfb92c",
     "/nxt-gen-aio/assets/images/withdraw-bg.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
+    "/nxt-gen-aio/assets/nxt-gen-mart.png": "efe1cce7538443df9b9f09fbb235a5a56ffbe430",
+    "/nxt-gen-aio/assets/nxt-gen-rounded.png": "207de72c3a6eb6033422226002b48db57caf6656",
     "/nxt-gen-aio/assets/svg/1/_sprite.svg": "15befabf18e02d22d6b95cf49a2a80473e0b1342",
     "/nxt-gen-aio/assets/svg/1/bag.svg": "cc88e86092752900e2bd28ffe050efe310634acc",
     "/nxt-gen-aio/assets/svg/1/biscuit.svg": "652e31f0a7f2628d90452980d0df8d2372a077be",
@@ -604,7 +608,7 @@
     "/nxt-gen-aio/chunk-RFKMXYIH.js": "5a8e9c3140e7ca5b5665c02b3439a5b47ed01b4b",
     "/nxt-gen-aio/chunk-RFVUTIKW.js": "f6acb7ddb58f756267520fdcf24c93d10faa55bf",
     "/nxt-gen-aio/chunk-SC2FM3PA.js": "6a35ff9150d274b2c5cc0792c006dc6453db5946",
-    "/nxt-gen-aio/chunk-SLXNL7X2.js": "bf4f0db83697bafad7e34e45eb4be49bbddde2ad",
+    "/nxt-gen-aio/chunk-ZCDC46X2.js": "cfd870efca7a8bde41b0adc212bfcf409e23e4da",
     "/nxt-gen-aio/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
     "/nxt-gen-aio/icons/icon-128x128.png": "59406c1ded19abfc171aebc12ad04c59c13c91c3",
     "/nxt-gen-aio/icons/icon-144x144.png": "6a866bb81677e1ff8e36adae09f850cd806c1fd5",
@@ -614,8 +618,8 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "24b0f1d7642bbb9d7624ce8cb0f0c54c54622459",
     "/nxt-gen-aio/icons/icon-72x72.png": "2cd48b99095ebeae5d637c18c88529289ab40221",
     "/nxt-gen-aio/icons/icon-96x96.png": "c0e1fe613ec6fda037686fe0c80bdd21dcbcb07f",
-    "/nxt-gen-aio/index.html": "d8ec8cad35a7504e3dd8b9f1ed8fe5fd8f584c09",
-    "/nxt-gen-aio/main-ML52NSYU.js": "31df6b6e560ee0ecb33035eab67d5f7a223b87de",
+    "/nxt-gen-aio/index.html": "6607bfadcf4383be8d1189199b7268e4bf1dbaff",
+    "/nxt-gen-aio/main-NOL3NBR4.js": "7265d779fcf0d48db3a0b0157fd7398899fd7cd1",
     "/nxt-gen-aio/manifest.webmanifest": "7743a3772ee544cf55725264629af4d60d7dec56",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
     "/nxt-gen-aio/media/bg-body-CC7IYXRE.png": "b121824023b53fd51b73133bea43eb7924af36be",
@@ -625,7 +629,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-PEXZSVIC.css": "5f84152e04b796b27eac03c354c805bb23ec633e"
+    "/nxt-gen-aio/styles-JWMSEQEG.css": "7f0562777238c75a5a7ac32c2b545b532c7b9c4a"
   },
   "navigationUrls": [
     {
