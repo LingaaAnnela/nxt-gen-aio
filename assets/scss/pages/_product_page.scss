@@ -2060,7 +2060,7 @@
   background: $white;
   border: 0;
   border-radius: 6px;
-  bottom: -130px;
+  // bottom: -130px;
   left: 20px;
   padding: 0;
   position: fixed;
@@ -2084,7 +2084,7 @@
   }
 
   &.show {
-    bottom: 20px;
+    bottom: 80px;
     transition: all 0.6s ease;
   }
 
@@ -2138,7 +2138,7 @@
 
   .recently-purchase {
     &.show {
-      bottom: 113px;
+      bottom: 213px;
     }
   }
 
