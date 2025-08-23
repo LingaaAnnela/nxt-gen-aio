@@ -5802,48 +5802,6 @@
           "created_by_id": "1",
           "collection_name": "products/314",
           "conversions_disk": "s3"
-        },
-         {
-          "disk": "s3",
-          "size": "50440",
-          "updated_at": null,
-          "mime_type": "image/webp",
-          "original_url": "https://image-mart.s3.us-east-2.amazonaws.com/products/314/S.W.A.G.webp",
-          "file_name": "S.W.A.G.webp",
-          "name": "S.W.A.G",
-          "created_at": null,
-          "id": 0,
-          "created_by_id": "1",
-          "collection_name": "products/314",
-          "conversions_disk": "s3"
-        },
-         {
-          "disk": "s3",
-          "size": "50440",
-          "updated_at": null,
-          "mime_type": "image/webp",
-          "original_url": "https://image-mart.s3.us-east-2.amazonaws.com/products/314/S.W.A.G.webp",
-          "file_name": "S.W.A.G.webp",
-          "name": "S.W.A.G",
-          "created_at": null,
-          "id": 0,
-          "created_by_id": "1",
-          "collection_name": "products/314",
-          "conversions_disk": "s3"
-        },
-         {
-          "disk": "s3",
-          "size": "50440",
-          "updated_at": null,
-          "mime_type": "image/webp",
-          "original_url": "https://image-mart.s3.us-east-2.amazonaws.com/products/314/S.W.A.G.webp",
-          "file_name": "S.W.A.G.webp",
-          "name": "S.W.A.G",
-          "created_at": null,
-          "id": 0,
-          "created_by_id": "1",
-          "collection_name": "products/314",
-          "conversions_disk": "s3"
         }
       ],
       "quantity": "106",
