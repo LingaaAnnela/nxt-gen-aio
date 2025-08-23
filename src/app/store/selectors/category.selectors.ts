@@ -18,3 +18,8 @@ export const categorySlugIdMap = createSelector(
   selectCategoryState,
   (state) => state.categorySlugIdMap!
 );
+
+export const showSidebar = createSelector(
+  selectCategoryState,
+  (state) => state.showSidebar
+);

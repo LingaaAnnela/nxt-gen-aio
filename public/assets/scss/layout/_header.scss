@@ -2312,7 +2312,7 @@ header {
   padding: 10px;
   width: 100%;
   background-color: var(--theme-color);
-  z-index: 2;
+  z-index: 999;
   overflow: hidden;
   box-shadow: 0 -3px 10px 0px rgba($black, 0.08);
 

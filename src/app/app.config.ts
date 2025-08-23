@@ -192,5 +192,9 @@ export const appConfig: ApplicationConfig = {
     ]),
     provideRouterStore(),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
+    provideServiceWorker('ngsw-worker.js', {
+      enabled: !isDevMode(),
+      registrationStrategy: 'registerWhenStable:30000',
+    }),
   ],
 };

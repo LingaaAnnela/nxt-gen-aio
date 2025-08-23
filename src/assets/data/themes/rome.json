@@ -94,22 +94,22 @@
       "status": true,
       "product_slider_1": {
         "title": "New Products",
-        "product_ids": [132, 133, 134],
+        "product_ids": [379, 322, 172, 530],
         "status": true
       },
       "product_slider_2": {
         "title": "Featured Products",
-        "product_ids": [520, 620, 530],
+        "product_ids": [184, 520, 620, 359],
         "status": true
       },
       "product_slider_3": {
         "title": "Best Seller",
-        "product_ids": [135, 136, 137, 530],
+        "product_ids": [322, 304, 530, 172],
         "status": true
       },
       "product_slider_4": {
         "title": "Trending Products",
-        "product_ids": [432, 433, 434, 435, 437],
+        "product_ids": [172, 620, 520, 379],
         "status": true
       }
     },
@@ -124,7 +124,7 @@
     "products_list_1": {
       "title": "Top Products",
       "status": true,
-      "product_ids": [132, 133, 134, 135, 136, 137]
+      "product_ids": [322, 304, 530, 172, 620, 520, 379]
     },
     "featured_blogs": {
       "title": "Featured Blog",

@@ -53,8 +53,11 @@
   }
 
   img {
-    @include pseudowh($width: calc(38px + (45 - 38) * ((100vw - 320px) / (1920 - 320))) !important,
-      $height: calc(38px + (45 - 38) * ((100vw - 320px) / (1920 - 320))));
+    @include pseudowh(
+      $width: calc(38px + (45 - 38) * ((100vw - 320px) / (1920 - 320)))
+        !important,
+      $height: calc(38px + (45 - 38) * ((100vw - 320px) / (1920 - 320)))
+    );
     object-fit: contain;
     margin: 0 auto;
     transition: all 0.3s ease-in-out;
@@ -267,9 +270,11 @@
         ul {
           li {
             .counter {
-              font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+              font-size: calc(
+                16px + (18 - 16) * ((100vw - 320px) / (1920 - 320))
+              );
 
-              >div {
+              > div {
                 line-height: 1;
               }
             }
@@ -324,6 +329,9 @@
     .shop-category-box {
       position: relative;
       padding-top: 14px;
+      // max-width: 200px;
+      // @include mq-max(sm) {
+      // }
 
       &:hover {
         a {
@@ -382,6 +390,10 @@
           object-fit: contain;
           margin: 0 auto;
           transition: all 0.3s ease-in-out;
+          @include mq-max(sm) {
+            max-width: 60px;
+            max-height: 60px;
+          }
         }
       }
 
@@ -482,7 +494,7 @@
         }
       }
 
-      >a {
+      > a {
         width: 100%;
         height: 130px;
 
@@ -553,7 +565,6 @@
 
 .no-bg-category {
   .product-list {
-
     &:before,
     &:after {
       display: none;
