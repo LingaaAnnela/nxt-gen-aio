@@ -3,7 +3,7 @@
 
 <section
   class="product-section"
-  [class.section-b-space]="product && !product.related_products.length"
+  [class.section-b-space]="product && !product?.related_products?.length"
 >
   @if (layout == 'product_thumbnail') {
   <app-product-thumbnail
@@ -33,7 +33,7 @@
   }
 </section>
 <!-- Related Products -->
-@if (product && product.related_products.length) {
+@if (product && product?.related_products?.length) {
 <section class="product-list-section section-b-space">
   <app-related-products [product]="product$ | async"></app-related-products>
 </section>

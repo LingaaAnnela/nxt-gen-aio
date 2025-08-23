@@ -1,4 +1,20 @@
 <div class="show-button">
+  <div
+    class="filter-button-group mt-0 sidebar-close"
+    [class.sidebar-open]="isSidebarOpen"
+  >
+    <div class="filter-button d-inline-block d-lg-none">
+      <a (click)="toggleSidebar()">
+        @if(!isSidebarOpen) {
+        <i class="activated js-fill ri-apps-line"></i>
+        {{ "categories" | translate }}
+        } @else {
+        <i class="ri-arrow-left-double-line"></i>
+        {{ "close" | translate }}
+        }
+      </a>
+    </div>
+  </div>
   <div class="top-filter-menu">
     <div class="category-dropdown">
       <h5 class="text-content">{{ "sort_by" | translate }} :</h5>

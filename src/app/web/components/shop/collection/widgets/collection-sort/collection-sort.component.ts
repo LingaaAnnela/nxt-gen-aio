@@ -12,6 +12,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Params } from '../../../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import { Store } from '@ngrx/store';
+import { NxtCategoryActions } from '../../../../../../store/actions';
 
 @Component({
   selector: 'app-collection-sort',
@@ -27,6 +29,7 @@ export class CollectionSortComponent {
   @Output() showFilter: EventEmitter<boolean> = new EventEmitter();
 
   public isBrowser: boolean;
+  public isSidebarOpen: boolean = false;
 
   public sorting: any = [
     {
@@ -71,6 +74,7 @@ export class CollectionSortComponent {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
+    private _store: Store,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -123,5 +127,12 @@ export class CollectionSortComponent {
       queryParamsHandling: 'merge', // preserve the existing query params in the route
       skipLocationChange: false, // do trigger navigation
     });
+  }
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+    this._store.dispatch(
+      NxtCategoryActions.ShowSidebar({ show: this.isSidebarOpen })
+    );
   }
 }

@@ -50,7 +50,7 @@
 }
 
 .list-style {
-  >* {
+  > * {
     width: 100% !important;
   }
 
@@ -96,7 +96,8 @@
   border-radius: 8px;
 
   .shop-banner-details {
-    padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320))) calc(25px + (80 - 25) * ((100vw - 320px) / (1920 - 320)));
+    padding: calc(20px + (40 - 20) * ((100vw - 320px) / (1920 - 320)))
+      calc(25px + (80 - 25) * ((100vw - 320px) / (1920 - 320)));
     width: 50%;
 
     @include mq-max(3xl) {
@@ -110,7 +111,11 @@
     @include mq-max(md) {
       width: 80%;
       background: $white;
-      background: linear-gradient(90deg, rgba($white, 0.4) 0%, rgba(246, 246, 246, 0) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba($white, 0.4) 0%,
+        rgba(246, 246, 246, 0) 100%
+      );
     }
 
     @include mq-max(xs) {
@@ -153,7 +158,11 @@
 }
 
 .category-list {
-  @include flex_wrap($dis: flex, $wrap: wrap, $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320))));
+  @include flex_wrap(
+    $dis: flex,
+    $wrap: wrap,
+    $gap: calc(10px + (16 - 10) * ((100vw - 320px) / (1920 - 320)))
+  );
 
   body.rtl & {
     padding-right: 0;
@@ -172,7 +181,11 @@
       }
 
       .form-check-label {
-        @include flex_common($dis: flex, $align: center, $justify: space-between);
+        @include flex_common(
+          $dis: flex,
+          $align: center,
+          $justify: space-between
+        );
         width: 100%;
         cursor: pointer;
 
@@ -527,6 +540,11 @@
     position: sticky;
     top: 0;
     border-right: 1px solid #ddd;
+    @include mq-max(sm) {
+      max-height: 76vh;
+      margin-top: 16vh;
+      margin-bottom: 8vh;
+    }
 
     .leftbox-overlay {
       position: fixed;
@@ -645,7 +663,9 @@
 
         body.rtl & {
           padding-left: unset;
-          padding-right: calc(16px + (26 - 16) * ((100vw - 320px) / (1920 - 320)));
+          padding-right: calc(
+            16px + (26 - 16) * ((100vw - 320px) / (1920 - 320))
+          );
         }
 
         @include mq-max(lg) {
@@ -746,7 +766,11 @@
 
         ul {
           margin-bottom: 25px;
-          @include flex_wrap($dis: flex, $wrap: wrap, $gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320))));
+          @include flex_wrap(
+            $dis: flex,
+            $wrap: wrap,
+            $gap: calc(10px + (15 - 10) * ((100vw - 320px) / (1920 - 320)))
+          );
           padding-top: 16px;
 
           body.rtl & {
@@ -789,7 +813,13 @@
                   background: #f6f7f8;
                   background-position: -500px 0;
                   animation: skeletonShine 1s linear 0s infinite normal forwards;
-                  background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+                  background-image: linear-gradient(
+                    135deg,
+                    #f6f7f8 0%,
+                    #edeef1 20%,
+                    #f6f7f8 40%,
+                    #f6f7f8 100%
+                  );
                   background-repeat: no-repeat;
                   background-size: 1000px 100%;
                   width: 92px;
@@ -811,7 +841,13 @@
               background: #f6f7f8;
               background-position: -500px 0;
               animation: skeletonShine 1s linear 0s infinite normal forwards;
-              background-image: linear-gradient(135deg, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+              background-image: linear-gradient(
+                135deg,
+                #f6f7f8 0%,
+                #edeef1 20%,
+                #f6f7f8 40%,
+                #f6f7f8 100%
+              );
               background-repeat: no-repeat;
               background-size: 1000px 100%;
               border-radius: 9px;
@@ -932,7 +968,7 @@
           display: flex;
           overflow: hidden;
 
-          >* {
+          > * {
             width: 100%;
           }
 
@@ -1016,7 +1052,8 @@
         cursor: pointer;
         font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
         font-weight: 600;
-        padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+        padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)))
+          calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
         background-color: var(--theme-color);
         border-radius: 5px;
         display: inline-block;
@@ -1035,7 +1072,8 @@
         a {
           font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
           font-weight: 600;
-          padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320))) calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
+          padding: calc(6px + (8 - 6) * ((100vw - 320px) / (1920 - 320)))
+            calc(9px + (12 - 9) * ((100vw - 320px) / (1920 - 320)));
           background-color: var(--theme-color);
           border-radius: 5px;
           display: inline-block;
@@ -1085,8 +1123,11 @@
             @include flex_common;
             border: none;
             background-color: #f6f5f2;
-            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
-            padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320))) 15px;
+            font-size: calc(
+              14px + (15 - 14) * ((100vw - 320px) / (1920 - 320))
+            );
+            padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320)))
+              15px;
             border-radius: 5px;
             color: #777;
             flex-wrap: wrap;
@@ -1133,7 +1174,11 @@
         }
 
         ul {
-          @include flex_wrap($dis: flex, $wrap: wrap, $gap: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320))));
+          @include flex_wrap(
+            $dis: flex,
+            $wrap: wrap,
+            $gap: calc(5px + (12 - 5) * ((100vw - 320px) / (1920 - 320)))
+          );
           align-items: center;
 
           body.rtl & {
@@ -1143,7 +1188,11 @@
           li {
             @include pseudowh($width: 35px, $height: 35px);
             border-radius: 5px;
-            background: linear-gradient(149.8deg, #f6f5f2 17.21%, #fbfaf9 79.21%);
+            background: linear-gradient(
+              149.8deg,
+              #f6f5f2 17.21%,
+              #fbfaf9 79.21%
+            );
 
             a {
               @include flex_common;
@@ -1185,8 +1234,11 @@
             @include flex_common;
             border: none;
             background-color: #f6f5f2;
-            font-size: calc(14px + (15 - 14) * ((100vw - 320px) / (1920 - 320)));
-            padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320))) 15px;
+            font-size: calc(
+              14px + (15 - 14) * ((100vw - 320px) / (1920 - 320))
+            );
+            padding: calc(9px + (10 - 9) * ((100vw - 320px) / (1920 - 320)))
+              15px;
             border-radius: 5px;
             color: #777;
             flex-wrap: wrap;
@@ -1206,7 +1258,6 @@
               display: block;
 
               a {
-
                 &:hover,
                 &:focus {
                   background-color: transparent;
@@ -1226,7 +1277,11 @@
         }
 
         ul {
-          @include flex_wrap($dis: flex, $wrap: wrap, $gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320))));
+          @include flex_wrap(
+            $dis: flex,
+            $wrap: wrap,
+            $gap: calc(5px + (10 - 5) * ((100vw - 320px) / (1920 - 320)))
+          );
           align-items: center;
 
           body.rtl & {
@@ -1236,7 +1291,11 @@
           li {
             @include pseudowh($width: 35px, $height: 35px);
             border-radius: 5px;
-            background: linear-gradient(149.8deg, #f6f5f2 17.21%, #fbfaf9 79.21%);
+            background: linear-gradient(
+              149.8deg,
+              #f6f5f2 17.21%,
+              #fbfaf9 79.21%
+            );
 
             a {
               @include flex_common;
@@ -1259,11 +1318,18 @@
       margin-bottom: 25px;
 
       ul {
-        @include flex_wrap($dis: flex, $wrap: wrap, $gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320))));
+        @include flex_wrap(
+          $dis: flex,
+          $wrap: wrap,
+          $gap: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)))
+        );
         padding-top: 16px;
 
         li {
-          padding: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(28px + (34 - 28) * ((100vw - 320px) / (1920 - 320))) calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320))) calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
+          padding: calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320)))
+            calc(28px + (34 - 28) * ((100vw - 320px) / (1920 - 320)))
+            calc(6px + (9 - 6) * ((100vw - 320px) / (1920 - 320)))
+            calc(7px + (11 - 7) * ((100vw - 320px) / (1920 - 320)));
           background-color: #f9f8f6;
           position: relative;
           border-radius: 4px;
@@ -1283,6 +1349,16 @@
         }
       }
     }
+
+    .sidebar-close {
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    .sidebar-open {
+      display: flex;
+      justify-content: flex-end;
+    }
   }
 
   .top-filter-category {
@@ -1301,8 +1377,8 @@
       margin-bottom: 22px;
     }
 
-    >.row {
-      >div {
+    > .row {
+      > div {
         border-right: 1px solid $border-color;
 
         body.rtl & {

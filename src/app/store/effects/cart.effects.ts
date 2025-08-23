@@ -1,14 +1,14 @@
 import { inject } from '@angular/core';
 import { Actions, createEffect, FunctionalEffect, ofType } from '@ngrx/effects';
 import { concatLatestFrom } from '@ngrx/operators';
+import { Store } from '@ngrx/store';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import { NxtCartActions } from '../actions';
 import { NxtCartService } from '../../services/cart.service';
-import { Store } from '@ngrx/store';
 import { NxtCartSelectors } from '../selectors';
-import { Cart } from '../../web/shared/interface/cart.interface';
+import { NotificationService } from '../../web/shared/services/notification.service';
 
 export const onGetCartItems: FunctionalEffect = createEffect(
   (actions$ = inject(Actions), cartService = inject(NxtCartService)) => {
@@ -35,7 +35,9 @@ export const onUpdateCart: FunctionalEffect = createEffect(
       concatLatestFrom(() => [store.select(NxtCartSelectors.items)]),
       map(([{ params }, items]) => {
         const cart = [...items];
-        let item = cart.find((item) => Number(item.product_id) === Number(params.product_id));
+        let item = cart.find(
+          (item) => Number(item.product_id) === Number(params.product_id)
+        );
 
         if (item) {
           if (
@@ -139,6 +141,22 @@ export const onAddToWishlist: FunctionalEffect = createEffect(
     );
   },
   { functional: true }
+);
+
+export const onAddToWishlistSuccess: FunctionalEffect = createEffect(
+  (
+    actions$ = inject(Actions),
+    notificationService = inject(NotificationService)
+  ) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.AddToWishlistSuccess),
+      // delay(3000),
+      map(() =>
+        notificationService.showSuccess('Item added to wishlist successfully!')
+      )
+    );
+  },
+  { dispatch: false, functional: true }
 );
 
 export const onDeleteWishlist: FunctionalEffect = createEffect(

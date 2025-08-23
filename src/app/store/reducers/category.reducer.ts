@@ -6,12 +6,14 @@ export interface NxtCategoryState {
   showSpinner: boolean;
   categories: Category[];
   categorySlugIdMap: Record<string, number>;
+  showSidebar: boolean;
 }
 
 export const initialState: NxtCategoryState = {
   showSpinner: false,
   categories: [],
   categorySlugIdMap: {},
+  showSidebar: false,
 };
 
 export const categoryReducer = createReducer(
@@ -32,5 +34,9 @@ export const categoryReducer = createReducer(
   on(NxtCategoryActions.GetCategoriesFailure, (state) => ({
     ...state,
     showSpinner: false,
+  })),
+  on(NxtCategoryActions.ShowSidebar, (state, { show }) => ({
+    ...state,
+    showSidebar: show,
   }))
 );

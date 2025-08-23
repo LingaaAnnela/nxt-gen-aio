@@ -13,3 +13,8 @@ export const GetCategoriesFailure = createAction(
   '[NXT] Get Categories Failure',
   props<{ error: { message: string } }>()
 );
+
+export const ShowSidebar = createAction(
+  '[NXT] Show Sidebar',
+  props<{ show: boolean }>()
+);

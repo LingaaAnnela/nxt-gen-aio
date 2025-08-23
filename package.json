@@ -6,6 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
+    "deploy": "npx ng build --configuration production --base-href=/nxt-gen-aio/ && npx angular-cli-ghpages --dir=dist/nxt-gen-aio/browser --message='chore(deploy): deploy to gh-pages [skip ci]'",
+    "lint": "ng lint",
     "test": "ng test"
   },
   "private": true,
