@@ -14,6 +14,7 @@ import { CurrencySymbolPipe } from '../../../../../../shared/pipe/currency-symbo
 import { ButtonComponent } from '../../../../../../shared/components/widgets/button/button.component';
 import { VariantAttributesComponent } from '../../../../../../shared/components/widgets/variant-attributes/variant-attributes.component';
 import { NxtCartSelectors } from '../../../../../../../store/selectors';
+import { NxtCartActions } from '../../../../../../../store/actions';
 
 @Component({
   selector: 'app-sticky-checkout',
@@ -53,7 +54,17 @@ export class StickyCheckoutComponent {
     this.selectedVariation = variation;
   }
 
-  updateQuantity(qty: number) {
+  updateQuantity(product: Product, qty: number) {
+    if (product.quantity < this.productQty + qty) {
+      this.store.dispatch(
+        NxtCartActions.ShowAlert({
+          message: `The maximum quantity available for this product is ${product.quantity}.`,
+          alertType: 'error',
+        })
+      );
+      this.productQty = Number(product.quantity);
+      return;
+    }
     if (1 > this.productQty + qty) return;
     this.productQty = this.productQty + qty;
     this.checkStockAvailable();

@@ -80,7 +80,7 @@
         [class]="'btn qty-left-minus'"
         [id]="'add-to-cart' + product.id"
         [spinner]="false"
-        (click)="updateQuantity(-1)"
+        (click)="updateQuantity(product, -1)"
       >
         <i class="ri-subtract-fill"></i>
       </app-button>
@@ -95,7 +95,7 @@
         [class]="'btn qty-left-minus'"
         [id]="'qty-left-minus' + product.id"
         [spinner]="false"
-        (click)="updateQuantity(1)"
+        (click)="updateQuantity(product, 1)"
       >
         <i class="ri-add-line"></i>
       </app-button>
@@ -108,7 +108,11 @@
       [spinner]="false"
       (click)="addToWishlist(product)"
     >
+      @if (store.select(NxtCartSelectors.isWishlisted(product.slug)) | async) {
+      <i class="ri-heart-fill" style="color: red;"></i>
+      } @else {
       <i class="ri-heart-line"></i>
+      }
     </app-button>
     <!-- <app-button
       [class]="'wishlist-button btn'"

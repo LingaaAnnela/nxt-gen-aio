@@ -55,7 +55,7 @@
               [class]="'btn qty-left-minus'"
               [id]="'add-to-cart' + item.product.id"
               [spinner]="false"
-              (click)="updateQuantity(-1)"
+              (click)="updateQuantity(item, -1)"
             >
               <i class="ri-subtract-fill"></i>
             </app-button>
@@ -70,7 +70,7 @@
               [class]="'btn qty-left-minus'"
               [id]="'qty-left-minus' + item.product.id"
               [spinner]="false"
-              (click)="updateQuantity(1)"
+              (click)="updateQuantity(item, 1)"
             >
               <i class="ri-add-line"></i>
             </app-button>

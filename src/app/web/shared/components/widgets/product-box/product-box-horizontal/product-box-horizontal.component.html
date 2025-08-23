@@ -42,7 +42,7 @@
     } @if (!close) {
     <ul class="product-option">
       <li>
-        <a href="javascript:void(0)" (click)="productDetailModal.openModal()">
+        <a href="javascript:void(0)"  (click)="productDetailModal.openModal()">
           <i class="ri-eye-line"></i>
         </a>
       </li>
@@ -57,7 +57,12 @@
           class="notifi-wishlist"
           (click)="addToWishlist(product)"
         >
+          @if (store.select(NxtCartSelectors.isWishlisted(product.slug)) |
+          async) {
+          <i class="ri-heart-fill" style="color: red;"></i>
+          } @else {
           <i class="ri-heart-line"></i>
+          }
         </a>
       </li>
     </ul>

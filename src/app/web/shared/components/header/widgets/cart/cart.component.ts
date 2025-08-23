@@ -94,6 +94,15 @@ export class CartComponent {
   }
 
   updateQuantity(item: Cart, qty: number) {
+    if (Number(item.product.quantity) < item.quantity + qty) {
+      this._store.dispatch(
+        NxtCartActions.ShowAlert({
+          message: `The maximum quantity available for this product is ${item.product.quantity}.`,
+          alertType: 'error',
+        })
+      );
+      return;
+    }
     const params: CartAddOrUpdate = {
       id: item?.id,
       product_id: item?.product?.id,

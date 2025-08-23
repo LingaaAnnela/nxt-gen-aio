@@ -232,3 +232,41 @@ export const onGetCoupons: FunctionalEffect = createEffect(
   },
   { functional: true }
 );
+
+export const onAddToCart: FunctionalEffect = createEffect(
+  (
+    actions$ = inject(Actions),
+    notificationService = inject(NotificationService)
+  ) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.AddToCart),
+      // delay(3000),
+      map(() => {
+        return notificationService.showSuccess(
+          'This item has been added to cart!'
+        );
+      })
+    );
+  },
+  { dispatch: false, functional: true }
+);
+
+export const onShowAlert: FunctionalEffect = createEffect(
+  (
+    actions$ = inject(Actions),
+    notificationService = inject(NotificationService)
+  ) => {
+    return actions$.pipe(
+      ofType(NxtCartActions.ShowAlert),
+      // delay(3000),
+      map(({ message, alertType }) => {
+        if (alertType === 'error') {
+          return notificationService.showError(message);
+        } else if (alertType === 'success') {
+          return notificationService.showSuccess(message);
+        }
+      })
+    );
+  },
+  { dispatch: false, functional: true }
+);

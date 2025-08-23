@@ -35,7 +35,7 @@
     },
     "categories_image_list": {
       "title": "Shop By Categories",
-      "category_ids": [1, 3, 4, 5],
+      "category_ids": [1, 3, 4, 6, 8, 10, 12, 13],
       "status": true
     },
     "value_banners": {
@@ -71,7 +71,7 @@
     "categories_products": {
       "title": "Our Products",
       "status": true,
-      "category_ids": [5, 10, 15, 4]
+      "category_ids": [5, 10, 6, 4]
     },
     "two_column_banners": {
       "status": true,

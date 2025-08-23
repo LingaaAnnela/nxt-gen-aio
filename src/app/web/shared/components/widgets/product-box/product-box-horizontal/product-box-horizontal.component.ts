@@ -1,4 +1,5 @@
 import { Component, inject, Input, ViewChild } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { NgbRatingConfig, NgbRating } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
@@ -28,6 +29,7 @@ import { NxtCartActions } from '../../../../../../store/actions';
     VariationModalComponent,
     TranslateModule,
     TitleCasePipe,
+    AsyncPipe,
     CurrencySymbolPipe,
   ],
 })
@@ -35,6 +37,8 @@ export class ProductBoxHorizontalComponent {
   @Input() product: Product;
   @Input() class: string;
   @Input() close: boolean;
+
+  NxtCartSelectors = NxtCartSelectors;
 
   cartItem$: Observable<Cart[]> = inject(Store).select(
     NxtCartSelectors.items
@@ -48,7 +52,7 @@ export class ProductBoxHorizontalComponent {
   public currentDate: number | null;
   public saleStartDate: number | null;
 
-  constructor(private store: Store, config: NgbRatingConfig) {
+  constructor(public store: Store, config: NgbRatingConfig) {
     config.max = 5;
     config.readonly = true;
   }
@@ -60,6 +64,15 @@ export class ProductBoxHorizontalComponent {
   }
 
   addToCart(product: Product, qty: number) {
+    if (product.quantity < this.cartItem?.quantity! + qty) {
+      this.store.dispatch(
+        NxtCartActions.ShowAlert({
+          message: `The maximum quantity available for this product is ${product.quantity}.`,
+          alertType: 'error',
+        })
+      );
+      return;
+    }
     const params: CartAddOrUpdate = {
       id: this.cartItem ? this.cartItem.id : null,
       product: product,
