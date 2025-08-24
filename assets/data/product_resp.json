@@ -3246,7 +3246,7 @@
       "size_chart_image_id": null,
       "sale_starts_at": null,
       "size_chart_image": null,
-      "related_products": [],
+      "related_products": [380, 369, 386, 379,384,398,383],
       "product_galleries": [
         {
           "disk": "s3",
