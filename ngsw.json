@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1756296450736,
+  "timestamp": 1756319729994,
   "index": "/nxt-gen-aio/index.html",
   "assetGroups": [
     {
@@ -19,7 +19,7 @@
         "/nxt-gen-aio/chunk-ERCC57WU.js",
         "/nxt-gen-aio/chunk-ERVLX5DS.js",
         "/nxt-gen-aio/chunk-GBBCEO5R.js",
-        "/nxt-gen-aio/chunk-HXG4CJOV.js",
+        "/nxt-gen-aio/chunk-GWFLZBZZ.js",
         "/nxt-gen-aio/chunk-ISARK6AK.js",
         "/nxt-gen-aio/chunk-IXXV57W7.js",
         "/nxt-gen-aio/chunk-LUABQX3O.js",
@@ -29,10 +29,10 @@
         "/nxt-gen-aio/chunk-VSK4AAV6.js",
         "/nxt-gen-aio/favicon.ico",
         "/nxt-gen-aio/index.html",
-        "/nxt-gen-aio/main-5U6XFEHV.js",
+        "/nxt-gen-aio/main-HEXG53OQ.js",
         "/nxt-gen-aio/manifest.webmanifest",
         "/nxt-gen-aio/polyfills-B6TNHZQ6.js",
-        "/nxt-gen-aio/styles-I47EHMSJ.css"
+        "/nxt-gen-aio/styles-4CAKBVPU.css"
       ],
       "patterns": []
     },
@@ -212,6 +212,7 @@
         "/nxt-gen-aio/assets/images/logo/5.png",
         "/nxt-gen-aio/assets/images/logo/6.png",
         "/nxt-gen-aio/assets/images/logo/image.png",
+        "/nxt-gen-aio/assets/images/logo/nxt-gen-header.png",
         "/nxt-gen-aio/assets/images/logo/nxt-gen.png",
         "/nxt-gen-aio/assets/images/mega-menu.png",
         "/nxt-gen-aio/assets/images/mega-menu2.png",
@@ -497,6 +498,7 @@
     "/nxt-gen-aio/assets/images/logo/5.png": "1c945c789d3384ca9d2323db5442fccfcff2ab83",
     "/nxt-gen-aio/assets/images/logo/6.png": "58b0b92a161178417949a5371c4669b80453a51d",
     "/nxt-gen-aio/assets/images/logo/image.png": "957064758b2d0ec49ff98e4b91712a659236bc0d",
+    "/nxt-gen-aio/assets/images/logo/nxt-gen-header.png": "b4d440b6fc165b278ab228756059edf8628f0dc6",
     "/nxt-gen-aio/assets/images/logo/nxt-gen.png": "504fd9f6ae29f024afb35b9f2c8d82e6d131f53f",
     "/nxt-gen-aio/assets/images/mega-menu.png": "90711120349f384b36ef5a92585b12998e83cd42",
     "/nxt-gen-aio/assets/images/mega-menu2.png": "0a17b04c4710111590492a3c6d526a2a5a5da095",
@@ -601,7 +603,7 @@
     "/nxt-gen-aio/chunk-ERCC57WU.js": "46087efa0c5af17bf798b1695ba542ad79a0d047",
     "/nxt-gen-aio/chunk-ERVLX5DS.js": "85cc159095e4bbfef58319651864a6ef7a25eef1",
     "/nxt-gen-aio/chunk-GBBCEO5R.js": "e68d3d1e11960e187bfe6c3eb2db660a22ebc4ef",
-    "/nxt-gen-aio/chunk-HXG4CJOV.js": "4ed58eda53412230f99994b541ef961817e872fb",
+    "/nxt-gen-aio/chunk-GWFLZBZZ.js": "4599f6c4ce7c14df7d690045b7fe676c956fffeb",
     "/nxt-gen-aio/chunk-ISARK6AK.js": "4c0a9d04f1a3f8c6ac0ee62d761948a19a3a1d86",
     "/nxt-gen-aio/chunk-IXXV57W7.js": "b23d9b33bfb4ae4386e99f78a754233fc20d7798",
     "/nxt-gen-aio/chunk-LUABQX3O.js": "3a9013907922312341d3ca9920c58b1237e91b27",
@@ -618,8 +620,8 @@
     "/nxt-gen-aio/icons/icon-512x512.png": "24b0f1d7642bbb9d7624ce8cb0f0c54c54622459",
     "/nxt-gen-aio/icons/icon-72x72.png": "2cd48b99095ebeae5d637c18c88529289ab40221",
     "/nxt-gen-aio/icons/icon-96x96.png": "c0e1fe613ec6fda037686fe0c80bdd21dcbcb07f",
-    "/nxt-gen-aio/index.html": "2730fa751b06e89c56227586552b4cf1b2f02ccc",
-    "/nxt-gen-aio/main-5U6XFEHV.js": "64abcb80edcc48a22dea1b9055ff9bf102dfd05b",
+    "/nxt-gen-aio/index.html": "7aade992e0c8263c25721e67a5f6360759eda521",
+    "/nxt-gen-aio/main-HEXG53OQ.js": "3ed3c537d86ad4111edcf1362c1077f7c4587f29",
     "/nxt-gen-aio/manifest.webmanifest": "7743a3772ee544cf55725264629af4d60d7dec56",
     "/nxt-gen-aio/media/arrow-NBASLMHE.svg": "e64eb8582a40904c02c9171f65249a57a09c30c9",
     "/nxt-gen-aio/media/bg-body-CC7IYXRE.png": "b121824023b53fd51b73133bea43eb7924af36be",
@@ -629,7 +631,7 @@
     "/nxt-gen-aio/media/log-in-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/media/withdraw-bg-OOPWY2D6.png": "6152c774fc3bf7f8a9edda88574d9f8eab285751",
     "/nxt-gen-aio/polyfills-B6TNHZQ6.js": "bf76ac291d7f51c1139b7edcf86b359a30c08c64",
-    "/nxt-gen-aio/styles-I47EHMSJ.css": "c04a2b5b29d67fb883bbbf4ebd06a124229fe3dc"
+    "/nxt-gen-aio/styles-4CAKBVPU.css": "11760be263c7db2038fb76923ae5c4231d926678"
   },
   "navigationUrls": [
     {
