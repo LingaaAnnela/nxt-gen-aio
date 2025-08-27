@@ -1,11 +1,10 @@
-import { Component, inject } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
 import { Product } from '../../../../../../shared/interface/product.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { ProductBoxComponent } from '../../../../../../shared/components/widgets/product-box/product-box.component';
 import { SlicePipe } from '@angular/common';
-import { NxtProductSelectors } from '../../../../../../../store/selectors';
+import { NxtProductEntitySelectors } from '../../../../../../../store/selectors';
 
 @Component({
   selector: 'app-trending-products',
@@ -14,17 +13,27 @@ import { NxtProductSelectors } from '../../../../../../../store/selectors';
   imports: [ProductBoxComponent, SlicePipe, TranslateModule],
 })
 export class TrendingProductsComponent {
-  relatedProduct$: Observable<Product[]> = inject(Store).select(
-    NxtProductSelectors.relatedProducts
-  );
+  @Input() product: Product;
 
   public relatedProducts: Product[] = [];
+  constructor(private _store: Store) {}
 
-  ngOnInit() {
-    this.relatedProduct$.subscribe((products) => {
-      this.relatedProducts = products.length
-        ? products?.filter((product) => product?.is_trending)
-        : [];
-    });
+  ngOnChanges() {
+    if (
+      this.product?.related_products &&
+      Array.isArray(this.product?.related_products)
+    ) {
+      this._store
+        .select(
+          NxtProductEntitySelectors.productsByIds(this.product.related_products)
+        )
+        .subscribe((products) => {
+          this.relatedProducts = products
+            .filter((product) =>
+              this.product?.related_products?.includes(product?.id)
+            )
+            .slice(0, 6); // Limit to 6 products
+        });
+    }
   }
 }

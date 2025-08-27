@@ -152,7 +152,7 @@ export const onAddToWishlistSuccess: FunctionalEffect = createEffect(
       ofType(NxtCartActions.AddToWishlistSuccess),
       // delay(3000),
       map(() =>
-        notificationService.showSuccess('Item added to wishlist successfully!')
+        notificationService.showSuccess('Your wishlist has been updated!')
       )
     );
   },
@@ -243,7 +243,7 @@ export const onAddToCart: FunctionalEffect = createEffect(
       // delay(3000),
       map(() => {
         return notificationService.showSuccess(
-          'This item has been added to cart!'
+          'Your cart has been updated!'
         );
       })
     );

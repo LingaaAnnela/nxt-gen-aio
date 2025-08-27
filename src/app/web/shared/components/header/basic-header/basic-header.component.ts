@@ -19,7 +19,6 @@ import { CallComponent } from '../widgets/call/call.component';
 import { SearchBoxComponent } from '../widgets/search-box/search-box.component';
 import { SearchComponent } from '../widgets/search/search.component';
 import { LogoComponent } from '../widgets/logo/logo.component';
-import { NavbarMenuButtonComponent } from '../widgets/navbar-menu-button/navbar-menu-button.component';
 import { TopbarComponent } from '../widgets/topbar/topbar.component';
 
 @Component({
@@ -28,7 +27,6 @@ import { TopbarComponent } from '../widgets/topbar/topbar.component';
   styleUrls: ['./basic-header.component.scss'],
   imports: [
     TopbarComponent,
-    NavbarMenuButtonComponent,
     LogoComponent,
     SearchComponent,
     SearchBoxComponent,
@@ -39,8 +37,8 @@ import { TopbarComponent } from '../widgets/topbar/topbar.component';
     CategoriesBlockComponent,
     ButtonComponent,
     DealComponent,
-    TranslateModule,
-  ],
+    TranslateModule
+],
 })
 export class BasicHeaderComponent {
   @Input() data: Option | null;

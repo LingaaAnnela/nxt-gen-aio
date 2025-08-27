@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { environment } from '../../../public/environments/environment';
 import { Params } from '@angular/router';
 import { AccountUser } from '../web/shared/interface/account.interface';
@@ -97,5 +97,9 @@ export class NxtAccountService {
     return this._http.get<BlogModel>(`${environment.URL}/blog.json`, {
       params: payload,
     });
+  }
+
+  logout(payload?: Params): Observable<boolean> {
+    return of(true);
   }
 }

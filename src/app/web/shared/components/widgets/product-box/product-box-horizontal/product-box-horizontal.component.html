@@ -46,11 +46,11 @@
           <i class="ri-eye-line"></i>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="javascript:void(0)" (click)="addToCompar(product.id)">
           <i class="ri-refresh-line"></i>
         </a>
-      </li>
+      </li> -->
       <li>
         <a
           href="javascript:void(0)"
@@ -73,9 +73,9 @@
       <h6 class="name">{{ product.name }}</h6>
     </a>
     <p>{{ product.short_description }}</p>
-    @if (product.unit) {
+    <!-- @if (product.unit) {
     <h6 class="unit mt-1">{{ product.unit }}</h6>
-    }
+    } -->
     <h5 class="sold text-content">
       <span class="theme-color price">{{
         product.sale_price | currencySymbol

@@ -67,18 +67,16 @@ export class SearchComponent {
     //  this.getProduct(this.filter);
 
     this.route.queryParams.subscribe((params) => {
-      if (params['search']) {
-        this.filter['search'] = params['search'];
-        this.search.patchValue(params['search'] ? params['search'] : '');
+      // if (params['search']) {
+      this.filter['search'] = params['search'];
+      this.search.patchValue(params['search'] ? params['search'] : '');
 
-        this._store
-          .select(
-            NxtProductEntitySelectors.productsBySearchKey(params['search'])
-          )
-          .subscribe((products) => {
-            this.products = (products as Product[]) || [];
-          });
-      }
+      this._store
+        .select(NxtProductEntitySelectors.productsBySearchKey(params['search']))
+        .subscribe((products) => {
+          this.products = (products as Product[]) || [];
+        });
+      // }
       // this.store.dispatch(new GetProducts(this.filter)).subscribe({
       //   next: (val: any) => {
       //     this.products = val.product.product.data;

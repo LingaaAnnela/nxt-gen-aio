@@ -5,6 +5,7 @@ import { of } from 'rxjs';
 
 import { NxtAccountActions } from '../actions';
 import { NxtAccountService } from '../../services/account.service';
+import { Router } from '@angular/router';
 
 export const onGetUser: FunctionalEffect = createEffect(
   (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
@@ -312,4 +313,32 @@ export const onGetBlogs: FunctionalEffect = createEffect(
     );
   },
   { functional: true }
+);
+
+export const onLogout: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.Logout),
+      // delay(3000),
+      switchMap(() =>
+        accountService.logout().pipe(
+          map(() => NxtAccountActions.LogoutSuccess()),
+          catchError((error: { message: string }) =>
+            of(NxtAccountActions.LogoutFailure({ error }))
+          )
+        )
+      )
+    );
+  },
+  { functional: true }
+);
+
+export const onLogoutSuccess: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), router = inject(Router)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.LogoutSuccess),
+      map(() => router.navigate(['/nxt/auth/login']))
+    );
+  },
+  { dispatch: false, functional: true }
 );

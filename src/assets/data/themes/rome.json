@@ -44,7 +44,7 @@
       "banners": [
         {
           "redirect_link": {
-            "link": "vegetables-fruits",
+            "link": "frozen",
             "link_type": "collection"
           },
           "status": true,
@@ -52,7 +52,7 @@
         },
         {
           "redirect_link": {
-            "link": "vegetables-fruits",
+            "link": "hookah",
             "link_type": "collection"
           },
           "status": true,
@@ -60,7 +60,7 @@
         },
         {
           "redirect_link": {
-            "link": "vegetables-fruits",
+            "link": "wraps",
             "link_type": "collection"
           },
           "status": true,
@@ -104,12 +104,12 @@
       },
       "product_slider_3": {
         "title": "Best Seller",
-        "product_ids": [322, 304, 530, 172],
+        "product_ids": [395, 304, 530, 172],
         "status": true
       },
       "product_slider_4": {
         "title": "Trending Products",
-        "product_ids": [172, 620, 520, 379],
+        "product_ids": [172, 620, 520, 314],
         "status": true
       }
     },
