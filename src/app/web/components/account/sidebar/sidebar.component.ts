@@ -17,6 +17,7 @@ import { RouterLinkActive, RouterLink } from '@angular/router';
 import { AsyncPipe } from '@angular/common';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 import { NxtAccountSelectors } from '../../../../store/selectors';
+import { NxtAccountActions } from '../../../../store/actions';
 
 @Component({
   selector: 'app-sidebar',
@@ -56,7 +57,7 @@ export class SidebarComponent {
   }
 
   logout() {
-    // this.store.dispatch(new Logout());
+    this._store.dispatch(NxtAccountActions.Logout());
   }
 
   openMenu(value: boolean) {

@@ -49,8 +49,7 @@ export interface NxtAccountState {
 }
 
 export const initialState: NxtAccountState = {
-  // auth: null,
-  auth: { isAuthenticated: true, token: 'abc1234', accsssToken: 'ABC1234' }, // Temporary auth state for testing
+  auth: null,
   user: null,
   settings: null,
   permissions: [],
@@ -81,6 +80,7 @@ export const accountReducer = createReducer(
     ...state,
     user,
     // permissions: response.permissions,
+    auth: { isAuthenticated: true, token: 'abc1234', accsssToken: 'ABC1234' }, // Temporary auth state for testing
     showSpinner: false,
   })),
   on(NxtAccountActions.GetUserFailure, (state, { error }) => ({
@@ -263,5 +263,10 @@ export const accountReducer = createReducer(
   on(NxtAccountActions.GetBlogsFailure, (state, { error }) => ({
     ...state,
     blogs: { data: [], isLoading: false },
+  })),
+  on(NxtAccountActions.LogoutSuccess, (state) => ({
+    ...state,
+    ...initialState,
+    auth: null,
   }))
 );

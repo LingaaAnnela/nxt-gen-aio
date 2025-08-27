@@ -104,3 +104,8 @@ export const GetCouponsFailure = createAction(
   '[NXT] Get Coupons Failure',
   props<{ error: { message: string } }>()
 );
+
+export const ShowAlert = createAction(
+  '[NXT] Show Alert',
+  props<{ message: string; alertType: 'success' | 'error' }>()
+);

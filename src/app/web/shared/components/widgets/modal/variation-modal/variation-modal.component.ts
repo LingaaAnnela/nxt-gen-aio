@@ -14,6 +14,7 @@ import { Product, Variation } from '../../../../interface/product.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { ButtonComponent } from '../../button/button.component';
 import { VariantAttributesComponent } from '../../variant-attributes/variant-attributes.component';
+import { NxtCartActions } from '../../../../../../store/actions';
 
 @Component({
   selector: 'app-variation-modal',
@@ -72,7 +73,16 @@ export class VariationModalComponent {
     this.selectedVariation = variation;
   }
 
-  updateQuantity(qty: number) {
+  updateQuantity(item: Cart, qty: number) {
+    if (item.product.quantity < this.productQty + qty) {
+      this.store.dispatch(
+        NxtCartActions.ShowAlert({
+          message: `The maximum quantity available for this product is ${item.product.quantity}.`,
+          alertType: 'error',
+        })
+      );
+      return;
+    }
     if (1 > this.productQty + qty) return;
     this.productQty = this.productQty + qty;
     this.checkStockAvailable();

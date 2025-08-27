@@ -31,7 +31,7 @@
               }
             </owl-carousel-o>
           </div>
-          @if (product.product_galleries?.length) {
+          @if (product.product_galleries?.length! > 1) {
           <div class="col-12">
             <div class="bottom-slider-image left-slider no-arrow slick-top">
               <owl-carousel-o [options]="productThumbSlider">
@@ -141,7 +141,7 @@
                     [class]="'btn qty-left-minus'"
                     [id]="'add-to-cart' + product.id"
                     [spinner]="false"
-                    (click)="updateQuantity(-1)"
+                    (click)="updateQuantity(product, -1)"
                   >
                     <i class="ri-subtract-fill"></i>
                   </app-button>
@@ -156,7 +156,7 @@
                     [class]="'btn qty-left-minus'"
                     [id]="'qty-left-minus' + product.id"
                     [spinner]="false"
-                    (click)="updateQuantity(1)"
+                    (click)="updateQuantity(product, 1)"
                   >
                     <i class="ri-add-line"></i>
                   </app-button>

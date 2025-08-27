@@ -68,13 +68,15 @@ export class RomeComponent implements OnInit, OnDestroy {
       // Change color for this layout
       document.documentElement.style.setProperty('--theme-color', '#0baf9a');
       this.themeOptionService.theme_color = '#0baf9a';
+      document.documentElement.style.setProperty('--theme-color', 'rgb(47 149 2)');
+      this.themeOptionService.theme_color = 'rgb(47 149 2)';
     }
   }
 
   ngOnDestroy() {
     if (isPlatformBrowser(this.platformId)) {
       // Remove Color
-      document.documentElement.style.removeProperty('--theme-color');
+      // document.documentElement.style.removeProperty('--theme-color');
     }
   }
 

@@ -103,7 +103,17 @@ export class ProductDetailModalComponent {
     this.selectedVariation = variation;
   }
 
-  updateQuantity(qty: number) {
+  updateQuantity(product: Product, qty: number) {
+    console.log(qty);
+    if (Number(product.quantity) < this.productQty + qty) {
+      this.store.dispatch(
+        NxtCartActions.ShowAlert({
+          message: `The maximum quantity available for this product is ${product.quantity}.`,
+          alertType: 'error',
+        })
+      );
+      return;
+    }
     if (1 > this.productQty + qty) return;
     this.productQty = this.productQty + qty;
     this.checkStockAvailable();

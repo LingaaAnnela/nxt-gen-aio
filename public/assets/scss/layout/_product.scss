@@ -821,7 +821,7 @@
 
       li {
         position: relative;
-        width: 33.33%;
+        width: 50%;
 
         a {
           color: $title-color;
@@ -898,6 +898,10 @@
       flex-wrap: wrap;
       gap: calc(4px + (7 - 4) * ((100vw - 320px) / (1920 - 320)));
       margin-top: 2px;
+
+      @include mq-max(xs) {
+        display: none;
+      }
 
       body.rtl & {
         justify-content: flex-start;

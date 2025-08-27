@@ -28,6 +28,12 @@ export const wishlist = createSelector(
   (state) => state.wishlist
 );
 
+export const isWishlisted = (slug: string) =>
+  createSelector(
+    wishlist,
+    (wishlist) => !!wishlist.find((item) => item.slug === slug)
+  );
+
 export const checkout = createSelector(
   selectCartState,
   (state) => state.checkout

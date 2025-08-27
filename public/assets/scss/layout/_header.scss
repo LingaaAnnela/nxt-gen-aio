@@ -556,9 +556,9 @@ header {
         display: flex;
         align-items: center;
 
-        @include mq-max(md) {
-          display: none;
-        }
+        // @include mq-max(md) {
+        //   display: none;
+        // }
 
         .location-box {
           border-radius: 5px;
@@ -780,23 +780,23 @@ header {
               }
             }
 
-            &:first-child {
-              display: none;
+            // &:first-child {
+            //   display: none;
 
-              @include mq-max(xl) {
-                display: block;
-              }
+            //   @include mq-max(xl) {
+            //     display: block;
+            //   }
 
-              @include mq-max(md) {
-                display: none;
-              }
-            }
+            //   @include mq-max(md) {
+            //     display: none;
+            //   }
+            // }
 
-            &:nth-child(2) {
-              @media (max-width: 1660px) {
-                display: none;
-              }
-            }
+            // &:nth-child(2) {
+            //   @media (max-width: 1660px) {
+            //     display: none;
+            //   }
+            // }
 
             &.search-icon {
               display: block;
@@ -2048,6 +2048,55 @@ header {
             display: none;
           }
         }
+      }
+    }
+  }
+
+  .deal-button {
+    color: var(--theme-color);
+    padding: calc(6px + (15 - 6) * ((100vw - 320px) / (1920 - 320)))
+      calc(11px + (20 - 11) * ((100vw - 320px) / (1920 - 320)));
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    z-index: 0;
+
+    &::before {
+      @include pos;
+      @include pseudowh;
+      top: 0;
+      left: 0;
+      background-color: var(--theme-color);
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 24px;
+      line-height: 1;
+
+      body.rtl & {
+        margin-right: unset;
+        margin-left: 10px;
+      }
+
+      @include mq-max(2xl) {
+        margin-right: 0;
+
+        body.rtl & {
+          margin-right: unset;
+          margin-left: 0;
+        }
+      }
+    }
+
+    span {
+      font-size: 16px;
+      font-weight: 600;
+
+      @include mq-max(2xl) {
+        display: none;
       }
     }
   }

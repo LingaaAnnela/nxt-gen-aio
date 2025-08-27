@@ -87,9 +87,9 @@ export const cartReducer = createReducer(
     };
   }),
   on(NxtCartActions.UpdateCartItem, (state, { item }) => {
-    const updatedItems = state.items.map((i) =>
-      i.product_id === item.product_id ? item : i
-    );
+    const updatedItems = state.items
+      .map((i) => (i.product_id === item.product_id ? item : i))
+      .filter((i) => i.quantity > 0);
 
     const total = updatedItems.reduce((prev, curr: Cart) => {
       return prev + Number(curr.sub_total);
@@ -124,8 +124,12 @@ export const cartReducer = createReducer(
         ...state,
         wishlist: [...state.wishlist, product],
       };
+    } else {
+      return {
+        ...state,
+        wishlist: state.wishlist.filter((p) => p.id !== product.id),
+      };
     }
-    return state;
   }),
   on(NxtCartActions.DeleteWishlist, (state, { id }) => {
     const wishlist = state.wishlist.filter((p) => p.id !== id);

@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { AccountUser } from '../../../../interface/account.interface';
 import { ConfirmationModalComponent } from '../../../widgets/modal/confirmation-modal/confirmation-modal.component';
 import { NxtAccountSelectors } from '../../../../../../store/selectors';
+import { NxtAccountActions } from '../../../../../../store/actions';
 
 @Component({
   selector: 'app-my-account',
@@ -29,6 +30,6 @@ export class MyAccountComponent {
   constructor(private _store: Store) {}
 
   logout() {
-    // this.store.dispatch(new Logout());
+    this._store.dispatch(NxtAccountActions.Logout());
   }
 }

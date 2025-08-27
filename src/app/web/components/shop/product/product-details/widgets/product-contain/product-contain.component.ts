@@ -51,6 +51,8 @@ export class ProductContainComponent {
   @Input() option: Option | null;
   @Input() owlCar: any;
 
+  NxtCartSelectors = NxtCartSelectors;
+
   cartItem$: Observable<Cart[]> = inject(Store).select(NxtCartSelectors.items);
 
   public cartItem: Cart | null;
@@ -64,7 +66,7 @@ export class ProductContainComponent {
   public isBrowser: boolean;
 
   constructor(
-    private store: Store,
+    public store: Store,
     private router: Router,
     @Inject(PLATFORM_ID) platformId: object
   ) {
@@ -106,7 +108,16 @@ export class ProductContainComponent {
     this.selectedVariation = variation;
   }
 
-  updateQuantity(qty: number) {
+  updateQuantity(product: Product, qty: number) {
+    if (product.quantity < this.productQty + qty) {
+      this.store.dispatch(
+        NxtCartActions.ShowAlert({
+          message: `The maximum quantity available for this product is ${product.quantity}.`,
+          alertType: 'error',
+        })
+      );
+      return;
+    }
     if (1 > this.productQty + qty) return;
     this.productQty = this.productQty + qty;
     this.checkStockAvailable();
@@ -127,6 +138,16 @@ export class ProductContainComponent {
 
   addToCart(product: Product) {
     if (product) {
+      if (product.quantity < this.productQty) {
+        this.store.dispatch(
+          NxtCartActions.ShowAlert({
+            message: `The maximum quantity available for this product is ${product.quantity}.`,
+            alertType: 'error',
+          })
+        );
+        this.productQty = Number(product.quantity);
+        return;
+      }
       const params: CartAddOrUpdate = {
         id: this.cartItem ? this.cartItem.id : null,
         product_id: product?.id,
