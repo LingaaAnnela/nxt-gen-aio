@@ -44,7 +44,7 @@
       "banners": [
         {
           "redirect_link": {
-            "link": "vegetables-fruits",
+            "link": "frozen",
             "link_type": "collection"
           },
           "status": true,
@@ -52,7 +52,7 @@
         },
         {
           "redirect_link": {
-            "link": "vegetables-fruits",
+            "link": "hookah",
             "link_type": "collection"
           },
           "status": true,
@@ -60,7 +60,7 @@
         },
         {
           "redirect_link": {
-            "link": "vegetables-fruits",
+            "link": "wraps",
             "link_type": "collection"
           },
           "status": true,
