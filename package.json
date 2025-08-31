@@ -7,6 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "deploy": "npx ng build --configuration production --base-href=/nxt-gen-aio/ && npx angular-cli-ghpages --dir=dist/nxt-gen-aio/browser --message='chore(deploy): deploy to gh-pages [skip ci]'",
+    "ios": "npx ng build --configuration ios && npx cap sync ios && npx cap open ios",
     "lint": "ng lint",
     "test": "ng test"
   },

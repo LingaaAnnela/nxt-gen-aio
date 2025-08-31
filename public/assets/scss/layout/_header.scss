@@ -2364,6 +2364,7 @@ header {
   z-index: 999;
   overflow: hidden;
   box-shadow: 0 -3px 10px 0px rgba($black, 0.08);
+  padding-bottom: calc(16px + var(--safe-bottom));
 
   body.rtl & {
     left: 0;

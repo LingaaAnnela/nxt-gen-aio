@@ -1,0 +1,5 @@
+.header-top {
+  padding-top: calc(48px + var(--safe-top));
+  background-color: var(--theme-color); // adjust as needed
+  z-index: 1000;
+}
