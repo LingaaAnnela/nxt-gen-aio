@@ -2,3 +2,19 @@
 
 @import "../public/assets/scss/app.scss";
 // @import "../public/assets/pwa/scss/style.scss";
+
+body {
+  padding-top: var(--safe-top);
+  padding-bottom: var(--safe-bottom);
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior-x: none;
+}
+
+* {
+  box-sizing: border-box;
+}

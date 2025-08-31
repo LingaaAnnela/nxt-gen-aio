@@ -12,13 +12,12 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "nxt",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/nxt-gen-aio",
-            "baseHref": "/nxt-gen-aio/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["zone.js"],
@@ -53,13 +52,15 @@
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "ngsw-config.json",
+              "baseHref": "/nxt-gen-aio/"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true
-            }
+            },
+            "ios": { "baseHref": "/" }
           },
           "defaultConfiguration": "production"
         },

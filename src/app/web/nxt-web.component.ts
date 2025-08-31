@@ -70,7 +70,7 @@ export class NxtWebComponent {
     return {
       header_logo: 'assets/images/logo/nxt-gen-header.png',
       footer: {
-        footer_logo: 'assets/images/logo/nxt-gen.png',
+        footer_logo: 'assets/images/logo/nxt-gen-header.png',
         footer_class: '',
       },
     };
