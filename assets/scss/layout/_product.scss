@@ -700,6 +700,9 @@
     font-weight: 500;
     z-index: 1;
 
+      white-space: normal !important;
+  word-break: break-word;
+
     body.rtl & {
       left: unset;
       right: 0;
@@ -785,6 +788,8 @@
       &:after {
         border-bottom-color: #ff7272;
       }
+
+
     }
 
     span {
