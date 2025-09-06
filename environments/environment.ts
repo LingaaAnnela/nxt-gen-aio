@@ -7,6 +7,7 @@ export const environment = {
   useMock: true,
   baseURL: 'http://localhost:4200/',
   URL: 'assets/data',
+  apiUrl: 'http://18.220.130.134:8000',
 };
 
 /*
