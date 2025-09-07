@@ -1,11 +1,53 @@
 import { inject } from '@angular/core';
 import { Actions, createEffect, FunctionalEffect, ofType } from '@ngrx/effects';
-import { catchError, map, switchMap } from 'rxjs/operators';
+import { catchError, map, switchMap, tap } from 'rxjs/operators';
 import { of } from 'rxjs';
 
 import { NxtAccountActions } from '../actions';
 import { NxtAccountService } from '../../services/account.service';
 import { Router } from '@angular/router';
+
+export const onHealthCheck: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetUser),
+      switchMap(() =>
+        accountService.healthCheck().pipe(
+          tap((response) => console.info('Health Check Response:', response)),
+          // cloud icon
+
+          tap(() => alert('We are on AWS Cloud9!')),
+          catchError((error) => {
+            console.error('Health Check Error:', error);
+            return of(error);
+          })
+        )
+      )
+    );
+  },
+  { functional: true, dispatch: false }
+);
+
+export const appRunner: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.GetUser),
+      switchMap(() =>
+        accountService.appRunnerCheck().pipe(
+          tap((response) => console.info('App Runner:', response)),
+          // cloud icon
+
+          tap(() => alert('We are on AWS Cloud9!')),
+          catchError((error) => {
+            console.error('Health Check Error:', error);
+            return of(error);
+          })
+        )
+      )
+    );
+  },
+  { functional: true, dispatch: false }
+);
 
 export const onGetUser: FunctionalEffect = createEffect(
   (actions$ = inject(Actions), accountService = inject(NxtAccountService)) => {

@@ -1,6 +1,6 @@
 @if(product) {
 <div class="product-box" [class]="class">
-  @if (product.is_sale_enable) {
+  <!-- @if (product.is_sale_enable) {
   <div class="label-tag sale-tag">
     <span>{{ "sale" | translate }}</span>
   </div>
@@ -8,7 +8,7 @@
   <div class="label-tag">
     <span>{{ "featured" | translate }}</span>
   </div>
-  } }
+  } } -->
   <ng-template #featured>
     @if (product.is_featured) {
     <div class="label-tag">
@@ -42,7 +42,7 @@
     } @if (!close) {
     <ul class="product-option">
       <li>
-        <a href="javascript:void(0)"  (click)="productDetailModal.openModal()">
+        <a href="javascript:void(0)" (click)="productDetailModal.openModal()">
           <i class="ri-eye-line"></i>
         </a>
       </li>
@@ -59,7 +59,7 @@
         >
           @if (store.select(NxtCartSelectors.isWishlisted(product.slug)) |
           async) {
-          <i class="ri-heart-fill" style="color: red;"></i>
+          <i class="ri-heart-fill" style="color: red"></i>
           } @else {
           <i class="ri-heart-line"></i>
           }

@@ -7,6 +7,7 @@ export const environment = {
   useMock: true,
   baseURL: 'http://localhost:4200/',
   URL: 'assets/data',
+  apiUrl: 'https://api.nextgenerationmart.com',
 };
 
 /*
