@@ -102,4 +102,14 @@ export class NxtAccountService {
   logout(payload?: Params): Observable<boolean> {
     return of(true);
   }
+
+  healthCheck(): Observable<any> {
+    return this._http.get(`${environment.apiUrl}/health`);
+  }
+
+  appRunnerCheck(): Observable<any> {
+    return this._http.get(
+      `https://zmwjubqmsv.us-east-2.awsapprunner.com/consumers/`
+    );
+  }
 }
