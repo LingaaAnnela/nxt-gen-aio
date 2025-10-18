@@ -103,7 +103,6 @@ export const productsByCategoryNames = (categoryList: string) =>
             .filter(Boolean)
         )
       );
-      debugger;
 
       // collect product slugs (union across selected categories)
       const productSlugSet = new Set<string>();

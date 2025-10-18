@@ -3,7 +3,7 @@
   "content": {
     "home_banner": {
       "status": true,
-      "bg_image_url": "https://laravel.pixelstrap.net/fastkart/storage/351/rome_07.png",
+      "bg_image_url": "/assets/images/newsletter/4.jpeg",
       "main_banner": {
         "image_url": "https://laravel.pixelstrap.net/fastkart/storage/672/rome_09.jpg",
         "redirect_link": {
@@ -44,11 +44,11 @@
       "banners": [
         {
           "redirect_link": {
-            "link": "frozen",
+            "link": "wraps",
             "link_type": "collection"
           },
           "status": true,
-          "image_url": "https://laravel.pixelstrap.net/fastkart/storage/665/rome_03.jpg"
+          "image_url": "/assets/images/newsletter/1.jpeg"
         },
         {
           "redirect_link": {
@@ -56,15 +56,15 @@
             "link_type": "collection"
           },
           "status": true,
-          "image_url": "https://laravel.pixelstrap.net/fastkart/storage/663/rome_01.jpg"
+          "image_url": "/assets/images/newsletter/2.jpeg"
         },
         {
           "redirect_link": {
-            "link": "wraps",
+            "link": "drinks",
             "link_type": "collection"
           },
           "status": true,
-          "image_url": "https://laravel.pixelstrap.net/fastkart/storage/664/rome_02.jpg"
+          "image_url": "/assets/images/newsletter/3.jpeg"
         }
       ]
     },
@@ -115,10 +115,10 @@
     },
     "full_width_banner": {
       "redirect_link": {
-        "link": "vegetables-fruits",
+        "link": "hookah",
         "link_type": "collection"
       },
-      "image_url": "https://laravel.pixelstrap.net/fastkart/storage/670/rome_07.jpg",
+      "image_url": "/assets/images/newsletter/5.jpeg",
       "status": true
     },
     "products_list_1": {
@@ -134,7 +134,7 @@
     "news_letter": {
       "title": "Subscribe to the newsletter",
       "sub_title": "Join our subscribers list to get the latest news, updates and special offers  delivered directly in your inbox.",
-      "image_url": "https://laravel.pixelstrap.net/fastkart/storage/358/rome_12.png",
+      "image_url": "/assets/images/newsletter/newsletter-background.jpeg",
       "status": true
     },
     "products_ids": [

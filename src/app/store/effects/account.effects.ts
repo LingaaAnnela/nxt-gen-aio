@@ -14,9 +14,6 @@ export const onHealthCheck: FunctionalEffect = createEffect(
       switchMap(() =>
         accountService.healthCheck().pipe(
           tap((response) => console.info('Health Check Response:', response)),
-          // cloud icon
-
-          tap(() => alert('We are on AWS Cloud9!')),
           catchError((error) => {
             console.error('Health Check Error:', error);
             return of(error);
@@ -35,9 +32,6 @@ export const appRunner: FunctionalEffect = createEffect(
       switchMap(() =>
         accountService.appRunnerCheck().pipe(
           tap((response) => console.info('App Runner:', response)),
-          // cloud icon
-
-          tap(() => alert('We are on AWS Cloud9!')),
           catchError((error) => {
             console.error('Health Check Error:', error);
             return of(error);

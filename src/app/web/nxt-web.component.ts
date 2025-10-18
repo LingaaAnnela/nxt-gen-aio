@@ -11,6 +11,7 @@ import { ThemeOptionService } from './shared/services/theme-option.service';
 import { Option } from './shared/interface/theme-option.interface';
 import { NxtThemeSelectors } from '../store/selectors';
 import { RecentPurchasePopupComponent } from './shared/components/widgets/recent-purchase-popup/recent-purchase-popup.component';
+import { NewsletterModalComponent } from './shared/components/widgets/modal/newsletter-modal/newsletter-modal.component';
 
 @Component({
   selector: 'nxt-web',
@@ -22,6 +23,7 @@ import { RecentPurchasePopupComponent } from './shared/components/widgets/recent
     HeaderComponent,
     RouterOutlet,
     FooterComponent,
+    NewsletterModalComponent,
     RecentPurchasePopupComponent,
   ],
 })
