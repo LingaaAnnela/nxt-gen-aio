@@ -9,6 +9,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { NotificationService } from '../../shared/services/notification.service';
+import { CognitoAuthService } from '../../../services/cognito-auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -21,7 +22,8 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(
     private _store: Store,
     private router: Router,
-    private notificationService: NotificationService
+    private notificationService: NotificationService,
+    private cognitoAuthService: CognitoAuthService
   ) {
     // this.store.dispatch(new GetCountries());
     // this.store.dispatch(new GetStates());
@@ -39,21 +41,38 @@ export class AuthInterceptor implements HttpInterceptor {
       this.router.navigate(['/nxt/maintenance']);
     }
 
-    // const token = this.store.selectSnapshot((state) => state.auth.access_token);
-    const token = 'abc1234'; // Replace with actual token retrieval logic
-    if (token) {
-      req = req.clone({
-        setHeaders: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+    // Skip token attachment for auth endpoints and public endpoints
+    const skipTokenEndpoints = [
+      '/nxt/auth/',
+      '/assets/',
+      '/api/auth/',
+      '/health'
+    ];
+
+    const shouldSkipToken = skipTokenEndpoints.some(endpoint => 
+      req.url.includes(endpoint)
+    );
+
+    if (!shouldSkipToken) {
+      // Get Cognito tokens
+      const tokens = this.cognitoAuthService.getStoredTokens();
+      if (tokens && tokens.idToken) {
+        req = req.clone({
+          setHeaders: {
+            Authorization: `Bearer ${tokens.idToken}`,
+          },
+        });
+      }
     }
 
     return next.handle(req).pipe(
       catchError((error: HttpErrorResponse) => {
         if (error.status === 401) {
           this.notificationService.notification = false;
-          // this.store.dispatch(new AuthClear());
+          // Clear Cognito session and redirect to login
+          this.cognitoAuthService.signOut().subscribe(() => {
+            this.router.navigate(['/nxt/auth/login']);
+          });
         }
         return throwError(() => error);
       })

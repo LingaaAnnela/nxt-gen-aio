@@ -16,16 +16,47 @@
         <div class="log-in-box">
           <div class="log-in-title">
             <h3>{{ "welcome_to_next_gen_mart" | translate }}</h3>
-            <h4>{{ "register_your_account" | translate }}</h4>
+            <h4>{{ "sign_in_to_your_account" | translate }}</h4>
           </div>
           <div class="input-box">
+            @if (message) {
+            <div class="alert alert-info mb-3">
+              {{ message }}
+            </div>
+            }
+
+            <!-- Login Method Toggle -->
+            <div class="login-method-toggle mb-4">
+              <div class="btn-group w-100" role="group">
+                <button
+                  type="button"
+                  class="btn login-method-btn"
+                  [class.active]="loginMethod === 'email'"
+                  (click)="switchLoginMethod('email')"
+                >
+                  <i class="ri-mail-line me-2"></i>
+                  {{ "email_password" | translate }}
+                </button>
+                <button
+                  type="button"
+                  class="btn login-method-btn"
+                  [class.active]="loginMethod === 'phone'"
+                  (click)="switchLoginMethod('phone')"
+                >
+                  <i class="ri-phone-line me-2"></i>
+                  {{ "phone_otp" | translate }}
+                </button>
+              </div>
+            </div>
+
             <form class="row g-4" [formGroup]="form" (ngSubmit)="submit()">
+              @if (loginMethod === 'email') {
+              <!-- Email Login -->
               <div class="col-12">
                 <div class="form-floating log-in-form">
                   <input
                     type="email"
                     class="form-control"
-                    id="email"
                     id="email"
                     formControlName="email"
                     placeholder="{{ 'email_address' | translate }}"
@@ -45,7 +76,7 @@
                 </div>
               </div>
               <div class="col-12">
-                <div class="form-floating theme-form-floating log-in-form">
+                <div class="form-floating log-in-form">
                   <input
                     type="password"
                     class="form-control"
@@ -59,9 +90,41 @@
                   <div class="invalid-feedback">
                     {{ "password_is_required" | translate }}
                   </div>
+                  } @if (form.controls['password'].touched &&
+                  form.controls['password'].errors?.['minlength']) {
+                  <div class="invalid-feedback">
+                    {{ "password_min_length" | translate }}
+                  </div>
                   }
                 </div>
               </div>
+              } @else {
+              <!-- Phone Login -->
+              <div class="col-12">
+                <div class="form-floating log-in-form">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    formControlName="phone"
+                    placeholder="{{ 'phone_number' | translate }}"
+                  />
+                  <label for="phone">{{ "phone_number" | translate }}</label>
+                  @if (form.controls['phone'].touched &&
+                  form.controls['phone'].errors?.['required']) {
+                  <div class="invalid-feedback">
+                    {{ "phone_is_required" | translate }}
+                  </div>
+                  } @if (form.controls['phone'].touched &&
+                  form.controls['phone'].errors?.['pattern']) {
+                  <div class="invalid-feedback">
+                    {{ "invalid_phone" | translate }}
+                  </div>
+                  }
+                </div>
+              </div>
+              }
+
               <div class="col-12">
                 <div class="forgot-box">
                   <div class="form-check ps-0 m-0 remember-box">
@@ -78,19 +141,49 @@
                     [routerLink]="['/nxt/auth/forgot-password']"
                     class="forgot-password"
                   >
-                    {{ "forgot_password" | translate }}?
+                    {{ "need_help" | translate }}?
                   </a>
                 </div>
               </div>
               <div class="col-12">
                 <app-button [id]="'login_btn'">
-                  {{ "log_in" | translate }}
+                  @if (loginMethod === 'phone') {
+                  {{ "send_otp" | translate }}
+                  } @else {
+                  {{ "sign_in" | translate }}
+                  }
                 </app-button>
               </div>
             </form>
           </div>
           <div class="other-log-in">
             <h6>{{ "or" | translate }}</h6>
+          </div>
+          <div class="social-login-buttons">
+            <div class="row g-3">
+              <div class="col-6">
+                <button
+                  disabled
+                  type="button"
+                  class="btn social-login-btn w-100 d-flex align-items-center justify-content-center"
+                  (click)="loginWithGoogle()"
+                >
+                  <i class="ri-google-fill me-2"></i>
+                  {{ "login_with_google" | translate }}
+                </button>
+              </div>
+              <div class="col-6">
+                <button
+                  disabled
+                  type="button"
+                  class="btn social-login-btn w-100 d-flex align-items-center justify-content-center"
+                  (click)="loginWithFacebook()"
+                >
+                  <i class="ri-facebook-fill me-2"></i>
+                  {{ "login_with_facebook" | translate }}
+                </button>
+              </div>
+            </div>
           </div>
           <div class="sign-up-box">
             <h4>{{ "don't_have_an_account" | translate }}?</h4>

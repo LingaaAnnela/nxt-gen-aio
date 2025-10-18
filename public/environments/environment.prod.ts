@@ -7,6 +7,17 @@ export const environment = {
   useMock: true,
   baseURL: 'http://localhost:4200/',
   URL: 'assets/data',
+  cognito: {
+    region: 'us-east-1',
+    userPoolId: 'us-east-1_e5FiF6ZJc',
+    userPoolWebClientId: '5nkkq0dsegjljdcjbai37eioe3',
+    oauth: {
+      domain: 'https://us-east-1e5fif6zjc.auth.us-east-1.amazoncognito.com',
+      redirectSignIn: 'https://yourdomain.com/nxt/auth/callback',
+      redirectSignOut: 'https://yourdomain.com/nxt/auth/login',
+      responseType: 'code'
+    }
+  }
 };
 
 /*

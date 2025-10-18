@@ -46,11 +46,13 @@ export class ForgotPasswordComponent {
   submit() {
     this.form.markAllAsTouched();
     if (this.form.valid) {
-      // this.store.dispatch(new ForgotPassWord(this.form.value)).subscribe({
-      //   complete: () => {
-      //     this.router.navigateByUrl('/nxt/auth/otp');
-      //   },
-      // });
+      // Since we're using passwordless authentication, 
+      // redirect to login page with a message about using phone number
+      this.router.navigate(['/nxt/auth/login'], {
+        queryParams: { 
+          message: 'Please use your phone number to sign in. If you need to reset your account, please contact support.' 
+        }
+      });
     }
   }
 }

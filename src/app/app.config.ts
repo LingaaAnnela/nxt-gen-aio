@@ -7,6 +7,7 @@ import {
 import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideServiceWorker } from '@angular/service-worker';
+import { environment } from '../../public/environments/environment';
 
 import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
@@ -77,6 +78,8 @@ import { debugMeta, reducers } from './store/reducers';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+console.log('Environment cognito config:', environment.cognito);
 
 export const appConfig: ApplicationConfig = {
   providers: [

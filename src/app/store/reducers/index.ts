@@ -29,7 +29,7 @@ export const reducers: ActionReducerMap<NxtAppState> = {
 
 export function debugMeta(reducer: ActionReducer<any>): ActionReducer<any> {
   return (state, action) => {
-    console.log('DISPATCHED ACTION:', action);
+    // console.log('DISPATCHED ACTION:', action);
     return reducer(state, action);
   };
 }

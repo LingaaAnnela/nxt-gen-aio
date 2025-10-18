@@ -30,20 +30,11 @@ export class AuthGuard {
     // Store the attempted URL for redirecting after login
     this.authService.redirectUrl = state.url;
 
-    // Redirect to the login page
-    // if (
-    //   !this.store.selectSnapshot(
-    //     (state) => state.auth && state.auth.access_token
-    //   )
-    // ) {
-    //   return this.router.createUrlTree(['/auth/login']);
-    // }
+    // Check if user is authenticated with Cognito
+    if (!this.authService.isAuthenticated() || !this.authService.hasValidTokens()) {
+      return this.router.createUrlTree(['/nxt/auth/login']);
+    }
 
-    // this.store.dispatch(new GetUserDetails()).subscribe({
-    //   complete: () => {
-    //     return true;
-    //   },
-    // });
     return true;
   }
 
@@ -51,19 +42,21 @@ export class AuthGuard {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | UrlTree {
-    // if (
-    //   !!this.store.selectSnapshot(
-    //     (state) => state.auth && state.auth.access_token
-    //   )
-    // ) {
-    //   if (
-    //     this.router.url.startsWith('/account') ||
-    //     this.router.url == '/checkout' ||
-    //     this.router.url == '/compare'
-    //   )
-    //     this.router.navigate(['/nxt/theme/rome']);
-    //   return false;
-    // }
+    // Check if user is authenticated
+    if (!this.authService.isAuthenticated() || !this.authService.hasValidTokens()) {
+      return this.router.createUrlTree(['/nxt/auth/login']);
+    }
+
+    // If user is already authenticated and trying to access auth pages, redirect to dashboard
+    if (
+      this.authService.isAuthenticated() &&
+      (state.url.startsWith('/nxt/auth/login') ||
+       state.url.startsWith('/nxt/auth/register') ||
+       state.url.startsWith('/nxt/auth/otp'))
+    ) {
+      return this.router.createUrlTree(['/nxt/account/dashboard']);
+    }
+
     return true;
   }
 }

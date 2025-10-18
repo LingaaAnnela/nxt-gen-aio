@@ -16,7 +16,7 @@ import { Blog } from '../../web/shared/interface/blog.interface';
 
 export const Login = createAction(
   '[NXT] Login User',
-  props<{ email: string; password: string }>()
+  props<{ phone: string; country_code: string }>()
 );
 export const LoginSuccess = createAction(
   '[NXT] Login User Success',
@@ -24,6 +24,71 @@ export const LoginSuccess = createAction(
 );
 export const LoginFailure = createAction(
   '[NXT] Login User Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const EmailLogin = createAction(
+  '[NXT] Email Login User',
+  props<{ email: string; password: string }>()
+);
+export const EmailLoginSuccess = createAction(
+  '[NXT] Email Login User Success',
+  props<{ user: AccountUser }>()
+);
+export const EmailLoginFailure = createAction(
+  '[NXT] Email Login User Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const SendOTP = createAction(
+  '[NXT] Send OTP',
+  props<{ phone: string; country_code: string }>()
+);
+export const SendOTPSuccess = createAction(
+  '[NXT] Send OTP Success',
+  props<{ message: string }>()
+);
+export const SendOTPFailure = createAction(
+  '[NXT] Send OTP Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const VerifyOTP = createAction(
+  '[NXT] Verify OTP',
+  props<{ code: string }>()
+);
+export const VerifyOTPSuccess = createAction(
+  '[NXT] Verify OTP Success',
+  props<{ user: AccountUser }>()
+);
+export const VerifyOTPFailure = createAction(
+  '[NXT] Verify OTP Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const VerifyRegistrationOTP = createAction(
+  '[NXT] Verify Registration OTP',
+  props<{ code: string }>()
+);
+export const VerifyRegistrationOTPSuccess = createAction(
+  '[NXT] Verify Registration OTP Success',
+  props<{ message: string }>()
+);
+export const VerifyRegistrationOTPFailure = createAction(
+  '[NXT] Verify Registration OTP Failure',
+  props<{ error: { message: string } }>()
+);
+
+export const SocialLogin = createAction(
+  '[NXT] Social Login',
+  props<{ provider: 'Google' | 'Facebook' }>()
+);
+export const SocialLoginSuccess = createAction(
+  '[NXT] Social Login Success',
+  props<{ user: AccountUser }>()
+);
+export const SocialLoginFailure = createAction(
+  '[NXT] Social Login Failure',
   props<{ error: { message: string } }>()
 );
 
@@ -36,11 +101,11 @@ export const LogoutFailure = createAction(
 
 export const Register = createAction(
   '[NXT] Register User',
-  props<{ user: AccountUser }>()
+  props<{ name: string; email: string; phone: string; country_code: string; password: string }>()
 );
 export const RegisterSuccess = createAction(
   '[NXT] Register User Success',
-  props<{ user: AccountUser }>()
+  props<{ message: string }>()
 );
 export const RegisterFailure = createAction(
   '[NXT] Register User Failure',

@@ -13,6 +13,7 @@ import { Breadcrumb } from '../../../shared/interface/breadcrumb';
 import * as data from '../../../shared/data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
+import { NxtAccountActions } from '../../../../store/actions';
 // import { Select2Module } from 'ng-select2-component';
 
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
@@ -54,7 +55,7 @@ export class RegisterComponent {
           Validators.required,
           Validators.pattern(/^[0-9]*$/),
         ]),
-        country_code: new FormControl('91', [Validators.required]),
+        country_code: new FormControl('+1', [Validators.required]),
         password: new FormControl('', [Validators.required]),
         password_confirmation: new FormControl('', [Validators.required]),
       },
@@ -80,11 +81,23 @@ export class RegisterComponent {
       return;
     }
     if (this.form.valid) {
-      // this.store.dispatch(new Register(this.form.value)).subscribe({
-      //   complete: () => {
-      //     this.router.navigateByUrl('/account/dashboard');
-      //   },
-      // });
+      const { name, email, phone, country_code, password } = this.form.value;
+      this._store.dispatch(NxtAccountActions.Register({ 
+        name, 
+        email, 
+        phone, 
+        country_code, 
+        password 
+      }));
     }
+  }
+
+  // Social login methods
+  loginWithGoogle() {
+    this._store.dispatch(NxtAccountActions.SocialLogin({ provider: 'Google' }));
+  }
+
+  loginWithFacebook() {
+    this._store.dispatch(NxtAccountActions.SocialLogin({ provider: 'Facebook' }));
   }
 }

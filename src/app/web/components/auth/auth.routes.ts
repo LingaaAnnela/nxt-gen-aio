@@ -5,6 +5,7 @@ import { LoginComponent } from "./login/login.component";
 import { OtpComponent } from "./otp/otp.component";
 import { RegisterComponent } from "./register/register.component";
 import { UpdatePasswordComponent } from "./update-password/update-password.component";
+import { OAuthCallbackComponent } from "./oauth-callback/oauth-callback.component";
 
 export default[
   {
@@ -26,5 +27,9 @@ export default[
   {
     path: "register",
     component: RegisterComponent,
+  },
+  {
+    path: "callback",
+    component: OAuthCallbackComponent,
   }
 ] as Routes;

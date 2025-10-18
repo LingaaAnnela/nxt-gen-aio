@@ -21,6 +21,11 @@ export interface NxtAccountState {
     isAuthenticated: boolean;
     token: string | null;
     accsssToken: string | null;
+    accessToken: string | null;
+    idToken: string | null;
+    refreshToken: string | null;
+    phoneNumber: string | null;
+    verificationStatus: 'pending' | 'verified' | null;
   } | null;
   user: AccountUser | null;
   settings: Values | null;
@@ -49,7 +54,16 @@ export interface NxtAccountState {
 }
 
 export const initialState: NxtAccountState = {
-  auth: null,
+  auth: {
+    isAuthenticated: false,
+    token: null,
+    accsssToken: null,
+    accessToken: null,
+    idToken: null,
+    refreshToken: null,
+    phoneNumber: null,
+    verificationStatus: null
+  },
   user: null,
   settings: null,
   permissions: [],
@@ -80,7 +94,16 @@ export const accountReducer = createReducer(
     ...state,
     user,
     // permissions: response.permissions,
-    auth: { isAuthenticated: true, token: 'abc1234', accsssToken: 'ABC1234' }, // Temporary auth state for testing
+    auth: { 
+      isAuthenticated: true, 
+      token: 'abc1234', 
+      accsssToken: 'ABC1234',
+      accessToken: null,
+      idToken: null,
+      refreshToken: null,
+      phoneNumber: null,
+      verificationStatus: 'verified' as 'verified' | 'pending' | null
+    }, // Temporary auth state for testing
     showSpinner: false,
   })),
   on(NxtAccountActions.GetUserFailure, (state, { error }) => ({
@@ -267,6 +290,95 @@ export const accountReducer = createReducer(
   on(NxtAccountActions.LogoutSuccess, (state) => ({
     ...state,
     ...initialState,
-    auth: null,
+    auth: {
+      isAuthenticated: false,
+      token: null,
+      accsssToken: null,
+      accessToken: null,
+      idToken: null,
+      refreshToken: null,
+      phoneNumber: null,
+      verificationStatus: null
+    },
+  })),
+
+  // Cognito Authentication Reducers
+  on(NxtAccountActions.SendOTPSuccess, (state) => ({
+    ...state,
+    auth: {
+      ...state.auth!,
+      verificationStatus: 'pending' as 'verified' | 'pending' | null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.VerifyOTPSuccess, (state, { user }) => ({
+    ...state,
+    user,
+    auth: {
+      ...state.auth!,
+      isAuthenticated: true,
+      verificationStatus: 'verified' as 'verified' | 'pending' | null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.RegisterSuccess, (state) => ({
+    ...state,
+    auth: {
+      ...state.auth!,
+      verificationStatus: 'pending' as 'verified' | 'pending' | null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.SocialLoginSuccess, (state, { user }) => ({
+    ...state,
+    user,
+    auth: {
+      ...state.auth!,
+      isAuthenticated: true,
+      verificationStatus: 'verified' as 'verified' | 'pending' | null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.LoginFailure, (state, { error }) => ({
+    ...state,
+    auth: {
+      ...state.auth!,
+      isAuthenticated: false,
+      verificationStatus: null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.RegisterFailure, (state, { error }) => ({
+    ...state,
+    auth: {
+      ...state.auth!,
+      isAuthenticated: false,
+      verificationStatus: null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.VerifyOTPFailure, (state, { error }) => ({
+    ...state,
+    auth: {
+      ...state.auth!,
+      verificationStatus: 'pending' as 'verified' | 'pending' | null
+    },
+    showSpinner: false,
+  })),
+
+  on(NxtAccountActions.SocialLoginFailure, (state, { error }) => ({
+    ...state,
+    auth: {
+      ...state.auth!,
+      isAuthenticated: false,
+      verificationStatus: null
+    },
+    showSpinner: false,
   }))
 );
