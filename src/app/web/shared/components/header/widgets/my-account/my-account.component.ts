@@ -1,4 +1,4 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { Component, inject, Input, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
@@ -13,7 +13,7 @@ import { NxtAccountActions } from '../../../../../../store/actions';
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
   styleUrls: ['./my-account.component.scss'],
-  imports: [RouterLink, ConfirmationModalComponent, AsyncPipe, TranslateModule],
+  imports: [CommonModule, RouterLink, ConfirmationModalComponent, AsyncPipe, TranslateModule],
 })
 export class MyAccountComponent {
   @Input() style: string = 'basic';

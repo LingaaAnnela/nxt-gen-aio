@@ -21,6 +21,9 @@ export class AppComponent {
   constructor(private _store: Store) {}
 
   ngOnInit() {
+    // Validate authentication state first
+    this._store.dispatch(NxtAccountActions.ValidateAuthState());
+    
     this._store.dispatch(NxtAccountActions.GetSettings());
     this._store.dispatch(NxtAccountActions.GetUser());
     this._store.dispatch(NxtAccountActions.GetCurrency());

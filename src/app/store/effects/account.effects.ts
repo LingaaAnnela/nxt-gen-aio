@@ -2,7 +2,7 @@ import { inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, createEffect, FunctionalEffect, ofType } from '@ngrx/effects';
 import { catchError, map, switchMap, tap } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { of, from } from 'rxjs';
 
 import { NxtAccountActions } from '../actions';
 import { NxtAccountService } from '../../services/account.service';
@@ -380,24 +380,10 @@ export const onEmailLogin: FunctionalEffect = createEffect(
       switchMap(({ email, password }) => {
         console.log('EmailLogin effect triggered with:', { email, password });
         return cognitoAuthService.signInWithEmail(email, password).pipe(
-          switchMap(() => cognitoAuthService.getCurrentUser()),
-          map((user) => {
-            const accountUser = {
-              id: 1, // This should be a number, using 1 as placeholder
-              name: user?.attributes?.name || user?.attributes?.given_name || '',
-              email: user?.attributes?.email || '',
-              phone: user?.attributes?.phone_number || '',
-              country_code: '91', // Default country code
-              status: true,
-              email_verified_at: new Date().toISOString(),
-              payment_account: {} as any,
-              role_id: 1,
-              permission: [],
-              orders_count: 0,
-              is_approved: true
-            };
+          map(() => {
+            console.log('Email login successful, triggering getUser call');
             router.navigate(['/nxt/account/dashboard']);
-            return NxtAccountActions.EmailLoginSuccess({ user: accountUser });
+            return NxtAccountActions.EmailLoginSuccess();
           }),
           catchError((error: { message: string }) =>
             of(NxtAccountActions.EmailLoginFailure({ error }))
@@ -435,24 +421,10 @@ export const onVerifyOTP: FunctionalEffect = createEffect(
       ofType(NxtAccountActions.VerifyOTP),
       switchMap(({ code }) =>
         cognitoAuthService.verifyOTP(code).pipe(
-          switchMap(() => cognitoAuthService.getCurrentUser()),
-          map((user) => {
-            const accountUser = {
-              id: 1, // This should be a number, using 1 as placeholder
-              name: user?.attributes?.name || user?.attributes?.given_name || '',
-              email: user?.attributes?.email || '',
-              phone: user?.attributes?.phone_number || '',
-              country_code: '91', // Default country code
-              status: true,
-              email_verified_at: new Date().toISOString(),
-              payment_account: {} as any,
-              role_id: 1,
-              permission: [],
-              orders_count: 0,
-              is_approved: true
-            };
+          map(() => {
+            console.log('OTP verification successful, triggering getUser call');
             router.navigate(['/nxt/account/dashboard']);
-            return NxtAccountActions.VerifyOTPSuccess({ user: accountUser });
+            return NxtAccountActions.VerifyOTPSuccess();
           }),
           catchError((error: { message: string }) =>
             of(NxtAccountActions.VerifyOTPFailure({ error }))
@@ -495,24 +467,10 @@ export const onSocialLogin: FunctionalEffect = createEffect(
           : cognitoAuthService.signInWithFacebook();
         
         return loginMethod.pipe(
-          switchMap(() => cognitoAuthService.getCurrentUser()),
-          map((user) => {
-            const accountUser = {
-              id: 1, // This should be a number, using 1 as placeholder
-              name: user?.attributes?.name || user?.attributes?.given_name || '',
-              email: user?.attributes?.email || '',
-              phone: user?.attributes?.phone_number || '',
-              country_code: '91', // Default country code
-              status: true,
-              email_verified_at: new Date().toISOString(),
-              payment_account: {} as any,
-              role_id: 1,
-              permission: [],
-              orders_count: 0,
-              is_approved: true
-            };
+          map(() => {
+            console.log('Social login successful, triggering getUser call');
             router.navigate(['/nxt/account/dashboard']);
-            return NxtAccountActions.SocialLoginSuccess({ user: accountUser });
+            return NxtAccountActions.SocialLoginSuccess();
           }),
           catchError((error: { message: string }) =>
             of(NxtAccountActions.SocialLoginFailure({ error }))
@@ -549,4 +507,102 @@ export const onLogoutSuccess: FunctionalEffect = createEffect(
     );
   },
   { dispatch: false, functional: true }
+);
+
+export const onValidateAuthState: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.ValidateAuthState),
+      switchMap(() =>
+        from(cognitoAuthService.validateAuthState()).pipe(
+          switchMap((isValid) => {
+            if (isValid) {
+              // Get current user and tokens
+              return cognitoAuthService.getCurrentUser().pipe(
+                switchMap((user) => cognitoAuthService.getTokens().pipe(
+                  map((tokens) => {
+                    const accountUser = {
+                      id: 1, // This should be a number, using 1 as placeholder
+                      name: user?.attributes?.name || user?.attributes?.given_name || '',
+                      email: user?.attributes?.email || '',
+                      phone: user?.attributes?.phone_number || '',
+                      country_code: '91', // Default country code
+                      status: true,
+                      email_verified_at: new Date().toISOString(),
+                      payment_account: {} as any,
+                      role_id: 1,
+                      permission: [],
+                      orders_count: 0,
+                      is_approved: true
+                    };
+                    return NxtAccountActions.ValidateAuthStateSuccess({ 
+                      user: accountUser, 
+                      tokens 
+                    });
+                  })
+                ))
+              );
+            } else {
+              return of(NxtAccountActions.ValidateAuthStateFailure());
+            }
+          })
+        )
+      ),
+      catchError(() => of(NxtAccountActions.ValidateAuthStateFailure()))
+    );
+  },
+  { functional: true }
+);
+
+// Effects to trigger getUser after successful login
+export const onEmailLoginSuccess: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.EmailLoginSuccess),
+      map(() => {
+        console.log('Email login success, dispatching GetUser action');
+        return NxtAccountActions.GetUser();
+      })
+    );
+  },
+  { functional: true }
+);
+
+export const onVerifyOTPSuccess: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.VerifyOTPSuccess),
+      map(() => {
+        console.log('OTP verification success, dispatching GetUser action');
+        return NxtAccountActions.GetUser();
+      })
+    );
+  },
+  { functional: true }
+);
+
+export const onSocialLoginSuccess: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.SocialLoginSuccess),
+      map(() => {
+        console.log('Social login success, dispatching GetUser action');
+        return NxtAccountActions.GetUser();
+      })
+    );
+  },
+  { functional: true }
+);
+
+export const onVerifyRegistrationOTPSuccess: FunctionalEffect = createEffect(
+  (actions$ = inject(Actions)) => {
+    return actions$.pipe(
+      ofType(NxtAccountActions.VerifyRegistrationOTPSuccess),
+      map(() => {
+        console.log('Registration OTP verification success, dispatching GetUser action');
+        return NxtAccountActions.GetUser();
+      })
+    );
+  },
+  { functional: true }
 );

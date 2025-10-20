@@ -14,6 +14,16 @@ export const isAuthenticated = createSelector(
   (state) => state.auth?.isAuthenticated || false
 );
 
+export const authError = createSelector(
+  selectAccountState,
+  (state) => state.auth?.error
+);
+
+export const authLoading = createSelector(
+  selectAccountState,
+  (state) => state.auth?.isLoading || false
+);
+
 export const user = createSelector(selectAccountState, (state) => state.user);
 
 export const settings = createSelector(

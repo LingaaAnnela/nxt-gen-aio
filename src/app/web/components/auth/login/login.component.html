@@ -23,6 +23,11 @@
             <div class="alert alert-info mb-3">
               {{ message }}
             </div>
+            } @if (errorMessage) {
+            <div class="alert alert-danger mb-1">
+              <i class="ri-error-warning-line me-2"></i>
+              {{ errorMessage }}
+            </div>
             }
 
             <!-- Login Method Toggle -->
@@ -146,12 +151,18 @@
                 </div>
               </div>
               <div class="col-12">
-                <app-button [id]="'login_btn'">
-                  @if (loginMethod === 'phone') {
+                <app-button
+                  [id]="'login_btn'"
+                  [disabled]="!!(isLoading$ | async)"
+                >
+                  @if (isLoading$ | async) {
+                  <i class="ri-loader-4-line ri-spin me-2"></i>
+                  {{ "loading" | translate }}
+                  } @else { @if (loginMethod === 'phone') {
                   {{ "send_otp" | translate }}
                   } @else {
                   {{ "sign_in" | translate }}
-                  }
+                  } }
                 </app-button>
               </div>
             </form>
@@ -163,7 +174,7 @@
             <div class="row g-3">
               <div class="col-6">
                 <button
-                  disabled
+                  [disabled]="isLoading$ | async"
                   type="button"
                   class="btn social-login-btn w-100 d-flex align-items-center justify-content-center"
                   (click)="loginWithGoogle()"
@@ -174,7 +185,7 @@
               </div>
               <div class="col-6">
                 <button
-                  disabled
+                  [disabled]="isLoading$ | async"
                   type="button"
                   class="btn social-login-btn w-100 d-flex align-items-center justify-content-center"
                   (click)="loginWithFacebook()"

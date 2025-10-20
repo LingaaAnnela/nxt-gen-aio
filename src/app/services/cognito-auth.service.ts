@@ -66,18 +66,131 @@ export class CognitoAuthService {
     }
   }
 
-  private initializeAuth(): void {
-    // Check if user is already authenticated on service initialization
-    this.getCurrentUser().subscribe({
-      next: (user) => {
+  private async initializeAuth(): Promise<void> {
+    try {
+      // First, try to restore from stored tokens
+      await this.restoreAuthFromStoredTokens();
+      
+      // If no valid stored tokens, check current user session
+      if (!this.isAuthenticatedSubject.value) {
+        await this.checkCurrentUserSession();
+      }
+    } catch (error) {
+      console.error('Error during auth initialization:', error);
+      this.clearAuthState();
+    }
+  }
+
+  private async restoreAuthFromStoredTokens(): Promise<void> {
+    const storedTokens = this.getStoredTokens();
+    
+    if (!storedTokens) {
+      console.log('No stored tokens found');
+      return;
+    }
+
+    // Check if tokens are still valid
+    if (this.areTokensValid(storedTokens)) {
+      console.log('Stored tokens are valid, restoring auth state');
+      this.authTokensSubject.next(storedTokens);
+      
+      // Try to get current user to verify tokens are still valid with AWS
+      try {
+        const user = await this.getCurrentUserFromAWS();
+        if (user) {
+          this.currentUserSubject.next(user);
+          this.isAuthenticatedSubject.next(true);
+          console.log('Auth state restored successfully');
+        } else {
+          console.log('Stored tokens are invalid, clearing auth state');
+          this.clearAuthState();
+        }
+      } catch (error) {
+        console.log('Error validating stored tokens with AWS:', error);
+        this.clearAuthState();
+      }
+    } else {
+      console.log('Stored tokens are expired, clearing auth state');
+      this.clearAuthState();
+    }
+  }
+
+  private async checkCurrentUserSession(): Promise<void> {
+    try {
+      const user = await this.getCurrentUserFromAWS();
+      if (user) {
         this.currentUserSubject.next(user);
         this.isAuthenticatedSubject.next(true);
-      },
-      error: () => {
-        this.currentUserSubject.next(null);
-        this.isAuthenticatedSubject.next(false);
+        // Fetch and store fresh tokens
+        await this.fetchAndStoreTokens();
+        console.log('Current user session found and restored');
+      } else {
+        console.log('No current user session found');
+        this.clearAuthState();
       }
-    });
+    } catch (error) {
+      console.log('Error checking current user session:', error);
+      this.clearAuthState();
+    }
+  }
+
+  private async getCurrentUserFromAWS(): Promise<CognitoUser | null> {
+    try {
+      const user = await getCurrentUser();
+      return {
+        username: user.username,
+        attributes: {
+          email: user.signInDetails?.loginId,
+          phone_number: user.signInDetails?.loginId,
+          name: user.username
+        }
+      };
+    } catch (error) {
+      return null;
+    }
+  }
+
+  private areTokensValid(tokens: AuthTokens): boolean {
+    if (!tokens.accessToken || !tokens.idToken) {
+      return false;
+    }
+
+    try {
+      // Decode JWT token to check expiration
+      const payload = JSON.parse(atob(tokens.idToken.split('.')[1]));
+      const currentTime = Math.floor(Date.now() / 1000);
+      
+      // Check if token is expired (with 5 minute buffer)
+      if (payload.exp && payload.exp < (currentTime + 300)) {
+        return false;
+      }
+      
+      return true;
+    } catch (error) {
+      console.error('Error validating token:', error);
+      return false;
+    }
+  }
+
+  private clearAuthState(): void {
+    this.currentUserSubject.next(null);
+    this.isAuthenticatedSubject.next(false);
+    this.authTokensSubject.next(null);
+    this.clearStoredTokens();
+    this.clearSessionStorage();
+  }
+
+  // Clear session storage data
+  private clearSessionStorage(): void {
+    try {
+      sessionStorage.removeItem('pendingPhoneNumber');
+      sessionStorage.removeItem('pendingUsername');
+      sessionStorage.removeItem('pendingEmail');
+      sessionStorage.removeItem('pendingSignInSession');
+      console.log('Session storage cleared');
+    } catch (error) {
+      console.error('Error clearing session storage:', error);
+    }
   }
 
   private setupAuthHub(): void {
@@ -104,10 +217,13 @@ export class CognitoAuthService {
   }
 
   private handleSignOut(): void {
+    console.log('Handling sign out - clearing all auth state');
     this.currentUserSubject.next(null);
     this.isAuthenticatedSubject.next(false);
     this.authTokensSubject.next(null);
     this.clearStoredTokens();
+    this.clearSessionStorage();
+    console.log('Sign out completed - all tokens and sessions cleared');
   }
 
   private handleTokenRefresh(payload: any): void {
@@ -397,12 +513,14 @@ export class CognitoAuthService {
   signOut(): Observable<any> {
     return from(signOut()).pipe(
       map(() => {
+        console.log('AWS Cognito signOut successful');
         this.handleSignOut();
         return true;
       }),
       catchError((error) => {
         console.error('Sign out error:', error);
         // Even if signOut fails, clear local state
+        console.log('Clearing local state despite signOut error');
         this.handleSignOut();
         return throwError(() => error);
       })
@@ -436,15 +554,54 @@ export class CognitoAuthService {
   // Clear stored tokens
   private clearStoredTokens(): void {
     try {
-      localStorage.removeItem('cognito_tokens');
+      const tokensBefore = localStorage.getItem('cognito_tokens');
+      if (tokensBefore) {
+        console.log('Clearing stored tokens from localStorage');
+        localStorage.removeItem('cognito_tokens');
+        console.log('Tokens successfully cleared from localStorage');
+      } else {
+        console.log('No tokens found in localStorage to clear');
+      }
     } catch (error) {
       console.error('Error clearing tokens:', error);
     }
   }
 
   // Fetch and store tokens
+  private async fetchAndStoreTokens(): Promise<void> {
+    try {
+      const tokens = await this.getTokens().toPromise();
+      if (tokens) {
+        this.authTokensSubject.next(tokens);
+      }
+    } catch (error) {
+      console.error('Error fetching and storing tokens:', error);
+    }
+  }
+
+  // Fetch tokens (public method)
   private fetchTokens(): void {
     this.getTokens().subscribe();
+  }
+
+  // Validate current authentication state (public method)
+  async validateAuthState(): Promise<boolean> {
+    try {
+      const user = await this.getCurrentUserFromAWS();
+      if (user) {
+        this.currentUserSubject.next(user);
+        this.isAuthenticatedSubject.next(true);
+        await this.fetchAndStoreTokens();
+        return true;
+      } else {
+        this.clearAuthState();
+        return false;
+      }
+    } catch (error) {
+      console.error('Error validating auth state:', error);
+      this.clearAuthState();
+      return false;
+    }
   }
 
   // Get pending phone number from session
@@ -456,5 +613,37 @@ export class CognitoAuthService {
   clearPendingPhoneNumber(): void {
     sessionStorage.removeItem('pendingPhoneNumber');
     sessionStorage.removeItem('pendingUsername');
+  }
+
+  // Public method to manually refresh authentication state
+  async refreshAuthState(): Promise<boolean> {
+    console.log('Manually refreshing authentication state...');
+    return await this.validateAuthState();
+  }
+
+  // Check if current tokens need refreshing
+  shouldRefreshTokens(): boolean {
+    const tokens = this.authTokensSubject.value;
+    if (!tokens) {
+      return true;
+    }
+    return !this.areTokensValid(tokens);
+  }
+
+  // Get authentication status for debugging
+  getAuthStatus(): { isAuthenticated: boolean; hasValidTokens: boolean; currentUser: CognitoUser | null } {
+    const tokens = this.authTokensSubject.value;
+    return {
+      isAuthenticated: this.isAuthenticatedSubject.value,
+      hasValidTokens: tokens ? this.areTokensValid(tokens) : false,
+      currentUser: this.currentUserSubject.value
+    };
+  }
+
+  // Public method to manually clear all authentication data (useful for debugging)
+  clearAllAuthData(): void {
+    console.log('Manually clearing all authentication data...');
+    this.handleSignOut();
+    console.log('All authentication data cleared manually');
   }
 }

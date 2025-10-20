@@ -31,10 +31,7 @@ export const EmailLogin = createAction(
   '[NXT] Email Login User',
   props<{ email: string; password: string }>()
 );
-export const EmailLoginSuccess = createAction(
-  '[NXT] Email Login User Success',
-  props<{ user: AccountUser }>()
-);
+export const EmailLoginSuccess = createAction('[NXT] Email Login User Success');
 export const EmailLoginFailure = createAction(
   '[NXT] Email Login User Failure',
   props<{ error: { message: string } }>()
@@ -57,10 +54,7 @@ export const VerifyOTP = createAction(
   '[NXT] Verify OTP',
   props<{ code: string }>()
 );
-export const VerifyOTPSuccess = createAction(
-  '[NXT] Verify OTP Success',
-  props<{ user: AccountUser }>()
-);
+export const VerifyOTPSuccess = createAction('[NXT] Verify OTP Success');
 export const VerifyOTPFailure = createAction(
   '[NXT] Verify OTP Failure',
   props<{ error: { message: string } }>()
@@ -83,10 +77,7 @@ export const SocialLogin = createAction(
   '[NXT] Social Login',
   props<{ provider: 'Google' | 'Facebook' }>()
 );
-export const SocialLoginSuccess = createAction(
-  '[NXT] Social Login Success',
-  props<{ user: AccountUser }>()
-);
+export const SocialLoginSuccess = createAction('[NXT] Social Login Success');
 export const SocialLoginFailure = createAction(
   '[NXT] Social Login Failure',
   props<{ error: { message: string } }>()
@@ -99,9 +90,24 @@ export const LogoutFailure = createAction(
   props<{ error: { message: string } }>()
 );
 
+export const ValidateAuthState = createAction('[NXT] Validate Auth State');
+export const ValidateAuthStateSuccess = createAction(
+  '[NXT] Validate Auth State Success',
+  props<{ user: AccountUser; tokens: any }>()
+);
+export const ValidateAuthStateFailure = createAction(
+  '[NXT] Validate Auth State Failure'
+);
+
 export const Register = createAction(
   '[NXT] Register User',
-  props<{ name: string; email: string; phone: string; country_code: string; password: string }>()
+  props<{
+    name: string;
+    email: string;
+    phone: string;
+    country_code: string;
+    password: string;
+  }>()
 );
 export const RegisterSuccess = createAction(
   '[NXT] Register User Success',

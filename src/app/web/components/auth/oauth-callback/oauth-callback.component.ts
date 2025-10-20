@@ -109,7 +109,7 @@ export class OAuthCallbackComponent implements OnInit {
           is_approved: true
         };
         
-        this.store.dispatch(NxtAccountActions.SocialLoginSuccess({ user: accountUser }));
+        this.store.dispatch(NxtAccountActions.SocialLoginSuccess(/* { user: accountUser } */));
         this.router.navigate(['/nxt/account/dashboard']);
       },
       error: (error) => {
@@ -138,7 +138,7 @@ export class OAuthCallbackComponent implements OnInit {
             is_approved: true
           };
           
-          this.store.dispatch(NxtAccountActions.SocialLoginSuccess({ user: accountUser }));
+          this.store.dispatch(NxtAccountActions.SocialLoginSuccess(/* { user: accountUser } */));
           this.router.navigate(['/nxt/account/dashboard']);
         } else {
           this.router.navigate(['/nxt/auth/login']);
