@@ -14,7 +14,7 @@ import * as data from '../../../shared/data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
 import { ButtonComponent } from '../../../shared/components/widgets/button/button.component';
 import { NxtAccountActions } from '../../../../store/actions';
-// import { Select2Module } from 'ng-select2-component';
+import { Select2 } from 'ng-select2-component';
 
 import { BreadcrumbComponent } from '../../../shared/components/widgets/breadcrumb/breadcrumb.component';
 import { isPlatformBrowser } from '@angular/common';
@@ -28,6 +28,7 @@ import { isPlatformBrowser } from '@angular/common';
     ButtonComponent,
     RouterLink,
     TranslateModule,
+    Select2,
   ],
 })
 export class RegisterComponent {

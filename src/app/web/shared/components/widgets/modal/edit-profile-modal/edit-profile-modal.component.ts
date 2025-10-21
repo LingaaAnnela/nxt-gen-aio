@@ -20,7 +20,7 @@ import { Observable } from 'rxjs';
 import { AccountUser } from '../../../../interface/account.interface';
 import * as data from '../../../../data/country-code';
 import { TranslateModule } from '@ngx-translate/core';
-// import { Select2Module } from 'ng-select2-component';
+import { Select2 } from 'ng-select2-component';
 import { ButtonComponent } from '../../button/button.component';
 import { NxtAccountSelectors } from '../../../../../../store/selectors';
 
@@ -28,7 +28,7 @@ import { NxtAccountSelectors } from '../../../../../../store/selectors';
   selector: 'app-edit-profile-modal',
   templateUrl: './edit-profile-modal.component.html',
   styleUrls: ['./edit-profile-modal.component.scss'],
-  imports: [ButtonComponent, ReactiveFormsModule, TranslateModule],
+  imports: [ButtonComponent, ReactiveFormsModule, TranslateModule, Select2],
 })
 export class EditProfileModalComponent {
   user$: Observable<AccountUser> = inject(Store).select(

@@ -526,7 +526,7 @@ export const onValidateAuthState: FunctionalEffect = createEffect(
                       name: user?.attributes?.name || user?.attributes?.given_name || '',
                       email: user?.attributes?.email || '',
                       phone: user?.attributes?.phone_number || '',
-                      country_code: '91', // Default country code
+                      country_code: '1', // Default country code
                       status: true,
                       email_verified_at: new Date().toISOString(),
                       payment_account: {} as any,

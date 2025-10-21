@@ -59,12 +59,12 @@
             "Payment Option" | translate
           }}</label>
           @if(isBrowser) {
-          <!-- <select2 class="custom-select"
+          <select2 class="custom-select"
                 [data]="option ? option : []"
                 [placeholder]="'select_payment_option' | translate"
                 formControlName="payment_type"
                 resettable>
-            </select2> -->
+            </select2>
           } @if (form.controls['payment_type'].touched &&
           form.controls['payment_type'].errors?.['required']) {
           <div class="invalid-feedback">

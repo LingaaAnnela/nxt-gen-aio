@@ -61,9 +61,16 @@
             <label class="form-label" for="address1">{{
               "country" | translate
             }}</label>
-            <!-- <select2 class="custom-select" [data]="(countries$ | async) ? (countries$ | async)! : []"
-                [placeholder]="'select_country' | translate" formControlName="country_id" (update)="countryChange($event)" resettable>
-              </select2> -->
+            <select2
+              class="custom-select"
+              [data]="(countries$ | async) ? (countries$ | async)! : []"
+              [placeholder]="'select_country' | translate"
+              formControlName="country_id"
+              value="840"
+              (update)="countryChange($event)"
+              resettable
+            >
+            </select2>
             @if (form.controls['country_id'].touched &&
             form.controls['country_id'].errors?.['required']) {
             <div class="invalid-feedback">
@@ -77,9 +84,13 @@
             <label class="form-label" for="address1">{{
               "state" | translate
             }}</label>
-            <!-- <select2 class="custom-select" [data]="(states$ | async) ? (states$ | async)! : []"
-                [placeholder]="'select_state' | translate" formControlName="state_id">
-              </select2> -->
+            <select2
+              class="custom-select"
+              [data]="(states$ | async) ? (states$ | async)! : []"
+              [placeholder]="'select_state' | translate"
+              formControlName="state_id"
+            >
+            </select2>
             @if (form.controls['state_id'].touched &&
             form.controls['state_id'].errors?.['required']) {
             <div class="invalid-feedback">
@@ -136,17 +147,21 @@
             <label class="form-label" for="address1">{{
               "phone_number" | translate
             }}</label>
-            <!-- <select2 class="custom-select intl-tel-input" [templates]="template" [data]="codes"
-                formControlName="country_code">
-                <ng-template #template let-data="data">
-                  <div class="country">
-                    <div class="flag-box">
-                      <div class="iti-flag {{data?.class}}"></div>
-                    </div>
-                    <span class="dial-code">{{data.code}}</span>
+            <select2
+              class="custom-select intl-tel-input"
+              [templates]="template"
+              [data]="codes"
+              formControlName="country_code"
+            >
+              <ng-template #template let-data="data">
+                <div class="country">
+                  <div class="flag-box">
+                    <div class="iti-flag {{ data?.class }}"></div>
                   </div>
-                </ng-template>
-              </select2> -->
+                  <span class="dial-code">{{ data.code }}</span>
+                </div>
+              </ng-template>
+            </select2>
             <input
               type="number"
               class="form-control intl-input-padding"

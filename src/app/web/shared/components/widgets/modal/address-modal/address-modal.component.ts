@@ -6,7 +6,7 @@ import {
   Inject,
   inject,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, AsyncPipe } from '@angular/common';
 import {
   FormBuilder,
   FormControl,
@@ -18,7 +18,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
 import { TranslateModule } from '@ngx-translate/core';
 import { map, Observable } from 'rxjs';
-// import { Select2Data, Select2UpdateEvent, Select2Module } from 'ng-select2-component';
+import { Select2Data, Select2 } from 'ng-select2-component';
 import { UserAddress } from '../../../../interface/user.interface';
 import * as data from '../../../../data/country-code';
 import { ButtonComponent } from '../../button/button.component';
@@ -29,14 +29,20 @@ import { Country } from '../../../../interface/country.interface';
   selector: 'address-modal',
   templateUrl: './address-modal.component.html',
   styleUrls: ['./address-modal.component.scss'],
-  imports: [ButtonComponent, ReactiveFormsModule, TranslateModule],
+  imports: [
+    ButtonComponent,
+    ReactiveFormsModule,
+    TranslateModule,
+    Select2,
+    AsyncPipe,
+  ],
 })
 export class AddressModalComponent {
   public form: FormGroup;
   public closeResult: string;
   public modalOpen: boolean = false;
 
-  public states$: Observable<any>;
+  public states$: Observable<Select2Data>;
   public address: UserAddress | null;
   public codes = data.countryCodes;
   public isBrowser: boolean;
@@ -44,9 +50,16 @@ export class AddressModalComponent {
   @ViewChild('addressModal', { static: false })
   AddressModal: TemplateRef<string>;
 
-  countries$: Observable<Country[]> = inject(Store).select(
-    NxtAccountSelectors.countries
-  );
+  countries$: Observable<Select2Data> = inject(Store)
+    .select(NxtAccountSelectors.countries)
+    .pipe(
+      map((countries: Country[]) =>
+        countries.map((country) => ({
+          value: country.id.toString(),
+          label: country.name,
+        }))
+      )
+    );
 
   constructor(
     private modalService: NgbModal,
@@ -59,10 +72,10 @@ export class AddressModalComponent {
       title: new FormControl('', [Validators.required]),
       street: new FormControl('', [Validators.required]),
       state_id: new FormControl('', [Validators.required]),
-      country_id: new FormControl('', [Validators.required]),
+      country_id: new FormControl('840', [Validators.required]),
       city: new FormControl('', [Validators.required]),
       pincode: new FormControl('', [Validators.required]),
-      country_code: new FormControl('91', [Validators.required]),
+      country_code: new FormControl('+1', [Validators.required]),
       phone: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[0-9]*$/),
@@ -72,13 +85,14 @@ export class AddressModalComponent {
 
   countryChange(data: any) {
     if (data && data?.value) {
-      this.states$ = this.store
-        .select(NxtAccountSelectors.states)
-        .pipe(
-          map((states) =>
-            states.filter((state) => state.country_id === +data?.value)
-          )
-        );
+      this.states$ = this.store.select(NxtAccountSelectors.states).pipe(
+        map((states) =>
+          states.map((state) => ({
+            value: state.id.toString(),
+            label: state.name,
+          }))
+        )
+      );
       if (!this.address) this.form.controls['state_id'].setValue('');
     } else {
       this.form.controls['state_id'].setValue('');
@@ -133,7 +147,7 @@ export class AddressModalComponent {
     } else {
       this.address = null;
       this.form.reset();
-      this.form?.controls?.['country_code'].setValue('91');
+      this.form?.controls?.['country_code'].setValue('1');
     }
   }
 
@@ -151,7 +165,7 @@ export class AddressModalComponent {
       //   complete: () => {
       //     this.form.reset();
       //     if (!this.address) {
-      //       this.form?.controls?.['country_code'].setValue('91');
+      //       this.form?.controls?.['country_code'].setValue('1');
       //     }
       //   },
       // });

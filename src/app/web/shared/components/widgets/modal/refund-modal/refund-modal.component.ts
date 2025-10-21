@@ -15,7 +15,7 @@ import {
 } from '@angular/forms';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Store } from '@ngrx/store';
-// import { Select2Data, Select2Module } from 'ng-select2-component';
+import { Select2Data, Select2 } from 'ng-select2-component';
 import { Product } from '../../../../interface/product.interface';
 import { CurrencySymbolPipe } from '../../../../pipe/currency-symbol.pipe';
 import { TranslateModule } from '@ngx-translate/core';
@@ -32,6 +32,7 @@ import { ButtonComponent } from '../../button/button.component';
     FormsModule,
     TranslateModule,
     CurrencySymbolPipe,
+    Select2,
   ],
 })
 export class RefundModalComponent {

@@ -20,13 +20,13 @@
       <!-- <h5 class="text-content">{{ "sort_by" | translate }} :</h5> -->
       @if(isBrowser) {
       <div class="dropdown">
-        <!-- <select2 class="custom-select"
+        <select2 class="custom-select"
             [displaySearchStatus]="'hidden'"
             [placeholder]="'Sort'"
             [value]="filter['sortBy']"
             [data]="sorting ? sorting : []"
             (update)="sortByFilter($event)">
-          </select2> -->
+          </select2>
       </div>
       }
     </div>

@@ -8,7 +8,7 @@ import {
   PLATFORM_ID,
 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// import { Select2Data, Select2UpdateEvent } from 'ng-select2-component';
+import { Select2Data, Select2UpdateEvent, Select2 } from 'ng-select2-component';
 import { Params } from '../../../../../shared/interface/core.interface';
 import { TranslateModule } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
@@ -19,7 +19,7 @@ import { NxtCategoryActions } from '../../../../../../store/actions';
   selector: 'app-collection-sort',
   templateUrl: './collection-sort.component.html',
   styleUrls: ['./collection-sort.component.scss'],
-  imports: [TranslateModule],
+  imports: [TranslateModule, Select2],
 })
 export class CollectionSortComponent {
   @Input() filter: Params;
