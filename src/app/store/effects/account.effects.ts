@@ -354,14 +354,20 @@ export const onGetBlogs: FunctionalEffect = createEffect(
 
 // Cognito Authentication Effects
 export const onLogin: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService), router = inject(Router)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService),
+    router = inject(Router)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.Login),
       switchMap(({ phone, country_code }) =>
         cognitoAuthService.sendOTP(phone, country_code).pipe(
           map(() => {
             router.navigate(['/nxt/auth/otp']);
-            return NxtAccountActions.SendOTPSuccess({ message: 'OTP sent successfully' });
+            return NxtAccountActions.SendOTPSuccess({
+              message: 'OTP sent successfully',
+            });
           }),
           catchError((error: { message: string }) =>
             of(NxtAccountActions.LoginFailure({ error }))
@@ -374,7 +380,11 @@ export const onLogin: FunctionalEffect = createEffect(
 );
 
 export const onEmailLogin: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService), router = inject(Router)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService),
+    router = inject(Router)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.EmailLogin),
       switchMap(({ email, password }) => {
@@ -396,19 +406,28 @@ export const onEmailLogin: FunctionalEffect = createEffect(
 );
 
 export const onRegister: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService), router = inject(Router)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService),
+    router = inject(Router)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.Register),
       switchMap(({ name, email, phone, country_code, password }) =>
-        cognitoAuthService.registerUser({ name, email, phone, country_code, password }).pipe(
-          map(() => {
-            router.navigate(['/nxt/auth/otp']);
-            return NxtAccountActions.RegisterSuccess({ message: 'Registration successful. Please verify your phone number.' });
-          }),
-          catchError((error: { message: string }) =>
-            of(NxtAccountActions.RegisterFailure({ error }))
+        cognitoAuthService
+          .registerUser({ name, email, phone, country_code, password })
+          .pipe(
+            map(() => {
+              router.navigate(['/nxt/auth/otp']);
+              return NxtAccountActions.RegisterSuccess({
+                message:
+                  'Registration successful. Please verify your phone number.',
+              });
+            }),
+            catchError((error: { message: string }) =>
+              of(NxtAccountActions.RegisterFailure({ error }))
+            )
           )
-        )
       )
     );
   },
@@ -416,7 +435,11 @@ export const onRegister: FunctionalEffect = createEffect(
 );
 
 export const onVerifyOTP: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService), router = inject(Router)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService),
+    router = inject(Router)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.VerifyOTP),
       switchMap(({ code }) =>
@@ -437,7 +460,11 @@ export const onVerifyOTP: FunctionalEffect = createEffect(
 );
 
 export const onVerifyRegistrationOTP: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService), router = inject(Router)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService),
+    router = inject(Router)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.VerifyRegistrationOTP),
       switchMap(({ code }) =>
@@ -445,7 +472,9 @@ export const onVerifyRegistrationOTP: FunctionalEffect = createEffect(
           map((result) => {
             console.log('Registration OTP verification successful:', result);
             router.navigate(['/nxt/account/dashboard']);
-            return NxtAccountActions.VerifyRegistrationOTPSuccess({ message: 'Registration completed successfully!' });
+            return NxtAccountActions.VerifyRegistrationOTPSuccess({
+              message: 'Registration completed successfully!',
+            });
           }),
           catchError((error: { message: string }) =>
             of(NxtAccountActions.VerifyRegistrationOTPFailure({ error }))
@@ -458,14 +487,19 @@ export const onVerifyRegistrationOTP: FunctionalEffect = createEffect(
 );
 
 export const onSocialLogin: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService), router = inject(Router)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService),
+    router = inject(Router)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.SocialLogin),
       switchMap(({ provider }) => {
-        const loginMethod = provider === 'Google' 
-          ? cognitoAuthService.signInWithGoogle() 
-          : cognitoAuthService.signInWithFacebook();
-        
+        const loginMethod =
+          provider === 'Google'
+            ? cognitoAuthService.signInWithGoogle()
+            : cognitoAuthService.signInWithFacebook();
+
         return loginMethod.pipe(
           map(() => {
             console.log('Social login successful, triggering getUser call');
@@ -483,7 +517,10 @@ export const onSocialLogin: FunctionalEffect = createEffect(
 );
 
 export const onLogout: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.Logout),
       switchMap(() =>
@@ -510,7 +547,10 @@ export const onLogoutSuccess: FunctionalEffect = createEffect(
 );
 
 export const onValidateAuthState: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions), cognitoAuthService = inject(CognitoAuthService)) => {
+  (
+    actions$ = inject(Actions),
+    cognitoAuthService = inject(CognitoAuthService)
+  ) => {
     return actions$.pipe(
       ofType(NxtAccountActions.ValidateAuthState),
       switchMap(() =>
@@ -519,28 +559,33 @@ export const onValidateAuthState: FunctionalEffect = createEffect(
             if (isValid) {
               // Get current user and tokens
               return cognitoAuthService.getCurrentUser().pipe(
-                switchMap((user) => cognitoAuthService.getTokens().pipe(
-                  map((tokens) => {
-                    const accountUser = {
-                      id: 1, // This should be a number, using 1 as placeholder
-                      name: user?.attributes?.name || user?.attributes?.given_name || '',
-                      email: user?.attributes?.email || '',
-                      phone: user?.attributes?.phone_number || '',
-                      country_code: '1', // Default country code
-                      status: true,
-                      email_verified_at: new Date().toISOString(),
-                      payment_account: {} as any,
-                      role_id: 1,
-                      permission: [],
-                      orders_count: 0,
-                      is_approved: true
-                    };
-                    return NxtAccountActions.ValidateAuthStateSuccess({ 
-                      user: accountUser, 
-                      tokens 
-                    });
-                  })
-                ))
+                switchMap((user) =>
+                  cognitoAuthService.getTokens().pipe(
+                    map((tokens) => {
+                      const accountUser = {
+                        id: 1, // This should be a number, using 1 as placeholder
+                        name:
+                          user?.attributes?.name ||
+                          user?.attributes?.given_name ||
+                          '',
+                        email: user?.attributes?.email || '',
+                        phone: user?.attributes?.phone_number || '',
+                        country_code: '1', // Default country code
+                        status: true,
+                        email_verified_at: new Date().toISOString(),
+                        payment_account: {} as any,
+                        role_id: 1,
+                        permission: [],
+                        orders_count: 0,
+                        is_approved: true,
+                      };
+                      return NxtAccountActions.ValidateAuthStateSuccess({
+                        user: accountUser,
+                        tokens,
+                      });
+                    })
+                  )
+                )
               );
             } else {
               return of(NxtAccountActions.ValidateAuthStateFailure());
@@ -556,11 +601,13 @@ export const onValidateAuthState: FunctionalEffect = createEffect(
 
 // Effects to trigger getUser after successful login
 export const onEmailLoginSuccess: FunctionalEffect = createEffect(
-  (actions$ = inject(Actions)) => {
+  (actions$ = inject(Actions), router = inject(Router)) => {
     return actions$.pipe(
       ofType(NxtAccountActions.EmailLoginSuccess),
       map(() => {
         console.log('Email login success, dispatching GetUser action');
+        // router.navigate(['/nxt/account/dashboard']);
+        router.navigate(['/nxt']);
         return NxtAccountActions.GetUser();
       })
     );
@@ -599,7 +646,9 @@ export const onVerifyRegistrationOTPSuccess: FunctionalEffect = createEffect(
     return actions$.pipe(
       ofType(NxtAccountActions.VerifyRegistrationOTPSuccess),
       map(() => {
-        console.log('Registration OTP verification success, dispatching GetUser action');
+        console.log(
+          'Registration OTP verification success, dispatching GetUser action'
+        );
         return NxtAccountActions.GetUser();
       })
     );
